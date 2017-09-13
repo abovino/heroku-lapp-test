@@ -1,0 +1,125 @@
+body {
+	background: linear-gradient(rgba(255,255,255,.2), rgba(255,255,255,.2)), url('http://img.interempresas.net/fotos/1139333.jpeg');
+}
+
+#wrapper {
+  min-height: 100%;
+}
+
+.header-container {
+	padding: 30px 20px 20px;
+	margin: 0;
+	background-color: #F7F7F7;
+}
+
+.cable-selector {
+	width: 85%;
+	padding: 25px;
+	border-radius: 10px;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.15), 0 0 1px 1px rgba(0, 0, 0, 0.1);
+	background-color: rgba(255,255,255,.9);
+}
+
+.cable-image {
+  text-align: center;
+}
+
+.cable-pics {
+  max-width: 125px;
+}
+
+h2, h3, h4 {
+	text-align: center;
+}
+
+.content {
+	padding-top: 65px;
+}
+
+.cat-list {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.btn-default:hover {
+  background-color: #ffffff;
+  border: 1px solid rgba(255, 136, 39, 0.86);
+}
+
+.btn-default.active, .btn-default:active, .open>.dropdown-toggle.btn-default {
+    color: #333;
+    background-color: rgba(255, 136, 39, 0.86);
+    border-color: #adadad;
+}
+
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
+    outline: 0px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+
+.btn-default.focus, .btn-default:focus {
+    color: #333;
+    background-color: #ffffff; 
+    border-color: #ccc;
+}
+
+.btn-default.active.focus, .btn-default.active:focus, .btn-default.active:hover, .btn-default:active.focus, .btn-default:active:focus, .btn-default:active:hover, .open>.dropdown-toggle.btn-default.focus, .open>.dropdown-toggle.btn-default:focus, .open>.dropdown-toggle.btn-default:hover {
+    color: #333;
+    background-color: rgba(255, 136, 39, 0.86); 
+    border-color: #8c8c8c;
+}
+
+.footer {
+	/*position: relative;*/
+	bottom: 0;
+	height: 60px;
+	background-color: #272727;
+	width: 100vw;
+}
+
+.footer-text {
+	padding-top: 20px;
+}
+
+.fa {
+	color: black;
+	font-size: 3em;
+}
+
+/*========== Media Queries ==========*/
+
+ /* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+ 
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+  
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+  .content {
+    padding-top: 15px;
+  }
+
+	.footer-text {
+		font-size: 11px;
+	}
+
+  .footer {
+    position: relative;
+    margin-top: 15px;
+  }
+}
+
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width : 320px) {
+		
+}
