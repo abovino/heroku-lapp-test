@@ -10832,7 +10832,7 @@ var ProfibusOther = function (_React$Component) {
     key: "sendPayload",
     value: function sendPayload() {
       $.ajax({
-        url: "http://104.236.212.43/bus/ajax/2170220",
+        url: "https://104.236.212.43/bus/ajax/2170220",
         type: 'GET'
       }).done(function (data) {
         console.log(data);
