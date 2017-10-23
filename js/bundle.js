@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 127);
+/******/ 	return __webpack_require__(__webpack_require__.s = 126);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -2192,7 +2192,7 @@ module.exports = __webpack_require__(21).getIteratorMethod = function (it) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // 9.4.2.3 ArraySpeciesCreate(originalArray, length)
-var speciesConstructor = __webpack_require__(219);
+var speciesConstructor = __webpack_require__(218);
 
 module.exports = function (original, length) {
   return new (speciesConstructor(original))(length);
@@ -2741,11 +2741,11 @@ exports[DATA_VIEW] = $DataView;
 "use strict";
 /* WEBPACK VAR INJECTION */(function(global) {
 
-__webpack_require__(128);
+__webpack_require__(127);
+
+__webpack_require__(324);
 
 __webpack_require__(325);
-
-__webpack_require__(326);
 
 if (global._babelPolyfill) {
   throw new Error("only one instance of babel-polyfill is allowed");
@@ -3739,268 +3739,91 @@ module.exports = Math.scale || function scale(x, inLow, inHigh, outLow, outHigh)
 
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var _ReactRouter = ReactRouter,
-    Router = _ReactRouter.Router,
-    Route = _ReactRouter.Route,
-    IndexRoute = _ReactRouter.IndexRoute,
-    IndexLink = _ReactRouter.IndexLink,
-    hashHistory = _ReactRouter.hashHistory,
-    Link = _ReactRouter.Link;
-
-var SelectCable = function (_React$Component) {
-	_inherits(SelectCable, _React$Component);
-
-	function SelectCable() {
-		_classCallCheck(this, SelectCable);
-
-		return _possibleConstructorReturn(this, (SelectCable.__proto__ || Object.getPrototypeOf(SelectCable)).apply(this, arguments));
-	}
-
-	_createClass(SelectCable, [{
-		key: "render",
-		value: function render() {
-			return React.createElement(
-				"div",
-				null,
-				React.createElement(
-					"h2",
-					null,
-					"Cable Selector Tool"
-				),
-				React.createElement(
-					"h4",
-					null,
-					"Click an image below to start"
-				),
-				React.createElement(
-					"div",
-					{ className: "row cable-type" },
-					React.createElement("div", { className: "col-sm-2" }),
-					React.createElement(
-						"div",
-						{ className: "col-sm-4 cable-image" },
-						React.createElement(
-							Link,
-							{ to: "etherline" },
-							React.createElement("img", { className: "cable-pics", src: "images/icon_etherline.gif", alt: "" })
-						),
-						React.createElement(
-							"h3",
-							null,
-							"Etherline"
-						)
-					),
-					React.createElement(
-						"div",
-						{ className: "col-sm-4 cable-image" },
-						React.createElement(
-							Link,
-							{ to: "profibus" },
-							React.createElement("img", { className: "cable-pics", src: "images/icon_unitronic.gif", alt: "" })
-						),
-						React.createElement(
-							"h3",
-							null,
-							"Profibus"
-						)
-					),
-					React.createElement("div", { className: "col-sm-2" })
-				)
-			);
-		}
-	}]);
-
-	return SelectCable;
-}(React.Component);
-
-exports.default = SelectCable;
-
-/***/ }),
-/* 126 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _SelectCable = __webpack_require__(329);
+
+var _SelectCable2 = _interopRequireDefault(_SelectCable);
+
+var _Unitronic = __webpack_require__(330);
+
+var _Unitronic2 = _interopRequireDefault(_Unitronic);
+
+var _Etherline = __webpack_require__(340);
+
+var _Etherline2 = _interopRequireDefault(_Etherline);
+
+var _jquery321Min = __webpack_require__(351);
+
+var _jquery321Min2 = _interopRequireDefault(_jquery321Min);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+// import TransitionGroup from './../client/js/react-transition-group/react-transition-group.min.js';
+// import Transition from './../client/js/react-transition-group/react-transition-group.min.js';
+
+var _ReactTransitionGroup = ReactTransitionGroup,
+    CSSTransitionGroup = _ReactTransitionGroup.CSSTransitionGroup;
 var _ReactRouter = ReactRouter,
     Router = _ReactRouter.Router,
     Route = _ReactRouter.Route,
     IndexRoute = _ReactRouter.IndexRoute,
     IndexLink = _ReactRouter.IndexLink,
     hashHistory = _ReactRouter.hashHistory,
+    browserHistory = _ReactRouter.browserHistory,
+    createMemoryHistory = _ReactRouter.createMemoryHistory,
     Link = _ReactRouter.Link;
 
+var App = function (_React$Component) {
+  _inherits(App, _React$Component);
 
-var selectedApplications = [];
+  function App() {
+    _classCallCheck(this, App);
 
-var ProfibusApplication = function (_React$Component) {
-  _inherits(ProfibusApplication, _React$Component);
-
-  function ProfibusApplication(props) {
-    _classCallCheck(this, ProfibusApplication);
-
-    var _this = _possibleConstructorReturn(this, (ProfibusApplication.__proto__ || Object.getPrototypeOf(ProfibusApplication)).call(this, props));
-
-    _this.state = _this.props.location.state;
-    _this.handleChange = _this.handleChange.bind(_this);
-    _this.handleOptionChange = _this.handleOptionChange.bind(_this);
-    _this.consoleLog = _this.consoleLog.bind(_this);
-    return _this;
+    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
   }
 
-  _createClass(ProfibusApplication, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      console.log(this.props);
-    }
-  }, {
-    key: 'handleChange',
-    value: function handleChange(e) {
-      // this.setState({application: e.target.value});
-      if (selectedApplications.indexOf(e.target.value) < 0) {
-        selectedApplications.push(e.target.value);
-      } else {
-        var index = selectedApplications.indexOf(e.target.value);
-        selectedApplications.splice(index, 1);
-      }
-
-      this.setState({ applications: selectedApplications });
-
-      // console.log("this.state.selections:", JSON.stringify(this.state, 0, 2));
-    }
-  }, {
-    key: 'handleOptionChange',
-    value: function handleOptionChange(e) {
-      this.setState({ selectedOption: e.target.value });
-    }
-  }, {
-    key: 'consoleLog',
-    value: function consoleLog() {
-      console.log(this.state);
-    }
-  }, {
+  _createClass(App, [{
     key: 'render',
     value: function render() {
-      var _this2 = this;
-
-      var applicationsArr = ['Stationary', 'Flexible', 'Continuous Flex', 'Torsion', 'Festoon'];
-      /* var applicationsArr = [
-      	{ "Stationary": false },
-      	{ "Flexible": false },
-      	{ "Continous Flex": false },
-      	{ "Torsion": false },
-      	{ "Festoon": false }
-      ]; */
-      var availableApplications = [];
-      this.state.queryData.map(function (data, i) {
-        return (
-          /* if (availableApplications.indexOf(data.application) < 0) {
-          		} */
-          availableApplications.indexOf(data.application) < 0 ? availableApplications.push(data.application) : ""
-        );
-      });
-      console.log(availableApplications);
-      var checkboxItems = applicationsArr.map(function (data, i) {
-        return React.createElement(
-          'div',
-          { key: i, className: availableApplications.indexOf(data) < 0 ? "checkbox disabled" : "checkbox" },
-          React.createElement(
-            'label',
-            { className: (_this2.state.applications.indexOf(data) >= 0 ? 'btn btn-default btn btn-block selected' : 'btn btn-default btn btn-block') + (availableApplications.indexOf(data) < 0 ? ' not-valid-selection' : '') },
-            availableApplications.indexOf(data) < 0 ? React.createElement('input', { type: 'checkbox', value: data, disabled: true }) : React.createElement('input', { type: 'checkbox', value: data }),
-            ' ',
-            data
-          )
-        );
-      });
       return React.createElement(
-        'div',
-        null,
-        React.createElement(
-          'h2',
-          null,
-          'Profibus Selector Tool'
-        ),
-        React.createElement(
-          'h4',
-          null,
-          'Choose Application'
-        ),
-        React.createElement(
-          'div',
-          { className: 'form-group cat-list' },
-          React.createElement(
-            'form',
-            { onChange: this.handleChange },
-            checkboxItems
-          )
-        ),
-        React.createElement(
-          Link,
-          { to: {
-              pathname: "/profibus/approvals",
-              state: this.state
-            } },
-          this.state.applications.length > 0 ? React.createElement(
-            'button',
-            { className: 'btn btn-primary' },
-            'Next'
-          ) : React.createElement(
-            'button',
-            { className: 'btn btn-primary', disabled: 'disabled' },
-            'Next'
-          )
-        ),
-        React.createElement(
-          'button',
-          { className: 'btn btn-primary', onClick: this.consoleLog },
-          'Console Log'
-        )
+        Router,
+        { history: hashHistory },
+        React.createElement(Route, { exact: true, path: '/', component: _SelectCable2.default }),
+        React.createElement(Route, { exact: true, path: '/unitronic', component: _Unitronic2.default }),
+        React.createElement(Route, { exact: true, path: '/etherline', component: _Etherline2.default })
       );
     }
   }]);
 
-  return ProfibusApplication;
+  return App;
 }(React.Component);
 
-exports.default = ProfibusApplication;
+exports.default = App;
+
+/***/ }),
+/* 126 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(89);
+module.exports = __webpack_require__(328);
+
 
 /***/ }),
 /* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(89);
-module.exports = __webpack_require__(329);
-
-
-/***/ }),
-/* 128 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(129);
+__webpack_require__(128);
+__webpack_require__(130);
 __webpack_require__(131);
 __webpack_require__(132);
 __webpack_require__(133);
@@ -4015,7 +3838,7 @@ __webpack_require__(141);
 __webpack_require__(142);
 __webpack_require__(143);
 __webpack_require__(144);
-__webpack_require__(145);
+__webpack_require__(146);
 __webpack_require__(147);
 __webpack_require__(148);
 __webpack_require__(149);
@@ -4076,16 +3899,16 @@ __webpack_require__(203);
 __webpack_require__(204);
 __webpack_require__(205);
 __webpack_require__(206);
-__webpack_require__(207);
+__webpack_require__(208);
 __webpack_require__(209);
-__webpack_require__(210);
+__webpack_require__(211);
 __webpack_require__(212);
 __webpack_require__(213);
 __webpack_require__(214);
 __webpack_require__(215);
 __webpack_require__(216);
 __webpack_require__(217);
-__webpack_require__(218);
+__webpack_require__(219);
 __webpack_require__(220);
 __webpack_require__(221);
 __webpack_require__(222);
@@ -4098,19 +3921,19 @@ __webpack_require__(228);
 __webpack_require__(229);
 __webpack_require__(230);
 __webpack_require__(231);
-__webpack_require__(232);
 __webpack_require__(84);
+__webpack_require__(232);
 __webpack_require__(233);
-__webpack_require__(234);
 __webpack_require__(109);
+__webpack_require__(234);
 __webpack_require__(235);
 __webpack_require__(236);
 __webpack_require__(237);
 __webpack_require__(238);
-__webpack_require__(239);
 __webpack_require__(112);
 __webpack_require__(114);
 __webpack_require__(115);
+__webpack_require__(239);
 __webpack_require__(240);
 __webpack_require__(241);
 __webpack_require__(242);
@@ -4195,12 +4018,11 @@ __webpack_require__(320);
 __webpack_require__(321);
 __webpack_require__(322);
 __webpack_require__(323);
-__webpack_require__(324);
 module.exports = __webpack_require__(21);
 
 
 /***/ }),
-/* 129 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4219,7 +4041,7 @@ var uid = __webpack_require__(32);
 var wks = __webpack_require__(5);
 var wksExt = __webpack_require__(92);
 var wksDefine = __webpack_require__(64);
-var enumKeys = __webpack_require__(130);
+var enumKeys = __webpack_require__(129);
 var isArray = __webpack_require__(52);
 var anObject = __webpack_require__(1);
 var toIObject = __webpack_require__(15);
@@ -4441,7 +4263,7 @@ setToStringTag(global.JSON, 'JSON', true);
 
 
 /***/ }),
-/* 130 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // all enumerable object keys, includes symbols
@@ -4462,7 +4284,7 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 131 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
@@ -4471,7 +4293,7 @@ $export($export.S, 'Object', { create: __webpack_require__(36) });
 
 
 /***/ }),
-/* 132 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
@@ -4480,7 +4302,7 @@ $export($export.S + $export.F * !__webpack_require__(6), 'Object', { definePrope
 
 
 /***/ }),
-/* 133 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
@@ -4489,7 +4311,7 @@ $export($export.S + $export.F * !__webpack_require__(6), 'Object', { definePrope
 
 
 /***/ }),
-/* 134 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.6 Object.getOwnPropertyDescriptor(O, P)
@@ -4504,7 +4326,7 @@ __webpack_require__(25)('getOwnPropertyDescriptor', function () {
 
 
 /***/ }),
-/* 135 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.9 Object.getPrototypeOf(O)
@@ -4519,7 +4341,7 @@ __webpack_require__(25)('getPrototypeOf', function () {
 
 
 /***/ }),
-/* 136 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.14 Object.keys(O)
@@ -4534,7 +4356,7 @@ __webpack_require__(25)('keys', function () {
 
 
 /***/ }),
-/* 137 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.7 Object.getOwnPropertyNames(O)
@@ -4544,7 +4366,7 @@ __webpack_require__(25)('getOwnPropertyNames', function () {
 
 
 /***/ }),
-/* 138 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.5 Object.freeze(O)
@@ -4559,7 +4381,7 @@ __webpack_require__(25)('freeze', function ($freeze) {
 
 
 /***/ }),
-/* 139 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.17 Object.seal(O)
@@ -4574,7 +4396,7 @@ __webpack_require__(25)('seal', function ($seal) {
 
 
 /***/ }),
-/* 140 */
+/* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.15 Object.preventExtensions(O)
@@ -4589,7 +4411,7 @@ __webpack_require__(25)('preventExtensions', function ($preventExtensions) {
 
 
 /***/ }),
-/* 141 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.12 Object.isFrozen(O)
@@ -4603,7 +4425,7 @@ __webpack_require__(25)('isFrozen', function ($isFrozen) {
 
 
 /***/ }),
-/* 142 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.13 Object.isSealed(O)
@@ -4617,7 +4439,7 @@ __webpack_require__(25)('isSealed', function ($isSealed) {
 
 
 /***/ }),
-/* 143 */
+/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.11 Object.isExtensible(O)
@@ -4631,7 +4453,7 @@ __webpack_require__(25)('isExtensible', function ($isExtensible) {
 
 
 /***/ }),
-/* 144 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.3.1 Object.assign(target, source)
@@ -4641,16 +4463,16 @@ $export($export.S + $export.F, 'Object', { assign: __webpack_require__(96) });
 
 
 /***/ }),
-/* 145 */
+/* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.3.10 Object.is(value1, value2)
 var $export = __webpack_require__(0);
-$export($export.S, 'Object', { is: __webpack_require__(146) });
+$export($export.S, 'Object', { is: __webpack_require__(145) });
 
 
 /***/ }),
-/* 146 */
+/* 145 */
 /***/ (function(module, exports) {
 
 // 7.2.9 SameValue(x, y)
@@ -4661,7 +4483,7 @@ module.exports = Object.is || function is(x, y) {
 
 
 /***/ }),
-/* 147 */
+/* 146 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.3.19 Object.setPrototypeOf(O, proto)
@@ -4670,7 +4492,7 @@ $export($export.S, 'Object', { setPrototypeOf: __webpack_require__(68).set });
 
 
 /***/ }),
-/* 148 */
+/* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4687,7 +4509,7 @@ if (test + '' != '[object z]') {
 
 
 /***/ }),
-/* 149 */
+/* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.2.3.2 / 15.3.4.5 Function.prototype.bind(thisArg, args...)
@@ -4697,7 +4519,7 @@ $export($export.P, 'Function', { bind: __webpack_require__(97) });
 
 
 /***/ }),
-/* 150 */
+/* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var dP = __webpack_require__(7).f;
@@ -4719,7 +4541,7 @@ NAME in FProto || __webpack_require__(6) && dP(FProto, NAME, {
 
 
 /***/ }),
-/* 151 */
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4739,7 +4561,7 @@ if (!(HAS_INSTANCE in FunctionProto)) __webpack_require__(7).f(FunctionProto, HA
 
 
 /***/ }),
-/* 152 */
+/* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
@@ -4749,7 +4571,7 @@ $export($export.G + $export.F * (parseInt != $parseInt), { parseInt: $parseInt }
 
 
 /***/ }),
-/* 153 */
+/* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
@@ -4759,7 +4581,7 @@ $export($export.G + $export.F * (parseFloat != $parseFloat), { parseFloat: $pars
 
 
 /***/ }),
-/* 154 */
+/* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4835,7 +4657,7 @@ if (!$Number(' 0o1') || !$Number('0b1') || $Number('+0x1')) {
 
 
 /***/ }),
-/* 155 */
+/* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4956,7 +4778,7 @@ $export($export.P + $export.F * (!!$toFixed && (
 
 
 /***/ }),
-/* 156 */
+/* 155 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4981,7 +4803,7 @@ $export($export.P + $export.F * ($fails(function () {
 
 
 /***/ }),
-/* 157 */
+/* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.1 Number.EPSILON
@@ -4991,7 +4813,7 @@ $export($export.S, 'Number', { EPSILON: Math.pow(2, -52) });
 
 
 /***/ }),
-/* 158 */
+/* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.2 Number.isFinite(number)
@@ -5006,7 +4828,7 @@ $export($export.S, 'Number', {
 
 
 /***/ }),
-/* 159 */
+/* 158 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.3 Number.isInteger(number)
@@ -5016,7 +4838,7 @@ $export($export.S, 'Number', { isInteger: __webpack_require__(102) });
 
 
 /***/ }),
-/* 160 */
+/* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.4 Number.isNaN(number)
@@ -5031,7 +4853,7 @@ $export($export.S, 'Number', {
 
 
 /***/ }),
-/* 161 */
+/* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.5 Number.isSafeInteger(number)
@@ -5047,7 +4869,7 @@ $export($export.S, 'Number', {
 
 
 /***/ }),
-/* 162 */
+/* 161 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.6 Number.MAX_SAFE_INTEGER
@@ -5057,7 +4879,7 @@ $export($export.S, 'Number', { MAX_SAFE_INTEGER: 0x1fffffffffffff });
 
 
 /***/ }),
-/* 163 */
+/* 162 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.10 Number.MIN_SAFE_INTEGER
@@ -5067,7 +4889,7 @@ $export($export.S, 'Number', { MIN_SAFE_INTEGER: -0x1fffffffffffff });
 
 
 /***/ }),
-/* 164 */
+/* 163 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
@@ -5077,7 +4899,7 @@ $export($export.S + $export.F * (Number.parseFloat != $parseFloat), 'Number', { 
 
 
 /***/ }),
-/* 165 */
+/* 164 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
@@ -5087,7 +4909,7 @@ $export($export.S + $export.F * (Number.parseInt != $parseInt), 'Number', { pars
 
 
 /***/ }),
-/* 166 */
+/* 165 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.3 Math.acosh(x)
@@ -5111,7 +4933,7 @@ $export($export.S + $export.F * !($acosh
 
 
 /***/ }),
-/* 167 */
+/* 166 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.5 Math.asinh(x)
@@ -5127,7 +4949,7 @@ $export($export.S + $export.F * !($asinh && 1 / $asinh(0) > 0), 'Math', { asinh:
 
 
 /***/ }),
-/* 168 */
+/* 167 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.7 Math.atanh(x)
@@ -5143,7 +4965,7 @@ $export($export.S + $export.F * !($atanh && 1 / $atanh(-0) < 0), 'Math', {
 
 
 /***/ }),
-/* 169 */
+/* 168 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.9 Math.cbrt(x)
@@ -5158,7 +4980,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 170 */
+/* 169 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.11 Math.clz32(x)
@@ -5172,7 +4994,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 171 */
+/* 170 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.12 Math.cosh(x)
@@ -5187,7 +5009,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 172 */
+/* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.14 Math.expm1(x)
@@ -5198,7 +5020,7 @@ $export($export.S + $export.F * ($expm1 != Math.expm1), 'Math', { expm1: $expm1 
 
 
 /***/ }),
-/* 173 */
+/* 172 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.16 Math.fround(x)
@@ -5208,7 +5030,7 @@ $export($export.S, 'Math', { fround: __webpack_require__(104) });
 
 
 /***/ }),
-/* 174 */
+/* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.17 Math.hypot([value1[, value2[, … ]]])
@@ -5239,7 +5061,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 175 */
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.18 Math.imul(x, y)
@@ -5262,7 +5084,7 @@ $export($export.S + $export.F * __webpack_require__(3)(function () {
 
 
 /***/ }),
-/* 176 */
+/* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.21 Math.log10(x)
@@ -5276,7 +5098,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 177 */
+/* 176 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.20 Math.log1p(x)
@@ -5286,7 +5108,7 @@ $export($export.S, 'Math', { log1p: __webpack_require__(103) });
 
 
 /***/ }),
-/* 178 */
+/* 177 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.22 Math.log2(x)
@@ -5300,7 +5122,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 179 */
+/* 178 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.28 Math.sign(x)
@@ -5310,7 +5132,7 @@ $export($export.S, 'Math', { sign: __webpack_require__(72) });
 
 
 /***/ }),
-/* 180 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.30 Math.sinh(x)
@@ -5331,7 +5153,7 @@ $export($export.S + $export.F * __webpack_require__(3)(function () {
 
 
 /***/ }),
-/* 181 */
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.33 Math.tanh(x)
@@ -5349,7 +5171,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 182 */
+/* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.34 Math.trunc(x)
@@ -5363,7 +5185,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 183 */
+/* 182 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
@@ -5392,7 +5214,7 @@ $export($export.S + $export.F * (!!$fromCodePoint && $fromCodePoint.length != 1)
 
 
 /***/ }),
-/* 184 */
+/* 183 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
@@ -5416,7 +5238,7 @@ $export($export.S, 'String', {
 
 
 /***/ }),
-/* 185 */
+/* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5430,7 +5252,7 @@ __webpack_require__(43)('trim', function ($trim) {
 
 
 /***/ }),
-/* 186 */
+/* 185 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5454,7 +5276,7 @@ __webpack_require__(75)(String, 'String', function (iterated) {
 
 
 /***/ }),
-/* 187 */
+/* 186 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5470,7 +5292,7 @@ $export($export.P, 'String', {
 
 
 /***/ }),
-/* 188 */
+/* 187 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5497,7 +5319,7 @@ $export($export.P + $export.F * __webpack_require__(78)(ENDS_WITH), 'String', {
 
 
 /***/ }),
-/* 189 */
+/* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5516,7 +5338,7 @@ $export($export.P + $export.F * __webpack_require__(78)(INCLUDES), 'String', {
 
 
 /***/ }),
-/* 190 */
+/* 189 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
@@ -5528,7 +5350,7 @@ $export($export.P, 'String', {
 
 
 /***/ }),
-/* 191 */
+/* 190 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5553,7 +5375,7 @@ $export($export.P + $export.F * __webpack_require__(78)(STARTS_WITH), 'String', 
 
 
 /***/ }),
-/* 192 */
+/* 191 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5567,7 +5389,7 @@ __webpack_require__(14)('anchor', function (createHTML) {
 
 
 /***/ }),
-/* 193 */
+/* 192 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5581,7 +5403,7 @@ __webpack_require__(14)('big', function (createHTML) {
 
 
 /***/ }),
-/* 194 */
+/* 193 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5595,7 +5417,7 @@ __webpack_require__(14)('blink', function (createHTML) {
 
 
 /***/ }),
-/* 195 */
+/* 194 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5609,7 +5431,7 @@ __webpack_require__(14)('bold', function (createHTML) {
 
 
 /***/ }),
-/* 196 */
+/* 195 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5623,7 +5445,7 @@ __webpack_require__(14)('fixed', function (createHTML) {
 
 
 /***/ }),
-/* 197 */
+/* 196 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5637,7 +5459,7 @@ __webpack_require__(14)('fontcolor', function (createHTML) {
 
 
 /***/ }),
-/* 198 */
+/* 197 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5651,7 +5473,7 @@ __webpack_require__(14)('fontsize', function (createHTML) {
 
 
 /***/ }),
-/* 199 */
+/* 198 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5665,7 +5487,7 @@ __webpack_require__(14)('italics', function (createHTML) {
 
 
 /***/ }),
-/* 200 */
+/* 199 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5679,7 +5501,7 @@ __webpack_require__(14)('link', function (createHTML) {
 
 
 /***/ }),
-/* 201 */
+/* 200 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5693,7 +5515,7 @@ __webpack_require__(14)('small', function (createHTML) {
 
 
 /***/ }),
-/* 202 */
+/* 201 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5707,7 +5529,7 @@ __webpack_require__(14)('strike', function (createHTML) {
 
 
 /***/ }),
-/* 203 */
+/* 202 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5721,7 +5543,7 @@ __webpack_require__(14)('sub', function (createHTML) {
 
 
 /***/ }),
-/* 204 */
+/* 203 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5735,7 +5557,7 @@ __webpack_require__(14)('sup', function (createHTML) {
 
 
 /***/ }),
-/* 205 */
+/* 204 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.3.3.1 / 15.9.4.4 Date.now()
@@ -5745,7 +5567,7 @@ $export($export.S, 'Date', { now: function () { return new Date().getTime(); } }
 
 
 /***/ }),
-/* 206 */
+/* 205 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5768,12 +5590,12 @@ $export($export.P + $export.F * __webpack_require__(3)(function () {
 
 
 /***/ }),
-/* 207 */
+/* 206 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.3.4.36 / 15.9.5.43 Date.prototype.toISOString()
 var $export = __webpack_require__(0);
-var toISOString = __webpack_require__(208);
+var toISOString = __webpack_require__(207);
 
 // PhantomJS / old WebKit has a broken implementations
 $export($export.P + $export.F * (Date.prototype.toISOString !== toISOString), 'Date', {
@@ -5782,7 +5604,7 @@ $export($export.P + $export.F * (Date.prototype.toISOString !== toISOString), 'D
 
 
 /***/ }),
-/* 208 */
+/* 207 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5815,7 +5637,7 @@ module.exports = (fails(function () {
 
 
 /***/ }),
-/* 209 */
+/* 208 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var DateProto = Date.prototype;
@@ -5833,17 +5655,17 @@ if (new Date(NaN) + '' != INVALID_DATE) {
 
 
 /***/ }),
-/* 210 */
+/* 209 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var TO_PRIMITIVE = __webpack_require__(5)('toPrimitive');
 var proto = Date.prototype;
 
-if (!(TO_PRIMITIVE in proto)) __webpack_require__(12)(proto, TO_PRIMITIVE, __webpack_require__(211));
+if (!(TO_PRIMITIVE in proto)) __webpack_require__(12)(proto, TO_PRIMITIVE, __webpack_require__(210));
 
 
 /***/ }),
-/* 211 */
+/* 210 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5859,7 +5681,7 @@ module.exports = function (hint) {
 
 
 /***/ }),
-/* 212 */
+/* 211 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 22.1.2.2 / 15.4.3.2 Array.isArray(arg)
@@ -5869,7 +5691,7 @@ $export($export.S, 'Array', { isArray: __webpack_require__(52) });
 
 
 /***/ }),
-/* 213 */
+/* 212 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5913,7 +5735,7 @@ $export($export.S + $export.F * !__webpack_require__(54)(function (iter) { Array
 
 
 /***/ }),
-/* 214 */
+/* 213 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5939,7 +5761,7 @@ $export($export.S + $export.F * __webpack_require__(3)(function () {
 
 
 /***/ }),
-/* 215 */
+/* 214 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5958,7 +5780,7 @@ $export($export.P + $export.F * (__webpack_require__(46) != Object || !__webpack
 
 
 /***/ }),
-/* 216 */
+/* 215 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5993,7 +5815,7 @@ $export($export.P + $export.F * __webpack_require__(3)(function () {
 
 
 /***/ }),
-/* 217 */
+/* 216 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6023,7 +5845,7 @@ $export($export.P + $export.F * (fails(function () {
 
 
 /***/ }),
-/* 218 */
+/* 217 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6041,7 +5863,7 @@ $export($export.P + $export.F * !STRICT, 'Array', {
 
 
 /***/ }),
-/* 219 */
+/* 218 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(4);
@@ -6063,7 +5885,7 @@ module.exports = function (original) {
 
 
 /***/ }),
-/* 220 */
+/* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6080,7 +5902,7 @@ $export($export.P + $export.F * !__webpack_require__(20)([].map, true), 'Array',
 
 
 /***/ }),
-/* 221 */
+/* 220 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6097,7 +5919,7 @@ $export($export.P + $export.F * !__webpack_require__(20)([].filter, true), 'Arra
 
 
 /***/ }),
-/* 222 */
+/* 221 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6114,7 +5936,7 @@ $export($export.P + $export.F * !__webpack_require__(20)([].some, true), 'Array'
 
 
 /***/ }),
-/* 223 */
+/* 222 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6131,7 +5953,7 @@ $export($export.P + $export.F * !__webpack_require__(20)([].every, true), 'Array
 
 
 /***/ }),
-/* 224 */
+/* 223 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6148,7 +5970,7 @@ $export($export.P + $export.F * !__webpack_require__(20)([].reduce, true), 'Arra
 
 
 /***/ }),
-/* 225 */
+/* 224 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6165,7 +5987,7 @@ $export($export.P + $export.F * !__webpack_require__(20)([].reduceRight, true), 
 
 
 /***/ }),
-/* 226 */
+/* 225 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6187,7 +6009,7 @@ $export($export.P + $export.F * (NEGATIVE_ZERO || !__webpack_require__(20)($nati
 
 
 /***/ }),
-/* 227 */
+/* 226 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6216,7 +6038,7 @@ $export($export.P + $export.F * (NEGATIVE_ZERO || !__webpack_require__(20)($nati
 
 
 /***/ }),
-/* 228 */
+/* 227 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 22.1.3.3 Array.prototype.copyWithin(target, start, end = this.length)
@@ -6228,7 +6050,7 @@ __webpack_require__(30)('copyWithin');
 
 
 /***/ }),
-/* 229 */
+/* 228 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 22.1.3.6 Array.prototype.fill(value, start = 0, end = this.length)
@@ -6240,7 +6062,7 @@ __webpack_require__(30)('fill');
 
 
 /***/ }),
-/* 230 */
+/* 229 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6261,7 +6083,7 @@ __webpack_require__(30)(KEY);
 
 
 /***/ }),
-/* 231 */
+/* 230 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6282,14 +6104,14 @@ __webpack_require__(30)(KEY);
 
 
 /***/ }),
-/* 232 */
+/* 231 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(38)('Array');
 
 
 /***/ }),
-/* 233 */
+/* 232 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var global = __webpack_require__(2);
@@ -6338,7 +6160,7 @@ __webpack_require__(38)('RegExp');
 
 
 /***/ }),
-/* 234 */
+/* 233 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6370,7 +6192,7 @@ if (__webpack_require__(3)(function () { return $toString.call({ source: 'a', fl
 
 
 /***/ }),
-/* 235 */
+/* 234 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // @@match logic
@@ -6386,7 +6208,7 @@ __webpack_require__(56)('match', 1, function (defined, MATCH, $match) {
 
 
 /***/ }),
-/* 236 */
+/* 235 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // @@replace logic
@@ -6404,7 +6226,7 @@ __webpack_require__(56)('replace', 2, function (defined, REPLACE, $replace) {
 
 
 /***/ }),
-/* 237 */
+/* 236 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // @@search logic
@@ -6420,7 +6242,7 @@ __webpack_require__(56)('search', 1, function (defined, SEARCH, $search) {
 
 
 /***/ }),
-/* 238 */
+/* 237 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // @@split logic
@@ -6497,7 +6319,7 @@ __webpack_require__(56)('split', 2, function (defined, SPLIT, $split) {
 
 
 /***/ }),
-/* 239 */
+/* 238 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6784,7 +6606,7 @@ $export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(54)(function
 
 
 /***/ }),
-/* 240 */
+/* 239 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6805,7 +6627,7 @@ __webpack_require__(58)(WEAK_SET, function (get) {
 
 
 /***/ }),
-/* 241 */
+/* 240 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6858,7 +6680,7 @@ __webpack_require__(38)(ARRAY_BUFFER);
 
 
 /***/ }),
-/* 242 */
+/* 241 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
@@ -6868,7 +6690,7 @@ $export($export.G + $export.W + $export.F * !__webpack_require__(59).ABV, {
 
 
 /***/ }),
-/* 243 */
+/* 242 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(27)('Int8', 1, function (init) {
@@ -6879,7 +6701,7 @@ __webpack_require__(27)('Int8', 1, function (init) {
 
 
 /***/ }),
-/* 244 */
+/* 243 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(27)('Uint8', 1, function (init) {
@@ -6890,7 +6712,7 @@ __webpack_require__(27)('Uint8', 1, function (init) {
 
 
 /***/ }),
-/* 245 */
+/* 244 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(27)('Uint8', 1, function (init) {
@@ -6901,7 +6723,7 @@ __webpack_require__(27)('Uint8', 1, function (init) {
 
 
 /***/ }),
-/* 246 */
+/* 245 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(27)('Int16', 2, function (init) {
@@ -6912,7 +6734,7 @@ __webpack_require__(27)('Int16', 2, function (init) {
 
 
 /***/ }),
-/* 247 */
+/* 246 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(27)('Uint16', 2, function (init) {
@@ -6923,7 +6745,7 @@ __webpack_require__(27)('Uint16', 2, function (init) {
 
 
 /***/ }),
-/* 248 */
+/* 247 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(27)('Int32', 4, function (init) {
@@ -6934,7 +6756,7 @@ __webpack_require__(27)('Int32', 4, function (init) {
 
 
 /***/ }),
-/* 249 */
+/* 248 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(27)('Uint32', 4, function (init) {
@@ -6945,7 +6767,7 @@ __webpack_require__(27)('Uint32', 4, function (init) {
 
 
 /***/ }),
-/* 250 */
+/* 249 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(27)('Float32', 4, function (init) {
@@ -6956,7 +6778,7 @@ __webpack_require__(27)('Float32', 4, function (init) {
 
 
 /***/ }),
-/* 251 */
+/* 250 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(27)('Float64', 8, function (init) {
@@ -6967,7 +6789,7 @@ __webpack_require__(27)('Float64', 8, function (init) {
 
 
 /***/ }),
-/* 252 */
+/* 251 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.1 Reflect.apply(target, thisArgument, argumentsList)
@@ -6989,7 +6811,7 @@ $export($export.S + $export.F * !__webpack_require__(3)(function () {
 
 
 /***/ }),
-/* 253 */
+/* 252 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.2 Reflect.construct(target, argumentsList [, newTarget])
@@ -7042,7 +6864,7 @@ $export($export.S + $export.F * (NEW_TARGET_BUG || ARGS_BUG), 'Reflect', {
 
 
 /***/ }),
-/* 254 */
+/* 253 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.3 Reflect.defineProperty(target, propertyKey, attributes)
@@ -7071,7 +6893,7 @@ $export($export.S + $export.F * __webpack_require__(3)(function () {
 
 
 /***/ }),
-/* 255 */
+/* 254 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.4 Reflect.deleteProperty(target, propertyKey)
@@ -7088,7 +6910,7 @@ $export($export.S, 'Reflect', {
 
 
 /***/ }),
-/* 256 */
+/* 255 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7121,7 +6943,7 @@ $export($export.S, 'Reflect', {
 
 
 /***/ }),
-/* 257 */
+/* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.6 Reflect.get(target, propertyKey [, receiver])
@@ -7148,7 +6970,7 @@ $export($export.S, 'Reflect', { get: get });
 
 
 /***/ }),
-/* 258 */
+/* 257 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.7 Reflect.getOwnPropertyDescriptor(target, propertyKey)
@@ -7164,7 +6986,7 @@ $export($export.S, 'Reflect', {
 
 
 /***/ }),
-/* 259 */
+/* 258 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.8 Reflect.getPrototypeOf(target)
@@ -7180,7 +7002,7 @@ $export($export.S, 'Reflect', {
 
 
 /***/ }),
-/* 260 */
+/* 259 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.9 Reflect.has(target, propertyKey)
@@ -7194,7 +7016,7 @@ $export($export.S, 'Reflect', {
 
 
 /***/ }),
-/* 261 */
+/* 260 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.10 Reflect.isExtensible(target)
@@ -7211,7 +7033,7 @@ $export($export.S, 'Reflect', {
 
 
 /***/ }),
-/* 262 */
+/* 261 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.11 Reflect.ownKeys(target)
@@ -7221,7 +7043,7 @@ $export($export.S, 'Reflect', { ownKeys: __webpack_require__(118) });
 
 
 /***/ }),
-/* 263 */
+/* 262 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.12 Reflect.preventExtensions(target)
@@ -7243,7 +7065,7 @@ $export($export.S, 'Reflect', {
 
 
 /***/ }),
-/* 264 */
+/* 263 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.13 Reflect.set(target, propertyKey, V [, receiver])
@@ -7280,7 +7102,7 @@ $export($export.S, 'Reflect', { set: set });
 
 
 /***/ }),
-/* 265 */
+/* 264 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.14 Reflect.setPrototypeOf(target, proto)
@@ -7301,7 +7123,7 @@ if (setProto) $export($export.S, 'Reflect', {
 
 
 /***/ }),
-/* 266 */
+/* 265 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7320,7 +7142,7 @@ __webpack_require__(30)('includes');
 
 
 /***/ }),
-/* 267 */
+/* 266 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7349,7 +7171,7 @@ __webpack_require__(30)('flatMap');
 
 
 /***/ }),
-/* 268 */
+/* 267 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7377,7 +7199,7 @@ __webpack_require__(30)('flatten');
 
 
 /***/ }),
-/* 269 */
+/* 268 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7394,7 +7216,7 @@ $export($export.P, 'String', {
 
 
 /***/ }),
-/* 270 */
+/* 269 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7411,7 +7233,7 @@ $export($export.P, 'String', {
 
 
 /***/ }),
-/* 271 */
+/* 270 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7428,7 +7250,7 @@ $export($export.P, 'String', {
 
 
 /***/ }),
-/* 272 */
+/* 271 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7442,7 +7264,7 @@ __webpack_require__(43)('trimLeft', function ($trim) {
 
 
 /***/ }),
-/* 273 */
+/* 272 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7456,7 +7278,7 @@ __webpack_require__(43)('trimRight', function ($trim) {
 
 
 /***/ }),
-/* 274 */
+/* 273 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7493,21 +7315,21 @@ $export($export.P, 'String', {
 
 
 /***/ }),
-/* 275 */
+/* 274 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(64)('asyncIterator');
 
 
 /***/ }),
-/* 276 */
+/* 275 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(64)('observable');
 
 
 /***/ }),
-/* 277 */
+/* 276 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/tc39/proposal-object-getownpropertydescriptors
@@ -7535,7 +7357,7 @@ $export($export.S, 'Object', {
 
 
 /***/ }),
-/* 278 */
+/* 277 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/tc39/proposal-object-values-entries
@@ -7550,7 +7372,7 @@ $export($export.S, 'Object', {
 
 
 /***/ }),
-/* 279 */
+/* 278 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/tc39/proposal-object-values-entries
@@ -7565,7 +7387,7 @@ $export($export.S, 'Object', {
 
 
 /***/ }),
-/* 280 */
+/* 279 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7584,7 +7406,7 @@ __webpack_require__(6) && $export($export.P + __webpack_require__(60), 'Object',
 
 
 /***/ }),
-/* 281 */
+/* 280 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7603,7 +7425,7 @@ __webpack_require__(6) && $export($export.P + __webpack_require__(60), 'Object',
 
 
 /***/ }),
-/* 282 */
+/* 281 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7628,7 +7450,7 @@ __webpack_require__(6) && $export($export.P + __webpack_require__(60), 'Object',
 
 
 /***/ }),
-/* 283 */
+/* 282 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7653,7 +7475,7 @@ __webpack_require__(6) && $export($export.P + __webpack_require__(60), 'Object',
 
 
 /***/ }),
-/* 284 */
+/* 283 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/DavidBruant/Map-Set.prototype.toJSON
@@ -7663,7 +7485,7 @@ $export($export.P + $export.R, 'Map', { toJSON: __webpack_require__(122)('Map') 
 
 
 /***/ }),
-/* 285 */
+/* 284 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/DavidBruant/Map-Set.prototype.toJSON
@@ -7673,7 +7495,7 @@ $export($export.P + $export.R, 'Set', { toJSON: __webpack_require__(122)('Set') 
 
 
 /***/ }),
-/* 286 */
+/* 285 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://tc39.github.io/proposal-setmap-offrom/#sec-map.of
@@ -7681,7 +7503,7 @@ __webpack_require__(61)('Map');
 
 
 /***/ }),
-/* 287 */
+/* 286 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://tc39.github.io/proposal-setmap-offrom/#sec-set.of
@@ -7689,7 +7511,7 @@ __webpack_require__(61)('Set');
 
 
 /***/ }),
-/* 288 */
+/* 287 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://tc39.github.io/proposal-setmap-offrom/#sec-weakmap.of
@@ -7697,7 +7519,7 @@ __webpack_require__(61)('WeakMap');
 
 
 /***/ }),
-/* 289 */
+/* 288 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://tc39.github.io/proposal-setmap-offrom/#sec-weakset.of
@@ -7705,7 +7527,7 @@ __webpack_require__(61)('WeakSet');
 
 
 /***/ }),
-/* 290 */
+/* 289 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://tc39.github.io/proposal-setmap-offrom/#sec-map.from
@@ -7713,7 +7535,7 @@ __webpack_require__(62)('Map');
 
 
 /***/ }),
-/* 291 */
+/* 290 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://tc39.github.io/proposal-setmap-offrom/#sec-set.from
@@ -7721,7 +7543,7 @@ __webpack_require__(62)('Set');
 
 
 /***/ }),
-/* 292 */
+/* 291 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://tc39.github.io/proposal-setmap-offrom/#sec-weakmap.from
@@ -7729,7 +7551,7 @@ __webpack_require__(62)('WeakMap');
 
 
 /***/ }),
-/* 293 */
+/* 292 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://tc39.github.io/proposal-setmap-offrom/#sec-weakset.from
@@ -7737,7 +7559,7 @@ __webpack_require__(62)('WeakSet');
 
 
 /***/ }),
-/* 294 */
+/* 293 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/tc39/proposal-global
@@ -7747,7 +7569,7 @@ $export($export.G, { global: __webpack_require__(2) });
 
 
 /***/ }),
-/* 295 */
+/* 294 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/tc39/proposal-global
@@ -7757,7 +7579,7 @@ $export($export.S, 'System', { global: __webpack_require__(2) });
 
 
 /***/ }),
-/* 296 */
+/* 295 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/ljharb/proposal-is-error
@@ -7772,7 +7594,7 @@ $export($export.S, 'Error', {
 
 
 /***/ }),
-/* 297 */
+/* 296 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://rwaldron.github.io/proposal-math-extensions/
@@ -7786,7 +7608,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 298 */
+/* 297 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://rwaldron.github.io/proposal-math-extensions/
@@ -7796,7 +7618,7 @@ $export($export.S, 'Math', { DEG_PER_RAD: Math.PI / 180 });
 
 
 /***/ }),
-/* 299 */
+/* 298 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://rwaldron.github.io/proposal-math-extensions/
@@ -7811,7 +7633,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 300 */
+/* 299 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://rwaldron.github.io/proposal-math-extensions/
@@ -7827,7 +7649,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 301 */
+/* 300 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://gist.github.com/BrendanEich/4294d5c212a6d2254703
@@ -7844,7 +7666,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 302 */
+/* 301 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://gist.github.com/BrendanEich/4294d5c212a6d2254703
@@ -7861,7 +7683,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 303 */
+/* 302 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://gist.github.com/BrendanEich/4294d5c212a6d2254703
@@ -7883,7 +7705,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 304 */
+/* 303 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://rwaldron.github.io/proposal-math-extensions/
@@ -7893,7 +7715,7 @@ $export($export.S, 'Math', { RAD_PER_DEG: 180 / Math.PI });
 
 
 /***/ }),
-/* 305 */
+/* 304 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://rwaldron.github.io/proposal-math-extensions/
@@ -7908,7 +7730,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 306 */
+/* 305 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://rwaldron.github.io/proposal-math-extensions/
@@ -7918,7 +7740,7 @@ $export($export.S, 'Math', { scale: __webpack_require__(124) });
 
 
 /***/ }),
-/* 307 */
+/* 306 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://gist.github.com/BrendanEich/4294d5c212a6d2254703
@@ -7940,7 +7762,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 308 */
+/* 307 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // http://jfbastien.github.io/papers/Math.signbit.html
@@ -7953,7 +7775,7 @@ $export($export.S, 'Math', { signbit: function signbit(x) {
 
 
 /***/ }),
-/* 309 */
+/* 308 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7980,7 +7802,7 @@ $export($export.P + $export.R, 'Promise', { 'finally': function (onFinally) {
 
 
 /***/ }),
-/* 310 */
+/* 309 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7999,7 +7821,7 @@ $export($export.S, 'Promise', { 'try': function (callbackfn) {
 
 
 /***/ }),
-/* 311 */
+/* 310 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata = __webpack_require__(28);
@@ -8013,7 +7835,7 @@ metadata.exp({ defineMetadata: function defineMetadata(metadataKey, metadataValu
 
 
 /***/ }),
-/* 312 */
+/* 311 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata = __webpack_require__(28);
@@ -8034,7 +7856,7 @@ metadata.exp({ deleteMetadata: function deleteMetadata(metadataKey, target /* , 
 
 
 /***/ }),
-/* 313 */
+/* 312 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata = __webpack_require__(28);
@@ -8057,7 +7879,7 @@ metadata.exp({ getMetadata: function getMetadata(metadataKey, target /* , target
 
 
 /***/ }),
-/* 314 */
+/* 313 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Set = __webpack_require__(114);
@@ -8082,7 +7904,7 @@ metadata.exp({ getMetadataKeys: function getMetadataKeys(target /* , targetKey *
 
 
 /***/ }),
-/* 315 */
+/* 314 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata = __webpack_require__(28);
@@ -8097,7 +7919,7 @@ metadata.exp({ getOwnMetadata: function getOwnMetadata(metadataKey, target /* , 
 
 
 /***/ }),
-/* 316 */
+/* 315 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata = __webpack_require__(28);
@@ -8111,7 +7933,7 @@ metadata.exp({ getOwnMetadataKeys: function getOwnMetadataKeys(target /* , targe
 
 
 /***/ }),
-/* 317 */
+/* 316 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata = __webpack_require__(28);
@@ -8133,7 +7955,7 @@ metadata.exp({ hasMetadata: function hasMetadata(metadataKey, target /* , target
 
 
 /***/ }),
-/* 318 */
+/* 317 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata = __webpack_require__(28);
@@ -8148,7 +7970,7 @@ metadata.exp({ hasOwnMetadata: function hasOwnMetadata(metadataKey, target /* , 
 
 
 /***/ }),
-/* 319 */
+/* 318 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $metadata = __webpack_require__(28);
@@ -8169,7 +7991,7 @@ $metadata.exp({ metadata: function metadata(metadataKey, metadataValue) {
 
 
 /***/ }),
-/* 320 */
+/* 319 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/rwaldron/tc39-notes/blob/master/es6/2014-09/sept-25.md#510-globalasap-for-enqueuing-a-microtask
@@ -8187,7 +8009,7 @@ $export($export.G, {
 
 
 /***/ }),
-/* 321 */
+/* 320 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8393,7 +8215,7 @@ __webpack_require__(38)('Observable');
 
 
 /***/ }),
-/* 322 */
+/* 321 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // ie9- setTimeout & setInterval additional parameters fix
@@ -8419,7 +8241,7 @@ $export($export.G + $export.B + $export.F * MSIE, {
 
 
 /***/ }),
-/* 323 */
+/* 322 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
@@ -8431,7 +8253,7 @@ $export($export.G + $export.B, {
 
 
 /***/ }),
-/* 324 */
+/* 323 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $iterators = __webpack_require__(84);
@@ -8495,7 +8317,7 @@ for (var collections = getKeys(DOMIterables), i = 0; i < collections.length; i++
 
 
 /***/ }),
-/* 325 */
+/* 324 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/**
@@ -9238,26 +9060,26 @@ for (var collections = getKeys(DOMIterables), i = 0; i < collections.length; i++
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(90)))
 
 /***/ }),
-/* 326 */
+/* 325 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(327);
+__webpack_require__(326);
 module.exports = __webpack_require__(21).RegExp.escape;
 
 
 /***/ }),
-/* 327 */
+/* 326 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/benjamingr/RexExp.escape
 var $export = __webpack_require__(0);
-var $re = __webpack_require__(328)(/[\\^$*+?.()|[\]{}]/g, '\\$&');
+var $re = __webpack_require__(327)(/[\\^$*+?.()|[\]{}]/g, '\\$&');
 
 $export($export.S, 'RegExp', { escape: function escape(it) { return $re(it); } });
 
 
 /***/ }),
-/* 328 */
+/* 327 */
 /***/ (function(module, exports) {
 
 module.exports = function (regExp, replace) {
@@ -9271,7 +9093,7 @@ module.exports = function (regExp, replace) {
 
 
 /***/ }),
-/* 329 */
+/* 328 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9279,12 +9101,14 @@ module.exports = function (regExp, replace) {
 
 __webpack_require__(89);
 
-var _App = __webpack_require__(330);
+var _App = __webpack_require__(125);
 
 var _App2 = _interopRequireDefault(_App);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var _ReactTransitionGroup = ReactTransitionGroup,
+    CSSTransitionGroup = _ReactTransitionGroup.CSSTransitionGroup;
 var _ReactRouter = ReactRouter,
     Router = _ReactRouter.Router,
     Route = _ReactRouter.Route,
@@ -9297,180 +9121,7 @@ var _ReactRouter = ReactRouter,
 ReactDOM.render(React.createElement(_App2.default, null), document.getElementById('root'));
 
 /***/ }),
-/* 330 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _Main = __webpack_require__(331);
-
-var _Main2 = _interopRequireDefault(_Main);
-
-var _EtherlineCat = __webpack_require__(332);
-
-var _EtherlineCat2 = _interopRequireDefault(_EtherlineCat);
-
-var _EtherlineApplication = __webpack_require__(333);
-
-var _EtherlineApplication2 = _interopRequireDefault(_EtherlineApplication);
-
-var _EtherlineApprovals = __webpack_require__(334);
-
-var _EtherlineApprovals2 = _interopRequireDefault(_EtherlineApprovals);
-
-var _ProfibusBus = __webpack_require__(335);
-
-var _ProfibusBus2 = _interopRequireDefault(_ProfibusBus);
-
-var _ProfibusApplication = __webpack_require__(126);
-
-var _ProfibusApplication2 = _interopRequireDefault(_ProfibusApplication);
-
-var _ProfibusApprovals = __webpack_require__(336);
-
-var _ProfibusApprovals2 = _interopRequireDefault(_ProfibusApprovals);
-
-var _ProfibusFastConnect = __webpack_require__(337);
-
-var _ProfibusFastConnect2 = _interopRequireDefault(_ProfibusFastConnect);
-
-var _ProfibusJacket = __webpack_require__(338);
-
-var _ProfibusJacket2 = _interopRequireDefault(_ProfibusJacket);
-
-var _SelectCable = __webpack_require__(125);
-
-var _SelectCable2 = _interopRequireDefault(_SelectCable);
-
-var _ProfiApp = __webpack_require__(339);
-
-var _ProfiApp2 = _interopRequireDefault(_ProfiApp);
-
-var _jquery321Min = __webpack_require__(340);
-
-var _jquery321Min2 = _interopRequireDefault(_jquery321Min);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var _ReactRouter = ReactRouter,
-    Router = _ReactRouter.Router,
-    Route = _ReactRouter.Route,
-    IndexRoute = _ReactRouter.IndexRoute,
-    IndexLink = _ReactRouter.IndexLink,
-    hashHistory = _ReactRouter.hashHistory,
-    browserHistory = _ReactRouter.browserHistory,
-    createMemoryHistory = _ReactRouter.createMemoryHistory,
-    Link = _ReactRouter.Link;
-
-var App = function (_React$Component) {
-  _inherits(App, _React$Component);
-
-  function App() {
-    _classCallCheck(this, App);
-
-    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
-  }
-
-  _createClass(App, [{
-    key: 'render',
-    value: function render() {
-      return React.createElement(
-        Router,
-        { history: hashHistory },
-        React.createElement(Route, { exact: true, path: '/', component: _SelectCable2.default }),
-        React.createElement(Route, { exact: true, path: '/etherline', component: _EtherlineCat2.default }),
-        React.createElement(Route, { exact: true, path: '/etherline/application', component: _EtherlineApplication2.default }),
-        React.createElement(Route, { exact: true, path: '/etherline/approvals', component: _EtherlineApprovals2.default }),
-        React.createElement(Route, { exact: true, path: '/profibus', component: _ProfibusBus2.default }),
-        React.createElement(Route, { exact: true, path: '/profibus/application', component: _ProfibusApplication2.default }),
-        React.createElement(Route, { exact: true, path: '/profibus/approvals', component: _ProfibusApprovals2.default }),
-        React.createElement(Route, { exact: true, path: '/profibus/fastconnect', component: _ProfibusFastConnect2.default }),
-        React.createElement(Route, { exact: true, path: '/profibus/jacket', component: _ProfibusJacket2.default })
-      );
-    }
-  }]);
-
-  return App;
-}(React.Component);
-
-exports.default = App;
-
-/***/ }),
-/* 331 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _SelectCable = __webpack_require__(125);
-
-var _SelectCable2 = _interopRequireDefault(_SelectCable);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var _ReactRouter = ReactRouter,
-    Router = _ReactRouter.Router,
-    Route = _ReactRouter.Route,
-    IndexRoute = _ReactRouter.IndexRoute,
-    IndexLink = _ReactRouter.IndexLink,
-    hashHistory = _ReactRouter.hashHistory,
-    Link = _ReactRouter.Link;
-
-var Main = function (_React$Component) {
-  _inherits(Main, _React$Component);
-
-  function Main(props) {
-    _classCallCheck(this, Main);
-
-    var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
-
-    console.log(props);
-    return _this;
-  }
-
-  _createClass(Main, [{
-    key: 'render',
-    value: function render() {
-      return React.createElement(
-        'div',
-        null,
-        React.createElement(_SelectCable2.default, null)
-      );
-    }
-  }]);
-
-  return Main;
-}(React.Component);
-
-exports.default = Main;
-
-/***/ }),
-/* 332 */
+/* 329 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9496,44 +9147,243 @@ var _ReactRouter = ReactRouter,
     hashHistory = _ReactRouter.hashHistory,
     Link = _ReactRouter.Link;
 
-var EtherlineCat = function (_React$Component) {
-	_inherits(EtherlineCat, _React$Component);
+var SelectCable = function (_React$Component) {
+	_inherits(SelectCable, _React$Component);
 
-	function EtherlineCat(props) {
-		_classCallCheck(this, EtherlineCat);
+	function SelectCable() {
+		_classCallCheck(this, SelectCable);
 
-		var _this = _possibleConstructorReturn(this, (EtherlineCat.__proto__ || Object.getPrototypeOf(EtherlineCat)).call(this, props));
+		return _possibleConstructorReturn(this, (SelectCable.__proto__ || Object.getPrototypeOf(SelectCable)).apply(this, arguments));
+	}
+
+	_createClass(SelectCable, [{
+		key: "render",
+		value: function render() {
+			return React.createElement(
+				"div",
+				null,
+				React.createElement(
+					"h2",
+					null,
+					"Cable Selector Tool"
+				),
+				React.createElement(
+					"h4",
+					null,
+					"Click an image below to start"
+				),
+				React.createElement(
+					"div",
+					{ className: "row cable-type" },
+					React.createElement("div", { className: "col-sm-2" }),
+					React.createElement(
+						"div",
+						{ className: "col-sm-4 cable-image" },
+						React.createElement(
+							Link,
+							{ to: "etherline" },
+							React.createElement("img", { className: "cable-pics", src: "images/icon_etherline.gif", alt: "" })
+						),
+						React.createElement(
+							"h3",
+							null,
+							"ETHERLINE\xAE"
+						),
+						React.createElement(
+							"h5",
+							null,
+							"Industrial Ethernet Solutions"
+						)
+					),
+					React.createElement(
+						"div",
+						{ className: "col-sm-4 cable-image" },
+						React.createElement(
+							Link,
+							{ to: "unitronic" },
+							React.createElement("img", { className: "cable-pics", src: "images/icon_unitronic.gif", alt: "" })
+						),
+						React.createElement(
+							"h3",
+							null,
+							"UNITRONIC\xAE BUS"
+						),
+						React.createElement(
+							"h5",
+							null,
+							"Fieldbus Solutions"
+						)
+					),
+					React.createElement("div", { className: "col-sm-2" })
+				)
+			);
+		}
+	}]);
+
+	return SelectCable;
+}(React.Component);
+
+exports.default = SelectCable;
+
+/***/ }),
+/* 330 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _FilterContainer = __webpack_require__(331);
+
+var _FilterContainer2 = _interopRequireDefault(_FilterContainer);
+
+var _SelectedProducts = __webpack_require__(337);
+
+var _SelectedProducts2 = _interopRequireDefault(_SelectedProducts);
+
+var _ProductGridContainer = __webpack_require__(338);
+
+var _ProductGridContainer2 = _interopRequireDefault(_ProductGridContainer);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Unitronic = function (_React$Component) {
+	_inherits(Unitronic, _React$Component);
+
+	function Unitronic(props) {
+		_classCallCheck(this, Unitronic);
+
+		var _this = _possibleConstructorReturn(this, (Unitronic.__proto__ || Object.getPrototypeOf(Unitronic)).call(this, props));
 
 		_this.state = {
-			cat: null,
-			application: null,
-			approvals: [],
-			fastConnect: null,
-			jacketMaterial: null,
-			otherRequirements: [],
-			selectedOption: null
+			data: [],
+			busSelection: null,
+			applicationSelection: null,
+			approvalsSelection: [],
+			fastConnectSelection: null,
+			jacketSelection: [],
+			selectedProducts: [],
+			selectedProductsArr: [],
+			searchPartNumber: null
 		};
-		console.log(props);
-		_this.handleChange = _this.handleChange.bind(_this);
-		_this.handleOptionChange = _this.handleOptionChange.bind(_this);
-		_this.consoleLog = _this.consoleLog.bind(_this);
+		_this.stateContainer = _this.stateContainer.bind(_this);
+		_this.selectedProductsUpdater = _this.selectedProductsUpdater.bind(_this);
+		_this.searchPartNum = _this.searchPartNum.bind(_this);
 		return _this;
 	}
 
-	_createClass(EtherlineCat, [{
-		key: 'handleChange',
-		value: function handleChange(e) {
-			this.setState({ cat: e.target.value });
+	_createClass(Unitronic, [{
+		key: 'componentDidMount',
+		value: function componentDidMount() {
+			var _this2 = this;
+
+			$.ajax({
+				contentType: "application/json; charset=utf-8",
+				dataType: "JSON",
+				type: "GET",
+				url: "http://localhost:3000/bus/data"
+			}).done(function (data) {
+				console.log(data);
+			}).then(function (data) {
+				for (var i = 0; i < data.length; i++) {
+					var prettyApprovalArr = [];
+					data[i]["prettyApprovalArr"] = prettyApprovalArr;
+
+					if (data[i].cmg) {
+						data[i].prettyApprovalArr.push("UL CMG");
+					}
+					if (data[i].cmx) {
+						data[i].prettyApprovalArr.push("UL CMX");
+					}
+					if (data[i].pltc) {
+						data[i].prettyApprovalArr.push("UL PLTC");
+					}
+					if (data[i].awm) {
+						data[i].prettyApprovalArr.push("UL AWM");
+					}
+					if (data[i].cl2) {
+						data[i].prettyApprovalArr.push("UL CL2");
+					}
+					if (data[i].can_cmx) {
+						data[i].prettyApprovalArr.push("CAN CMX");
+					}
+					if (data[i].can_cmg) {
+						data[i].prettyApprovalArr.push("CAN CMG");
+					}
+					if (data[i].can_awm) {
+						data[i].prettyApprovalArr.push("CAN AWM");
+					}
+				}
+				console.log(data);
+				_this2.setState({ data: data, bus: null });
+			});
 		}
 	}, {
-		key: 'handleOptionChange',
-		value: function handleOptionChange(e) {
-			this.setState({ selectedOption: e.target.value });
+		key: 'stateContainer',
+		value: function stateContainer(selections) {
+			var _setState;
+
+			var accessKey = Object.keys(selections)[0];
+			this.setState((_setState = {}, _defineProperty(_setState, accessKey, selections[accessKey]), _defineProperty(_setState, 'searchPartNumber', null), _setState));
 		}
 	}, {
-		key: 'consoleLog',
-		value: function consoleLog() {
-			console.log(this.state.cat);
+		key: 'selectedProductsUpdater',
+		value: function selectedProductsUpdater(product) {
+			var data = this.state.data;
+			var selectedProducts = this.state.selectedProducts;
+			var loopSwitch = false;
+
+			for (var i = 0; i < selectedProducts.length; i++) {
+				if (selectedProducts[i].part_number === product) {
+					loopSwitch = true;
+					selectedProducts.splice(i, 1);
+					break;
+				}
+			}
+
+			if (loopSwitch !== true) {
+				for (var i = 0; i < data.length; i++) {
+					if (product === data[i].part_number) {
+						selectedProducts.push(data[i]);
+						break;
+					}
+				}
+			}
+
+			var selectedProductsArr = [];
+			for (var i = 0; i < selectedProducts.length; i++) {
+				selectedProductsArr.push(selectedProducts[i].part_number);
+			}
+
+			this.setState({
+				selectedProducts: selectedProducts,
+				selectedProductsArr: selectedProductsArr
+			});
+		}
+	}, {
+		key: 'searchPartNum',
+		value: function searchPartNum(partNum) {
+			this.setState({
+				busSelection: null,
+				applicationSelection: null,
+				approvalsSelection: [],
+				fastConnectSelection: null,
+				jacketSelection: [],
+				searchPartNumber: partNum
+			});
 		}
 	}, {
 		key: 'render',
@@ -9542,113 +9392,285 @@ var EtherlineCat = function (_React$Component) {
 				'div',
 				null,
 				React.createElement(
-					'h2',
-					null,
-					'Etherline Selector Tool'
-				),
-				React.createElement(
-					'h4',
-					null,
-					'Choose category'
-				),
-				React.createElement(
 					'div',
 					{ className: 'form-group cat-list' },
 					React.createElement(
-						'form',
-						{ onChange: this.handleChange },
+						'div',
+						{ className: 'row' },
 						React.createElement(
 							'div',
-							{ className: 'radio' },
+							{ className: 'col-xs-12 tool-header' },
 							React.createElement(
-								'label',
-								{ className: this.state.selectedOption === 'Cat.5' ? 'btn btn-default btn-lg btn-block selected' : 'btn btn-default btn-lg btn-block ' },
-								React.createElement('input', { type: 'radio', value: 'Cat.5',
-									checked: this.state.selectedOption === 'option1',
-									onChange: this.handleOptionChange
-								}),
-								' Cat.5'
+								'h2',
+								null,
+								'UNITRONIC\xAE Selector Tool'
 							)
 						),
+						React.createElement(_FilterContainer2.default, {
+							data: this.state.data,
+							busSelection: this.state.busSelection,
+							applicationSelection: this.state.applicationSelection,
+							approvalsSelection: this.state.approvalsSelection,
+							fastConnectSelection: this.state.fastConnectSelection,
+							jacketSelection: this.state.jacketSelection,
+							stateContainer: this.stateContainer
+						}),
 						React.createElement(
 							'div',
-							{ className: 'radio' },
+							{ className: 'col-sm-9 col-xs-12 grid-container' },
 							React.createElement(
-								'label',
-								{ className: this.state.selectedOption === 'Cat.5e' ? 'btn btn-default btn-lg btn-block selected' : 'btn btn-default btn-lg btn-block ' },
-								React.createElement('input', { type: 'radio', value: 'Cat.5e',
-									checked: this.state.selectedOption === 'option2',
-									onChange: this.handleOptionChange
-								}),
-								' Cat.5e'
-							)
-						),
-						React.createElement(
-							'div',
-							{ className: 'radio' },
-							React.createElement(
-								'label',
-								{ className: this.state.selectedOption === 'Cat.6' ? 'btn btn-default btn-lg btn-block selected' : 'btn btn-default btn-lg btn-block ' },
-								React.createElement('input', { type: 'radio', value: 'Cat.6',
-									checked: this.state.selectedOption === 'option3',
-									onChange: this.handleOptionChange
-								}),
-								' Cat.6'
-							)
-						),
-						React.createElement(
-							'div',
-							{ className: 'radio' },
-							React.createElement(
-								'label',
-								{ className: this.state.selectedOption === 'Cat.6a' ? 'btn btn-default btn-lg btn-block selected' : 'btn btn-default btn-lg btn-block ' },
-								React.createElement('input', { type: 'radio', value: 'Cat.6a',
-									checked: this.state.selectedOption === 'option4',
-									onChange: this.handleOptionChange
-								}),
-								' Cat.6a'
-							)
-						),
-						React.createElement(
-							'div',
-							{ className: 'radio' },
-							React.createElement(
-								'label',
-								{ className: this.state.selectedOption === 'Cat.7' ? 'btn btn-default btn-lg btn-block selected' : 'btn btn-default btn-lg btn-block ' },
-								React.createElement('input', { type: 'radio', value: 'Cat.7',
-									checked: this.state.selectedOption === 'option5',
-									onChange: this.handleOptionChange
-								}),
-								' Cat.7'
-							)
+								'div',
+								{ id: 'nav-container-padding', className: 'col-xs-12' },
+								React.createElement(_SelectedProducts2.default, {
+									busSelection: this.state.busSelection,
+									selectedProducts: this.state.selectedProducts,
+									selectedProductsArr: this.state.selectedProductsArr,
+									selectedProductsUpdater: this.selectedProductsUpdater,
+									searchPartNum: this.searchPartNum
+								})
+							),
+							React.createElement(_ProductGridContainer2.default, {
+								data: this.state.data,
+								selectedProducts: this.state.selectedProducts,
+								selectedProductsArr: this.state.selectedProductsArr,
+								busSelection: this.state.busSelection,
+								applicationSelection: this.state.applicationSelection,
+								approvalsSelection: this.state.approvalsSelection,
+								fastConnectSelection: this.state.fastConnectSelection,
+								jacketSelection: this.state.jacketSelection,
+								searchPartNumber: this.state.searchPartNumber,
+								selectedProductsUpdater: this.selectedProductsUpdater
+							})
 						)
 					)
-				),
-				React.createElement(
-					Link,
-					{ to: {
-							pathname: "/etherline/application",
-							state: this.state
-						} },
-					React.createElement(
-						'button',
-						{ className: 'btn btn-primary' },
-						'Next'
-					)
-				),
-				React.createElement(
-					'button',
-					{ className: 'btn btn-primary', onClick: this.consoleLog },
-					'Console Log'
 				)
 			);
 		}
 	}]);
 
-	return EtherlineCat;
+	return Unitronic;
 }(React.Component);
 
-exports.default = EtherlineCat;
+exports.default = Unitronic;
+
+/***/ }),
+/* 331 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _BusFilter = __webpack_require__(332);
+
+var _BusFilter2 = _interopRequireDefault(_BusFilter);
+
+var _ApplicationFilter = __webpack_require__(333);
+
+var _ApplicationFilter2 = _interopRequireDefault(_ApplicationFilter);
+
+var _ApprovalsFilter = __webpack_require__(334);
+
+var _ApprovalsFilter2 = _interopRequireDefault(_ApprovalsFilter);
+
+var _FastConnectFilter = __webpack_require__(335);
+
+var _FastConnectFilter2 = _interopRequireDefault(_FastConnectFilter);
+
+var _JacketFilter = __webpack_require__(336);
+
+var _JacketFilter2 = _interopRequireDefault(_JacketFilter);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var FilterContainer = function (_React$Component) {
+	_inherits(FilterContainer, _React$Component);
+
+	function FilterContainer(props) {
+		_classCallCheck(this, FilterContainer);
+
+		var _this = _possibleConstructorReturn(this, (FilterContainer.__proto__ || Object.getPrototypeOf(FilterContainer)).call(this, props));
+
+		_this.state = {
+			collapsedState: false,
+			windowWidth: 768
+		};
+		_this.updateWindowDimensions = _this.updateWindowDimensions.bind(_this);
+		return _this;
+	}
+
+	_createClass(FilterContainer, [{
+		key: 'componentDidMount',
+		value: function componentDidMount() {
+			this.updateWindowDimensions();
+			window.addEventListener('resize', this.updateWindowDimensions);
+		}
+	}, {
+		key: 'updateWindowDimensions',
+		value: function updateWindowDimensions() {
+			if (this.state.windowWidth < 768) {
+				console.log("doesn't matter");
+			} else if (window.innerWidth < 768) {
+				console.log('ayyyyyy');
+				this.setState({ collapsedState: true, windowWidth: window.innerWidth });
+			}
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			return React.createElement(
+				'div',
+				{ className: 'col-xs-12 col-sm-3 filter-container' },
+				React.createElement(_BusFilter2.default, {
+					busSelection: this.props.busSelection,
+					stateContainer: this.props.stateContainer,
+					collapsedState: this.state.collapsedState
+				}),
+				React.createElement(_ApplicationFilter2.default, {
+					applicationSelection: this.props.applicationSelection,
+					stateContainer: this.props.stateContainer,
+					collapsedState: this.state.collapsedState
+				}),
+				React.createElement(_ApprovalsFilter2.default, {
+					approvalsSelection: this.props.approvalsSelection,
+					stateContainer: this.props.stateContainer,
+					collapsedState: this.state.collapsedState
+				}),
+				React.createElement(_FastConnectFilter2.default, {
+					fastConnectSelection: this.props.fastConnectSelection,
+					stateContainer: this.props.stateContainer,
+					collapsedState: this.state.collapsedState
+				}),
+				React.createElement(_JacketFilter2.default, {
+					jacketSelection: this.props.jacketSelection,
+					stateContainer: this.props.stateContainer,
+					collapsedState: this.state.collapsedState
+				})
+			);
+		}
+	}]);
+
+	return FilterContainer;
+}(React.Component);
+
+exports.default = FilterContainer;
+
+/***/ }),
+/* 332 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var busList = ['DeviceNet', 'PROFIBUS DP', 'CAN Bus', 'RS485/RS422', 'AS-Interface (AS-I)', 'Data Highway', 'INTERBUS', 'Genius', 'CC-Link', 'FOUNDATION Fieldbus', 'SafetyBUS'];
+
+var BusFilter = function (_React$Component) {
+  _inherits(BusFilter, _React$Component);
+
+  function BusFilter(props) {
+    _classCallCheck(this, BusFilter);
+
+    var _this = _possibleConstructorReturn(this, (BusFilter.__proto__ || Object.getPrototypeOf(BusFilter)).call(this, props));
+
+    _this.state = { collapsedState: _this.props.collapsedState };
+    _this.collapseDetection = "collapsed";
+    _this.handleOptionChange = _this.handleOptionChange.bind(_this);
+    _this.handleCollapseClick = _this.handleCollapseClick.bind(_this);
+    return _this;
+  }
+
+  _createClass(BusFilter, [{
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      if (nextProps.collapsedState !== this.props.collapsedState) {
+        this.setState({ collapsedState: nextProps.collapsedState });
+      }
+    }
+  }, {
+    key: 'handleOptionChange',
+    value: function handleOptionChange(e) {
+      var busState = null;
+      if (e.target.value !== this.props.busSelection) {
+        busState = e.target.value;
+      }
+      this.props.stateContainer({ busSelection: busState });
+    }
+  }, {
+    key: 'handleCollapseClick',
+    value: function handleCollapseClick(e) {
+      var collapsedState = e.currentTarget.classList.contains(this.collapseDetection);
+      this.setState({ collapsedState: collapsedState });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      var busRadioItems = busList.map(function (data, i) {
+        return React.createElement(
+          'div',
+          { key: i, className: _this2.props.busSelection === data ? "bus-type selected-attribute" : "bus-type" },
+          React.createElement(
+            'label',
+            null,
+            React.createElement('input', { type: 'radio', value: data,
+              checked: _this2.props.busSelection === 'option' + [i]
+            }),
+            ' ',
+            data
+          )
+        );
+      });
+      return React.createElement(
+        'div',
+        { className: 'filter-collapse-container' },
+        React.createElement(
+          'div',
+          { 'data-toggle': 'collapse', 'data-target': '#bus-form', className: 'filter-header', onClick: this.handleCollapseClick },
+          React.createElement(
+            'span',
+            { className: 'span-margin' },
+            'Bus Type'
+          ),
+          ' ',
+          React.createElement('span', { className: this.state.collapsedState == true ? "glyphicon glyphicon-plus pull-right glyphicon-margin" : "glyphicon glyphicon-minus pull-right glyphicon-margin" })
+        ),
+        React.createElement(
+          'form',
+          { id: 'bus-form', onChange: this.handleOptionChange, className: this.props.collapsedState == true ? "attribute-list collapse" : 'attribute-list collapse in' },
+          busRadioItems
+        )
+      );
+    }
+  }]);
+
+  return BusFilter;
+}(React.Component);
+
+exports.default = BusFilter;
 
 /***/ }),
 /* 333 */
@@ -9669,119 +9691,92 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var _ReactRouter = ReactRouter,
-    Router = _ReactRouter.Router,
-    Route = _ReactRouter.Route,
-    IndexRoute = _ReactRouter.IndexRoute,
-    IndexLink = _ReactRouter.IndexLink,
-    hashHistory = _ReactRouter.hashHistory,
-    Link = _ReactRouter.Link;
+var applicationList = ['Stationary', 'Flexible', 'Continuous Flex', 'Torsion', 'Festoon'];
 
-var EtherlineApplication = function (_React$Component) {
-  _inherits(EtherlineApplication, _React$Component);
+var ApplicationFilter = function (_React$Component) {
+  _inherits(ApplicationFilter, _React$Component);
 
-  function EtherlineApplication(props) {
-    _classCallCheck(this, EtherlineApplication);
+  function ApplicationFilter(props) {
+    _classCallCheck(this, ApplicationFilter);
 
-    var _this = _possibleConstructorReturn(this, (EtherlineApplication.__proto__ || Object.getPrototypeOf(EtherlineApplication)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (ApplicationFilter.__proto__ || Object.getPrototypeOf(ApplicationFilter)).call(this, props));
 
-    console.log(_this.props);
-    _this.state = _this.props.location.state;
-    console.log("STATE: ", _this.state);
-    _this.handleChange = _this.handleChange.bind(_this);
+    _this.state = { collapsedState: _this.props.collapsedState };
+    _this.collapseDetection = "collapsed";
+    _this.handleOptionChange = _this.handleOptionChange.bind(_this);
+    _this.handleCollapseClick = _this.handleCollapseClick.bind(_this);
     return _this;
   }
 
-  _createClass(EtherlineApplication, [{
-    key: "handleChange",
-    value: function handleChange(e) {
-      this.setState({ application: e.target.value });
-      console.log("this.state.selections:", JSON.stringify(this.state, 0, 2));
+  _createClass(ApplicationFilter, [{
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      if (nextProps.collapsedState !== this.props.collapsedState) {
+        this.setState({ collapsedState: nextProps.collapsedState });
+      }
     }
   }, {
-    key: "render",
+    key: 'handleOptionChange',
+    value: function handleOptionChange(e) {
+      var applicationState = null;
+      if (e.target.value !== this.props.applicationSelection) {
+        applicationState = e.target.value;
+      }
+      this.props.stateContainer({ applicationSelection: applicationState });
+    }
+  }, {
+    key: 'handleCollapseClick',
+    value: function handleCollapseClick(e) {
+      var collapsedState = e.currentTarget.classList.contains(this.collapseDetection);
+      this.setState({ collapsedState: collapsedState });
+    }
+  }, {
+    key: 'render',
     value: function render() {
+      var _this2 = this;
+
+      var applicationRadioItems = applicationList.map(function (data, i) {
+        return React.createElement(
+          'div',
+          { key: i, className: _this2.props.applicationSelection === data ? "bus-type selected-attribute" : "bus-type" },
+          React.createElement(
+            'label',
+            null,
+            React.createElement('input', { type: 'radio', value: data,
+              checked: _this2.props.applicationSelection === 'option' + [i]
+            }),
+            ' ',
+            data
+          )
+        );
+      });
       return React.createElement(
-        "div",
-        null,
+        'div',
+        { className: 'filter-collapse-container' },
         React.createElement(
-          "h2",
-          null,
-          "Etherline Selector Tool"
-        ),
-        React.createElement(
-          "h4",
-          null,
-          "Choose Application"
-        ),
-        React.createElement(
-          "div",
-          { className: "form-group cat-list" },
+          'div',
+          { 'data-toggle': 'collapse', 'data-target': '#application-form', className: 'filter-header', onClick: this.handleCollapseClick },
           React.createElement(
-            "form",
-            { onChange: this.handleChange },
-            React.createElement(
-              "div",
-              { className: "radio" },
-              React.createElement(
-                "label",
-                null,
-                React.createElement("input", { type: "radio", name: "catselection", value: "stationary" }),
-                " Stationary"
-              )
-            ),
-            React.createElement(
-              "div",
-              { className: "radio" },
-              React.createElement(
-                "label",
-                null,
-                React.createElement("input", { type: "radio", name: "catselection", value: "flexible" }),
-                " Flexible"
-              )
-            ),
-            React.createElement(
-              "div",
-              { className: "radio" },
-              React.createElement(
-                "label",
-                null,
-                React.createElement("input", { type: "radio", name: "catselection", value: "continuous flex" }),
-                " Continuous Flex"
-              )
-            ),
-            React.createElement(
-              "div",
-              { className: "radio" },
-              React.createElement(
-                "label",
-                null,
-                React.createElement("input", { type: "radio", name: "catselection", value: "torsion" }),
-                " Torsion"
-              )
-            )
-          )
+            'span',
+            { className: 'span-margin' },
+            'Application'
+          ),
+          ' ',
+          React.createElement('span', { className: this.state.collapsedState == true ? "glyphicon glyphicon-plus pull-right glyphicon-margin" : "glyphicon glyphicon-minus pull-right glyphicon-margin" })
         ),
         React.createElement(
-          Link,
-          { to: {
-              pathname: "/etherline/approvals",
-              state: this.state
-            } },
-          React.createElement(
-            "button",
-            { className: "btn btn-primary" },
-            "Next"
-          )
+          'form',
+          { id: 'application-form', onChange: this.handleOptionChange, className: this.props.collapsedState == true ? "attribute-list collapse" : 'attribute-list collapse in' },
+          applicationRadioItems
         )
       );
     }
   }]);
 
-  return EtherlineApplication;
+  return ApplicationFilter;
 }(React.Component);
 
-exports.default = EtherlineApplication;
+exports.default = ApplicationFilter;
 
 /***/ }),
 /* 334 */
@@ -9791,7 +9786,7 @@ exports.default = EtherlineApplication;
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -9802,130 +9797,98 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var _ReactRouter = ReactRouter,
-    Router = _ReactRouter.Router,
-    Route = _ReactRouter.Route,
-    IndexRoute = _ReactRouter.IndexRoute,
-    IndexLink = _ReactRouter.IndexLink,
-    hashHistory = _ReactRouter.hashHistory,
-    Link = _ReactRouter.Link;
+var approvalsList = ["UL AWM", "UL CMG", "UL CMX", "UL PLTC", "UL CL2", "CAN AWM", "CAN CMG", "CAN CMX"];
 
+var ApprovalsFilter = function (_React$Component) {
+	_inherits(ApprovalsFilter, _React$Component);
 
-var approvalSelections = [];
+	function ApprovalsFilter(props) {
+		_classCallCheck(this, ApprovalsFilter);
 
-var EtherlineApprovals = function (_React$Component) {
-  _inherits(EtherlineApprovals, _React$Component);
+		var _this = _possibleConstructorReturn(this, (ApprovalsFilter.__proto__ || Object.getPrototypeOf(ApprovalsFilter)).call(this, props));
 
-  function EtherlineApprovals(props) {
-    _classCallCheck(this, EtherlineApprovals);
+		_this.state = { collapsedState: _this.props.collapsedState };
+		_this.collapseDetection = "collapsed";
+		console.log("ApprovalsFilter props: ", _this.props);
+		_this.handleOptionChange = _this.handleOptionChange.bind(_this);
+		_this.handleCollapseClick = _this.handleCollapseClick.bind(_this);
+		return _this;
+	}
 
-    var _this = _possibleConstructorReturn(this, (EtherlineApprovals.__proto__ || Object.getPrototypeOf(EtherlineApprovals)).call(this, props));
+	_createClass(ApprovalsFilter, [{
+		key: "componentWillReceiveProps",
+		value: function componentWillReceiveProps(nextProps) {
+			if (nextProps.collapsedState !== this.props.collapsedState) {
+				this.setState({ collapsedState: nextProps.collapsedState });
+			}
+		}
+	}, {
+		key: "handleOptionChange",
+		value: function handleOptionChange(e) {
+			var tempApprovalSelections = this.props.approvalsSelection;
 
-    console.log(_this.props);
-    _this.state = _this.props.location.state;
-    console.log("STATE: ", _this.state);
-    _this.handleChange = _this.handleChange.bind(_this);
-    _this.consoleLog = _this.consoleLog.bind(_this);
-    return _this;
-  }
+			if (tempApprovalSelections.indexOf(e.target.value) < 0) {
+				tempApprovalSelections.push(e.target.value);
+			} else {
+				var index = tempApprovalSelections.indexOf(e.target.value);
+				tempApprovalSelections.splice(index, 1);
+			}
 
-  _createClass(EtherlineApprovals, [{
-    key: "handleChange",
-    value: function handleChange(e) {
-      // var arr = [];
-      if (approvalSelections.indexOf(e.target.value) < 0) {
-        approvalSelections.push(e.target.value);
-      } else {
-        var index = approvalSelections.indexOf(e.target.value);
-        approvalSelections.splice(index, 1);
-      }
+			this.props.stateContainer({ approvalsSelection: tempApprovalSelections });
+		}
+	}, {
+		key: "handleCollapseClick",
+		value: function handleCollapseClick(e) {
+			var collapsedState = e.currentTarget.classList.contains(this.collapseDetection);
+			this.setState({ collapsedState: collapsedState });
+		}
+	}, {
+		key: "render",
+		value: function render() {
+			var _this2 = this;
 
-      this.setState({ approvals: approvalSelections });
-    }
-  }, {
-    key: "consoleLog",
-    value: function consoleLog(e) {
-      console.log(this.state);
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      return React.createElement(
-        "div",
-        null,
-        React.createElement(
-          "h2",
-          null,
-          "Etherline Selector Tool"
-        ),
-        React.createElement(
-          "h4",
-          null,
-          "Choose approvals (optional)"
-        ),
-        React.createElement(
-          "div",
-          { className: "form-group cat-list" },
-          React.createElement(
-            "form",
-            { onChange: this.handleChange },
-            React.createElement(
-              "div",
-              { className: "checkbox" },
-              React.createElement(
-                "label",
-                null,
-                React.createElement("input", { type: "checkbox", name: "approvals", value: "pltc-er" }),
-                " PLTC-ER"
-              )
-            ),
-            React.createElement(
-              "div",
-              { className: "checkbox" },
-              React.createElement(
-                "label",
-                null,
-                React.createElement("input", { type: "checkbox", name: "approvals", value: "CMX" }),
-                " CMX"
-              )
-            ),
-            React.createElement(
-              "div",
-              { className: "checkbox" },
-              React.createElement(
-                "label",
-                null,
-                React.createElement("input", { type: "checkbox", name: "approvals", value: "cm/cmg" }),
-                " CM/CMG"
-              )
-            )
-          )
-        ),
-        React.createElement(
-          Link,
-          { to: {
-              pathname: "/etherline/fastconnect",
-              state: this.state
-            } },
-          React.createElement(
-            "button",
-            { className: "btn btn-primary" },
-            "Next"
-          )
-        ),
-        React.createElement(
-          "button",
-          { className: "btn btn-primary", onClick: this.consoleLog },
-          "Console Log"
-        )
-      );
-    }
-  }]);
+			var approvalRadioItems = approvalsList.map(function (data, i) {
+				return React.createElement(
+					"div",
+					{ key: i, className: _this2.props.approvalsSelection.indexOf(data) > -1 ? "bus-type selected-attribute" : "bus-type" },
+					React.createElement(
+						"label",
+						null,
+						React.createElement("input", { type: "radio", value: data,
+							checked: _this2.props.approvalsSelection === 'option' + [i]
+						}),
+						" ",
+						data
+					)
+				);
+			});
+			return React.createElement(
+				"div",
+				{ className: "filter-collapse-container" },
+				React.createElement(
+					"div",
+					{ "data-toggle": "collapse", "data-target": "#approval-form", className: "filter-header", onClick: this.handleCollapseClick },
+					React.createElement(
+						"span",
+						{ className: "span-margin" },
+						"Approvals"
+					),
+					" ",
+					React.createElement("span", { className: this.state.collapsedState == true ? "glyphicon glyphicon-plus pull-right glyphicon-margin" : "glyphicon glyphicon-minus pull-right glyphicon-margin" })
+				),
+				React.createElement(
+					"form",
+					{ id: "approval-form", onChange: this.handleOptionChange, className: this.props.collapsedState == true ? "attribute-list collapse" : 'attribute-list collapse in' },
+					approvalRadioItems
+				)
+			);
+		}
+	}]);
 
-  return EtherlineApprovals;
+	return ApprovalsFilter;
 }(React.Component);
 
-exports.default = EtherlineApprovals;
+exports.default = ApprovalsFilter;
 
 /***/ }),
 /* 335 */
@@ -9935,16 +9898,10 @@ exports.default = EtherlineApprovals;
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _ProfibusApplication = __webpack_require__(126);
-
-var _ProfibusApplication2 = _interopRequireDefault(_ProfibusApplication);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -9952,160 +9909,92 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var _ReactRouter = ReactRouter,
-    Router = _ReactRouter.Router,
-    Route = _ReactRouter.Route,
-    IndexRoute = _ReactRouter.IndexRoute,
-    IndexLink = _ReactRouter.IndexLink,
-    hashHistory = _ReactRouter.hashHistory,
-    Link = _ReactRouter.Link;
+var fastConnectList = ['Yes', 'No'];
 
+var FastConnectFilter = function (_React$Component) {
+	_inherits(FastConnectFilter, _React$Component);
 
-var resData = [];
+	function FastConnectFilter(props) {
+		_classCallCheck(this, FastConnectFilter);
 
-var ProfibusBus = function (_React$Component) {
-  _inherits(ProfibusBus, _React$Component);
+		var _this = _possibleConstructorReturn(this, (FastConnectFilter.__proto__ || Object.getPrototypeOf(FastConnectFilter)).call(this, props));
 
-  function ProfibusBus(props) {
-    _classCallCheck(this, ProfibusBus);
+		_this.state = { collapsedState: _this.props.collapsedState };
+		_this.collapseDetection = "collapsed";
+		_this.handleOptionChange = _this.handleOptionChange.bind(_this);
+		_this.handleCollapseClick = _this.handleCollapseClick.bind(_this);
+		return _this;
+	}
 
-    var _this = _possibleConstructorReturn(this, (ProfibusBus.__proto__ || Object.getPrototypeOf(ProfibusBus)).call(this, props));
+	_createClass(FastConnectFilter, [{
+		key: 'componentWillReceiveProps',
+		value: function componentWillReceiveProps(nextProps) {
+			if (nextProps.collapsedState !== this.props.collapsedState) {
+				this.setState({ collapsedState: nextProps.collapsedState });
+			}
+		}
+	}, {
+		key: 'handleOptionChange',
+		value: function handleOptionChange(e) {
+			var fastConnectChoice = false;
+			if (e.target.value === "Yes") {
+				fastConnectChoice = true;
+			}
+			this.props.stateContainer({ fastConnectSelection: fastConnectChoice });
+		}
+	}, {
+		key: 'handleCollapseClick',
+		value: function handleCollapseClick(e) {
+			var collapsedState = e.currentTarget.classList.contains(this.collapseDetection);
+			this.setState({ collapsedState: collapsedState });
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			var _this2 = this;
 
-    _this.state = {
-      busSystem: null,
-      applications: [],
-      approvals: [],
-      fastConnect: null,
-      jacketMaterial: null,
-      otherRequirements: [],
-      selectedOption: null,
-      queryData: null
-    };
-    _this.handleChange = _this.handleChange.bind(_this);
-    _this.handleOptionChange = _this.handleOptionChange.bind(_this);
-    _this.consoleLog = _this.consoleLog.bind(_this);
-    // this.componentDidMount = this.componentDidMount.bind(this);
-    return _this;
-  }
+			var fastConnectRadioItems = fastConnectList.map(function (data, i) {
+				return React.createElement(
+					'div',
+					{ key: i, className: _this2.props.applicationSelection === data ? "bus-type selected-attribute" : "bus-type" },
+					React.createElement(
+						'label',
+						null,
+						React.createElement('input', { type: 'radio', value: data,
+							checked: _this2.props.fastConnectSelection === 'option' + [i]
+						}),
+						' ',
+						data
+					)
+				);
+			});
+			return React.createElement(
+				'div',
+				{ className: 'filter-collapse-container' },
+				React.createElement(
+					'div',
+					{ 'data-toggle': 'collapse', 'data-target': '#fast-connect-form', className: 'filter-header', onClick: this.handleCollapseClick },
+					React.createElement(
+						'span',
+						{ className: 'span-margin' },
+						'FastConnect'
+					),
+					' ',
+					React.createElement('span', { className: this.state.collapsedState == true ? "glyphicon glyphicon-plus pull-right glyphicon-margin" : "glyphicon glyphicon-minus pull-right glyphicon-margin" })
+				),
+				React.createElement(
+					'form',
+					{ id: 'fast-connect-form', onChange: this.handleOptionChange, className: this.props.collapsedState == true ? "attribute-list collapse" : 'attribute-list collapse in' },
+					fastConnectRadioItems
+				)
+			);
+		}
+	}]);
 
-  _createClass(ProfibusBus, [{
-    key: "componentWillMount",
-    value: function componentWillMount() {
-      $.ajax({
-        // url: "https://selectortoolapi.com/bus/ajax/2170220",
-        dataType: "JSON",
-        type: "GET",
-        url: "http://localhost:3000/bus/data"
-      }).done(function (data) {
-        console.log(data);
-        resData = data;
-      });
-
-      console.log(resData);
-    }
-  }, {
-    key: "handleChange",
-    value: function handleChange(e) {
-      this.setState({ busSystem: e.target.value });
-    }
-  }, {
-    key: "handleOptionChange",
-    value: function handleOptionChange(e) {
-      var selectedData = [];
-      for (var i = 0; i < resData.length; i++) {
-        if (resData[i].bus_system == e.target.value) {
-          selectedData.push(resData[i]);
-        }
-      }
-      console.log(selectedData);
-      this.setState({
-        selectedOption: e.target.value,
-        queryData: selectedData
-      });
-    }
-  }, {
-    key: "consoleLog",
-    value: function consoleLog() {
-      console.log(this.state);
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var _this2 = this;
-
-      var busTypes = ['DeviceNet', 'PROFIBUS DP', 'CAN Bus', 'RS485, RS422 Bus systems', 'AS-Interface (AS-I)', 'Data Highway', 'INTERBUS', 'Genius', 'CC-Link', 'Fieldbus Foundation', 'SafetyBUS'];
-      var busRadioItems = busTypes.map(function (data, i) {
-        return React.createElement(
-          "div",
-          { key: i, className: "radio" },
-          React.createElement(
-            "label",
-            { className: _this2.state.selectedOption === data ? 'btn btn-default btn-block selected' : 'btn btn-default btn-block' },
-            React.createElement("input", { type: "radio", value: data,
-              checked: _this2.state.selectedOption === 'option' + [i],
-              onChange: _this2.handleOptionChange
-            }),
-            " ",
-            data
-          )
-        );
-      });
-      return React.createElement(
-        "div",
-        null,
-        React.createElement(
-          "h2",
-          null,
-          "Profibus Selector Tool"
-        ),
-        React.createElement(
-          "h4",
-          null,
-          "Choose Bus Type"
-        ),
-        React.createElement(
-          "div",
-          { className: "form-group cat-list" },
-          React.createElement(
-            "form",
-            { onChange: this.handleChange },
-            busRadioItems
-          )
-        ),
-        React.createElement(
-          Link,
-          { to: {
-              pathname: "/profibus/application",
-              state: this.state
-            } },
-          this.state.busSystem == null ? React.createElement(
-            "button",
-            { className: "btn btn-primary", disabled: "disabled" },
-            "Next"
-          ) : React.createElement(
-            "button",
-            { className: "btn btn-primary" },
-            "Next"
-          )
-        ),
-        React.createElement(
-          "button",
-          { className: "btn btn-primary", onClick: this.nextComponent },
-          "Next Component"
-        ),
-        React.createElement(
-          "button",
-          { className: "btn btn-primary", onClick: this.consoleLog },
-          "Console Log"
-        )
-      );
-    }
-  }]);
-
-  return ProfibusBus;
+	return FastConnectFilter;
 }(React.Component);
 
-exports.default = ProfibusBus;
+exports.default = FastConnectFilter;
 
 /***/ }),
 /* 336 */
@@ -10126,170 +10015,97 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var _ReactRouter = ReactRouter,
-    Router = _ReactRouter.Router,
-    Route = _ReactRouter.Route,
-    IndexRoute = _ReactRouter.IndexRoute,
-    IndexLink = _ReactRouter.IndexLink,
-    hashHistory = _ReactRouter.hashHistory,
-    Link = _ReactRouter.Link;
+var jacketList = ['PVC', 'PUR', 'Halogen-free', 'Rubber', 'TPE'];
 
+var JacketFilter = function (_React$Component) {
+  _inherits(JacketFilter, _React$Component);
 
-var approvalSelections = [];
+  function JacketFilter(props) {
+    _classCallCheck(this, JacketFilter);
 
-var ProfibusApprovals = function (_React$Component) {
-  _inherits(ProfibusApprovals, _React$Component);
+    var _this = _possibleConstructorReturn(this, (JacketFilter.__proto__ || Object.getPrototypeOf(JacketFilter)).call(this, props));
 
-  function ProfibusApprovals(props) {
-    _classCallCheck(this, ProfibusApprovals);
-
-    var _this = _possibleConstructorReturn(this, (ProfibusApprovals.__proto__ || Object.getPrototypeOf(ProfibusApprovals)).call(this, props));
-
-    _this.state = _this.props.location.state;
-    console.log(props);
-    _this.handleChange = _this.handleChange.bind(_this);
-    _this.consoleLog = _this.consoleLog.bind(_this);
+    _this.state = { collapsedState: _this.props.collapsedState };
+    _this.collapseDetection = "collapsed";
+    _this.handleOptionChange = _this.handleOptionChange.bind(_this);
+    _this.handleCollapseClick = _this.handleCollapseClick.bind(_this);
     return _this;
   }
 
-  _createClass(ProfibusApprovals, [{
-    key: "handleChange",
-    value: function handleChange(e) {
-      if (approvalSelections.indexOf(e.target.value) < 0) {
-        approvalSelections.push(e.target.value);
+  _createClass(JacketFilter, [{
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      if (nextProps.collapsedState !== this.props.collapsedState) {
+        this.setState({ collapsedState: nextProps.collapsedState });
+      }
+    }
+  }, {
+    key: 'handleOptionChange',
+    value: function handleOptionChange(e) {
+      var tempJacketSelections = this.props.jacketSelection;
+
+      if (tempJacketSelections.indexOf(e.target.value) < 0) {
+        tempJacketSelections.push(e.target.value);
       } else {
-        var index = approvalSelections.indexOf(e.target.value);
-        approvalSelections.splice(index, 1);
+        var index = tempJacketSelections.indexOf(e.target.value);
+        tempJacketSelections.splice(index, 1);
       }
 
-      this.setState({ approvals: approvalSelections });
-
-      console.log("this.state.selections:", JSON.stringify(this.state, 0, 2));
+      this.props.stateContainer({ jacketSelection: tempJacketSelections });
     }
   }, {
-    key: "consoleLog",
-    value: function consoleLog() {
-      console.log(this.state);
+    key: 'handleCollapseClick',
+    value: function handleCollapseClick(e) {
+      var collapsedState = e.currentTarget.classList.contains(this.collapseDetection);
+      this.setState({ collapsedState: collapsedState });
     }
   }, {
-    key: "render",
+    key: 'render',
     value: function render() {
+      var _this2 = this;
+
+      var jacketRadioItems = jacketList.map(function (data, i) {
+        return React.createElement(
+          'div',
+          { key: i, className: _this2.props.applicationSelection === data ? "bus-type selected-attribute" : "bus-type" },
+          React.createElement(
+            'label',
+            null,
+            React.createElement('input', { type: 'radio', value: data,
+              checked: _this2.props.jacketSelection === 'option' + [i]
+            }),
+            ' ',
+            data
+          )
+        );
+      });
       return React.createElement(
-        "div",
-        null,
+        'div',
+        { className: 'filter-collapse-container' },
         React.createElement(
-          "h2",
-          null,
-          "Profibus Selector Tool"
-        ),
-        React.createElement(
-          "h4",
-          null,
-          "Choose Approvals"
-        ),
-        React.createElement(
-          "div",
-          { className: "form-group cat-list" },
+          'div',
+          { 'data-toggle': 'collapse', 'data-target': '#jacket-form', className: 'filter-header', onClick: this.handleCollapseClick },
           React.createElement(
-            "form",
-            { onChange: this.handleChange },
-            React.createElement(
-              "div",
-              { className: "checkbox" },
-              React.createElement(
-                "label",
-                { className: "btn btn-default btn btn-block" },
-                React.createElement("input", { type: "checkbox", name: "approvals", value: "ul pltc-er" }),
-                " UL PLTC-ER"
-              )
-            ),
-            React.createElement(
-              "div",
-              { className: "checkbox" },
-              React.createElement(
-                "label",
-                { className: "btn btn-default btn btn-block" },
-                React.createElement("input", { type: "checkbox", name: "approvals", value: "CMX" }),
-                " CMX"
-              )
-            ),
-            React.createElement(
-              "div",
-              { className: "checkbox" },
-              React.createElement(
-                "label",
-                { className: "btn btn-default btn btn-block" },
-                React.createElement("input", { type: "checkbox", name: "approvals", value: "cm/cmg" }),
-                " CM/CMG"
-              )
-            ),
-            React.createElement(
-              "div",
-              { className: "checkbox" },
-              React.createElement(
-                "label",
-                { className: "btn btn-default btn btn-block" },
-                React.createElement("input", { type: "checkbox", name: "approvals", value: "ul awm" }),
-                " UL AWM"
-              )
-            ),
-            React.createElement(
-              "div",
-              { className: "checkbox" },
-              React.createElement(
-                "label",
-                { className: "btn btn-default btn btn-block" },
-                React.createElement("input", { type: "checkbox", name: "approvals", value: "germanischer lloyd" }),
-                " Germanischer Lloyd"
-              )
-            ),
-            React.createElement(
-              "div",
-              { className: "checkbox" },
-              React.createElement(
-                "label",
-                { className: "btn btn-default btn btn-block" },
-                React.createElement("input", { type: "checkbox", name: "approvals", value: "cru awm" }),
-                " cRU AWM"
-              )
-            ),
-            React.createElement(
-              "div",
-              { className: "checkbox" },
-              React.createElement(
-                "label",
-                { className: "btn btn-default btn btn-block" },
-                React.createElement("input", { type: "checkbox", name: "approvals", value: "any" }),
-                " Any"
-              )
-            )
-          )
+            'span',
+            { className: 'span-margin' },
+            'Jacket'
+          ),
+          ' ',
+          React.createElement('span', { className: this.state.collapsedState == true ? "glyphicon glyphicon-plus pull-right glyphicon-margin" : "glyphicon glyphicon-minus pull-right glyphicon-margin" })
         ),
         React.createElement(
-          Link,
-          { to: {
-              pathname: "/profibus/fastconnect",
-              state: this.state
-            } },
-          React.createElement(
-            "button",
-            { className: "btn btn-primary" },
-            "Next"
-          )
-        ),
-        React.createElement(
-          "button",
-          { className: "btn btn-primary", onClick: this.consoleLog },
-          "Console Log"
+          'form',
+          { id: 'jacket-form', onChange: this.handleOptionChange, className: this.props.collapsedState == true ? "attribute-list collapse" : 'attribute-list collapse in' },
+          jacketRadioItems
         )
       );
     }
   }]);
 
-  return ProfibusApprovals;
+  return JacketFilter;
 }(React.Component);
 
-exports.default = ProfibusApprovals;
+exports.default = JacketFilter;
 
 /***/ }),
 /* 337 */
@@ -10310,66 +10126,181 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var _ReactRouter = ReactRouter,
-    Router = _ReactRouter.Router,
-    Route = _ReactRouter.Route,
-    IndexRoute = _ReactRouter.IndexRoute,
-    IndexLink = _ReactRouter.IndexLink,
-    hashHistory = _ReactRouter.hashHistory,
-    Link = _ReactRouter.Link;
+var _ReactTransitionGroup = ReactTransitionGroup,
+    CSSTransitionGroup = _ReactTransitionGroup.CSSTransitionGroup;
 
+var SelectedProducts = function (_React$Component) {
+  _inherits(SelectedProducts, _React$Component);
 
-var approvalSelections = [];
+  function SelectedProducts(props) {
+    _classCallCheck(this, SelectedProducts);
 
-var ProfibusFastConnect = function (_React$Component) {
-  _inherits(ProfibusFastConnect, _React$Component);
+    var _this = _possibleConstructorReturn(this, (SelectedProducts.__proto__ || Object.getPrototypeOf(SelectedProducts)).call(this, props));
 
-  function ProfibusFastConnect(props) {
-    _classCallCheck(this, ProfibusFastConnect);
-
-    var _this = _possibleConstructorReturn(this, (ProfibusFastConnect.__proto__ || Object.getPrototypeOf(ProfibusFastConnect)).call(this, props));
-
-    _this.state = _this.props.location.state;
-    _this.handleChange = _this.handleChange.bind(_this);
+    _this.state = {
+      company: '',
+      salutation: '',
+      fname: '',
+      lname: '',
+      country: '',
+      email: '',
+      phone: '',
+      comments: ''
+    };
+    _this.getApprovals = _this.getApprovals.bind(_this);
+    _this.getCanApprovals = _this.getCanApprovals.bind(_this);
     _this.handleOptionChange = _this.handleOptionChange.bind(_this);
-    _this.consoleLog = _this.consoleLog.bind(_this);
+    _this.handleSearchChange = _this.handleSearchChange.bind(_this);
+    _this.onFormSubmit = _this.onFormSubmit.bind(_this);
     return _this;
   }
 
-  _createClass(ProfibusFastConnect, [{
-    key: 'handleChange',
-    value: function handleChange(e) {
-      this.setState({ fastConnect: e.target.value });
+  _createClass(SelectedProducts, [{
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      console.log("SelectedProducts Props");
+      console.log(nextProps.selectedProducts);
+    }
+  }, {
+    key: 'getApprovals',
+    value: function getApprovals(data) {
+      var approvalsArr = [];
+      var approvalsStr = "";
+
+      if (data.awm === true) {
+        approvalsArr.push("AWM");
+      }
+      if (data.pltc === true) {
+        approvalsArr.push("PLTC");
+      }
+      if (data.cl2 === true) {
+        approvalsArr.push("CL2");
+      }
+      if (data.cmg === true) {
+        approvalsArr.push("CMG");
+      }
+      if (data.cmx === true) {
+        approvalsArr.push("CMX");
+      }
+
+      approvalsStr = approvalsArr.join(', ');
+      if (approvalsStr.length > 1) {
+        return approvalsStr;
+      } else {
+        return "n/a";
+      }
+    }
+  }, {
+    key: 'getCanApprovals',
+    value: function getCanApprovals(data) {
+      var approvalsArr = [];
+      var approvalsStr = "";
+
+      if (data.can_awm === true) {
+        approvalsArr.push("AWM");
+      }
+      if (data.can_cmg === true) {
+        approvalsArr.push("CMG");
+      }
+      if (data.can_cmx === true) {
+        approvalsArr.push("CMX");
+      }
+
+      approvalsStr = approvalsArr.join(', ');
+      if (approvalsStr.length > 1) {
+        return approvalsStr;
+      } else {
+        return "n/a";
+      }
     }
   }, {
     key: 'handleOptionChange',
     value: function handleOptionChange(e) {
-      this.setState({ selectedOption: e.target.value });
+      this.props.selectedProductsUpdater(e.target.value);
     }
   }, {
-    key: 'consoleLog',
-    value: function consoleLog() {
-      console.log(this.state);
+    key: 'handleSearchChange',
+    value: function handleSearchChange(e) {
+      e.preventDefault();
+      this.props.searchPartNum(e.target.partNumber.value);
+      document.getElementById('search-form-container').reset();
+    }
+  }, {
+    key: 'onFormSubmit',
+    value: function onFormSubmit(e) {
+      e.preventDefault();
+      /* Email form submit */
     }
   }, {
     key: 'render',
     value: function render() {
       var _this2 = this;
 
-      var fastConnectSelections = ['Yes', 'No'];
-      var radioItems = fastConnectSelections.map(function (data, i) {
+      var _state = this.state,
+          company = _state.company,
+          salutation = _state.salutation,
+          fname = _state.fname,
+          lname = _state.lname,
+          country = _state.country,
+          email = _state.email,
+          phone = _state.phone,
+          comments = _state.comments;
+
+      var modalRows = this.props.selectedProducts.map(function (product, i) {
         return React.createElement(
-          'div',
-          { key: i, className: 'radio' },
+          'li',
+          { key: i, className: _this2.props.selectedProductsArr.indexOf(product.part_number) > -1 ? "active-selected-part col-xs-12 col-sm-6 col-md-4 modal-grid-list-item" : "button-label col-xs-12 col-sm-6 col-md-4 modal-grid-list-item" },
           React.createElement(
             'label',
-            { className: _this2.state.selectedOption === data ? 'btn btn-default btn btn-block selected' : 'btn btn-default btn btn-block' },
-            React.createElement('input', { type: 'radio', value: data,
-              checked: _this2.state.selectedOption === 'option' + [i],
-              onChange: _this2.handleOptionChange
-            }),
-            ' ',
-            data
+            { className: 'button-label' },
+            React.createElement('input', { type: 'checkbox', value: product.part_number, className: 'product-checkbox' }),
+            React.createElement(
+              'ul',
+              { className: 'inner-list' },
+              React.createElement(
+                'li',
+                null,
+                React.createElement(
+                  'strong',
+                  null,
+                  product.description
+                )
+              ),
+              React.createElement(
+                'li',
+                null,
+                'Application: ',
+                product.application
+              ),
+              React.createElement(
+                'li',
+                null,
+                'Jacket: ',
+                product.jacket
+              ),
+              React.createElement(
+                'li',
+                null,
+                'UL: ',
+                _this2.getApprovals(product)
+              ),
+              React.createElement(
+                'li',
+                null,
+                'Canada: ',
+                _this2.getCanApprovals(product)
+              ),
+              React.createElement(
+                'li',
+                null,
+                'P/N: ',
+                React.createElement(
+                  'a',
+                  { href: '#', target: '_blank' },
+                  product.part_number
+                )
+              )
+            )
           )
         );
       });
@@ -10377,49 +10308,367 @@ var ProfibusFastConnect = function (_React$Component) {
         'div',
         null,
         React.createElement(
-          'h2',
-          null,
-          'Profibus Selector Tool'
-        ),
-        React.createElement(
-          'h4',
-          null,
-          'Choose Fast Connect'
+          'nav',
+          { className: 'navbar navbar-default custom-nav' },
+          React.createElement(
+            'div',
+            { className: 'container-fluid no-padding-left' },
+            React.createElement(
+              'div',
+              { className: 'navbar-header ' },
+              React.createElement(
+                'button',
+                { type: 'button', className: 'navbar-toggle collapsed', 'data-toggle': 'collapse', 'data-target': '#bs-example-navbar-collapse-1', 'aria-expanded': 'false' },
+                React.createElement(
+                  'span',
+                  { className: 'sr-only' },
+                  'Toggle navigation'
+                ),
+                React.createElement('span', { className: 'icon-bar' }),
+                React.createElement('span', { className: 'icon-bar' }),
+                React.createElement('span', { className: 'icon-bar' })
+              )
+            ),
+            React.createElement(
+              'div',
+              { className: 'collapse no-padding-left navbar-collapse', id: 'bs-example-navbar-collapse-1' },
+              React.createElement(
+                'form',
+                { id: 'search-form-container', className: 'navbar-form navbar-left', onSubmit: this.handleSearchChange },
+                React.createElement(
+                  'div',
+                  { className: 'form-group' },
+                  React.createElement('input', { type: 'text', name: 'partNumber', className: 'form-control input-xs', placeholder: 'Search by Part Number' })
+                ),
+                React.createElement(
+                  'button',
+                  { type: 'submit', className: 'btn btn-default btn-xs pull-right' },
+                  'Search'
+                )
+              ),
+              React.createElement(
+                'div',
+                { className: 'nav navbar-nav col-sm-5 col-md-7 col-lg-8' },
+                React.createElement(
+                  'div',
+                  { className: 'cat-selection-header' },
+                  React.createElement(
+                    'h4',
+                    null,
+                    this.props.busSelection != null ? this.props.busSelection : ''
+                  )
+                )
+              ),
+              React.createElement(
+                'ul',
+                { className: 'nav navbar-nav navbar-right' },
+                React.createElement(
+                  'li',
+                  { id: 'modal-toggle-btn' },
+                  React.createElement(
+                    'a',
+                    { 'data-toggle': 'modal', 'data-target': '#myModal' },
+                    'RFQ ',
+                    React.createElement(
+                      'span',
+                      null,
+                      '(',
+                      this.props.selectedProducts.length,
+                      ')'
+                    )
+                  )
+                )
+              )
+            )
+          )
         ),
         React.createElement(
           'div',
-          { className: 'form-group cat-list' },
+          { className: 'modal fade', id: 'myModal', tabIndex: '-1', role: 'dialog', 'aria-labelledby': 'myModalLabel' },
           React.createElement(
-            'form',
-            { onChange: this.handleChange },
-            radioItems
+            'div',
+            { className: 'modal-dialog', role: 'document' },
+            React.createElement(
+              'div',
+              { className: 'modal-content' },
+              React.createElement(
+                'div',
+                { className: 'modal-header' },
+                React.createElement(
+                  'button',
+                  { type: 'button', className: 'close', 'data-dismiss': 'modal', 'aria-label': 'Close' },
+                  React.createElement(
+                    'span',
+                    { 'aria-hidden': 'true' },
+                    '\xD7'
+                  )
+                ),
+                React.createElement(
+                  'h4',
+                  { className: 'modal-title', id: 'myModalLabel' },
+                  'Selected Products'
+                )
+              ),
+              React.createElement(
+                'div',
+                { className: 'modal-body' },
+                React.createElement(
+                  'div',
+                  { className: 'row' },
+                  React.createElement(
+                    'div',
+                    { className: 'col-xs-12 col-sm-10 col-sm-offset-1' },
+                    React.createElement(
+                      'form',
+                      { onSubmit: this.onFormSubmit },
+                      React.createElement(
+                        'fieldset',
+                        null,
+                        React.createElement(
+                          'legend',
+                          null,
+                          'CONTACT INFORMATION'
+                        ),
+                        React.createElement(
+                          'table',
+                          { id: 'form-table' },
+                          React.createElement(
+                            'tbody',
+                            null,
+                            React.createElement(
+                              'tr',
+                              null,
+                              React.createElement(
+                                'td',
+                                { className: 'form-label' },
+                                React.createElement(
+                                  'span',
+                                  null,
+                                  'Company'
+                                )
+                              ),
+                              React.createElement(
+                                'td',
+                                null,
+                                React.createElement('input', { name: 'company', type: 'text', value: 'Lapp USA' })
+                              )
+                            ),
+                            React.createElement(
+                              'tr',
+                              null,
+                              React.createElement(
+                                'td',
+                                { className: 'form-label' },
+                                React.createElement(
+                                  'span',
+                                  null,
+                                  'Salutation'
+                                )
+                              ),
+                              React.createElement(
+                                'td',
+                                null,
+                                React.createElement(
+                                  'select',
+                                  { name: 'salutation', id: 'salutation-dropdown' },
+                                  React.createElement(
+                                    'option',
+                                    { value: 'Mr.' },
+                                    'Mr.'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'Mrs.' },
+                                    'Mrs.'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'Ms.' },
+                                    'Ms.'
+                                  )
+                                )
+                              )
+                            ),
+                            React.createElement(
+                              'tr',
+                              null,
+                              React.createElement(
+                                'td',
+                                { className: 'form-label' },
+                                React.createElement(
+                                  'span',
+                                  null,
+                                  'First Name'
+                                )
+                              ),
+                              React.createElement(
+                                'td',
+                                null,
+                                React.createElement('input', { name: 'fname', type: 'text', value: 'Angelo' })
+                              )
+                            ),
+                            React.createElement(
+                              'tr',
+                              null,
+                              React.createElement(
+                                'td',
+                                { className: 'form-label' },
+                                React.createElement(
+                                  'span',
+                                  null,
+                                  'Last Name'
+                                )
+                              ),
+                              React.createElement(
+                                'td',
+                                null,
+                                React.createElement('input', { name: 'lname', type: 'text', value: 'Bovino' })
+                              )
+                            ),
+                            React.createElement(
+                              'tr',
+                              null,
+                              React.createElement(
+                                'td',
+                                { className: 'form-label' },
+                                React.createElement(
+                                  'span',
+                                  null,
+                                  'Country'
+                                )
+                              ),
+                              React.createElement(
+                                'td',
+                                null,
+                                React.createElement(
+                                  'select',
+                                  { name: 'country', id: 'country-dropdown' },
+                                  React.createElement(
+                                    'option',
+                                    { value: 'USA' },
+                                    'USA'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'Canada' },
+                                    'Canada'
+                                  )
+                                )
+                              )
+                            ),
+                            React.createElement(
+                              'tr',
+                              null,
+                              React.createElement(
+                                'td',
+                                { className: 'form-label' },
+                                React.createElement(
+                                  'span',
+                                  null,
+                                  'Email'
+                                )
+                              ),
+                              React.createElement(
+                                'td',
+                                null,
+                                React.createElement('input', { name: 'email', type: 'text', value: 'angelo.bovino@outlook.com' })
+                              )
+                            ),
+                            React.createElement(
+                              'tr',
+                              null,
+                              React.createElement(
+                                'td',
+                                { className: 'form-label' },
+                                React.createElement(
+                                  'span',
+                                  null,
+                                  'Phone'
+                                )
+                              ),
+                              React.createElement(
+                                'td',
+                                null,
+                                React.createElement('input', { name: 'phone', type: 'text', value: '973-992-2257' })
+                              )
+                            ),
+                            React.createElement(
+                              'tr',
+                              null,
+                              React.createElement(
+                                'td',
+                                { className: 'form-label' },
+                                React.createElement(
+                                  'span',
+                                  null,
+                                  'Comments'
+                                )
+                              ),
+                              React.createElement(
+                                'td',
+                                null,
+                                React.createElement('textarea', { name: 'comments', cols: '21', rows: '3', value: 'Here\'s my comments' })
+                              )
+                            )
+                          )
+                        )
+                      ),
+                      React.createElement(
+                        'div',
+                        { className: 'col-xs-12' },
+                        React.createElement(
+                          'button',
+                          { type: 'button', className: 'btn btn-default', 'data-dismiss': 'modal' },
+                          'Close'
+                        ),
+                        React.createElement(
+                          'button',
+                          { type: 'submit', className: 'btn btn-primary pull-right' },
+                          'Submit'
+                        )
+                      )
+                    )
+                  )
+                )
+              ),
+              React.createElement(
+                'div',
+                { className: 'modal-body modal-grid' },
+                React.createElement(
+                  'div',
+                  { className: 'row' },
+                  React.createElement(
+                    'form',
+                    { onChange: this.handleOptionChange },
+                    modalRows
+                  )
+                )
+              ),
+              React.createElement(
+                'div',
+                { className: 'modal-footer' },
+                React.createElement(
+                  'button',
+                  { type: 'button', className: 'btn btn-default', 'data-dismiss': 'modal' },
+                  'Close'
+                ),
+                React.createElement(
+                  'button',
+                  { type: 'button', className: 'btn btn-primary' },
+                  'Save changes'
+                )
+              )
+            )
           )
-        ),
-        React.createElement(
-          Link,
-          { to: {
-              pathname: "/profibus/jacket",
-              state: this.state
-            } },
-          React.createElement(
-            'button',
-            { className: 'btn btn-primary' },
-            'Next'
-          )
-        ),
-        React.createElement(
-          'button',
-          { className: 'btn btn-primary', onClick: this.consoleLog },
-          'Console Log'
         )
       );
     }
   }]);
 
-  return ProfibusFastConnect;
+  return SelectedProducts;
 }(React.Component);
 
-exports.default = ProfibusFastConnect;
+exports.default = SelectedProducts;
 
 /***/ }),
 /* 338 */
@@ -10434,181 +10683,285 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _App = __webpack_require__(125);
+
+var _App2 = _interopRequireDefault(_App);
+
+var _ProductItem = __webpack_require__(339);
+
+var _ProductItem2 = _interopRequireDefault(_ProductItem);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var _ReactRouter = ReactRouter,
-    Router = _ReactRouter.Router,
-    Route = _ReactRouter.Route,
-    IndexRoute = _ReactRouter.IndexRoute,
-    IndexLink = _ReactRouter.IndexLink,
-    hashHistory = _ReactRouter.hashHistory,
-    Link = _ReactRouter.Link;
+var _ReactTransitionGroup = ReactTransitionGroup,
+    CSSTransitionGroup = _ReactTransitionGroup.CSSTransitionGroup;
 
+var ProductGridContainer = function (_React$Component) {
+  _inherits(ProductGridContainer, _React$Component);
 
-var approvalSelections = [];
+  function ProductGridContainer(props) {
+    _classCallCheck(this, ProductGridContainer);
 
-var ProfibusJacket = function (_React$Component) {
-  _inherits(ProfibusJacket, _React$Component);
+    var _this = _possibleConstructorReturn(this, (ProductGridContainer.__proto__ || Object.getPrototypeOf(ProductGridContainer)).call(this, props));
 
-  function ProfibusJacket(props) {
-    _classCallCheck(this, ProfibusJacket);
-
-    var _this = _possibleConstructorReturn(this, (ProfibusJacket.__proto__ || Object.getPrototypeOf(ProfibusJacket)).call(this, props));
-
-    _this.state = _this.props.location.state;
-    console.log(props);
-    _this.handleChange = _this.handleChange.bind(_this);
-    _this.sendPayload = _this.sendPayload.bind(_this);
-    _this.consoleLog = _this.consoleLog.bind(_this);
+    _this.state = { searchPartNumber: null };
+    _this.getApprovals = _this.getApprovals.bind(_this);
+    _this.getCanApprovals = _this.getCanApprovals.bind(_this);
+    _this.handleOptionChange = _this.handleOptionChange.bind(_this);
     return _this;
   }
 
-  _createClass(ProfibusJacket, [{
-    key: "handleChange",
-    value: function handleChange(e) {
-      this.setState({ jacketMaterial: e.target.value });
-      console.log("this.state.selections:", JSON.stringify(this.state, 0, 2));
+  _createClass(ProductGridContainer, [{
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      if (nextProps.searchPartNumber == null) {
+        return;
+      } else {
+        this.setState({ searchPartNumber: nextProps.searchPartNumber });
+      }
     }
   }, {
-    key: "sendPayload",
-    value: function sendPayload() {
-      var jsonData = this.state;
-      console.log(jsonData);
-      $.ajax({
-        // url: "https://selectortoolapi.com/bus/ajax/2170220",
-        url: "http://localhost:3000/bus/payload",
-        type: "POST",
-        dataType: "json",
-        data: jsonData
-      }).done(function (data) {
-        console.log(data);
-      });
+    key: 'getApprovals',
+    value: function getApprovals(data) {
+      var approvalsArr = [];
+      var approvalsStr = "";
+
+      if (data.awm === true) {
+        approvalsArr.push("AWM");
+      }
+      if (data.pltc === true) {
+        approvalsArr.push("PLTC");
+      }
+      if (data.cl2 === true) {
+        approvalsArr.push("CL2");
+      }
+      if (data.cmg === true) {
+        approvalsArr.push("CMG");
+      }
+      if (data.cmx === true) {
+        approvalsArr.push("CMX");
+      }
+
+      approvalsStr = approvalsArr.join(', ');
+      if (approvalsStr.length > 1) {
+        return approvalsStr;
+      } else {
+        return "n/a";
+      }
     }
   }, {
-    key: "consoleLog",
-    value: function consoleLog() {
-      console.log(this.state);
+    key: 'getCanApprovals',
+    value: function getCanApprovals(data) {
+      var approvalsArr = [];
+      var approvalsStr = "";
+
+      if (data.can_awm === true) {
+        approvalsArr.push("AWM");
+      }
+      if (data.can_cmg === true) {
+        approvalsArr.push("CMG");
+      }
+      if (data.can_cmx === true) {
+        approvalsArr.push("CMX");
+      }
+
+      approvalsStr = approvalsArr.join(', ');
+      if (approvalsStr.length > 1) {
+        return approvalsStr;
+      } else {
+        return "n/a";
+      }
     }
   }, {
-    key: "render",
+    key: 'handleOptionChange',
+    value: function handleOptionChange(e) {
+      this.props.selectedProductsUpdater(e.target.value);
+    }
+  }, {
+    key: 'render',
     value: function render() {
-      return React.createElement(
-        "div",
+      var _this2 = this;
+
+      var nope = React.createElement(
+        'h1',
         null,
-        React.createElement(
-          "h2",
-          null,
-          "Profibus Selector Tool"
-        ),
-        React.createElement(
-          "h4",
-          null,
-          "Choose Jacket Material"
-        ),
-        React.createElement(
-          "div",
-          { className: "form-group cat-list" },
+        'nopeee'
+      );
+      var rows = [];
+      this.props.data.map(function (product, i) {
+
+        if (_this2.props.searchPartNumber !== null) {
+          if (_this2.props.searchPartNumber === product.part_number) {
+            rows.push(React.createElement(
+              'li',
+              { key: i, className: 'col-md-3 col-sm-6 product-grid-list-item' },
+              React.createElement(
+                'label',
+                { className: _this2.props.selectedProductsArr.indexOf(product.part_number) > -1 ? "active-selected-part button-label" : "button-label" },
+                React.createElement('input', { type: 'checkbox', value: product.part_number, className: 'product-checkbox' }),
+                React.createElement(
+                  'ul',
+                  { className: 'inner-list' },
+                  React.createElement(
+                    'li',
+                    null,
+                    React.createElement(
+                      'strong',
+                      null,
+                      product.description
+                    )
+                  ),
+                  React.createElement(
+                    'li',
+                    null,
+                    'Application: ',
+                    product.application
+                  ),
+                  React.createElement(
+                    'li',
+                    null,
+                    'Jacket: ',
+                    product.jacket
+                  ),
+                  React.createElement(
+                    'li',
+                    null,
+                    'UL: ',
+                    _this2.getApprovals(product)
+                  ),
+                  React.createElement(
+                    'li',
+                    null,
+                    'Canada: ',
+                    _this2.getCanApprovals(product)
+                  ),
+                  React.createElement(
+                    'li',
+                    null,
+                    'P/N: ',
+                    React.createElement(
+                      'a',
+                      { href: product.link, target: '_blank' },
+                      product.part_number
+                    )
+                  )
+                )
+              )
+            ));
+            return;
+          }
+        }
+
+        if (product.bus_system !== _this2.props.busSelection) {
+          return;
+        }
+
+        if (_this2.props.applicationSelection !== null && product.application !== _this2.props.applicationSelection) {
+          return;
+        }
+
+        if (_this2.props.approvalsSelection !== null) {
+          for (var _i = 0; _i < _this2.props.approvalsSelection.length; _i++) {
+            if (product.prettyApprovalArr.indexOf(_this2.props.approvalsSelection[_i]) < 0) {
+              return;
+            }
+          }
+        }
+
+        // Need to add fast_connect column to database!!!!!!
+        /* if (this.props.fastConnectSelection !== null && product.fast_connect !== this.props.fastConnectSelection) {
+        	return;
+        } */
+
+        if (_this2.props.jacketSelection.length > 0) {
+          if (_this2.props.jacketSelection.indexOf(product.outer_sheath_material) < 0) {
+            return;
+          }
+        }
+
+        rows.push(React.createElement(
+          'li',
+          { key: i, className: 'col-md-4 col-sm-6 product-grid-list-item' },
           React.createElement(
-            "form",
-            { onChange: this.handleChange },
+            'label',
+            { className: _this2.props.selectedProductsArr.indexOf(product.part_number) > -1 ? "active-selected-part button-label" : "button-label" },
+            React.createElement('input', { type: 'checkbox', value: product.part_number, className: 'product-checkbox' }),
             React.createElement(
-              "div",
-              { className: "checkbox" },
+              'ul',
+              { className: 'inner-list' },
               React.createElement(
-                "label",
-                { className: "btn btn-default btn btn-block" },
-                React.createElement("input", { type: "checkbox", name: "jacket", value: "PVC" }),
-                " PVC"
-              )
-            ),
-            React.createElement(
-              "div",
-              { className: "checkbox" },
+                'li',
+                null,
+                React.createElement(
+                  'strong',
+                  null,
+                  product.description
+                )
+              ),
               React.createElement(
-                "label",
-                { className: "btn btn-default btn btn-block" },
-                React.createElement("input", { type: "checkbox", name: "jacket", value: "PUR" }),
-                " PUR"
-              )
-            ),
-            React.createElement(
-              "div",
-              { className: "checkbox" },
+                'li',
+                null,
+                'Application: ',
+                product.application
+              ),
               React.createElement(
-                "label",
-                { className: "btn btn-default btn btn-block" },
-                React.createElement("input", { type: "checkbox", name: "jacket", value: "Halogen-free" }),
-                " Halogen-free"
-              )
-            ),
-            React.createElement(
-              "div",
-              { className: "checkbox" },
+                'li',
+                null,
+                'Jacket: ',
+                product.jacket
+              ),
               React.createElement(
-                "label",
-                { className: "btn btn-default btn btn-block" },
-                React.createElement("input", { type: "checkbox", name: "jacket", value: "Rubber" }),
-                " Rubber"
-              )
-            ),
-            React.createElement(
-              "div",
-              { className: "checkbox" },
+                'li',
+                null,
+                'UL: ',
+                _this2.getApprovals(product)
+              ),
               React.createElement(
-                "label",
-                { className: "btn btn-default btn btn-block" },
-                React.createElement("input", { type: "checkbox", name: "jacket", value: "TPE" }),
-                " TPE"
-              )
-            ),
-            React.createElement(
-              "div",
-              { className: "checkbox" },
+                'li',
+                null,
+                'Canada: ',
+                _this2.getCanApprovals(product)
+              ),
               React.createElement(
-                "label",
-                { className: "btn btn-default btn btn-block" },
-                React.createElement("input", { type: "checkbox", name: "jacket", value: "Any" }),
-                " Any"
+                'li',
+                null,
+                'P/N: ',
+                React.createElement(
+                  'a',
+                  { href: '#', target: '_blank' },
+                  product.part_number
+                )
               )
             )
           )
-        ),
+        ));
+      });
+      return React.createElement(
+        'div',
+        { className: 'col-xs-12 item-container' },
         React.createElement(
-          Link,
-          { to: {
-              pathname: "/profibus/other",
-              state: this.state
-            } },
+          'div',
+          { className: 'scroll-container' },
           React.createElement(
-            "button",
-            { className: "btn btn-primary" },
-            "Next"
+            'form',
+            { onChange: this.handleOptionChange },
+            this.props.searchPartNumber !== null && rows.length < 1 ? nope : rows
           )
-        ),
-        React.createElement(
-          "button",
-          { className: "btn btn-primary", onClick: this.consoleLog },
-          "Console Log"
-        ),
-        React.createElement("br", null),
-        React.createElement("br", null),
-        React.createElement(
-          "button",
-          { className: "btn btn-danger", onClick: this.sendPayload },
-          "Send Payload"
         )
       );
     }
   }]);
 
-  return ProfibusJacket;
+  return ProductGridContainer;
 }(React.Component);
 
-exports.default = ProfibusJacket;
+exports.default = ProductGridContainer;
 
 /***/ }),
 /* 339 */
@@ -10629,71 +10982,1698 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var _ReactRouter = ReactRouter,
-    Router = _ReactRouter.Router,
-    Route = _ReactRouter.Route,
-    IndexRoute = _ReactRouter.IndexRoute,
-    IndexLink = _ReactRouter.IndexLink,
-    hashHistory = _ReactRouter.hashHistory,
-    Link = _ReactRouter.Link;
+var ProductItem = function (_React$Component) {
+  _inherits(ProductItem, _React$Component);
 
-var ProfiApp = function (_React$Component) {
-  _inherits(ProfiApp, _React$Component);
+  function ProductItem(props) {
+    _classCallCheck(this, ProductItem);
 
-  function ProfiApp(props) {
-    _classCallCheck(this, ProfiApp);
+    var _this = _possibleConstructorReturn(this, (ProductItem.__proto__ || Object.getPrototypeOf(ProductItem)).call(this, props));
 
-    var _this = _possibleConstructorReturn(this, (ProfiApp.__proto__ || Object.getPrototypeOf(ProfiApp)).call(this, props));
-
-    _this.state = {
-      busSystem: null,
-      application: null,
-      approvals: [],
-      fastConnect: null,
-      jacketMaterial: null,
-      otherRequirements: [],
-      selectedOption: null
-    };
-    _this.handleChange = _this.handleChange.bind(_this);
-    _this.handleOptionChange = _this.handleOptionChange.bind(_this);
+    _this.getApprovals = _this.getApprovals.bind(_this);
+    _this.getCanApprovals = _this.getCanApprovals.bind(_this);
     _this.consoleLog = _this.consoleLog.bind(_this);
     return _this;
   }
 
-  _createClass(ProfiApp, [{
-    key: 'handleChange',
-    value: function handleChange(e) {
-      this.setState({ busSystem: e.target.value });
+  _createClass(ProductItem, [{
+    key: "getApprovals",
+    value: function getApprovals(data) {
+      var approvalsArr = [];
+      var approvalsStr = "";
+
+      if (data.awm === true) {
+        approvalsArr.push("AWM");
+      }
+      if (data.pltc === true) {
+        approvalsArr.push("PLTC");
+      }
+      if (data.cl2 === true) {
+        approvalsArr.push("CL2");
+      }
+      if (data.cmg === true) {
+        approvalsArr.push("CMG");
+      }
+      if (data.cmx === true) {
+        approvalsArr.push("CMX");
+      }
+
+      approvalsStr = approvalsArr.join(', ');
+      if (approvalsStr.length > 1) {
+        return approvalsStr;
+      } else {
+        return "n/a";
+      }
+    }
+  }, {
+    key: "getCanApprovals",
+    value: function getCanApprovals(data) {
+      var approvalsArr = [];
+      var approvalsStr = "";
+
+      if (data.can_awm === true) {
+        approvalsArr.push("AWM");
+      }
+      if (data.can_cmg === true) {
+        approvalsArr.push("CMG");
+      }
+      if (data.can_cmx === true) {
+        approvalsArr.push("CMX");
+      }
+
+      approvalsStr = approvalsArr.join(', ');
+      if (approvalsStr.length > 1) {
+        return approvalsStr;
+      } else {
+        return "n/a";
+      }
+    }
+  }, {
+    key: "consoleLog",
+    value: function consoleLog() {
+      console.log(this.props);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return React.createElement(
+        "ul",
+        null,
+        React.createElement(
+          "li",
+          null,
+          React.createElement(
+            "h6",
+            null,
+            React.createElement(
+              "strong",
+              null,
+              this.props.data.description
+            )
+          )
+        ),
+        React.createElement(
+          "li",
+          null,
+          React.createElement(
+            "strong",
+            null,
+            "Bus System:"
+          ),
+          " ",
+          this.props.data.bus_system
+        ),
+        React.createElement(
+          "li",
+          null,
+          React.createElement(
+            "strong",
+            null,
+            "Application:"
+          ),
+          " ",
+          this.props.data.application
+        ),
+        React.createElement(
+          "li",
+          null,
+          React.createElement(
+            "strong",
+            null,
+            "Jacket:"
+          ),
+          " ",
+          this.props.data.outer_sheath_material
+        ),
+        React.createElement(
+          "li",
+          null,
+          React.createElement(
+            "strong",
+            null,
+            "UL: "
+          ),
+          this.getApprovals(this.props.data)
+        ),
+        React.createElement(
+          "li",
+          null,
+          React.createElement(
+            "strong",
+            null,
+            "Canada: "
+          ),
+          this.getCanApprovals(this.props.data)
+        ),
+        React.createElement(
+          "li",
+          null,
+          React.createElement(
+            "strong",
+            null,
+            "P/N: ",
+            this.props.data.part_number,
+            " "
+          )
+        )
+      );
+    }
+  }]);
+
+  return ProductItem;
+}(React.Component);
+
+exports.default = ProductItem;
+
+/***/ }),
+/* 340 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _FilterContainer = __webpack_require__(341);
+
+var _FilterContainer2 = _interopRequireDefault(_FilterContainer);
+
+var _ProductGrid = __webpack_require__(348);
+
+var _ProductGrid2 = _interopRequireDefault(_ProductGrid);
+
+var _SelectedProducts = __webpack_require__(349);
+
+var _SelectedProducts2 = _interopRequireDefault(_SelectedProducts);
+
+var _SelectedProductGrid = __webpack_require__(350);
+
+var _SelectedProductGrid2 = _interopRequireDefault(_SelectedProductGrid);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _ReactTransitionGroup = ReactTransitionGroup,
+    CSSTransitionGroup = _ReactTransitionGroup.CSSTransitionGroup;
+
+var Etherline = function (_React$Component) {
+	_inherits(Etherline, _React$Component);
+
+	function Etherline(props) {
+		_classCallCheck(this, Etherline);
+
+		var _this = _possibleConstructorReturn(this, (Etherline.__proto__ || Object.getPrototypeOf(Etherline)).call(this, props));
+
+		_this.state = {
+			data: [],
+			catSelection: null,
+			protocolSelections: null,
+			applicationSelection: null,
+			approvalsSelection: [],
+			awgSelection: [],
+			jacketSelection: [],
+			selectedProducts: [],
+			selectedProductsArr: [],
+			searchPartNumber: null
+		};
+		_this.stateContainer = _this.stateContainer.bind(_this);
+		_this.selectedProductsUpdater = _this.selectedProductsUpdater.bind(_this);
+		_this.searchPartNum = _this.searchPartNum.bind(_this);
+		return _this;
+	}
+
+	_createClass(Etherline, [{
+		key: 'componentDidMount',
+		value: function componentDidMount() {
+			var _this2 = this;
+
+			$.ajax({
+				// url: "https://selectortoolapi.com/bus/ajax/2170220",
+				contentType: "application/json; charset=utf-8",
+				dataType: "JSON",
+				type: "GET",
+				url: "http://localhost:3000/etherline/data"
+			}).done(function (data) {
+				console.log(data);
+			}).then(function (data) {
+				for (var i = 0; i < data.length; i++) {
+					var prettyApprovalArr = [];
+					data[i]["prettyApprovalArr"] = prettyApprovalArr;
+
+					if (data[i].cmg) {
+						data[i].prettyApprovalArr.push("UL CMG");
+					}
+					if (data[i].cmx) {
+						data[i].prettyApprovalArr.push("UL CMX");
+					}
+					if (data[i].pltc) {
+						data[i].prettyApprovalArr.push("UL PLTC");
+					}
+					if (data[i].cmr) {
+						data[i].prettyApprovalArr.push("UL CMR");
+					}
+					if (data[i].awm) {
+						data[i].prettyApprovalArr.push("UL AWM");
+					}
+					if (data[i].can_cmx) {
+						data[i].prettyApprovalArr.push("CAN CMX");
+					}
+					if (data[i].can_cmg) {
+						data[i].prettyApprovalArr.push("CAN CMG");
+					}
+					if (data[i].can_pltc) {
+						data[i].prettyApprovalArr.push("CAN PLTC");
+					}
+					if (data[i].can_awm) {
+						data[i].prettyApprovalArr.push("CAN AWM");
+					}
+				}
+				_this2.setState({ data: data });
+			});
+		}
+	}, {
+		key: 'stateContainer',
+		value: function stateContainer(selection) {
+			var _setState;
+
+			var accessKey = Object.keys(selection)[0];
+			this.setState((_setState = {}, _defineProperty(_setState, accessKey, selection[accessKey]), _defineProperty(_setState, 'searchPartNumber', null), _setState));
+		}
+	}, {
+		key: 'selectedProductsUpdater',
+		value: function selectedProductsUpdater(product) {
+			var data = this.state.data;
+			var selectedProducts = this.state.selectedProducts;
+			var loopSwitch = false;
+
+			for (var i = 0; i < selectedProducts.length; i++) {
+				if (selectedProducts[i].part_number === product) {
+					loopSwitch = true;
+					selectedProducts.splice(i, 1);
+					break;
+				}
+			}
+
+			if (loopSwitch !== true) {
+				for (var i = 0; i < data.length; i++) {
+					if (product === data[i].part_number) {
+						selectedProducts.push(data[i]);
+						break;
+					}
+				}
+			}
+
+			var selectedProductsArr = [];
+			for (var i = 0; i < selectedProducts.length; i++) {
+				selectedProductsArr.push(selectedProducts[i].part_number);
+			}
+
+			this.setState({
+				selectedProducts: selectedProducts,
+				selectedProductsArr: selectedProductsArr
+			});
+		}
+	}, {
+		key: 'searchPartNum',
+		value: function searchPartNum(partNum) {
+			this.setState({
+				catSelection: null,
+				protocolSelections: null,
+				applicationSelection: null,
+				approvalsSelection: [],
+				awgSelection: [],
+				jacketSelection: [],
+				searchPartNumber: partNum
+			});
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			return React.createElement(
+				'div',
+				null,
+				React.createElement(
+					'div',
+					{ className: 'form-group cat-list' },
+					React.createElement(
+						'div',
+						{ className: 'row' },
+						React.createElement(
+							'div',
+							{ className: 'col-xs-12 tool-header' },
+							React.createElement(
+								'h2',
+								null,
+								'ETHERLINE\xAE Cable Selector'
+							)
+						),
+						React.createElement(_FilterContainer2.default, {
+							catSelection: this.state.catSelection,
+							protocolSelections: this.state.protocolSelections,
+							applicationSelection: this.state.applicationSelection,
+							approvalsSelection: this.state.approvalsSelection,
+							awgSelection: this.state.awgSelection,
+							jacketSelection: this.state.jacketSelection,
+							stateContainer: this.stateContainer
+						}),
+						React.createElement(
+							'div',
+							{ className: 'col-sm-9 col-xs-12 grid-container' },
+							React.createElement(
+								'div',
+								{ id: 'nav-container-padding', className: 'col-xs-12' },
+								React.createElement(_SelectedProducts2.default, {
+									catSelection: this.state.catSelection,
+									selectedProducts: this.state.selectedProducts,
+									selectedProductsArr: this.state.selectedProductsArr,
+									selectedProductsUpdater: this.selectedProductsUpdater,
+									searchPartNum: this.searchPartNum
+								})
+							),
+							React.createElement(_ProductGrid2.default, {
+								data: this.state.data,
+								selectedProducts: this.state.selectedProducts,
+								selectedProductsArr: this.state.selectedProductsArr,
+								catSelection: this.state.catSelection,
+								protocolSelections: this.state.protocolSelections,
+								applicationSelection: this.state.applicationSelection,
+								approvalsSelection: this.state.approvalsSelection,
+								awgSelection: this.state.awgSelection,
+								jacketSelection: this.state.jacketSelection,
+								searchPartNumber: this.state.searchPartNumber,
+								selectedProductsUpdater: this.selectedProductsUpdater
+							})
+						)
+					)
+				)
+			);
+		}
+	}]);
+
+	return Etherline;
+}(React.Component);
+
+exports.default = Etherline;
+
+/***/ }),
+/* 341 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _CatFilter = __webpack_require__(342);
+
+var _CatFilter2 = _interopRequireDefault(_CatFilter);
+
+var _ProtocolFilter = __webpack_require__(343);
+
+var _ProtocolFilter2 = _interopRequireDefault(_ProtocolFilter);
+
+var _ApplicationFilter = __webpack_require__(344);
+
+var _ApplicationFilter2 = _interopRequireDefault(_ApplicationFilter);
+
+var _ApprovalsFilter = __webpack_require__(345);
+
+var _ApprovalsFilter2 = _interopRequireDefault(_ApprovalsFilter);
+
+var _AWGFilter = __webpack_require__(346);
+
+var _AWGFilter2 = _interopRequireDefault(_AWGFilter);
+
+var _JacketFilter = __webpack_require__(347);
+
+var _JacketFilter2 = _interopRequireDefault(_JacketFilter);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var FilterContainer = function (_React$Component) {
+	_inherits(FilterContainer, _React$Component);
+
+	function FilterContainer(props) {
+		_classCallCheck(this, FilterContainer);
+
+		var _this = _possibleConstructorReturn(this, (FilterContainer.__proto__ || Object.getPrototypeOf(FilterContainer)).call(this, props));
+
+		_this.state = {
+			collapsedState: false,
+			windowWidth: 768
+		};
+		_this.updateWindowDimensions = _this.updateWindowDimensions.bind(_this);
+		return _this;
+	}
+
+	_createClass(FilterContainer, [{
+		key: 'componentDidMount',
+		value: function componentDidMount() {
+			this.updateWindowDimensions();
+			window.addEventListener('resize', this.updateWindowDimensions);
+		}
+	}, {
+		key: 'updateWindowDimensions',
+		value: function updateWindowDimensions() {
+			if (this.state.windowWidth < 768) {
+				console.log("doesn't matter");
+			} else if (window.innerWidth < 768) {
+				console.log('ayyyyyy');
+				this.setState({ collapsedState: true, windowWidth: window.innerWidth });
+			}
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			return React.createElement(
+				'div',
+				{ className: 'col-xs-12 col-sm-3 filter-container' },
+				React.createElement(_CatFilter2.default, {
+					catSelection: this.props.catSelection,
+					stateContainer: this.props.stateContainer,
+					collapsedState: this.state.collapsedState
+				}),
+				React.createElement(_ProtocolFilter2.default, {
+					protocolSelections: this.props.protocolSelections,
+					stateContainer: this.props.stateContainer,
+					collapsedState: this.state.collapsedState
+				}),
+				React.createElement(_ApplicationFilter2.default, {
+					applicationSelection: this.props.applicationSelection,
+					stateContainer: this.props.stateContainer,
+					collapsedState: this.state.collapsedState
+				}),
+				React.createElement(_ApprovalsFilter2.default, {
+					approvalsSelection: this.props.approvalsSelection,
+					stateContainer: this.props.stateContainer,
+					collapsedState: this.state.collapsedState
+				}),
+				React.createElement(_AWGFilter2.default, {
+					awgSelection: this.props.awgSelection,
+					stateContainer: this.props.stateContainer,
+					collapsedState: this.state.collapsedState
+				}),
+				React.createElement(_JacketFilter2.default, {
+					jacketSelection: this.props.jacketSelection,
+					stateContainer: this.props.stateContainer,
+					collapsedState: this.state.collapsedState
+				})
+			);
+		}
+	}]);
+
+	return FilterContainer;
+}(React.Component);
+
+exports.default = FilterContainer;
+
+/***/ }),
+/* 342 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var catList = ['CAT.5', 'CAT.5e', 'CAT.6', 'CAT.6A', 'CAT.7'];
+
+var CatFilter = function (_React$Component) {
+	_inherits(CatFilter, _React$Component);
+
+	function CatFilter(props) {
+		_classCallCheck(this, CatFilter);
+
+		var _this = _possibleConstructorReturn(this, (CatFilter.__proto__ || Object.getPrototypeOf(CatFilter)).call(this, props));
+
+		_this.state = { collapsedState: _this.props.collapsedState };
+		_this.collapseDetection = "collapsed";
+		_this.handleOptionChange = _this.handleOptionChange.bind(_this);
+		_this.handleCollapseClick = _this.handleCollapseClick.bind(_this);
+		return _this;
+	}
+
+	_createClass(CatFilter, [{
+		key: 'componentWillReceiveProps',
+		value: function componentWillReceiveProps(nextProps) {
+			if (nextProps.collapsedState !== this.props.collapsedState) {
+				this.setState({ collapsedState: nextProps.collapsedState });
+			}
+		}
+	}, {
+		key: 'handleOptionChange',
+		value: function handleOptionChange(e) {
+			var catState = null;
+			if (e.target.value !== this.props.catSelection) {
+				catState = e.target.value;
+			}
+			console.log(catState);
+			this.props.stateContainer({ catSelection: catState });
+		}
+	}, {
+		key: 'handleCollapseClick',
+		value: function handleCollapseClick(e) {
+			var collapsedState = e.currentTarget.classList.contains(this.collapseDetection);
+			this.setState({ collapsedState: collapsedState });
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			var _this2 = this;
+
+			var catRadioItems = catList.map(function (data, i) {
+				return React.createElement(
+					'div',
+					{ key: i, className: _this2.props.catSelection === data ? "bus-type selected-attribute" : "bus-type" },
+					React.createElement(
+						'label',
+						null,
+						React.createElement('input', { type: 'radio', value: data,
+							checked: _this2.props.catSelection === 'option' + [i]
+						}),
+						' ',
+						data
+					)
+				);
+			});
+			return React.createElement(
+				'div',
+				{ className: 'filter-collapse-container' },
+				React.createElement(
+					'div',
+					{ 'data-toggle': 'collapse', 'data-target': '#cat-form', className: 'filter-header', onClick: this.handleCollapseClick },
+					React.createElement(
+						'span',
+						{ className: 'span-margin' },
+						'CAT Type'
+					),
+					' ',
+					React.createElement('span', { className: this.state.collapsedState == true ? "glyphicon glyphicon-plus pull-right glyphicon-margin" : "glyphicon glyphicon-minus pull-right glyphicon-margin" })
+				),
+				React.createElement(
+					'form',
+					{ id: 'cat-form', onChange: this.handleOptionChange, className: this.props.collapsedState == true ? "attribute-list collapse" : 'attribute-list collapse in' },
+					catRadioItems
+				)
+			);
+		}
+	}]);
+
+	return CatFilter;
+}(React.Component);
+
+exports.default = CatFilter;
+
+/***/ }),
+/* 343 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var protocolList = ['PROFINET', 'EtherNet/IP', 'EtherCAT'];
+
+var ProtocolFilter = function (_React$Component) {
+	_inherits(ProtocolFilter, _React$Component);
+
+	function ProtocolFilter(props) {
+		_classCallCheck(this, ProtocolFilter);
+
+		var _this = _possibleConstructorReturn(this, (ProtocolFilter.__proto__ || Object.getPrototypeOf(ProtocolFilter)).call(this, props));
+
+		_this.state = { collapsedState: _this.props.collapsedState };
+		_this.collapseDetection = "collapsed";
+		console.log("ProtocolFilter props: ", _this.props);
+		_this.handleOptionChange = _this.handleOptionChange.bind(_this);
+		_this.handleCollapseClick = _this.handleCollapseClick.bind(_this);
+		return _this;
+	}
+
+	_createClass(ProtocolFilter, [{
+		key: 'componentWillReceiveProps',
+		value: function componentWillReceiveProps(nextProps) {
+			if (nextProps.collapsedState !== this.props.collapsedState) {
+				this.setState({ collapsedState: nextProps.collapsedState });
+			}
+		}
+	}, {
+		key: 'handleOptionChange',
+		value: function handleOptionChange(e) {
+			var tempProtocolSelections = null;
+
+			if (e.target.value !== this.props.protocolSelections) {
+				tempProtocolSelections = e.target.value;
+			}
+
+			this.props.stateContainer({ protocolSelections: tempProtocolSelections });
+		}
+	}, {
+		key: 'handleCollapseClick',
+		value: function handleCollapseClick(e) {
+			var collapsedState = e.currentTarget.classList.contains(this.collapseDetection);
+			this.setState({ collapsedState: collapsedState });
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			var _this2 = this;
+
+			var protocolRadioItems = protocolList.map(function (data, i) {
+				return React.createElement(
+					'div',
+					{ key: i, className: _this2.props.protocolSelections === data ? "bus-type selected-attribute" : "bus-type" },
+					React.createElement(
+						'label',
+						null,
+						React.createElement('input', { type: 'radio', value: data,
+							checked: _this2.props.protocolSelections === 'option' + [i]
+						}),
+						' ',
+						data
+					)
+				);
+			});
+			return React.createElement(
+				'div',
+				{ className: 'filter-collapse-container' },
+				React.createElement(
+					'div',
+					{ 'data-toggle': 'collapse', 'data-target': '#protocol-form', className: 'filter-header', onClick: this.handleCollapseClick },
+					React.createElement(
+						'span',
+						{ className: 'span-margin' },
+						'Protocol'
+					),
+					' ',
+					React.createElement('span', { className: this.state.collapsedState == true ? "glyphicon glyphicon-plus pull-right glyphicon-margin" : "glyphicon glyphicon-minus pull-right glyphicon-margin" })
+				),
+				React.createElement(
+					'form',
+					{ id: 'protocol-form', onChange: this.handleOptionChange, className: this.props.collapsedState == true ? "attribute-list collapse" : 'attribute-list collapse in' },
+					protocolRadioItems
+				)
+			);
+		}
+	}]);
+
+	return ProtocolFilter;
+}(React.Component);
+
+exports.default = ProtocolFilter;
+
+/***/ }),
+/* 344 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var applicationList = ['Stationary', 'Flexible', 'Continuous Flex', 'Torsion'];
+
+var ApplicationFilter = function (_React$Component) {
+	_inherits(ApplicationFilter, _React$Component);
+
+	function ApplicationFilter(props) {
+		_classCallCheck(this, ApplicationFilter);
+
+		var _this = _possibleConstructorReturn(this, (ApplicationFilter.__proto__ || Object.getPrototypeOf(ApplicationFilter)).call(this, props));
+
+		_this.state = { collapsedState: _this.props.collapsedState };
+		_this.collapseDetection = "collapsed";
+		console.log("ApplicationFilter props: ", _this.props);
+		_this.handleOptionChange = _this.handleOptionChange.bind(_this);
+		_this.handleCollapseClick = _this.handleCollapseClick.bind(_this);
+		return _this;
+	}
+
+	_createClass(ApplicationFilter, [{
+		key: 'componentWillReceiveProps',
+		value: function componentWillReceiveProps(nextProps) {
+			if (nextProps.collapsedState !== this.props.collapsedState) {
+				this.setState({ collapsedState: nextProps.collapsedState });
+			}
+		}
+	}, {
+		key: 'handleOptionChange',
+		value: function handleOptionChange(e) {
+			var applicationState = null;
+			var word = 'application';
+			if (e.target.value !== this.props.applicationSelection) {
+				applicationState = e.target.value;
+			}
+			this.props.stateContainer({
+				applicationSelection: applicationState
+			});
+		}
+	}, {
+		key: 'handleCollapseClick',
+		value: function handleCollapseClick(e) {
+			var collapsedState = e.currentTarget.classList.contains(this.collapseDetection);
+			this.setState({ collapsedState: collapsedState });
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			var _this2 = this;
+
+			var applicationRadioItems = applicationList.map(function (data, i) {
+				return React.createElement(
+					'div',
+					{ key: i, className: _this2.props.applicationSelection === data ? "bus-type selected-attribute" : "bus-type" },
+					React.createElement(
+						'label',
+						null,
+						React.createElement('input', { type: 'radio', value: data,
+							checked: _this2.props.applicationSelection === 'option' + [i]
+						}),
+						' ',
+						data
+					)
+				);
+			});
+			return React.createElement(
+				'div',
+				{ className: 'filter-collapse-container' },
+				React.createElement(
+					'div',
+					{ 'data-toggle': 'collapse', 'data-target': '#application-form', className: 'filter-header', onClick: this.handleCollapseClick },
+					React.createElement(
+						'span',
+						{ className: 'span-margin' },
+						React.createElement(
+							'strong',
+							null,
+							'Application'
+						)
+					),
+					' ',
+					React.createElement('span', { className: this.state.collapsedState == true ? "glyphicon glyphicon-plus pull-right glyphicon-margin" : "glyphicon glyphicon-minus pull-right glyphicon-margin" })
+				),
+				React.createElement(
+					'form',
+					{ id: 'application-form', onChange: this.handleOptionChange, className: this.props.collapsedState == true ? "attribute-list collapse" : 'attribute-list collapse in' },
+					applicationRadioItems
+				)
+			);
+		}
+	}]);
+
+	return ApplicationFilter;
+}(React.Component);
+
+exports.default = ApplicationFilter;
+
+/***/ }),
+/* 345 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var approvalsList = ["UL AWM", "UL CMG", "UL CMX", "UL PLTC", "UL CMR", "CAN AWM", "CAN CMG", "CAN CMX", "CAN PLTC"];
+
+var ApprovalsFilter = function (_React$Component) {
+	_inherits(ApprovalsFilter, _React$Component);
+
+	function ApprovalsFilter(props) {
+		_classCallCheck(this, ApprovalsFilter);
+
+		var _this = _possibleConstructorReturn(this, (ApprovalsFilter.__proto__ || Object.getPrototypeOf(ApprovalsFilter)).call(this, props));
+
+		_this.state = { collapsedState: _this.props.collapsedState };
+		_this.collapseDetection = "collapsed";
+		console.log("ApprovalsFilter props: ", _this.props);
+		_this.handleOptionChange = _this.handleOptionChange.bind(_this);
+		_this.handleCollapseClick = _this.handleCollapseClick.bind(_this);
+		return _this;
+	}
+
+	_createClass(ApprovalsFilter, [{
+		key: "componentWillReceiveProps",
+		value: function componentWillReceiveProps(nextProps) {
+			if (nextProps.collapsedState !== this.props.collapsedState) {
+				this.setState({ collapsedState: nextProps.collapsedState });
+			}
+		}
+	}, {
+		key: "handleOptionChange",
+		value: function handleOptionChange(e) {
+			var tempApprovalSelections = this.props.approvalsSelection;
+
+			if (tempApprovalSelections.indexOf(e.target.value) < 0) {
+				tempApprovalSelections.push(e.target.value);
+			} else {
+				var index = tempApprovalSelections.indexOf(e.target.value);
+				tempApprovalSelections.splice(index, 1);
+			}
+
+			this.props.stateContainer({ approvalsSelection: tempApprovalSelections });
+		}
+	}, {
+		key: "handleCollapseClick",
+		value: function handleCollapseClick(e) {
+			var collapsedState = e.currentTarget.classList.contains(this.collapseDetection);
+			this.setState({ collapsedState: collapsedState });
+		}
+	}, {
+		key: "render",
+		value: function render() {
+			var _this2 = this;
+
+			var approvalRadioItems = approvalsList.map(function (data, i) {
+				return React.createElement(
+					"div",
+					{ key: i, className: _this2.props.approvalsSelection.indexOf(data) > -1 ? "bus-type selected-attribute" : "bus-type" },
+					React.createElement(
+						"label",
+						null,
+						React.createElement("input", { type: "radio", value: data,
+							checked: _this2.props.approvalsSelection === 'option' + [i]
+						}),
+						" ",
+						data
+					)
+				);
+			});
+			return React.createElement(
+				"div",
+				{ className: "filter-collapse-container" },
+				React.createElement(
+					"div",
+					{ "data-toggle": "collapse", "data-target": "#approval-form", className: "filter-header", onClick: this.handleCollapseClick },
+					React.createElement(
+						"span",
+						{ className: "span-margin" },
+						"Approvals"
+					),
+					" ",
+					React.createElement("span", { className: this.state.collapsedState == true ? "glyphicon glyphicon-plus pull-right glyphicon-margin" : "glyphicon glyphicon-minus pull-right glyphicon-margin" })
+				),
+				React.createElement(
+					"form",
+					{ id: "approval-form", onChange: this.handleOptionChange, className: this.props.collapsedState == true ? "attribute-list collapse" : 'attribute-list collapse in' },
+					approvalRadioItems
+				)
+			);
+		}
+	}]);
+
+	return ApprovalsFilter;
+}(React.Component);
+
+exports.default = ApprovalsFilter;
+
+/***/ }),
+/* 346 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var awgList = ["22 AWG", "22 AWG + 16 AWG/4c", "23 AWG", "24 AWG", "26 AWG"];
+
+var AWGFilter = function (_React$Component) {
+	_inherits(AWGFilter, _React$Component);
+
+	function AWGFilter(props) {
+		_classCallCheck(this, AWGFilter);
+
+		var _this = _possibleConstructorReturn(this, (AWGFilter.__proto__ || Object.getPrototypeOf(AWGFilter)).call(this, props));
+
+		_this.state = { collapsedState: _this.props.collapsedState };
+		_this.collapseDetection = "collapsed";
+		console.log("AWGFilter props: ", _this.props);
+		_this.handleOptionChange = _this.handleOptionChange.bind(_this);
+		_this.handleCollapseClick = _this.handleCollapseClick.bind(_this);
+		return _this;
+	}
+
+	_createClass(AWGFilter, [{
+		key: "componentWillReceiveProps",
+		value: function componentWillReceiveProps(nextProps) {
+			if (nextProps.collapsedState !== this.props.collapsedState) {
+				this.setState({ collapsedState: nextProps.collapsedState });
+			}
+		}
+	}, {
+		key: "handleOptionChange",
+		value: function handleOptionChange(e) {
+			var tempAwgSelection = this.props.awgSelection;
+			if (tempAwgSelection.indexOf(e.target.value) < 0) {
+				tempAwgSelection.push(e.target.value);
+			} else {
+				var index = tempAwgSelection.indexOf(e.target.value);
+				tempAwgSelection.splice(index, 1);
+			}
+			this.props.stateContainer({ awgSelection: tempAwgSelection });
+		}
+	}, {
+		key: "handleCollapseClick",
+		value: function handleCollapseClick(e) {
+			var collapsedState = e.currentTarget.classList.contains(this.collapseDetection);
+			this.setState({ collapsedState: collapsedState });
+		}
+	}, {
+		key: "render",
+		value: function render() {
+			var _this2 = this;
+
+			var awgRadioItems = awgList.map(function (data, i) {
+				return React.createElement(
+					"div",
+					{ key: i, className: _this2.props.awgSelection.indexOf(data) > -1 ? "bus-type selected-attribute" : "bus-type" },
+					React.createElement(
+						"label",
+						null,
+						React.createElement("input", { type: "radio", value: data,
+							checked: _this2.props.awgSelection === 'option' + [i]
+						}),
+						" ",
+						data
+					)
+				);
+			});
+			return React.createElement(
+				"div",
+				{ className: "filter-collapse-container" },
+				React.createElement(
+					"div",
+					{ "data-toggle": "collapse", "data-target": "#awg-form", className: "filter-header", onClick: this.handleCollapseClick },
+					React.createElement(
+						"span",
+						{ className: "span-margin" },
+						"AWG"
+					),
+					" ",
+					React.createElement("span", { className: this.state.collapsedState == true ? "glyphicon glyphicon-plus pull-right glyphicon-margin" : "glyphicon glyphicon-minus pull-right glyphicon-margin" })
+				),
+				React.createElement(
+					"form",
+					{ id: "awg-form", onChange: this.handleOptionChange, className: this.props.collapsedState == true ? "attribute-list collapse" : 'attribute-list collapse in' },
+					awgRadioItems
+				)
+			);
+		}
+	}]);
+
+	return AWGFilter;
+}(React.Component);
+
+exports.default = AWGFilter;
+
+/***/ }),
+/* 347 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var approvalsList = ['PUR', 'PVC', 'TPE', 'FRNC', 'PE', 'Halogen Free'];
+
+var JacketFilter = function (_React$Component) {
+	_inherits(JacketFilter, _React$Component);
+
+	function JacketFilter(props) {
+		_classCallCheck(this, JacketFilter);
+
+		var _this = _possibleConstructorReturn(this, (JacketFilter.__proto__ || Object.getPrototypeOf(JacketFilter)).call(this, props));
+
+		_this.state = { collapsedState: _this.props.collapsedState };
+		_this.collapseDetection = "collapsed";
+		console.log("JacketFilter props: ", _this.props);
+		_this.handleOptionChange = _this.handleOptionChange.bind(_this);
+		_this.handleCollapseClick = _this.handleCollapseClick.bind(_this);
+		return _this;
+	}
+
+	_createClass(JacketFilter, [{
+		key: 'componentWillReceiveProps',
+		value: function componentWillReceiveProps(nextProps) {
+			if (nextProps.collapsedState !== this.props.collapsedState) {
+				this.setState({ collapsedState: nextProps.collapsedState });
+			}
+		}
+	}, {
+		key: 'handleOptionChange',
+		value: function handleOptionChange(e) {
+			var tempJacketSelection = this.props.jacketSelection;
+
+			if (tempJacketSelection.indexOf(e.target.value) < 0) {
+				tempJacketSelection.push(e.target.value);
+			} else {
+				var index = tempJacketSelection.indexOf(e.target.value);
+				tempJacketSelection.splice(index, 1);
+			}
+
+			this.props.stateContainer({ jacketSelection: tempJacketSelection });
+		}
+	}, {
+		key: 'handleCollapseClick',
+		value: function handleCollapseClick(e) {
+			var collapsedState = e.currentTarget.classList.contains(this.collapseDetection);
+			this.setState({ collapsedState: collapsedState });
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			var _this2 = this;
+
+			var jacketRadioItems = approvalsList.map(function (data, i) {
+				return React.createElement(
+					'div',
+					{ key: i, className: _this2.props.jacketSelection.indexOf(data) > -1 ? "bus-type selected-attribute" : "bus-type" },
+					React.createElement(
+						'label',
+						null,
+						React.createElement('input', { type: 'radio', value: data,
+							checked: _this2.props.jacketSelection === 'option' + [i]
+						}),
+						' ',
+						data
+					)
+				);
+			});
+			return React.createElement(
+				'div',
+				{ className: 'filter-collapse-container' },
+				React.createElement(
+					'div',
+					{ 'data-toggle': 'collapse', 'data-target': '#jacket-form', className: 'filter-header', onClick: this.handleCollapseClick },
+					React.createElement(
+						'span',
+						{ className: 'span-margin' },
+						'Jacket'
+					),
+					' ',
+					React.createElement('span', { className: this.state.collapsedState == true ? "glyphicon glyphicon-plus pull-right glyphicon-margin" : "glyphicon glyphicon-minus pull-right glyphicon-margin" })
+				),
+				React.createElement(
+					'form',
+					{ id: 'jacket-form', onChange: this.handleOptionChange, className: this.props.collapsedState == true ? "attribute-list collapse" : 'attribute-list collapse in' },
+					jacketRadioItems
+				)
+			);
+		}
+	}]);
+
+	return JacketFilter;
+}(React.Component);
+
+exports.default = JacketFilter;
+
+/***/ }),
+/* 348 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _ReactTransitionGroup = ReactTransitionGroup,
+    CSSTransitionGroup = _ReactTransitionGroup.CSSTransitionGroup;
+
+var ProductGrid = function (_React$Component) {
+	_inherits(ProductGrid, _React$Component);
+
+	function ProductGrid(props) {
+		_classCallCheck(this, ProductGrid);
+
+		var _this = _possibleConstructorReturn(this, (ProductGrid.__proto__ || Object.getPrototypeOf(ProductGrid)).call(this, props));
+
+		_this.state = { searchPartNumber: null };
+		_this.getApprovals = _this.getApprovals.bind(_this);
+		_this.getCanApprovals = _this.getCanApprovals.bind(_this);
+		_this.handleOptionChange = _this.handleOptionChange.bind(_this);
+		return _this;
+	}
+
+	_createClass(ProductGrid, [{
+		key: "componentWillReceiveProps",
+		value: function componentWillReceiveProps(nextProps) {
+			if (nextProps.searchPartNumber == null) {
+				return;
+			} else {
+				this.setState({ searchPartNumber: nextProps.searchPartNumber });
+			}
+		}
+	}, {
+		key: "getApprovals",
+		value: function getApprovals(data) {
+			var approvalsArr = [];
+			var approvalsStr = "";
+
+			if (data.awm === true) {
+				approvalsArr.push("AWM");
+			}
+			if (data.pltc === true) {
+				approvalsArr.push("PLTC");
+			}
+			if (data.cmr === true) {
+				approvalsArr.push("CMR");
+			}
+			if (data.cmg === true) {
+				approvalsArr.push("CMG");
+			}
+			if (data.cmx === true) {
+				approvalsArr.push("CMX");
+			}
+
+			approvalsStr = approvalsArr.join(', ');
+			if (approvalsStr.length > 1) {
+				return approvalsStr;
+			} else {
+				return "n/a";
+			}
+		}
+	}, {
+		key: "getCanApprovals",
+		value: function getCanApprovals(data) {
+			var approvalsArr = [];
+			var approvalsStr = "";
+
+			if (data.can_awm === true) {
+				approvalsArr.push("AWM");
+			}
+			if (data.can_cmg === true) {
+				approvalsArr.push("CMG");
+			}
+			if (data.can_cmx === true) {
+				approvalsArr.push("CMX");
+			}
+			if (data.can_pltc === true) {
+				approvalsArr.push("PLTC");
+			}
+
+			approvalsStr = approvalsArr.join(', ');
+			if (approvalsStr.length > 1) {
+				return approvalsStr;
+			} else {
+				return "n/a";
+			}
+		}
+	}, {
+		key: "handleOptionChange",
+		value: function handleOptionChange(e) {
+			this.props.selectedProductsUpdater(e.target.value);
+		}
+	}, {
+		key: "render",
+		value: function render() {
+			var _this2 = this;
+
+			var nope = React.createElement(
+				"h1",
+				null,
+				"nopeee"
+			);
+			var rows = [];
+			this.props.data.map(function (product, i) {
+
+				if (_this2.props.searchPartNumber !== null) {
+					if (_this2.props.searchPartNumber === product.part_number) {
+						rows.push(React.createElement(
+							"li",
+							{ key: i, className: "col-md-3 col-sm-6 product-grid-list-item" },
+							React.createElement(
+								"label",
+								{ className: _this2.props.selectedProductsArr.indexOf(product.part_number) > -1 ? "active-selected-part button-label" : "button-label" },
+								React.createElement("input", { type: "checkbox", value: product.part_number, className: "product-checkbox" }),
+								React.createElement(
+									"ul",
+									{ className: "inner-list" },
+									React.createElement(
+										"li",
+										null,
+										React.createElement(
+											"strong",
+											null,
+											product.description
+										)
+									),
+									React.createElement(
+										"li",
+										null,
+										"Application: ",
+										product.application
+									),
+									React.createElement(
+										"li",
+										null,
+										"Jacket: ",
+										product.jacket
+									),
+									React.createElement(
+										"li",
+										null,
+										"UL: ",
+										_this2.getApprovals(product)
+									),
+									React.createElement(
+										"li",
+										null,
+										"Canada: ",
+										_this2.getCanApprovals(product)
+									),
+									React.createElement(
+										"li",
+										null,
+										"P/N: ",
+										React.createElement(
+											"a",
+											{ href: "#", target: "_blank" },
+											product.part_number
+										)
+									)
+								)
+							)
+						));
+						return;
+					}
+				}
+
+				if (product.category !== _this2.props.catSelection) {
+					return;
+				}
+
+				if (_this2.props.protocolSelections !== null) {
+					if (_this2.props.protocolSelections == "PROFINET" && product.profinet == true) {
+						console.log(product.profinet);
+					} else if (_this2.props.protocolSelections == "EtherNet/IP" && product.ethernet_ip == true) {
+						console.log(product.ethernet_ip);
+					} else if (_this2.props.protocolSelections == "EtherCAT" && product.ethercat == true) {
+						console.log(product.ethercat);
+					} else {
+						return;
+					}
+				}
+
+				if (_this2.props.applicationSelection !== null && product.application !== _this2.props.applicationSelection) {
+					return;
+				}
+
+				if (_this2.props.approvalsSelection !== null) {
+					for (var _i = 0; _i < _this2.props.approvalsSelection.length; _i++) {
+						if (product.prettyApprovalArr.indexOf(_this2.props.approvalsSelection[_i]) < 0) {
+							return;
+						}
+					}
+				}
+
+				// Need to add fast_connect column to database!!!!!!
+				/* if (this.props.fastConnectSelection !== null && product.fast_connect !== this.props.fastConnectSelection) {
+    	return;
+    } */
+
+				if (_this2.props.jacketSelection.length > 0) {
+					if (_this2.props.jacketSelection.indexOf(product.jacket) < 0) {
+						return;
+					}
+				}
+
+				/* var selectedSwitch = false;
+    for (let i = 0; i < this.props.selectedProducts; i++) {
+    	if (product.part_number === this.props.selectedProducts[i].part_number) {
+    		selectedSwitch = true;
+    	}
+    } */
+
+				rows.push(React.createElement(
+					"li",
+					{ key: i, className: "col-md-4 col-sm-6 product-grid-list-item" },
+					React.createElement(
+						"label",
+						{ className: _this2.props.selectedProductsArr.indexOf(product.part_number) > -1 ? "active-selected-part button-label" : "button-label" },
+						React.createElement("input", { type: "checkbox", value: product.part_number, className: "product-checkbox" }),
+						React.createElement(
+							"ul",
+							{ className: "inner-list" },
+							React.createElement(
+								"li",
+								null,
+								React.createElement(
+									"strong",
+									null,
+									product.description
+								)
+							),
+							React.createElement(
+								"li",
+								null,
+								"Application: ",
+								product.application
+							),
+							React.createElement(
+								"li",
+								null,
+								"Jacket: ",
+								product.jacket
+							),
+							React.createElement(
+								"li",
+								null,
+								"UL: ",
+								_this2.getApprovals(product)
+							),
+							React.createElement(
+								"li",
+								null,
+								"Canada: ",
+								_this2.getCanApprovals(product)
+							),
+							React.createElement(
+								"li",
+								null,
+								"P/N: ",
+								React.createElement(
+									"a",
+									{ href: product.link, target: "_blank" },
+									product.part_number
+								)
+							)
+						)
+					)
+				));
+			});
+			return React.createElement(
+				"div",
+				{ className: "col-xs-12 item-container" },
+				React.createElement(
+					"div",
+					{ className: "scroll-container" },
+					React.createElement(
+						"form",
+						{ onChange: this.handleOptionChange },
+						this.props.searchPartNumber !== null && rows.length < 1 ? nope : rows
+					)
+				)
+			);
+		}
+	}]);
+
+	return ProductGrid;
+}(React.Component);
+
+exports.default = ProductGrid;
+
+/***/ }),
+/* 349 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _ReactTransitionGroup = ReactTransitionGroup,
+    CSSTransitionGroup = _ReactTransitionGroup.CSSTransitionGroup;
+
+var SelectedProducts = function (_React$Component) {
+  _inherits(SelectedProducts, _React$Component);
+
+  function SelectedProducts(props) {
+    _classCallCheck(this, SelectedProducts);
+
+    var _this = _possibleConstructorReturn(this, (SelectedProducts.__proto__ || Object.getPrototypeOf(SelectedProducts)).call(this, props));
+
+    _this.state = {
+      company: '',
+      salutation: '',
+      fname: '',
+      lname: '',
+      country: '',
+      email: '',
+      phone: '',
+      comments: ''
+    };
+    _this.getApprovals = _this.getApprovals.bind(_this);
+    _this.getCanApprovals = _this.getCanApprovals.bind(_this);
+    _this.handleOptionChange = _this.handleOptionChange.bind(_this);
+    _this.handleSearchChange = _this.handleSearchChange.bind(_this);
+    _this.onFormSubmit = _this.onFormSubmit.bind(_this);
+    return _this;
+  }
+
+  _createClass(SelectedProducts, [{
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      console.log("SelectedProducts Props");
+      console.log(nextProps.selectedProducts);
+    }
+  }, {
+    key: 'getApprovals',
+    value: function getApprovals(data) {
+      var approvalsArr = [];
+      var approvalsStr = "";
+
+      if (data.awm === true) {
+        approvalsArr.push("AWM");
+      }
+      if (data.pltc === true) {
+        approvalsArr.push("PLTC");
+      }
+      if (data.cmr === true) {
+        approvalsArr.push("CMR");
+      }
+      if (data.cmg === true) {
+        approvalsArr.push("CMG");
+      }
+      if (data.cmx === true) {
+        approvalsArr.push("CMX");
+      }
+
+      approvalsStr = approvalsArr.join(', ');
+      if (approvalsStr.length > 1) {
+        return approvalsStr;
+      } else {
+        return "n/a";
+      }
+    }
+  }, {
+    key: 'getCanApprovals',
+    value: function getCanApprovals(data) {
+      var approvalsArr = [];
+      var approvalsStr = "";
+
+      if (data.can_awm === true) {
+        approvalsArr.push("AWM");
+      }
+      if (data.can_cmg === true) {
+        approvalsArr.push("CMG");
+      }
+      if (data.can_cmx === true) {
+        approvalsArr.push("CMX");
+      }
+      if (data.can_pltc === true) {
+        approvalsArr.push("PLTC");
+      }
+
+      approvalsStr = approvalsArr.join(', ');
+      if (approvalsStr.length > 1) {
+        return approvalsStr;
+      } else {
+        return "n/a";
+      }
     }
   }, {
     key: 'handleOptionChange',
     value: function handleOptionChange(e) {
-      this.setState({ selectedOption: e.target.value });
+      this.props.selectedProductsUpdater(e.target.value);
     }
   }, {
-    key: 'consoleLog',
-    value: function consoleLog() {
-      console.log(this.state);
+    key: 'handleSearchChange',
+    value: function handleSearchChange(e) {
+      e.preventDefault();
+      this.props.searchPartNum(e.target.partNumber.value);
+      document.getElementById('search-form-container').reset();
+    }
+  }, {
+    key: 'onFormSubmit',
+    value: function onFormSubmit(e) {
+      e.preventDefault();
+      /* Email form submit */
     }
   }, {
     key: 'render',
     value: function render() {
       var _this2 = this;
 
-      var busTypes = ['DeviceNet', 'PROFIBUS', 'CAN Bus', 'RS485, RS422', 'AS-Interface', 'Data Highway', 'INTERBUS', 'Genius', 'CC-Link', 'Fieldbus Foundation', 'SafetyBus'];
-      var busRadioItems = busTypes.map(function (data, i) {
+      var _state = this.state,
+          company = _state.company,
+          salutation = _state.salutation,
+          fname = _state.fname,
+          lname = _state.lname,
+          country = _state.country,
+          email = _state.email,
+          phone = _state.phone,
+          comments = _state.comments;
+
+      var modalRows = this.props.selectedProducts.map(function (product, i) {
         return React.createElement(
-          'div',
-          { key: i, className: 'radio' },
+          'li',
+          { key: i, className: _this2.props.selectedProductsArr.indexOf(product.part_number) > -1 ? "active-selected-part col-xs-12 col-sm-6 col-md-4 modal-grid-list-item" : "button-label col-xs-12 col-sm-6 col-md-4 modal-grid-list-item" },
           React.createElement(
             'label',
-            { className: _this2.state.selectedOption === data ? 'btn btn-default btn-block selected' : 'btn btn-default btn-block' },
-            React.createElement('input', { type: 'radio', value: data,
-              checked: _this2.state.selectedOption === 'option' + [i],
-              onChange: _this2.handleOptionChange
-            }),
-            ' ',
-            data
+            { className: 'button-label' },
+            React.createElement('input', { type: 'checkbox', value: product.part_number, className: 'product-checkbox' }),
+            React.createElement(
+              'ul',
+              { className: 'inner-list' },
+              React.createElement(
+                'li',
+                null,
+                React.createElement(
+                  'strong',
+                  null,
+                  product.description
+                )
+              ),
+              React.createElement(
+                'li',
+                null,
+                'Application: ',
+                product.application
+              ),
+              React.createElement(
+                'li',
+                null,
+                'Jacket: ',
+                product.jacket
+              ),
+              React.createElement(
+                'li',
+                null,
+                'UL: ',
+                _this2.getApprovals(product)
+              ),
+              React.createElement(
+                'li',
+                null,
+                'Canada: ',
+                _this2.getCanApprovals(product)
+              ),
+              React.createElement(
+                'li',
+                null,
+                'P/N: ',
+                React.createElement(
+                  'a',
+                  { href: '#', target: '_blank' },
+                  product.part_number
+                )
+              )
+            )
           )
         );
       });
@@ -10701,52 +12681,641 @@ var ProfiApp = function (_React$Component) {
         'div',
         null,
         React.createElement(
-          'h2',
-          null,
-          'Profibus Selector Tool'
-        ),
-        React.createElement(
-          'h4',
-          null,
-          'Choose Bus Type'
+          'nav',
+          { className: 'navbar navbar-default custom-nav' },
+          React.createElement(
+            'div',
+            { className: 'container-fluid no-padding-left' },
+            React.createElement(
+              'div',
+              { className: 'navbar-header ' },
+              React.createElement(
+                'button',
+                { type: 'button', className: 'navbar-toggle collapsed', 'data-toggle': 'collapse', 'data-target': '#bs-example-navbar-collapse-1', 'aria-expanded': 'false' },
+                React.createElement(
+                  'span',
+                  { className: 'sr-only' },
+                  'Toggle navigation'
+                ),
+                React.createElement('span', { className: 'icon-bar' }),
+                React.createElement('span', { className: 'icon-bar' }),
+                React.createElement('span', { className: 'icon-bar' })
+              )
+            ),
+            React.createElement(
+              'div',
+              { className: 'collapse no-padding-left navbar-collapse', id: 'bs-example-navbar-collapse-1' },
+              React.createElement(
+                'form',
+                { id: 'search-form-container', className: 'navbar-form navbar-left', onSubmit: this.handleSearchChange },
+                React.createElement(
+                  'div',
+                  { className: 'form-group' },
+                  React.createElement('input', { type: 'text', name: 'partNumber', className: 'form-control input-xs', placeholder: 'Search by Part Number' })
+                ),
+                React.createElement(
+                  'button',
+                  { type: 'submit', className: 'btn btn-default btn-xs pull-right' },
+                  'Search'
+                )
+              ),
+              React.createElement(
+                'div',
+                { className: 'nav navbar-nav col-sm-5 col-md-7 col-lg-8' },
+                React.createElement(
+                  'div',
+                  { className: 'cat-selection-header' },
+                  React.createElement(
+                    'h4',
+                    null,
+                    this.props.catSelection != null ? this.props.catSelection : ''
+                  )
+                )
+              ),
+              React.createElement(
+                'ul',
+                { className: 'nav navbar-nav navbar-right' },
+                React.createElement(
+                  'li',
+                  { id: 'modal-toggle-btn' },
+                  React.createElement(
+                    'a',
+                    { 'data-toggle': 'modal', 'data-target': '#myModal' },
+                    'RFQ ',
+                    React.createElement(
+                      'span',
+                      null,
+                      '(',
+                      this.props.selectedProducts.length,
+                      ')'
+                    )
+                  )
+                )
+              )
+            )
+          )
         ),
         React.createElement(
           'div',
-          { className: 'form-group cat-list' },
+          { className: 'modal fade', id: 'myModal', tabIndex: '-1', role: 'dialog', 'aria-labelledby': 'myModalLabel' },
           React.createElement(
-            'form',
-            { onChange: this.handleChange },
-            busRadioItems
+            'div',
+            { className: 'modal-dialog', role: 'document' },
+            React.createElement(
+              'div',
+              { className: 'modal-content' },
+              React.createElement(
+                'div',
+                { className: 'modal-header' },
+                React.createElement(
+                  'button',
+                  { type: 'button', className: 'close', 'data-dismiss': 'modal', 'aria-label': 'Close' },
+                  React.createElement(
+                    'span',
+                    { 'aria-hidden': 'true' },
+                    '\xD7'
+                  )
+                ),
+                React.createElement(
+                  'h4',
+                  { className: 'modal-title', id: 'myModalLabel' },
+                  'Selected Products'
+                )
+              ),
+              React.createElement(
+                'div',
+                { className: 'modal-body' },
+                React.createElement(
+                  'div',
+                  { className: 'row' },
+                  React.createElement(
+                    'div',
+                    { className: 'col-xs-12 col-sm-10 col-sm-offset-1' },
+                    React.createElement(
+                      'form',
+                      { onSubmit: this.onFormSubmit },
+                      React.createElement(
+                        'fieldset',
+                        null,
+                        React.createElement(
+                          'legend',
+                          null,
+                          'CONTACT INFORMATION'
+                        ),
+                        React.createElement(
+                          'table',
+                          { id: 'form-table' },
+                          React.createElement(
+                            'tbody',
+                            null,
+                            React.createElement(
+                              'tr',
+                              null,
+                              React.createElement(
+                                'td',
+                                { className: 'form-label' },
+                                React.createElement(
+                                  'span',
+                                  null,
+                                  'Company'
+                                )
+                              ),
+                              React.createElement(
+                                'td',
+                                null,
+                                React.createElement('input', { name: 'company', type: 'text', value: 'Lapp USA' })
+                              )
+                            ),
+                            React.createElement(
+                              'tr',
+                              null,
+                              React.createElement(
+                                'td',
+                                { className: 'form-label' },
+                                React.createElement(
+                                  'span',
+                                  null,
+                                  'Salutation'
+                                )
+                              ),
+                              React.createElement(
+                                'td',
+                                null,
+                                React.createElement(
+                                  'select',
+                                  { name: 'salutation', id: 'salutation-dropdown' },
+                                  React.createElement(
+                                    'option',
+                                    { value: 'Mr.' },
+                                    'Mr.'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'Mrs.' },
+                                    'Mrs.'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'Ms.' },
+                                    'Ms.'
+                                  )
+                                )
+                              )
+                            ),
+                            React.createElement(
+                              'tr',
+                              null,
+                              React.createElement(
+                                'td',
+                                { className: 'form-label' },
+                                React.createElement(
+                                  'span',
+                                  null,
+                                  'First Name'
+                                )
+                              ),
+                              React.createElement(
+                                'td',
+                                null,
+                                React.createElement('input', { name: 'fname', type: 'text', value: 'Angelo' })
+                              )
+                            ),
+                            React.createElement(
+                              'tr',
+                              null,
+                              React.createElement(
+                                'td',
+                                { className: 'form-label' },
+                                React.createElement(
+                                  'span',
+                                  null,
+                                  'Last Name'
+                                )
+                              ),
+                              React.createElement(
+                                'td',
+                                null,
+                                React.createElement('input', { name: 'lname', type: 'text', value: 'Bovino' })
+                              )
+                            ),
+                            React.createElement(
+                              'tr',
+                              null,
+                              React.createElement(
+                                'td',
+                                { className: 'form-label' },
+                                React.createElement(
+                                  'span',
+                                  null,
+                                  'Country'
+                                )
+                              ),
+                              React.createElement(
+                                'td',
+                                null,
+                                React.createElement(
+                                  'select',
+                                  { name: 'country', id: 'country-dropdown' },
+                                  React.createElement(
+                                    'option',
+                                    { value: 'USA' },
+                                    'USA'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'Canada' },
+                                    'Canada'
+                                  )
+                                )
+                              )
+                            ),
+                            React.createElement(
+                              'tr',
+                              null,
+                              React.createElement(
+                                'td',
+                                { className: 'form-label' },
+                                React.createElement(
+                                  'span',
+                                  null,
+                                  'Email'
+                                )
+                              ),
+                              React.createElement(
+                                'td',
+                                null,
+                                React.createElement('input', { name: 'email', type: 'text', value: 'angelo.bovino@outlook.com' })
+                              )
+                            ),
+                            React.createElement(
+                              'tr',
+                              null,
+                              React.createElement(
+                                'td',
+                                { className: 'form-label' },
+                                React.createElement(
+                                  'span',
+                                  null,
+                                  'Phone'
+                                )
+                              ),
+                              React.createElement(
+                                'td',
+                                null,
+                                React.createElement('input', { name: 'phone', type: 'text', value: '973-992-2257' })
+                              )
+                            ),
+                            React.createElement(
+                              'tr',
+                              null,
+                              React.createElement(
+                                'td',
+                                { className: 'form-label' },
+                                React.createElement(
+                                  'span',
+                                  null,
+                                  'Comments'
+                                )
+                              ),
+                              React.createElement(
+                                'td',
+                                null,
+                                React.createElement('textarea', { name: 'comments', cols: '21', rows: '3', value: 'Here\'s my comments' })
+                              )
+                            )
+                          )
+                        )
+                      ),
+                      React.createElement(
+                        'div',
+                        { className: 'col-xs-12' },
+                        React.createElement(
+                          'button',
+                          { type: 'button', className: 'btn btn-default', 'data-dismiss': 'modal' },
+                          'Close'
+                        ),
+                        React.createElement(
+                          'button',
+                          { type: 'submit', className: 'btn btn-primary pull-right' },
+                          'Submit'
+                        )
+                      )
+                    )
+                  )
+                )
+              ),
+              React.createElement(
+                'div',
+                { className: 'modal-body modal-grid' },
+                React.createElement(
+                  'div',
+                  { className: 'row' },
+                  React.createElement(
+                    'form',
+                    { onChange: this.handleOptionChange },
+                    modalRows
+                  )
+                )
+              ),
+              React.createElement(
+                'div',
+                { className: 'modal-footer' },
+                React.createElement(
+                  'button',
+                  { type: 'button', className: 'btn btn-default', 'data-dismiss': 'modal' },
+                  'Close'
+                ),
+                React.createElement(
+                  'button',
+                  { type: 'button', className: 'btn btn-primary' },
+                  'Save changes'
+                )
+              )
+            )
           )
-        ),
-        React.createElement(
-          Link,
-          { to: {
-              pathname: "/profibus/results",
-              state: this.state
-            } },
-          React.createElement(
-            'button',
-            { className: 'btn btn-primary' },
-            'Next'
-          )
-        ),
-        React.createElement(
-          'button',
-          { className: 'btn btn-primary', onClick: this.consoleLog },
-          'Console Log'
         )
       );
     }
   }]);
 
-  return ProfiApp;
+  return SelectedProducts;
 }(React.Component);
 
-exports.default = ProfiApp;
+exports.default = SelectedProducts;
 
 /***/ }),
-/* 340 */
+/* 350 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _ReactTransitionGroup = ReactTransitionGroup,
+    CSSTransitionGroup = _ReactTransitionGroup.CSSTransitionGroup;
+
+var SelectedProductGrid = function (_React$Component) {
+	_inherits(SelectedProductGrid, _React$Component);
+
+	function SelectedProductGrid(props) {
+		_classCallCheck(this, SelectedProductGrid);
+
+		var _this = _possibleConstructorReturn(this, (SelectedProductGrid.__proto__ || Object.getPrototypeOf(SelectedProductGrid)).call(this, props));
+
+		_this.getApprovals = _this.getApprovals.bind(_this);
+		_this.getCanApprovals = _this.getCanApprovals.bind(_this);
+		_this.handleOptionChange = _this.handleOptionChange.bind(_this);
+		return _this;
+	}
+
+	_createClass(SelectedProductGrid, [{
+		key: "componentWillReceiveProps",
+		value: function componentWillReceiveProps(nextProps) {
+			console.log('asdfasdf');
+		}
+	}, {
+		key: "getApprovals",
+		value: function getApprovals(data) {
+			var approvalsArr = [];
+			var approvalsStr = "";
+
+			if (data.awm === true) {
+				approvalsArr.push("AWM");
+			}
+			if (data.pltc === true) {
+				approvalsArr.push("PLTC");
+			}
+			if (data.cmr === true) {
+				approvalsArr.push("CMR");
+			}
+			if (data.cmg === true) {
+				approvalsArr.push("CMG");
+			}
+			if (data.cmx === true) {
+				approvalsArr.push("CMX");
+			}
+
+			approvalsStr = approvalsArr.join(', ');
+			if (approvalsStr.length > 1) {
+				return approvalsStr;
+			} else {
+				return "n/a";
+			}
+		}
+	}, {
+		key: "getCanApprovals",
+		value: function getCanApprovals(data) {
+			var approvalsArr = [];
+			var approvalsStr = "";
+
+			if (data.can_awm === true) {
+				approvalsArr.push("AWM");
+			}
+			if (data.can_cmg === true) {
+				approvalsArr.push("CMG");
+			}
+			if (data.can_cmx === true) {
+				approvalsArr.push("CMX");
+			}
+			if (data.can_pltc === true) {
+				approvalsArr.push("PLTC");
+			}
+
+			approvalsStr = approvalsArr.join(', ');
+			if (approvalsStr.length > 1) {
+				return approvalsStr;
+			} else {
+				return "n/a";
+			}
+		}
+	}, {
+		key: "handleOptionChange",
+		value: function handleOptionChange(e) {
+			this.props.selectedProductsUpdater(e.target.value);
+		}
+	}, {
+		key: "render",
+		value: function render() {
+			var _this2 = this;
+
+			var rows = [];
+			this.props.selectedProducts.map(function (product, i) {
+				if (product.category !== _this2.props.catSelection) {
+					return;
+				}
+
+				if (_this2.props.protocolSelections !== null) {
+					if (_this2.props.protocolSelections == "PROFINET" && product.profinet == true) {
+						console.log(product.profinet);
+					} else if (_this2.props.protocolSelections == "EtherNet/IP" && product.ethernet_ip == true) {
+						console.log(product.ethernet_ip);
+					} else if (_this2.props.protocolSelections == "EtherCAT" && product.ethercat == true) {
+						console.log(product.ethercat);
+					} else {
+						return;
+					}
+				}
+
+				if (_this2.props.applicationSelection !== null && product.application !== _this2.props.applicationSelection) {
+					return;
+				}
+
+				if (_this2.props.approvalsSelection !== null) {
+					for (var _i = 0; _i < _this2.props.approvalsSelection.length; _i++) {
+						if (product.prettyApprovalArr.indexOf(_this2.props.approvalsSelection[_i]) < 0) {
+							return;
+						}
+					}
+				}
+
+				// Need to add fast_connect column to database!!!!!!
+				/* if (this.props.fastConnectSelection !== null && product.fast_connect !== this.props.fastConnectSelection) {
+    	return;
+    } */
+
+				if (_this2.props.jacketSelection.length > 0) {
+					if (_this2.props.jacketSelection.indexOf(product.jacket) < 0) {
+						return;
+					}
+				}
+
+				/* var selectedSwitch = false;
+    for (let i = 0; i < this.props.selectedProducts; i++) {
+    	if (product.part_number === this.props.selectedProducts[i].part_number) {
+    		selectedSwitch = true;
+    	}
+    } */
+
+				rows.push(React.createElement(
+					"li",
+					{ key: i, className: "col-xs-6 product-grid-list-item" },
+					React.createElement(
+						"label",
+						{ className: _this2.props.selectedProductsArr.indexOf(product.part_number) > -1 ? "active-selected-part button-label" : "button-label" },
+						React.createElement("input", { type: "checkbox", value: product.part_number, className: "product-checkbox" }),
+						React.createElement(
+							"ul",
+							{ className: "inner-list" },
+							React.createElement(
+								"li",
+								null,
+								React.createElement(
+									"h6",
+									null,
+									React.createElement(
+										"strong",
+										null,
+										product.description
+									)
+								)
+							),
+							React.createElement(
+								"li",
+								null,
+								React.createElement(
+									"strong",
+									null,
+									"Application:"
+								),
+								" ",
+								product.application
+							),
+							React.createElement(
+								"li",
+								null,
+								React.createElement(
+									"strong",
+									null,
+									"Jacket:"
+								),
+								" ",
+								product.jacket
+							),
+							React.createElement(
+								"li",
+								null,
+								React.createElement(
+									"strong",
+									null,
+									"UL: "
+								),
+								_this2.getApprovals(product)
+							),
+							React.createElement(
+								"li",
+								null,
+								React.createElement(
+									"strong",
+									null,
+									"Canada: "
+								),
+								_this2.getCanApprovals(product)
+							),
+							React.createElement(
+								"li",
+								null,
+								React.createElement(
+									"strong",
+									null,
+									"P/N: ",
+									React.createElement(
+										"a",
+										{ href: "#" },
+										product.part_number
+									)
+								)
+							)
+						)
+					)
+				));
+			});
+			return React.createElement(
+				"div",
+				null,
+				React.createElement(
+					"div",
+					{ className: "col-xs-12" },
+					React.createElement(
+						"h3",
+						{ className: "product-grid-header" },
+						React.createElement(
+							"strong",
+							null,
+							"Selected Products"
+						)
+					)
+				),
+				React.createElement(
+					"div",
+					{ className: "col-xs-12 scroll-container" },
+					React.createElement(
+						"form",
+						{ onChange: this.handleOptionChange },
+						rows
+					)
+				)
+			);
+		}
+	}]);
+
+	return SelectedProductGrid;
+}(React.Component);
+
+exports.default = SelectedProductGrid;
+
+/***/ }),
+/* 351 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13025,7 +15594,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
       return 1 === arguments.length ? this.off(a, "**") : this.off(b, a || "**", c);
     } }), r.holdReady = function (a) {
     a ? r.readyWait++ : r.ready(!0);
-  }, r.isArray = Array.isArray, r.parseJSON = JSON.parse, r.nodeName = B, "function" == "function" && __webpack_require__(342) && !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
+  }, r.isArray = Array.isArray, r.parseJSON = JSON.parse, r.nodeName = B, "function" == "function" && __webpack_require__(353) && !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
     return r;
   }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));var Vb = a.jQuery,
@@ -13033,10 +15602,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     return a.$ === r && (a.$ = Wb), b && a.jQuery === r && (a.jQuery = Vb), r;
   }, b || (a.jQuery = a.$ = r), r;
 });
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(341)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(352)(module)))
 
 /***/ }),
-/* 341 */
+/* 352 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -13064,7 +15633,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 342 */
+/* 353 */
 /***/ (function(module, exports) {
 
 /* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {/* globals __webpack_amd_options__ */
