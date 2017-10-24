@@ -61,12 +61,8 @@ body {
   border-bottom: 0 !important;
 }
 
-a {
-	color: inherit !important;
-}
-
 a > span {
-	color: rgba(0, 0, 0, 0.5)
+	 color: rgba(0, 0, 0, 0.5) 
 }
 
 .active-tab > a {
@@ -131,6 +127,15 @@ a > span {
   padding-right: 23px;
 }
 
+#nav-glyph-btn {
+  padding: 10px !important;
+}
+
+.glyph-cart-resize {
+  font-size: 26px;
+  top: 5px !important;
+}
+
 .product-grid-header {
   margin: 0 0 5px 0;
 }
@@ -187,6 +192,10 @@ h2, h3, h4 {
 
 .filter-collapse-container {
 	border-bottom: 2px solid rgba(128, 126, 126, 0.25)
+}
+
+.hide-fast-connect {
+	display: none;
 }
 
 /* .attribute-container {
@@ -276,6 +285,7 @@ legend {
   margin-left: 10px;
   border-bottom: 0 !important;
   padding: 0 4px !important;
+  width: initial !important;
 }
 
 fieldset {
@@ -295,6 +305,16 @@ td {
   padding: 0 25px !important;
 }
 
+.modal-grid-list {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.modal-grid-list > .button-label {
+  border: 0 !important;
+}
+
 .modal-grid-list-item {
   list-style-type: none;
   max-height: 128px;
@@ -302,7 +322,25 @@ td {
   /* margin-bottom: 10px; */
   /* padding: 2px 2px !important; */
   padding: 0 !important;
-} 
+}
+
+.glyph-remove {
+  font-size: 25px;
+  position: absolute !important;
+  bottom: 10px;
+  left: 5px;
+  top: 83px !important;
+  color: rgba(197, 0, 0, .25);
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition: .5s;
+}
+
+.glyph-remove:hover {
+  color: rgba(197, 0, 0, .9);
+}
 
 .col-centered {
 	margin: 0 auto;
@@ -353,6 +391,12 @@ td {
   box-shadow: inset 0 0 45px 5px rgba(255, 136, 39, 1);
 	border: 1px solid rgba(255, 136, 39, 1) !important;
 }
+
+.modal-selected-part {
+  box-shadow: inset 0 0 45px 5px rgba(255, 136, 39, 0.66);
+	border: 1px solid rgba(255, 136, 39, 0.66) !important;
+}
+
 
 .product-img {
   display: block;
@@ -458,7 +502,15 @@ input[type=checkbox], input[type=radio] {
 	}
 	.cable-selector {
 		padding-top: 3px;
-	}
+  }
+  .glyph-remove {
+    font-size: 25px;
+    position: absolute !important;
+    bottom: 10px;
+    left: 5px;
+    top: 83px !important;
+    color: rgba(197, 0, 0, .85);
+  }
 }
 
 /* Extra Small Devices, Phones */ 
