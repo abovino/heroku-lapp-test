@@ -3748,11 +3748,11 @@ var _Unitronic = __webpack_require__(333);
 
 var _Unitronic2 = _interopRequireDefault(_Unitronic);
 
-var _Etherline = __webpack_require__(343);
+var _Etherline = __webpack_require__(345);
 
 var _Etherline2 = _interopRequireDefault(_Etherline);
 
-var _jquery321Min = __webpack_require__(354);
+var _jquery321Min = __webpack_require__(357);
 
 var _jquery321Min2 = _interopRequireDefault(_jquery321Min);
 
@@ -9314,11 +9314,11 @@ var _FilterContainer = __webpack_require__(334);
 
 var _FilterContainer2 = _interopRequireDefault(_FilterContainer);
 
-var _SelectedProducts = __webpack_require__(340);
+var _SelectedProducts = __webpack_require__(342);
 
 var _SelectedProducts2 = _interopRequireDefault(_SelectedProducts);
 
-var _ProductGridContainer = __webpack_require__(341);
+var _ProductGridContainer = __webpack_require__(343);
 
 var _ProductGridContainer2 = _interopRequireDefault(_ProductGridContainer);
 
@@ -9353,7 +9353,7 @@ var Unitronic = function (_React$Component) {
 						searchPartNumber: null
 				};
 				_this.stateContainer = _this.stateContainer.bind(_this);
-				_this.clearFilters = _this.clearFilters.bind(_this);
+				_this.clearStateFilters = _this.clearStateFilters.bind(_this);
 				_this.selectedProductsUpdater = _this.selectedProductsUpdater.bind(_this);
 				_this.searchPartNum = _this.searchPartNum.bind(_this);
 				return _this;
@@ -9411,13 +9411,21 @@ var Unitronic = function (_React$Component) {
 				value: function stateContainer(selections) {
 						var _setState;
 
+						console.log("SELECTIONS", selections);
 						var accessKey = Object.keys(selections)[0];
 						this.setState((_setState = {}, _defineProperty(_setState, accessKey, selections[accessKey]), _defineProperty(_setState, 'searchPartNumber', null), _setState));
 				}
 		}, {
-				key: 'clearFilters',
-				value: function clearFilters(selections) {
-						console.log(selections);
+				key: 'clearStateFilters',
+				value: function clearStateFilters() {
+						this.setState({
+								busSelection: null,
+								applicationSelection: null,
+								approvalsSelection: [],
+								fastConnectSelection: null,
+								jacketSelection: [],
+								halogenFree: null
+						});
 				}
 		}, {
 				key: 'selectedProductsUpdater',
@@ -9462,6 +9470,7 @@ var Unitronic = function (_React$Component) {
 								approvalsSelection: [],
 								fastConnectSelection: null,
 								jacketSelection: [],
+								halogenFree: null,
 								searchPartNumber: partNum
 						});
 				}
@@ -9501,7 +9510,8 @@ var Unitronic = function (_React$Component) {
 														fastConnectSelection: this.state.fastConnectSelection,
 														jacketSelection: this.state.jacketSelection,
 														stateContainer: this.stateContainer,
-														clearFilters: this.clearFilters
+														clearStateFilters: this.clearStateFilters,
+														searchPartNumber: this.state.searchPartNumber
 												}),
 												React.createElement(
 														'div',
@@ -9527,6 +9537,7 @@ var Unitronic = function (_React$Component) {
 																fastConnectSelection: this.state.fastConnectSelection,
 																jacketSelection: this.state.jacketSelection,
 																halogenFree: this.state.halogenFree,
+																clearStateFilters: this.clearStateFilters,
 																searchPartNumber: this.state.searchPartNumber,
 																selectedProductsUpdater: this.selectedProductsUpdater
 														})
@@ -9555,31 +9566,31 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _ActiveFilters = __webpack_require__(359);
+var _ActiveFilters = __webpack_require__(335);
 
 var _ActiveFilters2 = _interopRequireDefault(_ActiveFilters);
 
-var _BusFilter = __webpack_require__(335);
+var _BusFilter = __webpack_require__(336);
 
 var _BusFilter2 = _interopRequireDefault(_BusFilter);
 
-var _ApplicationFilter = __webpack_require__(336);
+var _ApplicationFilter = __webpack_require__(337);
 
 var _ApplicationFilter2 = _interopRequireDefault(_ApplicationFilter);
 
-var _ApprovalsFilter = __webpack_require__(337);
+var _ApprovalsFilter = __webpack_require__(338);
 
 var _ApprovalsFilter2 = _interopRequireDefault(_ApprovalsFilter);
 
-var _FastConnectFilter = __webpack_require__(338);
+var _FastConnectFilter = __webpack_require__(339);
 
 var _FastConnectFilter2 = _interopRequireDefault(_FastConnectFilter);
 
-var _JacketFilter = __webpack_require__(339);
+var _JacketFilter = __webpack_require__(340);
 
 var _JacketFilter2 = _interopRequireDefault(_JacketFilter);
 
-var _HalogenFreeFilter = __webpack_require__(357);
+var _HalogenFreeFilter = __webpack_require__(341);
 
 var _HalogenFreeFilter2 = _interopRequireDefault(_HalogenFreeFilter);
 
@@ -9601,9 +9612,11 @@ var FilterContainer = function (_React$Component) {
 
     _this.state = {
       collapsedState: false,
-      windowWidth: 768
+      windowWidth: 768,
+      displayFilters: false
     };
     _this.updateWindowDimensions = _this.updateWindowDimensions.bind(_this);
+    _this.toggleMobileFilterDisplay = _this.toggleMobileFilterDisplay.bind(_this);
     return _this;
   }
 
@@ -9624,53 +9637,72 @@ var FilterContainer = function (_React$Component) {
       }
     }
   }, {
+    key: 'toggleMobileFilterDisplay',
+    value: function toggleMobileFilterDisplay(e) {
+      e.preventDefault();
+      var displayFilters = false;
+      if (this.state.displayFilters === false) {
+        displayFilters = true;
+      }
+      this.setState({ displayFilters: displayFilters });
+    }
+  }, {
     key: 'render',
     value: function render() {
       return React.createElement(
         'div',
-        { className: 'col-xs-12 col-sm-3 filter-container' },
-        React.createElement(_ActiveFilters2.default, {
-          busSelection: this.props.busSelection,
-          fastConnectSelection: this.props.fastConnectSelection,
-          applicationSelection: this.props.applicationSelection,
-          approvalsSelection: this.props.approvalsSelection,
-          jacketSelection: this.props.jacketSelection,
-          halogenFree: this.props.halogenFree,
-          stateContainer: this.props.stateContainer,
-          collapsedState: this.state.collapsedState
-        }),
-        React.createElement(_BusFilter2.default, {
-          busSelection: this.props.busSelection,
-          stateContainer: this.props.stateContainer,
-          collapsedState: this.state.collapsedState
-        }),
-        React.createElement(_FastConnectFilter2.default, {
-          fastConnectSelection: this.props.fastConnectSelection,
-          hideFastConnect: this.props.hideFastConnect,
-          busSelection: this.props.busSelection,
-          stateContainer: this.props.stateContainer,
-          collapsedState: this.state.collapsedState
-        }),
-        React.createElement(_ApplicationFilter2.default, {
-          applicationSelection: this.props.applicationSelection,
-          stateContainer: this.props.stateContainer,
-          collapsedState: this.state.collapsedState
-        }),
-        React.createElement(_ApprovalsFilter2.default, {
-          approvalsSelection: this.props.approvalsSelection,
-          stateContainer: this.props.stateContainer,
-          collapsedState: this.state.collapsedState
-        }),
-        React.createElement(_JacketFilter2.default, {
-          jacketSelection: this.props.jacketSelection,
-          stateContainer: this.props.stateContainer,
-          collapsedState: this.state.collapsedState
-        }),
-        React.createElement(_HalogenFreeFilter2.default, {
-          halogenFree: this.props.halogenFree,
-          stateContainer: this.props.stateContainer,
-          collapsedState: this.state.collapsedState
-        })
+        null,
+        React.createElement(
+          'button',
+          { onClick: this.toggleMobileFilterDisplay, className: 'btn btn-default btn-xs filter-toggle-btn' },
+          'Filter by'
+        ),
+        React.createElement(
+          'div',
+          { className: this.state.displayFilters === false ? "col-xs-12 col-sm-3 filter-container" : "col-xs-12 col-sm-3 filter-container mobile-filter" },
+          React.createElement(_ActiveFilters2.default, {
+            busSelection: this.props.busSelection,
+            fastConnectSelection: this.props.fastConnectSelection,
+            applicationSelection: this.props.applicationSelection,
+            approvalsSelection: this.props.approvalsSelection,
+            jacketSelection: this.props.jacketSelection,
+            halogenFree: this.props.halogenFree,
+            stateContainer: this.props.stateContainer,
+            collapsedState: this.state.collapsedState
+          }),
+          React.createElement(_BusFilter2.default, {
+            busSelection: this.props.busSelection,
+            stateContainer: this.props.stateContainer,
+            collapsedState: this.state.collapsedState
+          }),
+          React.createElement(_FastConnectFilter2.default, {
+            fastConnectSelection: this.props.fastConnectSelection,
+            searchPartNumber: this.props.searchPartNumber,
+            busSelection: this.props.busSelection,
+            stateContainer: this.props.stateContainer,
+            collapsedState: this.state.collapsedState
+          }),
+          React.createElement(_ApplicationFilter2.default, {
+            applicationSelection: this.props.applicationSelection,
+            stateContainer: this.props.stateContainer,
+            collapsedState: this.state.collapsedState
+          }),
+          React.createElement(_ApprovalsFilter2.default, {
+            approvalsSelection: this.props.approvalsSelection,
+            stateContainer: this.props.stateContainer,
+            collapsedState: this.state.collapsedState
+          }),
+          React.createElement(_JacketFilter2.default, {
+            jacketSelection: this.props.jacketSelection,
+            stateContainer: this.props.stateContainer,
+            collapsedState: this.state.collapsedState
+          }),
+          React.createElement(_HalogenFreeFilter2.default, {
+            halogenFree: this.props.halogenFree,
+            stateContainer: this.props.stateContainer,
+            collapsedState: this.state.collapsedState
+          })
+        )
       );
     }
   }]);
@@ -9682,6 +9714,96 @@ exports.default = FilterContainer;
 
 /***/ }),
 /* 335 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ActiveFilter = function (_React$Component) {
+  _inherits(ActiveFilter, _React$Component);
+
+  function ActiveFilter(props) {
+    _classCallCheck(this, ActiveFilter);
+
+    var _this = _possibleConstructorReturn(this, (ActiveFilter.__proto__ || Object.getPrototypeOf(ActiveFilter)).call(this, props));
+
+    _this.state = {
+      collapsedState: _this.props.collapsedState,
+      propsArr: []
+    };
+    _this.collapseDetection = "collapsed";
+    _this.handleOptionChange = _this.handleOptionChange.bind(_this);
+    _this.handleCollapseClick = _this.handleCollapseClick.bind(_this);
+    return _this;
+  }
+
+  _createClass(ActiveFilter, [{
+    key: "componentWillReceiveProps",
+    value: function componentWillReceiveProps(nextProps) {
+      /* let propsArr = [];
+      for (var key in nextProps) {
+        if (nextProps.hasOwnProperty(key)) {
+          console.log(key + " -> " + nextProps[key]);
+          if(nextProps[key] !== null && key !== "stateContainer" && key !== "collapsedState") {
+            propsArr.push(nextProps[key]);
+          }
+        }
+      }
+      console.log("MAH PROPS: ", propsArr);
+      if (nextProps.collapsedState !== this.props.collapsedState) {
+      this.setState({ collapsedState: nextProps.collapsedState });
+      } */
+    }
+  }, {
+    key: "handleOptionChange",
+    value: function handleOptionChange(e) {
+      var busState = null;
+      if (e.target.value !== this.props.busSelection) {
+        busState = e.target.value;
+      }
+      this.props.stateContainer({ busSelection: busState });
+    }
+  }, {
+    key: "handleCollapseClick",
+    value: function handleCollapseClick(e) {
+      var collapsedState = e.currentTarget.classList.contains(this.collapseDetection);
+      this.setState({ collapsedState: collapsedState });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      /* const activeFilterList = this.props.map.map((data, i) =>
+         <div key={i} className={this.props.busSelection === data ? "bus-type selected-attribute":"bus-type"}>
+           <label>
+             <input type="radio" value={data}
+             checked={this.props.busSelection === 'option' + [i]}
+             /> {data}
+           </label>
+         </div>
+       )  */
+      return React.createElement("div", null);
+    }
+  }]);
+
+  return ActiveFilter;
+}(React.Component);
+
+exports.default = ActiveFilter;
+
+/***/ }),
+/* 336 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9746,7 +9868,7 @@ var BusFilter = function (_React$Component) {
       var busRadioItems = busList.map(function (data, i) {
         return React.createElement(
           'div',
-          { key: i, className: _this2.props.busSelection === data ? "bus-type selected-attribute" : "bus-type" },
+          { key: i, className: _this2.props.busSelection === data ? "bus-type selected-attribute col-xs-6 col-sm-12" : "bus-type col-xs-6 col-sm-12" },
           React.createElement(
             'label',
             null,
@@ -9787,7 +9909,7 @@ var BusFilter = function (_React$Component) {
 exports.default = BusFilter;
 
 /***/ }),
-/* 336 */
+/* 337 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9852,7 +9974,7 @@ var ApplicationFilter = function (_React$Component) {
       var applicationRadioItems = applicationList.map(function (data, i) {
         return React.createElement(
           'div',
-          { key: i, className: _this2.props.applicationSelection === data ? "bus-type selected-attribute" : "bus-type" },
+          { key: i, className: _this2.props.applicationSelection === data ? "bus-type selected-attribute col-xs-6 col-sm-12" : "bus-type col-xs-6 col-sm-12" },
           React.createElement(
             'label',
             null,
@@ -9893,7 +10015,7 @@ var ApplicationFilter = function (_React$Component) {
 exports.default = ApplicationFilter;
 
 /***/ }),
-/* 337 */
+/* 338 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9964,7 +10086,7 @@ var ApprovalsFilter = function (_React$Component) {
 			var approvalRadioItems = approvalsList.map(function (data, i) {
 				return React.createElement(
 					"div",
-					{ key: i, className: _this2.props.approvalsSelection.indexOf(data) > -1 ? "bus-type selected-attribute" : "bus-type" },
+					{ key: i, className: _this2.props.approvalsSelection.indexOf(data) > -1 ? "bus-type selected-attribute col-xs-6 col-sm-12" : "bus-type col-xs-6 col-sm-12" },
 					React.createElement(
 						"label",
 						null,
@@ -10005,7 +10127,7 @@ var ApprovalsFilter = function (_React$Component) {
 exports.default = ApprovalsFilter;
 
 /***/ }),
-/* 338 */
+/* 339 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10050,7 +10172,8 @@ var FastConnectFilter = function (_React$Component) {
       if (nextProps.busSelection === "PROFIBUS DP") {
         hideDetection = false;
       }
-      if (this.fastConnectHide === false && nextProps.busSelection !== "PROFIBUS DP") {
+      if (nextProps.searchPartNumber == null && this.fastConnectHide === false && nextProps.busSelection !== "PROFIBUS DP") {
+        console.log("TRUEEEEEE");
         this.props.stateContainer({ fastConnectSelection: null });
       }
       this.fastConnectHide = hideDetection;
@@ -10095,7 +10218,7 @@ var FastConnectFilter = function (_React$Component) {
       });
       return React.createElement(
         "div",
-        { className: this.fastConnectHide === true ? "filter-collapse-container hide-fast-connect" : "filter-collapse-container" },
+        { className: this.fastConnectHide === true ? "filter-collapse-container fast-connect" : "filter-collapse-container fast-connect hide-fast-connect" },
         React.createElement(
           "div",
           { "data-toggle": "collapse", "data-target": "#fast-connect-form", className: "filter-header", onClick: this.handleCollapseClick },
@@ -10122,7 +10245,7 @@ var FastConnectFilter = function (_React$Component) {
 exports.default = FastConnectFilter;
 
 /***/ }),
-/* 339 */
+/* 340 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10192,7 +10315,7 @@ var JacketFilter = function (_React$Component) {
       var jacketRadioItems = jacketList.map(function (data, i) {
         return React.createElement(
           'div',
-          { key: i, className: _this2.props.jacketSelection.indexOf(data) > -1 ? "bus-type selected-attribute" : "bus-type" },
+          { key: i, className: _this2.props.jacketSelection.indexOf(data) > -1 ? "bus-type selected-attribute col-xs-6 col-sm-12" : "bus-type col-xs-6 col-sm-12" },
           React.createElement(
             'label',
             null,
@@ -10233,7 +10356,113 @@ var JacketFilter = function (_React$Component) {
 exports.default = JacketFilter;
 
 /***/ }),
-/* 340 */
+/* 341 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var halogenFreeList = ['Yes'];
+
+var HalogenFreeFilter = function (_React$Component) {
+	_inherits(HalogenFreeFilter, _React$Component);
+
+	function HalogenFreeFilter(props) {
+		_classCallCheck(this, HalogenFreeFilter);
+
+		var _this = _possibleConstructorReturn(this, (HalogenFreeFilter.__proto__ || Object.getPrototypeOf(HalogenFreeFilter)).call(this, props));
+
+		_this.state = { collapsedState: _this.props.collapsedState };
+		_this.collapseDetection = "collapsed";
+		_this.handleOptionChange = _this.handleOptionChange.bind(_this);
+		_this.handleCollapseClick = _this.handleCollapseClick.bind(_this);
+		return _this;
+	}
+
+	_createClass(HalogenFreeFilter, [{
+		key: "componentWillReceiveProps",
+		value: function componentWillReceiveProps(nextProps) {
+			if (nextProps.collapsedState !== this.props.collapsedState) {
+				this.setState({ collapsedState: nextProps.collapsedState });
+			}
+		}
+	}, {
+		key: "handleOptionChange",
+		value: function handleOptionChange(e) {
+			var halogenFreeChoice = null;
+			if (e.target.value !== this.props.halogenFree) {
+				halogenFreeChoice = "Yes";
+			}
+			this.props.stateContainer({ halogenFree: halogenFreeChoice });
+		}
+	}, {
+		key: "handleCollapseClick",
+		value: function handleCollapseClick(e) {
+			var collapsedState = e.currentTarget.classList.contains(this.collapseDetection);
+			this.setState({ collapsedState: collapsedState });
+		}
+	}, {
+		key: "render",
+		value: function render() {
+			var _this2 = this;
+
+			var halogenFreeRadioItems = halogenFreeList.map(function (data, i) {
+				return React.createElement(
+					"div",
+					{ key: i, className: _this2.props.halogenFree === "Yes" ? "bus-type selected-attribute" : "bus-type" },
+					React.createElement(
+						"label",
+						null,
+						React.createElement("input", { type: "radio", value: data,
+							checked: _this2.props.halogenFree === 'option' + [i]
+						}),
+						" ",
+						data
+					)
+				);
+			});
+			return React.createElement(
+				"div",
+				{ className: "filter-collapse-container" },
+				React.createElement(
+					"div",
+					{ "data-toggle": "collapse", "data-target": "#halogen-free-form", className: "filter-header", onClick: this.handleCollapseClick },
+					React.createElement(
+						"span",
+						{ className: "span-margin" },
+						"Halogen Free"
+					),
+					" ",
+					React.createElement("span", { className: this.state.collapsedState == true ? "glyphicon glyphicon-plus pull-right glyphicon-margin" : "glyphicon glyphicon-minus pull-right glyphicon-margin" })
+				),
+				React.createElement(
+					"form",
+					{ id: "halogen-free-form", onChange: this.handleOptionChange, className: this.props.collapsedState == true ? "attribute-list collapse" : 'attribute-list collapse in' },
+					halogenFreeRadioItems
+				)
+			);
+		}
+	}]);
+
+	return HalogenFreeFilter;
+}(React.Component);
+
+exports.default = HalogenFreeFilter;
+
+/***/ }),
+/* 342 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10791,7 +11020,7 @@ var SelectedProducts = function (_React$Component) {
 exports.default = SelectedProducts;
 
 /***/ }),
-/* 341 */
+/* 343 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10807,7 +11036,7 @@ var _App = __webpack_require__(125);
 
 var _App2 = _interopRequireDefault(_App);
 
-var _ProductItem = __webpack_require__(342);
+var _ProductItem = __webpack_require__(344);
 
 var _ProductItem2 = _interopRequireDefault(_ProductItem);
 
@@ -10818,9 +11047,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var _ReactTransitionGroup = ReactTransitionGroup,
-    CSSTransitionGroup = _ReactTransitionGroup.CSSTransitionGroup;
 
 var ProductGridContainer = function (_React$Component) {
   _inherits(ProductGridContainer, _React$Component);
@@ -10834,6 +11060,7 @@ var ProductGridContainer = function (_React$Component) {
     _this.getApprovals = _this.getApprovals.bind(_this);
     _this.getCanApprovals = _this.getCanApprovals.bind(_this);
     _this.handleOptionChange = _this.handleOptionChange.bind(_this);
+    _this.clearFilters = _this.clearFilters.bind(_this);
     return _this;
   }
 
@@ -10904,15 +11131,85 @@ var ProductGridContainer = function (_React$Component) {
       this.props.selectedProductsUpdater(e.target.value);
     }
   }, {
+    key: 'clearFilters',
+    value: function clearFilters(e) {
+      e.preventDefault();
+      console.log('click');
+      this.props.clearStateFilters(e);
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _this2 = this;
 
       var nope = React.createElement(
-        'h1',
-        null,
-        'nopeee'
+        'div',
+        { className: 'col-xs-12 text-center no-results-msg' },
+        React.createElement(
+          'div',
+          { className: 'jumbotron custom-jumbotron' },
+          React.createElement(
+            'h4',
+            null,
+            'Select a'
+          ),
+          React.createElement(
+            'h4',
+            null,
+            'Bus type to begin'
+          )
+        )
       );
+
+      if (this.props.searchPartNumber !== null) {
+        nope = React.createElement(
+          'div',
+          { className: 'col-xs-12 text-center no-results-msg' },
+          React.createElement(
+            'div',
+            { className: 'jumbotron custom-jumbotron' },
+            React.createElement(
+              'h4',
+              null,
+              'We couldn\'t find any matches for part# "',
+              this.props.searchPartNumber,
+              '"'
+            )
+          )
+        );
+      } else if (this.props.searchPartNumber == null && this.props.busSelection !== null) {
+        nope = React.createElement(
+          'div',
+          { className: 'col-xs-12 text-center no-results-msg' },
+          React.createElement(
+            'div',
+            { className: 'jumbotron custom-jumbotron' },
+            React.createElement(
+              'h4',
+              null,
+              'Sorry, no results found'
+            ),
+            React.createElement(
+              'h5',
+              null,
+              'Please adjust your filters and try again'
+            ),
+            React.createElement(
+              'h6',
+              null,
+              React.createElement(
+                'i',
+                null,
+                React.createElement(
+                  'a',
+                  { onClick: this.clearFilters, href: '#' },
+                  'Clear filters'
+                )
+              )
+            )
+          )
+        );
+      }
       var rows = [];
       this.props.data.map(function (product, i) {
 
@@ -11075,7 +11372,7 @@ var ProductGridContainer = function (_React$Component) {
           React.createElement(
             'form',
             { onChange: this.handleOptionChange },
-            this.props.searchPartNumber !== null && rows.length < 1 ? nope : rows
+            rows.length < 1 ? nope : rows
           )
         )
       );
@@ -11088,7 +11385,7 @@ var ProductGridContainer = function (_React$Component) {
 exports.default = ProductGridContainer;
 
 /***/ }),
-/* 342 */
+/* 344 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11270,7 +11567,7 @@ var ProductItem = function (_React$Component) {
 exports.default = ProductItem;
 
 /***/ }),
-/* 343 */
+/* 345 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11282,19 +11579,19 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _FilterContainer = __webpack_require__(344);
+var _FilterContainer = __webpack_require__(346);
 
 var _FilterContainer2 = _interopRequireDefault(_FilterContainer);
 
-var _ProductGrid = __webpack_require__(351);
+var _ProductGrid = __webpack_require__(354);
 
 var _ProductGrid2 = _interopRequireDefault(_ProductGrid);
 
-var _SelectedProducts = __webpack_require__(352);
+var _SelectedProducts = __webpack_require__(355);
 
 var _SelectedProducts2 = _interopRequireDefault(_SelectedProducts);
 
-var _SelectedProductGrid = __webpack_require__(353);
+var _SelectedProductGrid = __webpack_require__(356);
 
 var _SelectedProductGrid2 = _interopRequireDefault(_SelectedProductGrid);
 
@@ -11332,6 +11629,7 @@ var Etherline = function (_React$Component) {
 		_this.stateContainer = _this.stateContainer.bind(_this);
 		_this.selectedProductsUpdater = _this.selectedProductsUpdater.bind(_this);
 		_this.searchPartNum = _this.searchPartNum.bind(_this);
+		_this.clearStateFilters = _this.clearStateFilters.bind(_this);
 		return _this;
 	}
 
@@ -11391,6 +11689,19 @@ var Etherline = function (_React$Component) {
 
 			var accessKey = Object.keys(selection)[0];
 			this.setState((_setState = {}, _defineProperty(_setState, accessKey, selection[accessKey]), _defineProperty(_setState, 'searchPartNumber', null), _setState));
+		}
+	}, {
+		key: 'clearStateFilters',
+		value: function clearStateFilters() {
+			this.setState({
+				catSelection: null,
+				protocolSelections: null,
+				applicationSelection: null,
+				approvalsSelection: [],
+				awgSelection: [],
+				jacketSelection: [],
+				halogenFree: null
+			});
 		}
 	}, {
 		key: 'selectedProductsUpdater',
@@ -11474,7 +11785,8 @@ var Etherline = function (_React$Component) {
 							awgSelection: this.state.awgSelection,
 							jacketSelection: this.state.jacketSelection,
 							halogenFree: this.state.halogenFree,
-							stateContainer: this.stateContainer
+							stateContainer: this.stateContainer,
+							clearStateFilters: this.clearStateFilters
 						}),
 						React.createElement(
 							'div',
@@ -11500,6 +11812,8 @@ var Etherline = function (_React$Component) {
 								approvalsSelection: this.state.approvalsSelection,
 								awgSelection: this.state.awgSelection,
 								jacketSelection: this.state.jacketSelection,
+								halogenFree: this.state.halogenFree,
+								clearStateFilters: this.clearStateFilters,
 								searchPartNumber: this.state.searchPartNumber,
 								selectedProductsUpdater: this.selectedProductsUpdater
 							})
@@ -11516,43 +11830,43 @@ var Etherline = function (_React$Component) {
 exports.default = Etherline;
 
 /***/ }),
-/* 344 */
+/* 346 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+  value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _CatFilter = __webpack_require__(345);
+var _CatFilter = __webpack_require__(347);
 
 var _CatFilter2 = _interopRequireDefault(_CatFilter);
 
-var _ProtocolFilter = __webpack_require__(346);
+var _ProtocolFilter = __webpack_require__(348);
 
 var _ProtocolFilter2 = _interopRequireDefault(_ProtocolFilter);
 
-var _ApplicationFilter = __webpack_require__(347);
+var _ApplicationFilter = __webpack_require__(349);
 
 var _ApplicationFilter2 = _interopRequireDefault(_ApplicationFilter);
 
-var _ApprovalsFilter = __webpack_require__(348);
+var _ApprovalsFilter = __webpack_require__(350);
 
 var _ApprovalsFilter2 = _interopRequireDefault(_ApprovalsFilter);
 
-var _AWGFilter = __webpack_require__(349);
+var _AWGFilter = __webpack_require__(351);
 
 var _AWGFilter2 = _interopRequireDefault(_AWGFilter);
 
-var _JacketFilter = __webpack_require__(350);
+var _JacketFilter = __webpack_require__(352);
 
 var _JacketFilter2 = _interopRequireDefault(_JacketFilter);
 
-var _HalogenFreeFilter = __webpack_require__(358);
+var _HalogenFreeFilter = __webpack_require__(353);
 
 var _HalogenFreeFilter2 = _interopRequireDefault(_HalogenFreeFilter);
 
@@ -11565,89 +11879,110 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var FilterContainer = function (_React$Component) {
-	_inherits(FilterContainer, _React$Component);
+  _inherits(FilterContainer, _React$Component);
 
-	function FilterContainer(props) {
-		_classCallCheck(this, FilterContainer);
+  function FilterContainer(props) {
+    _classCallCheck(this, FilterContainer);
 
-		var _this = _possibleConstructorReturn(this, (FilterContainer.__proto__ || Object.getPrototypeOf(FilterContainer)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (FilterContainer.__proto__ || Object.getPrototypeOf(FilterContainer)).call(this, props));
 
-		_this.state = {
-			collapsedState: false,
-			windowWidth: 768
-		};
-		_this.updateWindowDimensions = _this.updateWindowDimensions.bind(_this);
-		return _this;
-	}
+    _this.state = {
+      collapsedState: false,
+      windowWidth: 768,
+      displayFilters: false
+    };
+    _this.updateWindowDimensions = _this.updateWindowDimensions.bind(_this);
+    _this.toggleMobileFilterDisplay = _this.toggleMobileFilterDisplay.bind(_this);
+    return _this;
+  }
 
-	_createClass(FilterContainer, [{
-		key: 'componentDidMount',
-		value: function componentDidMount() {
-			this.updateWindowDimensions();
-			window.addEventListener('resize', this.updateWindowDimensions);
-		}
-	}, {
-		key: 'updateWindowDimensions',
-		value: function updateWindowDimensions() {
-			if (this.state.windowWidth < 768) {
-				console.log("doesn't matter");
-			} else if (window.innerWidth < 768) {
-				console.log('ayyyyyy');
-				this.setState({ collapsedState: true, windowWidth: window.innerWidth });
-			}
-		}
-	}, {
-		key: 'render',
-		value: function render() {
-			return React.createElement(
-				'div',
-				{ className: 'col-xs-12 col-sm-3 filter-container' },
-				React.createElement(_CatFilter2.default, {
-					catSelection: this.props.catSelection,
-					stateContainer: this.props.stateContainer,
-					collapsedState: this.state.collapsedState
-				}),
-				React.createElement(_ProtocolFilter2.default, {
-					protocolSelections: this.props.protocolSelections,
-					stateContainer: this.props.stateContainer,
-					collapsedState: this.state.collapsedState
-				}),
-				React.createElement(_ApplicationFilter2.default, {
-					applicationSelection: this.props.applicationSelection,
-					stateContainer: this.props.stateContainer,
-					collapsedState: this.state.collapsedState
-				}),
-				React.createElement(_ApprovalsFilter2.default, {
-					approvalsSelection: this.props.approvalsSelection,
-					stateContainer: this.props.stateContainer,
-					collapsedState: this.state.collapsedState
-				}),
-				React.createElement(_AWGFilter2.default, {
-					awgSelection: this.props.awgSelection,
-					stateContainer: this.props.stateContainer,
-					collapsedState: this.state.collapsedState
-				}),
-				React.createElement(_JacketFilter2.default, {
-					jacketSelection: this.props.jacketSelection,
-					stateContainer: this.props.stateContainer,
-					collapsedState: this.state.collapsedState
-				}),
-				React.createElement(_HalogenFreeFilter2.default, {
-					halogenFree: this.props.halogenFree,
-					stateContainer: this.props.stateContainer,
-					collapsedState: this.state.collapsedState
-				})
-			);
-		}
-	}]);
+  _createClass(FilterContainer, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.updateWindowDimensions();
+      window.addEventListener('resize', this.updateWindowDimensions);
+    }
+  }, {
+    key: 'updateWindowDimensions',
+    value: function updateWindowDimensions() {
+      if (this.state.windowWidth < 768) {
+        console.log("doesn't matter");
+      } else if (window.innerWidth < 768) {
+        console.log('ayyyyyy');
+        this.setState({ collapsedState: true, windowWidth: window.innerWidth });
+      }
+    }
+  }, {
+    key: 'toggleMobileFilterDisplay',
+    value: function toggleMobileFilterDisplay(e) {
+      e.preventDefault();
+      var displayFilters = false;
+      if (this.state.displayFilters === false) {
+        displayFilters = true;
+      }
+      this.setState({ displayFilters: displayFilters });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return React.createElement(
+        'div',
+        null,
+        React.createElement(
+          'button',
+          { onClick: this.toggleMobileFilterDisplay, className: 'btn btn-default btn-xs filter-toggle-btn' },
+          'Filter by'
+        ),
+        React.createElement(
+          'div',
+          { className: this.state.displayFilters === false ? "col-xs-12 col-sm-3 filter-container" : "col-xs-12 col-sm-3 filter-container mobile-filter" },
+          React.createElement(_CatFilter2.default, {
+            catSelection: this.props.catSelection,
+            stateContainer: this.props.stateContainer,
+            collapsedState: this.state.collapsedState
+          }),
+          React.createElement(_ProtocolFilter2.default, {
+            protocolSelections: this.props.protocolSelections,
+            stateContainer: this.props.stateContainer,
+            collapsedState: this.state.collapsedState
+          }),
+          React.createElement(_ApplicationFilter2.default, {
+            applicationSelection: this.props.applicationSelection,
+            stateContainer: this.props.stateContainer,
+            collapsedState: this.state.collapsedState
+          }),
+          React.createElement(_ApprovalsFilter2.default, {
+            approvalsSelection: this.props.approvalsSelection,
+            stateContainer: this.props.stateContainer,
+            collapsedState: this.state.collapsedState
+          }),
+          React.createElement(_AWGFilter2.default, {
+            awgSelection: this.props.awgSelection,
+            stateContainer: this.props.stateContainer,
+            collapsedState: this.state.collapsedState
+          }),
+          React.createElement(_JacketFilter2.default, {
+            jacketSelection: this.props.jacketSelection,
+            stateContainer: this.props.stateContainer,
+            collapsedState: this.state.collapsedState
+          }),
+          React.createElement(_HalogenFreeFilter2.default, {
+            halogenFree: this.props.halogenFree,
+            stateContainer: this.props.stateContainer,
+            collapsedState: this.state.collapsedState
+          })
+        )
+      );
+    }
+  }]);
 
-	return FilterContainer;
+  return FilterContainer;
 }(React.Component);
 
 exports.default = FilterContainer;
 
 /***/ }),
-/* 345 */
+/* 347 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11713,7 +12048,7 @@ var CatFilter = function (_React$Component) {
 			var catRadioItems = catList.map(function (data, i) {
 				return React.createElement(
 					'div',
-					{ key: i, className: _this2.props.catSelection === data ? "bus-type selected-attribute" : "bus-type" },
+					{ key: i, className: _this2.props.catSelection === data ? "bus-type selected-attribute col-xs-6 col-sm-12" : "bus-type col-xs-6 col-sm-12" },
 					React.createElement(
 						'label',
 						null,
@@ -11754,7 +12089,7 @@ var CatFilter = function (_React$Component) {
 exports.default = CatFilter;
 
 /***/ }),
-/* 346 */
+/* 348 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11822,7 +12157,7 @@ var ProtocolFilter = function (_React$Component) {
 			var protocolRadioItems = protocolList.map(function (data, i) {
 				return React.createElement(
 					'div',
-					{ key: i, className: _this2.props.protocolSelections === data ? "bus-type selected-attribute" : "bus-type" },
+					{ key: i, className: _this2.props.protocolSelections === data ? "bus-type selected-attribute col-xs-6 col-sm-12" : "bus-type col-xs-6 col-sm-12" },
 					React.createElement(
 						'label',
 						null,
@@ -11863,7 +12198,7 @@ var ProtocolFilter = function (_React$Component) {
 exports.default = ProtocolFilter;
 
 /***/ }),
-/* 347 */
+/* 349 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11932,7 +12267,7 @@ var ApplicationFilter = function (_React$Component) {
 			var applicationRadioItems = applicationList.map(function (data, i) {
 				return React.createElement(
 					'div',
-					{ key: i, className: _this2.props.applicationSelection === data ? "bus-type selected-attribute" : "bus-type" },
+					{ key: i, className: _this2.props.applicationSelection === data ? "bus-type selected-attribute col-xs-6 col-sm-12" : "bus-type col-xs-6 col-sm-12" },
 					React.createElement(
 						'label',
 						null,
@@ -11977,7 +12312,7 @@ var ApplicationFilter = function (_React$Component) {
 exports.default = ApplicationFilter;
 
 /***/ }),
-/* 348 */
+/* 350 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12048,7 +12383,7 @@ var ApprovalsFilter = function (_React$Component) {
 			var approvalRadioItems = approvalsList.map(function (data, i) {
 				return React.createElement(
 					"div",
-					{ key: i, className: _this2.props.approvalsSelection.indexOf(data) > -1 ? "bus-type selected-attribute" : "bus-type" },
+					{ key: i, className: _this2.props.approvalsSelection.indexOf(data) > -1 ? "bus-type selected-attribute  col-xs-6 col-sm-12" : "bus-type  col-xs-6 col-sm-12" },
 					React.createElement(
 						"label",
 						null,
@@ -12089,7 +12424,7 @@ var ApprovalsFilter = function (_React$Component) {
 exports.default = ApprovalsFilter;
 
 /***/ }),
-/* 349 */
+/* 351 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12107,7 +12442,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var awgList = ["22 AWG", "22 AWG + 16 AWG/4c", "23 AWG", "24 AWG", "26 AWG"];
+var awgList = ["22 AWG", "23 AWG", "24 AWG", "26 AWG", "22 AWG + 16 AWG/4c"];
 
 var AWGFilter = function (_React$Component) {
 	_inherits(AWGFilter, _React$Component);
@@ -12142,6 +12477,7 @@ var AWGFilter = function (_React$Component) {
 				var index = tempAwgSelection.indexOf(e.target.value);
 				tempAwgSelection.splice(index, 1);
 			}
+			console.log("AWG SELECTION: ", tempAwgSelection);
 			this.props.stateContainer({ awgSelection: tempAwgSelection });
 		}
 	}, {
@@ -12158,7 +12494,7 @@ var AWGFilter = function (_React$Component) {
 			var awgRadioItems = awgList.map(function (data, i) {
 				return React.createElement(
 					"div",
-					{ key: i, className: _this2.props.awgSelection.indexOf(data) > -1 ? "bus-type selected-attribute" : "bus-type" },
+					{ key: i, className: _this2.props.awgSelection.indexOf(data) > -1 ? "bus-type selected-attribute col-xs-6 col-sm-12" : "bus-type col-xs-6 col-sm-12" },
 					React.createElement(
 						"label",
 						null,
@@ -12199,7 +12535,7 @@ var AWGFilter = function (_React$Component) {
 exports.default = AWGFilter;
 
 /***/ }),
-/* 350 */
+/* 352 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12270,7 +12606,7 @@ var JacketFilter = function (_React$Component) {
 			var jacketRadioItems = approvalsList.map(function (data, i) {
 				return React.createElement(
 					'div',
-					{ key: i, className: _this2.props.jacketSelection.indexOf(data) > -1 ? "bus-type selected-attribute" : "bus-type" },
+					{ key: i, className: _this2.props.jacketSelection.indexOf(data) > -1 ? "bus-type selected-attribute col-xs-6 col-sm-12" : "bus-type col-xs-6 col-sm-12" },
 					React.createElement(
 						'label',
 						null,
@@ -12311,7 +12647,7 @@ var JacketFilter = function (_React$Component) {
 exports.default = JacketFilter;
 
 /***/ }),
-/* 351 */
+/* 353 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12329,294 +12665,477 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var _ReactTransitionGroup = ReactTransitionGroup,
-    CSSTransitionGroup = _ReactTransitionGroup.CSSTransitionGroup;
+var halogenFreeList = ['Yes'];
 
-var ProductGrid = function (_React$Component) {
-	_inherits(ProductGrid, _React$Component);
+var HalogenFreeFilter = function (_React$Component) {
+	_inherits(HalogenFreeFilter, _React$Component);
 
-	function ProductGrid(props) {
-		_classCallCheck(this, ProductGrid);
+	function HalogenFreeFilter(props) {
+		_classCallCheck(this, HalogenFreeFilter);
 
-		var _this = _possibleConstructorReturn(this, (ProductGrid.__proto__ || Object.getPrototypeOf(ProductGrid)).call(this, props));
+		var _this = _possibleConstructorReturn(this, (HalogenFreeFilter.__proto__ || Object.getPrototypeOf(HalogenFreeFilter)).call(this, props));
 
-		_this.state = { searchPartNumber: null };
-		_this.getApprovals = _this.getApprovals.bind(_this);
-		_this.getCanApprovals = _this.getCanApprovals.bind(_this);
+		_this.state = { collapsedState: _this.props.collapsedState };
+		_this.collapseDetection = "collapsed";
 		_this.handleOptionChange = _this.handleOptionChange.bind(_this);
+		_this.handleCollapseClick = _this.handleCollapseClick.bind(_this);
 		return _this;
 	}
 
-	_createClass(ProductGrid, [{
+	_createClass(HalogenFreeFilter, [{
 		key: "componentWillReceiveProps",
 		value: function componentWillReceiveProps(nextProps) {
-			if (nextProps.searchPartNumber == null) {
-				return;
-			} else {
-				this.setState({ searchPartNumber: nextProps.searchPartNumber });
-			}
-		}
-	}, {
-		key: "getApprovals",
-		value: function getApprovals(data) {
-			var approvalsArr = [];
-			var approvalsStr = "";
-
-			if (data.awm === true) {
-				approvalsArr.push("AWM");
-			}
-			if (data.pltc === true) {
-				approvalsArr.push("PLTC");
-			}
-			if (data.cmr === true) {
-				approvalsArr.push("CMR");
-			}
-			if (data.cmg === true) {
-				approvalsArr.push("CMG");
-			}
-			if (data.cmx === true) {
-				approvalsArr.push("CMX");
-			}
-
-			approvalsStr = approvalsArr.join(', ');
-			if (approvalsStr.length > 1) {
-				return approvalsStr;
-			} else {
-				return "n/a";
-			}
-		}
-	}, {
-		key: "getCanApprovals",
-		value: function getCanApprovals(data) {
-			var approvalsArr = [];
-			var approvalsStr = "";
-
-			if (data.can_awm === true) {
-				approvalsArr.push("AWM");
-			}
-			if (data.can_cmg === true) {
-				approvalsArr.push("CMG");
-			}
-			if (data.can_cmx === true) {
-				approvalsArr.push("CMX");
-			}
-			if (data.can_pltc === true) {
-				approvalsArr.push("PLTC");
-			}
-
-			approvalsStr = approvalsArr.join(', ');
-			if (approvalsStr.length > 1) {
-				return approvalsStr;
-			} else {
-				return "n/a";
+			if (nextProps.collapsedState !== this.props.collapsedState) {
+				this.setState({ collapsedState: nextProps.collapsedState });
 			}
 		}
 	}, {
 		key: "handleOptionChange",
 		value: function handleOptionChange(e) {
-			this.props.selectedProductsUpdater(e.target.value);
+			var halogenFreeChoice = null;
+			if (e.target.value !== this.props.halogenFree) {
+				halogenFreeChoice = "Yes";
+			}
+			this.props.stateContainer({ halogenFree: halogenFreeChoice });
+		}
+	}, {
+		key: "handleCollapseClick",
+		value: function handleCollapseClick(e) {
+			var collapsedState = e.currentTarget.classList.contains(this.collapseDetection);
+			this.setState({ collapsedState: collapsedState });
 		}
 	}, {
 		key: "render",
 		value: function render() {
 			var _this2 = this;
 
-			var nope = React.createElement(
-				"h1",
-				null,
-				"nopeee"
-			);
-			var rows = [];
-			this.props.data.map(function (product, i) {
-
-				if (_this2.props.searchPartNumber !== null) {
-					if (_this2.props.searchPartNumber === product.part_number) {
-						rows.push(React.createElement(
-							"li",
-							{ key: i, className: "col-md-3 col-sm-6 product-grid-list-item" },
-							React.createElement(
-								"label",
-								{ className: _this2.props.selectedProductsArr.indexOf(product.part_number) > -1 ? "active-selected-part button-label" : "button-label" },
-								React.createElement("input", { type: "checkbox", value: product.part_number, className: "product-checkbox" }),
-								React.createElement(
-									"ul",
-									{ className: "inner-list" },
-									React.createElement(
-										"li",
-										null,
-										React.createElement(
-											"strong",
-											null,
-											product.description
-										)
-									),
-									React.createElement(
-										"li",
-										null,
-										"Application: ",
-										product.application
-									),
-									React.createElement(
-										"li",
-										null,
-										"Jacket: ",
-										product.jacket
-									),
-									React.createElement(
-										"li",
-										null,
-										"UL: ",
-										_this2.getApprovals(product)
-									),
-									React.createElement(
-										"li",
-										null,
-										"Canada: ",
-										_this2.getCanApprovals(product)
-									),
-									React.createElement(
-										"li",
-										null,
-										"P/N: ",
-										React.createElement(
-											"a",
-											{ href: product.link, target: "_blank" },
-											product.part_number
-										)
-									)
-								)
-							)
-						));
-						return;
-					}
-				}
-
-				if (product.category !== _this2.props.catSelection) {
-					return;
-				}
-
-				if (_this2.props.protocolSelections !== null) {
-					if (_this2.props.protocolSelections == "PROFINET" && product.profinet == true) {
-						console.log(product.profinet);
-					} else if (_this2.props.protocolSelections == "EtherNet/IP" && product.ethernet_ip == true) {
-						console.log(product.ethernet_ip);
-					} else if (_this2.props.protocolSelections == "EtherCAT" && product.ethercat == true) {
-						console.log(product.ethercat);
-					} else {
-						return;
-					}
-				}
-
-				if (_this2.props.applicationSelection !== null && product.application !== _this2.props.applicationSelection) {
-					return;
-				}
-
-				if (_this2.props.approvalsSelection !== null) {
-					for (var _i = 0; _i < _this2.props.approvalsSelection.length; _i++) {
-						if (product.prettyApprovalArr.indexOf(_this2.props.approvalsSelection[_i]) < 0) {
-							return;
-						}
-					}
-				}
-
-				// Need to add fast_connect column to database!!!!!!
-				/* if (this.props.fastConnectSelection !== null && product.fast_connect !== this.props.fastConnectSelection) {
-    	return;
-    } */
-
-				if (_this2.props.jacketSelection.length > 0) {
-					if (_this2.props.jacketSelection.indexOf(product.jacket) < 0) {
-						return;
-					}
-				}
-
-				/* var selectedSwitch = false;
-    for (let i = 0; i < this.props.selectedProducts; i++) {
-    	if (product.part_number === this.props.selectedProducts[i].part_number) {
-    		selectedSwitch = true;
-    	}
-    } */
-
-				rows.push(React.createElement(
-					"li",
-					{ key: i, className: "col-md-4 col-sm-6 product-grid-list-item" },
+			var halogenFreeRadioItems = halogenFreeList.map(function (data, i) {
+				return React.createElement(
+					"div",
+					{ key: i, className: _this2.props.halogenFree === "Yes" ? "bus-type selected-attribute" : "bus-type" },
 					React.createElement(
 						"label",
-						{ className: _this2.props.selectedProductsArr.indexOf(product.part_number) > -1 ? "active-selected-part button-label" : "button-label" },
-						React.createElement("input", { type: "checkbox", value: product.part_number, className: "product-checkbox" }),
-						React.createElement(
-							"ul",
-							{ className: "inner-list" },
-							React.createElement(
-								"li",
-								null,
-								React.createElement(
-									"strong",
-									null,
-									product.description
-								)
-							),
-							React.createElement(
-								"li",
-								null,
-								"Application: ",
-								product.application
-							),
-							React.createElement(
-								"li",
-								null,
-								"Jacket: ",
-								product.jacket
-							),
-							React.createElement(
-								"li",
-								null,
-								"UL: ",
-								_this2.getApprovals(product)
-							),
-							React.createElement(
-								"li",
-								null,
-								"Canada: ",
-								_this2.getCanApprovals(product)
-							),
-							React.createElement(
-								"li",
-								null,
-								"P/N: ",
-								React.createElement(
-									"a",
-									{ href: product.link, target: "_blank" },
-									product.part_number
-								)
-							)
-						)
+						null,
+						React.createElement("input", { type: "radio", value: data,
+							checked: _this2.props.halogenFree === 'option' + [i]
+						}),
+						" ",
+						data
 					)
-				));
+				);
 			});
 			return React.createElement(
 				"div",
-				{ className: "col-xs-12 item-container" },
+				{ className: "filter-collapse-container" },
 				React.createElement(
 					"div",
-					{ className: "scroll-container" },
+					{ "data-toggle": "collapse", "data-target": "#halogen-free-form", className: "filter-header", onClick: this.handleCollapseClick },
 					React.createElement(
-						"form",
-						{ onChange: this.handleOptionChange },
-						this.props.searchPartNumber !== null && rows.length < 1 ? nope : rows
-					)
+						"span",
+						{ className: "span-margin" },
+						"Halogen Free"
+					),
+					" ",
+					React.createElement("span", { className: this.state.collapsedState == true ? "glyphicon glyphicon-plus pull-right glyphicon-margin" : "glyphicon glyphicon-minus pull-right glyphicon-margin" })
+				),
+				React.createElement(
+					"form",
+					{ id: "halogen-free-form", onChange: this.handleOptionChange, className: this.props.collapsedState == true ? "attribute-list collapse" : 'attribute-list collapse in' },
+					halogenFreeRadioItems
 				)
 			);
 		}
 	}]);
 
-	return ProductGrid;
+	return HalogenFreeFilter;
+}(React.Component);
+
+exports.default = HalogenFreeFilter;
+
+/***/ }),
+/* 354 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _ReactTransitionGroup = ReactTransitionGroup,
+    CSSTransitionGroup = _ReactTransitionGroup.CSSTransitionGroup;
+
+var ProductGrid = function (_React$Component) {
+  _inherits(ProductGrid, _React$Component);
+
+  function ProductGrid(props) {
+    _classCallCheck(this, ProductGrid);
+
+    var _this = _possibleConstructorReturn(this, (ProductGrid.__proto__ || Object.getPrototypeOf(ProductGrid)).call(this, props));
+
+    _this.state = { searchPartNumber: null };
+    _this.getApprovals = _this.getApprovals.bind(_this);
+    _this.getCanApprovals = _this.getCanApprovals.bind(_this);
+    _this.handleOptionChange = _this.handleOptionChange.bind(_this);
+    _this.clearFilters = _this.clearFilters.bind(_this);
+    return _this;
+  }
+
+  _createClass(ProductGrid, [{
+    key: "componentWillReceiveProps",
+    value: function componentWillReceiveProps(nextProps) {
+      if (nextProps.searchPartNumber == null) {
+        return;
+      } else {
+        this.setState({ searchPartNumber: nextProps.searchPartNumber });
+      }
+    }
+  }, {
+    key: "getApprovals",
+    value: function getApprovals(data) {
+      var approvalsArr = [];
+      var approvalsStr = "";
+
+      if (data.awm === true) {
+        approvalsArr.push("AWM");
+      }
+      if (data.pltc === true) {
+        approvalsArr.push("PLTC");
+      }
+      if (data.cmr === true) {
+        approvalsArr.push("CMR");
+      }
+      if (data.cmg === true) {
+        approvalsArr.push("CMG");
+      }
+      if (data.cmx === true) {
+        approvalsArr.push("CMX");
+      }
+
+      approvalsStr = approvalsArr.join(', ');
+      if (approvalsStr.length > 1) {
+        return approvalsStr;
+      } else {
+        return "n/a";
+      }
+    }
+  }, {
+    key: "getCanApprovals",
+    value: function getCanApprovals(data) {
+      var approvalsArr = [];
+      var approvalsStr = "";
+
+      if (data.can_awm === true) {
+        approvalsArr.push("AWM");
+      }
+      if (data.can_cmg === true) {
+        approvalsArr.push("CMG");
+      }
+      if (data.can_cmx === true) {
+        approvalsArr.push("CMX");
+      }
+      if (data.can_pltc === true) {
+        approvalsArr.push("PLTC");
+      }
+
+      approvalsStr = approvalsArr.join(', ');
+      if (approvalsStr.length > 1) {
+        return approvalsStr;
+      } else {
+        return "n/a";
+      }
+    }
+  }, {
+    key: "handleOptionChange",
+    value: function handleOptionChange(e) {
+      this.props.selectedProductsUpdater(e.target.value);
+    }
+  }, {
+    key: "clearFilters",
+    value: function clearFilters(e) {
+      e.preventDefault();
+      console.log('click');
+      this.props.clearStateFilters();
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var nope = React.createElement(
+        "div",
+        { className: "col-xs-12 text-center no-results-msg" },
+        React.createElement(
+          "div",
+          { className: "jumbotron custom-jumbotron" },
+          React.createElement(
+            "h4",
+            null,
+            "Select a"
+          ),
+          React.createElement(
+            "h4",
+            null,
+            "CAT Type to begin"
+          )
+        )
+      );
+
+      if (this.props.searchPartNumber !== null) {
+        nope = React.createElement(
+          "div",
+          { className: "col-xs-12 text-center no-results-msg" },
+          React.createElement(
+            "div",
+            { className: "jumbotron custom-jumbotron" },
+            React.createElement(
+              "h4",
+              null,
+              "We couldn't find any matches for part# \"",
+              this.props.searchPartNumber,
+              "\""
+            )
+          )
+        );
+      } else if (this.props.searchPartNumber == null && this.props.catSelection !== null) {
+        nope = React.createElement(
+          "div",
+          { className: "col-xs-12 text-center no-results-msg" },
+          React.createElement(
+            "div",
+            { className: "jumbotron custom-jumbotron" },
+            React.createElement(
+              "h4",
+              null,
+              "Sorry, no results found"
+            ),
+            React.createElement(
+              "h5",
+              null,
+              "Please adjust your filters and try again"
+            ),
+            React.createElement(
+              "h6",
+              null,
+              React.createElement(
+                "i",
+                null,
+                React.createElement(
+                  "a",
+                  { onClick: this.clearFilters, href: "#" },
+                  "Clear filters"
+                )
+              )
+            )
+          )
+        );
+      }
+      var rows = [];
+      this.props.data.map(function (product, i) {
+
+        if (_this2.props.searchPartNumber !== null) {
+          if (_this2.props.searchPartNumber === product.part_number) {
+            rows.push(React.createElement(
+              "li",
+              { key: i, className: "col-md-3 col-sm-6 product-grid-list-item" },
+              React.createElement(
+                "label",
+                { className: _this2.props.selectedProductsArr.indexOf(product.part_number) > -1 ? "active-selected-part button-label" : "button-label" },
+                React.createElement("input", { type: "checkbox", value: product.part_number, className: "product-checkbox" }),
+                React.createElement(
+                  "ul",
+                  { className: "inner-list" },
+                  React.createElement(
+                    "li",
+                    null,
+                    React.createElement(
+                      "strong",
+                      null,
+                      product.description
+                    )
+                  ),
+                  React.createElement(
+                    "li",
+                    null,
+                    "Application: ",
+                    product.application
+                  ),
+                  React.createElement(
+                    "li",
+                    null,
+                    "Jacket: ",
+                    product.jacket
+                  ),
+                  React.createElement(
+                    "li",
+                    null,
+                    "UL: ",
+                    _this2.getApprovals(product)
+                  ),
+                  React.createElement(
+                    "li",
+                    null,
+                    "Canada: ",
+                    _this2.getCanApprovals(product)
+                  ),
+                  React.createElement(
+                    "li",
+                    null,
+                    "P/N: ",
+                    React.createElement(
+                      "a",
+                      { href: product.link, target: "_blank" },
+                      product.part_number
+                    )
+                  )
+                )
+              )
+            ));
+            return;
+          }
+        }
+
+        if (product.category !== _this2.props.catSelection) {
+          return;
+        }
+
+        if (_this2.props.protocolSelections !== null) {
+          if (_this2.props.protocolSelections == "PROFINET" && product.profinet == true) {
+            console.log(product.profinet);
+          } else if (_this2.props.protocolSelections == "EtherNet/IP" && product.ethernet_ip == true) {
+            console.log(product.ethernet_ip);
+          } else if (_this2.props.protocolSelections == "EtherCAT" && product.ethercat == true) {
+            console.log(product.ethercat);
+          } else {
+            return;
+          }
+        }
+
+        if (_this2.props.applicationSelection !== null && product.application !== _this2.props.applicationSelection) {
+          return;
+        }
+
+        if (_this2.props.approvalsSelection !== null) {
+          for (var _i = 0; _i < _this2.props.approvalsSelection.length; _i++) {
+            if (product.prettyApprovalArr.indexOf(_this2.props.approvalsSelection[_i]) < 0) {
+              return;
+            }
+          }
+        }
+
+        if (_this2.props.awgSelection.length > 0) {
+          if (_this2.props.awgSelection.indexOf(product.awg) < 0) {
+            return;
+          }
+        }
+
+        if (_this2.props.jacketSelection.length > 0) {
+          if (_this2.props.jacketSelection.indexOf(product.jacket) < 0) {
+            return;
+          }
+        }
+
+        if (_this2.props.halogenFree !== null) {
+          if (product.halogen_free !== true) {
+            return;
+          }
+        }
+        /* var selectedSwitch = false;
+        for (let i = 0; i < this.props.selectedProducts; i++) {
+        	if (product.part_number === this.props.selectedProducts[i].part_number) {
+        		selectedSwitch = true;
+        	}
+        } */
+
+        rows.push(React.createElement(
+          "li",
+          { key: i, className: "col-md-4 col-sm-6 product-grid-list-item" },
+          React.createElement(
+            "label",
+            { className: _this2.props.selectedProductsArr.indexOf(product.part_number) > -1 ? "active-selected-part button-label" : "button-label" },
+            React.createElement("input", { type: "checkbox", value: product.part_number, className: "product-checkbox" }),
+            React.createElement(
+              "ul",
+              { className: "inner-list" },
+              React.createElement(
+                "li",
+                null,
+                React.createElement(
+                  "strong",
+                  null,
+                  product.description
+                )
+              ),
+              React.createElement(
+                "li",
+                null,
+                "Application: ",
+                product.application
+              ),
+              React.createElement(
+                "li",
+                null,
+                "Jacket: ",
+                product.jacket
+              ),
+              React.createElement(
+                "li",
+                null,
+                "UL: ",
+                _this2.getApprovals(product)
+              ),
+              React.createElement(
+                "li",
+                null,
+                "Canada: ",
+                _this2.getCanApprovals(product)
+              ),
+              React.createElement(
+                "li",
+                null,
+                "P/N: ",
+                React.createElement(
+                  "a",
+                  { href: product.link, target: "_blank" },
+                  product.part_number
+                )
+              )
+            )
+          )
+        ));
+      });
+      return React.createElement(
+        "div",
+        { className: "col-xs-12 item-container" },
+        React.createElement(
+          "div",
+          { className: "scroll-container" },
+          React.createElement(
+            "form",
+            { onChange: this.handleOptionChange },
+            rows.length < 1 ? nope : rows
+          )
+        )
+      );
+    }
+  }]);
+
+  return ProductGrid;
 }(React.Component);
 
 exports.default = ProductGrid;
 
 /***/ }),
-/* 352 */
+/* 355 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13183,7 +13702,7 @@ var SelectedProducts = function (_React$Component) {
 exports.default = SelectedProducts;
 
 /***/ }),
-/* 353 */
+/* 356 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13454,7 +13973,7 @@ var SelectedProductGrid = function (_React$Component) {
 exports.default = SelectedProductGrid;
 
 /***/ }),
-/* 354 */
+/* 357 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15733,7 +16252,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
       return 1 === arguments.length ? this.off(a, "**") : this.off(b, a || "**", c);
     } }), r.holdReady = function (a) {
     a ? r.readyWait++ : r.ready(!0);
-  }, r.isArray = Array.isArray, r.parseJSON = JSON.parse, r.nodeName = B, "function" == "function" && __webpack_require__(356) && !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
+  }, r.isArray = Array.isArray, r.parseJSON = JSON.parse, r.nodeName = B, "function" == "function" && __webpack_require__(359) && !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
     return r;
   }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));var Vb = a.jQuery,
@@ -15741,10 +16260,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     return a.$ === r && (a.$ = Wb), b && a.jQuery === r && (a.jQuery = Vb), r;
   }, b || (a.jQuery = a.$ = r), r;
 });
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(355)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(358)(module)))
 
 /***/ }),
-/* 355 */
+/* 358 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -15772,315 +16291,13 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 356 */
+/* 359 */
 /***/ (function(module, exports) {
 
 /* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {/* globals __webpack_amd_options__ */
 module.exports = __webpack_amd_options__;
 
 /* WEBPACK VAR INJECTION */}.call(exports, {}))
-
-/***/ }),
-/* 357 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var halogenFreeList = ['Yes'];
-
-var HalogenFreeFilter = function (_React$Component) {
-	_inherits(HalogenFreeFilter, _React$Component);
-
-	function HalogenFreeFilter(props) {
-		_classCallCheck(this, HalogenFreeFilter);
-
-		var _this = _possibleConstructorReturn(this, (HalogenFreeFilter.__proto__ || Object.getPrototypeOf(HalogenFreeFilter)).call(this, props));
-
-		_this.state = { collapsedState: _this.props.collapsedState };
-		_this.collapseDetection = "collapsed";
-		_this.handleOptionChange = _this.handleOptionChange.bind(_this);
-		_this.handleCollapseClick = _this.handleCollapseClick.bind(_this);
-		return _this;
-	}
-
-	_createClass(HalogenFreeFilter, [{
-		key: "componentWillReceiveProps",
-		value: function componentWillReceiveProps(nextProps) {
-			if (nextProps.collapsedState !== this.props.collapsedState) {
-				this.setState({ collapsedState: nextProps.collapsedState });
-			}
-		}
-	}, {
-		key: "handleOptionChange",
-		value: function handleOptionChange(e) {
-			var halogenFreeChoice = null;
-			if (e.target.value !== this.props.halogenFree) {
-				halogenFreeChoice = "Yes";
-			}
-			this.props.stateContainer({ halogenFree: halogenFreeChoice });
-		}
-	}, {
-		key: "handleCollapseClick",
-		value: function handleCollapseClick(e) {
-			var collapsedState = e.currentTarget.classList.contains(this.collapseDetection);
-			this.setState({ collapsedState: collapsedState });
-		}
-	}, {
-		key: "render",
-		value: function render() {
-			var _this2 = this;
-
-			var halogenFreeRadioItems = halogenFreeList.map(function (data, i) {
-				return React.createElement(
-					"div",
-					{ key: i, className: _this2.props.halogenFree === "Yes" ? "bus-type selected-attribute" : "bus-type" },
-					React.createElement(
-						"label",
-						null,
-						React.createElement("input", { type: "radio", value: data,
-							checked: _this2.props.halogenFree === 'option' + [i]
-						}),
-						" ",
-						data
-					)
-				);
-			});
-			return React.createElement(
-				"div",
-				{ className: "filter-collapse-container" },
-				React.createElement(
-					"div",
-					{ "data-toggle": "collapse", "data-target": "#halogen-free-form", className: "filter-header", onClick: this.handleCollapseClick },
-					React.createElement(
-						"span",
-						{ className: "span-margin" },
-						"Halogen Free"
-					),
-					" ",
-					React.createElement("span", { className: this.state.collapsedState == true ? "glyphicon glyphicon-plus pull-right glyphicon-margin" : "glyphicon glyphicon-minus pull-right glyphicon-margin" })
-				),
-				React.createElement(
-					"form",
-					{ id: "halogen-free-form", onChange: this.handleOptionChange, className: this.props.collapsedState == true ? "attribute-list collapse" : 'attribute-list collapse in' },
-					halogenFreeRadioItems
-				)
-			);
-		}
-	}]);
-
-	return HalogenFreeFilter;
-}(React.Component);
-
-exports.default = HalogenFreeFilter;
-
-/***/ }),
-/* 358 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var halogenFreeList = ['Yes'];
-
-var HalogenFreeFilter = function (_React$Component) {
-	_inherits(HalogenFreeFilter, _React$Component);
-
-	function HalogenFreeFilter(props) {
-		_classCallCheck(this, HalogenFreeFilter);
-
-		var _this = _possibleConstructorReturn(this, (HalogenFreeFilter.__proto__ || Object.getPrototypeOf(HalogenFreeFilter)).call(this, props));
-
-		_this.state = { collapsedState: _this.props.collapsedState };
-		_this.collapseDetection = "collapsed";
-		_this.handleOptionChange = _this.handleOptionChange.bind(_this);
-		_this.handleCollapseClick = _this.handleCollapseClick.bind(_this);
-		return _this;
-	}
-
-	_createClass(HalogenFreeFilter, [{
-		key: "componentWillReceiveProps",
-		value: function componentWillReceiveProps(nextProps) {
-			if (nextProps.collapsedState !== this.props.collapsedState) {
-				this.setState({ collapsedState: nextProps.collapsedState });
-			}
-		}
-	}, {
-		key: "handleOptionChange",
-		value: function handleOptionChange(e) {
-			var halogenFreeChoice = null;
-			if (e.target.value !== this.props.halogenFree) {
-				halogenFreeChoice = "Yes";
-			}
-			this.props.stateContainer({ halogenFree: halogenFreeChoice });
-		}
-	}, {
-		key: "handleCollapseClick",
-		value: function handleCollapseClick(e) {
-			var collapsedState = e.currentTarget.classList.contains(this.collapseDetection);
-			this.setState({ collapsedState: collapsedState });
-		}
-	}, {
-		key: "render",
-		value: function render() {
-			var _this2 = this;
-
-			var halogenFreeRadioItems = halogenFreeList.map(function (data, i) {
-				return React.createElement(
-					"div",
-					{ key: i, className: _this2.props.halogenFree === true ? "bus-type selected-attribute" : "bus-type" },
-					React.createElement(
-						"label",
-						null,
-						React.createElement("input", { type: "radio", value: data,
-							checked: _this2.props.halogenFree === 'option' + [i]
-						}),
-						" ",
-						data
-					)
-				);
-			});
-			return React.createElement(
-				"div",
-				{ className: "filter-collapse-container" },
-				React.createElement(
-					"div",
-					{ "data-toggle": "collapse", "data-target": "#halogen-free-form", className: "filter-header", onClick: this.handleCollapseClick },
-					React.createElement(
-						"span",
-						{ className: "span-margin" },
-						"Halogen Free"
-					),
-					" ",
-					React.createElement("span", { className: this.state.collapsedState == true ? "glyphicon glyphicon-plus pull-right glyphicon-margin" : "glyphicon glyphicon-minus pull-right glyphicon-margin" })
-				),
-				React.createElement(
-					"form",
-					{ id: "halogen-free-form", onChange: this.handleOptionChange, className: this.props.collapsedState == true ? "attribute-list collapse" : 'attribute-list collapse in' },
-					halogenFreeRadioItems
-				)
-			);
-		}
-	}]);
-
-	return HalogenFreeFilter;
-}(React.Component);
-
-exports.default = HalogenFreeFilter;
-
-/***/ }),
-/* 359 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ActiveFilter = function (_React$Component) {
-  _inherits(ActiveFilter, _React$Component);
-
-  function ActiveFilter(props) {
-    _classCallCheck(this, ActiveFilter);
-
-    var _this = _possibleConstructorReturn(this, (ActiveFilter.__proto__ || Object.getPrototypeOf(ActiveFilter)).call(this, props));
-
-    _this.state = {
-      collapsedState: _this.props.collapsedState,
-      propsArr: []
-    };
-    _this.collapseDetection = "collapsed";
-    _this.handleOptionChange = _this.handleOptionChange.bind(_this);
-    _this.handleCollapseClick = _this.handleCollapseClick.bind(_this);
-    return _this;
-  }
-
-  _createClass(ActiveFilter, [{
-    key: "componentWillReceiveProps",
-    value: function componentWillReceiveProps(nextProps) {
-      var propsArr = [];
-      for (var key in nextProps) {
-        if (nextProps.hasOwnProperty(key)) {
-          console.log(key + " -> " + nextProps[key]);
-          if (nextProps[key] !== null && key !== "stateContainer" && key !== "collapsedState") {
-            propsArr.push(nextProps[key]);
-          }
-        }
-      }
-      console.log("MAH PROPS: ", propsArr);
-      if (nextProps.collapsedState !== this.props.collapsedState) {
-        this.setState({ collapsedState: nextProps.collapsedState });
-      }
-    }
-  }, {
-    key: "handleOptionChange",
-    value: function handleOptionChange(e) {
-      var busState = null;
-      if (e.target.value !== this.props.busSelection) {
-        busState = e.target.value;
-      }
-      this.props.stateContainer({ busSelection: busState });
-    }
-  }, {
-    key: "handleCollapseClick",
-    value: function handleCollapseClick(e) {
-      var collapsedState = e.currentTarget.classList.contains(this.collapseDetection);
-      this.setState({ collapsedState: collapsedState });
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      /* const activeFilterList = this.props.map.map((data, i) =>
-         <div key={i} className={this.props.busSelection === data ? "bus-type selected-attribute":"bus-type"}>
-           <label>
-             <input type="radio" value={data}
-             checked={this.props.busSelection === 'option' + [i]}
-             /> {data}
-           </label>
-         </div>
-       )  */
-      return React.createElement("div", null);
-    }
-  }]);
-
-  return ActiveFilter;
-}(React.Component);
-
-exports.default = ActiveFilter;
 
 /***/ })
 /******/ ]);
