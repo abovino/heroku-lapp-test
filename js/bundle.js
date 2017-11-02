@@ -9308,8 +9308,8 @@ var Unitronic = function (_React$Component) {
 								contentType: "application/json; charset=utf-8",
 								dataType: "JSON",
 								type: "GET",
-								// url: "https://selectortoolapi.com/bus/data"
-								url: "http://localhost:3000/bus/data"
+								url: "https://selectortoolapi.com/bus/data"
+								// url: "http://localhost:3000/bus/data"
 						}).done(function (data) {
 								console.log(data);
 						}).then(function (data) {
@@ -12088,8 +12088,8 @@ var Etherline = function (_React$Component) {
 				contentType: "application/json; charset=utf-8",
 				dataType: "JSON",
 				type: "GET",
-				// url: "https://selectortoolapi.com/etherline/data"
-				url: "http://localhost:3000/etherline/data"
+				url: "https://selectortoolapi.com/etherline/data"
+				// url: "http://localhost:3000/etherline/data"
 			}).done(function (data) {
 				console.log(data);
 			}).then(function (data) {
