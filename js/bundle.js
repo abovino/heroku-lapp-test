@@ -9170,7 +9170,7 @@ var SelectCable = function (_React$Component) {
 				React.createElement(
 					"h4",
 					null,
-					"Click an image below to start"
+					"Make your selection below"
 				),
 				React.createElement(
 					"div",
@@ -9181,32 +9181,8 @@ var SelectCable = function (_React$Component) {
 						{ className: "col-sm-4 cable-image" },
 						React.createElement(
 							Link,
-							{ to: "etherline" },
-							React.createElement("img", { className: "cable-pics", src: "images/icon_etherline.gif", alt: "" })
-						),
-						React.createElement(
-							"h3",
-							null,
-							"ETHERLINE",
-							React.createElement(
-								"sup",
-								null,
-								"\xAE"
-							)
-						),
-						React.createElement(
-							"h5",
-							null,
-							"Industrial Ethernet Solutions"
-						)
-					),
-					React.createElement(
-						"div",
-						{ className: "col-sm-4 cable-image" },
-						React.createElement(
-							Link,
 							{ to: "unitronic" },
-							React.createElement("img", { className: "cable-pics", src: "images/icon_unitronic.gif", alt: "" })
+							React.createElement("img", { className: "cable-pics", src: "images/icon_unitronic.jpg", alt: "" })
 						),
 						React.createElement(
 							"h3",
@@ -9223,6 +9199,30 @@ var SelectCable = function (_React$Component) {
 							"h5",
 							null,
 							"Fieldbus Solutions"
+						)
+					),
+					React.createElement(
+						"div",
+						{ className: "col-sm-4 cable-image" },
+						React.createElement(
+							Link,
+							{ to: "etherline" },
+							React.createElement("img", { className: "cable-pics", src: "images/icon_etherline.jpg", alt: "" })
+						),
+						React.createElement(
+							"h3",
+							null,
+							"ETHERLINE",
+							React.createElement(
+								"sup",
+								null,
+								"\xAE"
+							)
+						),
+						React.createElement(
+							"h5",
+							null,
+							"Industrial Ethernet Solutions"
 						)
 					),
 					React.createElement("div", { className: "col-sm-2" })
@@ -9295,6 +9295,7 @@ var Unitronic = function (_React$Component) {
 				_this.clearStateFilters = _this.clearStateFilters.bind(_this);
 				_this.selectedProductsUpdater = _this.selectedProductsUpdater.bind(_this);
 				_this.searchPartNum = _this.searchPartNum.bind(_this);
+				_this.getOptions = _this.getOptions.bind(_this);
 				return _this;
 		}
 
@@ -9307,8 +9308,8 @@ var Unitronic = function (_React$Component) {
 								contentType: "application/json; charset=utf-8",
 								dataType: "JSON",
 								type: "GET",
-								url: "https://selectortoolapi.com/bus/data"
-								// url: "http://localhost:3000/bus/data"
+								// url: "https://selectortoolapi.com/bus/data"
+								url: "http://localhost:3000/bus/data"
 						}).done(function (data) {
 								console.log(data);
 						}).then(function (data) {
@@ -9332,13 +9333,13 @@ var Unitronic = function (_React$Component) {
 												data[i].prettyApprovalArr.push("UL CL2");
 										}
 										if (data[i].can_cmx) {
-												data[i].prettyApprovalArr.push("CAN CMX");
+												data[i].prettyApprovalArr.push("Canada CMX");
 										}
 										if (data[i].can_cmg) {
-												data[i].prettyApprovalArr.push("CAN CMG");
+												data[i].prettyApprovalArr.push("Canada CMG");
 										}
 										if (data[i].can_awm) {
-												data[i].prettyApprovalArr.push("CAN AWM");
+												data[i].prettyApprovalArr.push("Canada AWM");
 										}
 								}
 								console.log(data);
@@ -9413,6 +9414,12 @@ var Unitronic = function (_React$Component) {
 						});
 				}
 		}, {
+				key: 'getOptions',
+				value: function getOptions(options) {
+						console.log("OPTIONSSSSSSSSSSS");
+						console.log(options);
+				}
+		}, {
 				key: 'render',
 				value: function render() {
 						return React.createElement(
@@ -9436,7 +9443,7 @@ var Unitronic = function (_React$Component) {
 																		null,
 																		'\xAE'
 																),
-																' Cable Selector'
+																' Bus Cable Selector'
 														)
 												),
 												React.createElement(_FilterContainer2.default, {
@@ -9494,7 +9501,8 @@ var Unitronic = function (_React$Component) {
 																halogenFree: this.state.halogenFree,
 																clearStateFilters: this.clearStateFilters,
 																searchPartNumber: this.state.searchPartNumber,
-																selectedProductsUpdater: this.selectedProductsUpdater
+																selectedProductsUpdater: this.selectedProductsUpdater,
+																getOptions: this.getOptions
 														})
 												)
 										)
@@ -9661,8 +9669,13 @@ var FilterContainer = function (_React$Component) {
                 ),
                 React.createElement(
                   'a',
-                  { id: 'mobile-filters-btn', className: 'navbar-brand', href: '#', onClick: this.toggleMobileFilterDisplay },
-                  React.createElement('span', { className: 'glyphicon glyphicon-filter' })
+                  { id: 'mobile-filters-btn', className: 'navbar-brand text-center', href: '#', onClick: this.toggleMobileFilterDisplay },
+                  React.createElement('span', { className: 'glyphicon glyphicon-filter' }),
+                  React.createElement(
+                    'span',
+                    { className: 'glyph-text' },
+                    'Filter'
+                  )
                 ),
                 React.createElement('img', { className: 'img-responsive header-img', src: 'images/lapp_group_web_cropped.png', alt: 'lapp-logo' })
               )
@@ -9703,6 +9716,8 @@ var FilterContainer = function (_React$Component) {
             collapsedState: this.state.collapsedState
           }),
           React.createElement(_ApplicationFilter2.default, {
+            data: this.props.data,
+            busSelection: this.props.busSelection,
             applicationSelection: this.props.applicationSelection,
             stateContainer: this.props.stateContainer,
             collapsedState: this.state.collapsedState
@@ -9843,7 +9858,7 @@ exports.default = ActiveFilter;
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -9857,86 +9872,230 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var busList = ['DeviceNet', 'PROFIBUS DP', 'CAN Bus', 'RS485/RS422', 'AS-Interface (AS-I)', 'Data Highway', 'INTERBUS', 'Genius', 'CC-Link', 'FOUNDATION Fieldbus', 'SafetyBUS'];
 
 var BusFilter = function (_React$Component) {
-  _inherits(BusFilter, _React$Component);
+	_inherits(BusFilter, _React$Component);
 
-  function BusFilter(props) {
-    _classCallCheck(this, BusFilter);
+	function BusFilter(props) {
+		_classCallCheck(this, BusFilter);
 
-    var _this = _possibleConstructorReturn(this, (BusFilter.__proto__ || Object.getPrototypeOf(BusFilter)).call(this, props));
+		var _this = _possibleConstructorReturn(this, (BusFilter.__proto__ || Object.getPrototypeOf(BusFilter)).call(this, props));
 
-    _this.state = { collapsedState: _this.props.collapsedState };
-    _this.collapseDetection = "collapsed";
-    _this.handleOptionChange = _this.handleOptionChange.bind(_this);
-    _this.handleCollapseClick = _this.handleCollapseClick.bind(_this);
-    return _this;
-  }
+		_this.state = { collapsedState: _this.props.collapsedState };
+		_this.collapseDetection = "collapsed";
+		_this.h1 = React.createElement(
+			'h1',
+			null,
+			'hi'
+		);
+		_this.handleOptionChange = _this.handleOptionChange.bind(_this);
+		_this.handleCollapseClick = _this.handleCollapseClick.bind(_this);
+		return _this;
+	}
 
-  _createClass(BusFilter, [{
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(nextProps) {
-      if (nextProps.collapsedState !== this.props.collapsedState) {
-        this.setState({ collapsedState: nextProps.collapsedState });
-      }
-    }
-  }, {
-    key: 'handleOptionChange',
-    value: function handleOptionChange(e) {
-      var busState = null;
-      if (e.target.value !== this.props.busSelection) {
-        busState = e.target.value;
-      }
-      this.props.stateContainer({ busSelection: busState });
-    }
-  }, {
-    key: 'handleCollapseClick',
-    value: function handleCollapseClick(e) {
-      var collapsedState = e.currentTarget.classList.contains(this.collapseDetection);
-      this.setState({ collapsedState: collapsedState });
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
+	_createClass(BusFilter, [{
+		key: 'componentWillReceiveProps',
+		value: function componentWillReceiveProps(nextProps) {
+			if (nextProps.collapsedState !== this.props.collapsedState) {
+				this.setState({ collapsedState: nextProps.collapsedState });
+			}
+		}
+	}, {
+		key: 'handleOptionChange',
+		value: function handleOptionChange(e) {
+			var busState = null;
+			if (e.target.value !== this.props.busSelection) {
+				busState = e.target.value;
+			}
+			this.props.stateContainer({ busSelection: busState });
+		}
+	}, {
+		key: 'handleCollapseClick',
+		value: function handleCollapseClick(e) {
+			var collapsedState = e.currentTarget.classList.contains(this.collapseDetection);
+			this.setState({ collapsedState: collapsedState });
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			var _this2 = this;
 
-      var busRadioItems = busList.map(function (data, i) {
-        return React.createElement(
-          'div',
-          { key: i, className: _this2.props.busSelection === data ? "bus-type selected-attribute col-xs-6 col-sm-12" : "bus-type col-xs-6 col-sm-12" },
-          React.createElement(
-            'label',
-            null,
-            React.createElement('input', { type: 'radio', value: data,
-              checked: _this2.props.busSelection === 'option' + [i]
-            }),
-            ' ',
-            data
-          )
-        );
-      });
-      return React.createElement(
-        'div',
-        { className: 'filter-collapse-container' },
-        React.createElement(
-          'div',
-          { 'data-toggle': 'collapse', 'data-target': '#bus-form', className: 'filter-header', onClick: this.handleCollapseClick },
-          React.createElement(
-            'span',
-            { className: 'span-margin' },
-            'Bus Type'
-          ),
-          ' ',
-          React.createElement('span', { className: this.state.collapsedState == true ? "glyphicon glyphicon-plus pull-right glyphicon-margin" : "glyphicon glyphicon-minus pull-right glyphicon-margin" })
-        ),
-        React.createElement(
-          'form',
-          { id: 'bus-form', onChange: this.handleOptionChange, className: this.props.collapsedState == true ? "attribute-list collapse" : 'attribute-list collapse in' },
-          busRadioItems
-        )
-      );
-    }
-  }]);
+			// const h1 = (<h1>hi</h1>);
+			var busRadioItems = busList.map(function (data, i) {
+				return React.createElement(
+					'div',
+					{ key: i, className: _this2.props.busSelection === data ? "bus-type selected-attribute col-xs-6 col-sm-12" : "bus-type col-xs-6 col-sm-12" },
+					React.createElement(
+						'label',
+						null,
+						React.createElement('input', { type: 'radio', value: data,
+							checked: _this2.props.busSelection === 'option' + [i]
+						}),
+						' ',
+						data,
+						' ',
+						React.createElement(
+							'sup',
+							null,
+							data === "PROFIBUS DP" ? "®" : data === "DeviceNet" ? "TM" : ''
+						)
+					)
+				);
+			});
+			return React.createElement(
+				'div',
+				{ className: 'filter-collapse-container' },
+				React.createElement(
+					'div',
+					null,
+					React.createElement('span', { role: 'button', 'data-toggle': 'modal', 'data-target': '#bus-modal', className: 'glyphicon glyphicon-info-sign info-btn' }),
+					React.createElement(
+						'div',
+						{ 'data-toggle': 'collapse', 'data-target': '#bus-form', className: 'filter-header', onClick: this.handleCollapseClick },
+						React.createElement(
+							'span',
+							{ className: 'span-margin' },
+							'Bus System'
+						),
+						' ',
+						React.createElement('span', { className: this.state.collapsedState == true ? "glyphicon glyphicon-plus pull-right glyphicon-margin" : "glyphicon glyphicon-minus pull-right glyphicon-margin" })
+					)
+				),
+				React.createElement(
+					'form',
+					{ id: 'bus-form', onChange: this.handleOptionChange, className: this.props.collapsedState == true ? "attribute-list collapse" : 'attribute-list collapse in' },
+					busRadioItems
+				),
+				React.createElement(
+					'div',
+					{ id: 'bus-modal', className: 'modal fade', tabIndex: '-1', role: 'dialog', 'aria-labelledby': 'mySmallModalLabel' },
+					React.createElement(
+						'div',
+						{ className: 'modal-dialog', role: 'document' },
+						React.createElement(
+							'div',
+							{ className: 'modal-content' },
+							React.createElement(
+								'div',
+								{ className: 'modal-header' },
+								React.createElement(
+									'button',
+									{ type: 'button', className: 'close', 'data-dismiss': 'modal', 'aria-label': 'Close' },
+									React.createElement(
+										'span',
+										{ 'aria-hidden': 'true' },
+										'\xD7'
+									)
+								),
+								React.createElement(
+									'h4',
+									{ className: 'modal-title', id: 'myModalLabel' },
+									'Bus Systems ...'
+								)
+							),
+							React.createElement(
+								'div',
+								{ className: 'modal-body' },
+								React.createElement(
+									'div',
+									{ className: 'list-group' },
+									React.createElement(
+										'div',
+										{ className: 'list-group-item' },
+										React.createElement(
+											'h5',
+											{ className: 'list-group-item-heading' },
+											'DeviceNet',
+											React.createElement(
+												'sup',
+												null,
+												'\u2122'
+											)
+										),
+										React.createElement(
+											'p',
+											{ className: 'list-group-item-text' },
+											'Rockwell supported; one of the premier Fieldbus systems in North America.'
+										)
+									),
+									React.createElement(
+										'div',
+										{ className: 'list-group-item' },
+										React.createElement(
+											'h5',
+											{ className: 'list-group-item-heading' },
+											'PROFIBUS',
+											React.createElement(
+												'sup',
+												null,
+												'\xAE'
+											)
+										),
+										React.createElement(
+											'p',
+											{ className: 'list-group-item-text' },
+											'Siemens supported; dominates worldwide in process automation.'
+										)
+									),
+									React.createElement(
+										'div',
+										{ className: 'list-group-item' },
+										React.createElement(
+											'h5',
+											{ className: 'list-group-item-heading' },
+											'AS-Interface (AS-I)'
+										),
+										React.createElement(
+											'p',
+											{ className: 'list-group-item-text' },
+											'Inexpensive alternative on the lower fieldbus level.'
+										)
+									),
+									React.createElement(
+										'div',
+										{ className: 'list-group-item' },
+										React.createElement(
+											'h5',
+											{ className: 'list-group-item-heading' },
+											'CAN/CANopen'
+										),
+										React.createElement(
+											'p',
+											{ className: 'list-group-item-text' },
+											'Open protocol used in broad range of applications.'
+										)
+									),
+									React.createElement(
+										'div',
+										{ className: 'list-group-item' },
+										React.createElement(
+											'h5',
+											{ className: 'list-group-item-heading' },
+											'INTERBUS'
+										),
+										React.createElement(
+											'p',
+											{ className: 'list-group-item-text' },
+											'Phoenix Contact supported, used in system production and process engineering.'
+										)
+									)
+								)
+							),
+							React.createElement(
+								'div',
+								{ className: 'modal-footer' },
+								React.createElement(
+									'button',
+									{ type: 'button', className: 'btn btn-default', 'data-dismiss': 'modal' },
+									'Close'
+								)
+							)
+						)
+					)
+				)
+			);
+		}
+	}]);
 
-  return BusFilter;
+	return BusFilter;
 }(React.Component);
 
 exports.default = BusFilter;
@@ -9949,7 +10108,7 @@ exports.default = BusFilter;
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -9963,86 +10122,273 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var applicationList = ['Stationary', 'Flexible', 'Continuous Flex', 'Torsion', 'Festoon'];
 
 var ApplicationFilter = function (_React$Component) {
-  _inherits(ApplicationFilter, _React$Component);
+	_inherits(ApplicationFilter, _React$Component);
 
-  function ApplicationFilter(props) {
-    _classCallCheck(this, ApplicationFilter);
+	function ApplicationFilter(props) {
+		_classCallCheck(this, ApplicationFilter);
 
-    var _this = _possibleConstructorReturn(this, (ApplicationFilter.__proto__ || Object.getPrototypeOf(ApplicationFilter)).call(this, props));
+		var _this = _possibleConstructorReturn(this, (ApplicationFilter.__proto__ || Object.getPrototypeOf(ApplicationFilter)).call(this, props));
 
-    _this.state = { collapsedState: _this.props.collapsedState };
-    _this.collapseDetection = "collapsed";
-    _this.handleOptionChange = _this.handleOptionChange.bind(_this);
-    _this.handleCollapseClick = _this.handleCollapseClick.bind(_this);
-    return _this;
-  }
+		_this.state = {
+			collapsedState: _this.props.collapsedState,
+			stationaryCount: 0,
+			flexibleCount: 0,
+			continuousFlex: 0,
+			torsionCount: 0,
+			festoonCount: 0
+		};
+		_this.collapseDetection = "collapsed";
+		_this.handleOptionChange = _this.handleOptionChange.bind(_this);
+		_this.handleCollapseClick = _this.handleCollapseClick.bind(_this);
+		return _this;
+	}
 
-  _createClass(ApplicationFilter, [{
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(nextProps) {
-      if (nextProps.collapsedState !== this.props.collapsedState) {
-        this.setState({ collapsedState: nextProps.collapsedState });
-      }
-    }
-  }, {
-    key: 'handleOptionChange',
-    value: function handleOptionChange(e) {
-      var applicationState = null;
-      if (e.target.value !== this.props.applicationSelection) {
-        applicationState = e.target.value;
-      }
-      this.props.stateContainer({ applicationSelection: applicationState });
-    }
-  }, {
-    key: 'handleCollapseClick',
-    value: function handleCollapseClick(e) {
-      var collapsedState = e.currentTarget.classList.contains(this.collapseDetection);
-      this.setState({ collapsedState: collapsedState });
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
+	_createClass(ApplicationFilter, [{
+		key: 'componentWillReceiveProps',
+		value: function componentWillReceiveProps(nextProps) {
+			console.log(nextProps.selectedProductsArr);
+			var stationary = 0;
+			var flexible = 0;
+			var continuous = 0;
+			var torsion = 0;
+			var festoon = 0;
+			for (var i = 0; i < nextProps.data.length; i++) {
+				if (nextProps.busSelection === nextProps.data[i].bus_system) {
+					switch (nextProps.data[i].application) {
+						case "Stationary":
+							stationary++;
+							break;
+						case "Flexible":
+							flexible++;
+							break;
+						case "Continuous Flex":
+							continuous++;
+							break;
+						case "Torsion":
+							torsion++;
+							break;
+						case "Festoon":
+							festoon++;
+							break;
+						default:
+							break;
+					}
+				}
+			}
 
-      var applicationRadioItems = applicationList.map(function (data, i) {
-        return React.createElement(
-          'div',
-          { key: i, className: _this2.props.applicationSelection === data ? "bus-type selected-attribute col-xs-6 col-sm-12" : "bus-type col-xs-6 col-sm-12" },
-          React.createElement(
-            'label',
-            null,
-            React.createElement('input', { type: 'radio', value: data,
-              checked: _this2.props.applicationSelection === 'option' + [i]
-            }),
-            ' ',
-            data
-          )
-        );
-      });
-      return React.createElement(
-        'div',
-        { className: 'filter-collapse-container' },
-        React.createElement(
-          'div',
-          { 'data-toggle': 'collapse', 'data-target': '#application-form', className: 'filter-header', onClick: this.handleCollapseClick },
-          React.createElement(
-            'span',
-            { className: 'span-margin' },
-            'Application'
-          ),
-          ' ',
-          React.createElement('span', { className: this.state.collapsedState == true ? "glyphicon glyphicon-plus pull-right glyphicon-margin" : "glyphicon glyphicon-minus pull-right glyphicon-margin" })
-        ),
-        React.createElement(
-          'form',
-          { id: 'application-form', onChange: this.handleOptionChange, className: this.props.collapsedState == true ? "attribute-list collapse" : 'attribute-list collapse in' },
-          applicationRadioItems
-        )
-      );
-    }
-  }]);
+			console.log(stationary);
 
-  return ApplicationFilter;
+			if (nextProps.collapsedState !== this.props.collapsedState) {
+				this.setState({
+					collapsedState: nextProps.collapsedState,
+					stationaryCount: stationary,
+					flexibleCount: flexible,
+					continuousFlex: continuous,
+					torsionCount: torsion,
+					festoonCount: festoon
+				});
+			} else {
+				this.setState({
+					collapsedState: nextProps.collapsedState,
+					stationaryCount: stationary,
+					flexibleCount: flexible,
+					continuousFlex: continuous,
+					torsionCount: torsion,
+					festoonCount: festoon
+				});
+			}
+		}
+	}, {
+		key: 'handleOptionChange',
+		value: function handleOptionChange(e) {
+			var applicationState = null;
+			if (e.target.value !== this.props.applicationSelection) {
+				applicationState = e.target.value;
+			}
+			this.props.stateContainer({ applicationSelection: applicationState });
+		}
+	}, {
+		key: 'handleCollapseClick',
+		value: function handleCollapseClick(e) {
+			var collapsedState = e.currentTarget.classList.contains(this.collapseDetection);
+			this.setState({ collapsedState: collapsedState });
+		}
+	}, {
+		key: 'counter',
+		value: function counter(data) {
+			if (data === "Stationary") {
+				return this.state.stationaryCount;
+			}
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			var _this2 = this;
+
+			var applicationRadioItems = applicationList.map(function (data, i) {
+				return React.createElement(
+					'div',
+					{ key: i, className: _this2.props.applicationSelection === data ? "bus-type selected-attribute col-xs-6 col-sm-12" : "bus-type col-xs-6 col-sm-12" },
+					React.createElement(
+						'label',
+						null,
+						React.createElement('input', { type: 'radio', value: data,
+							checked: _this2.props.applicationSelection === 'option' + [i]
+						}),
+						' ',
+						data,
+						' (',
+						_this2.counter(data),
+						')'
+					)
+				);
+			});
+			return React.createElement(
+				'div',
+				{ className: 'filter-collapse-container' },
+				React.createElement(
+					'div',
+					null,
+					React.createElement('span', { role: 'button', 'data-toggle': 'modal', 'data-target': '#application-modal', className: 'glyphicon glyphicon-info-sign info-btn' }),
+					React.createElement(
+						'div',
+						{ 'data-toggle': 'collapse', 'data-target': '#application-form', className: 'filter-header', onClick: this.handleCollapseClick },
+						React.createElement(
+							'span',
+							{ className: 'span-margin' },
+							'Application'
+						),
+						' ',
+						React.createElement('span', { className: this.state.collapsedState == true ? "glyphicon glyphicon-plus pull-right glyphicon-margin" : "glyphicon glyphicon-minus pull-right glyphicon-margin" })
+					)
+				),
+				React.createElement(
+					'form',
+					{ id: 'application-form', onChange: this.handleOptionChange, className: this.props.collapsedState == true ? "attribute-list collapse" : 'attribute-list collapse in' },
+					applicationRadioItems
+				),
+				React.createElement(
+					'div',
+					{ id: 'application-modal', className: 'modal fade', tabIndex: '-1', role: 'dialog', 'aria-labelledby': 'mySmallModalLabel' },
+					React.createElement(
+						'div',
+						{ className: 'modal-dialog', role: 'document' },
+						React.createElement(
+							'div',
+							{ className: 'modal-content' },
+							React.createElement(
+								'div',
+								{ className: 'modal-header' },
+								React.createElement(
+									'button',
+									{ type: 'button', className: 'close', 'data-dismiss': 'modal', 'aria-label': 'Close' },
+									React.createElement(
+										'span',
+										{ 'aria-hidden': 'true' },
+										'\xD7'
+									)
+								),
+								React.createElement(
+									'h4',
+									{ className: 'modal-title', id: 'myModalLabel' },
+									'Applications ...'
+								)
+							),
+							React.createElement(
+								'div',
+								{ className: 'modal-body' },
+								React.createElement(
+									'div',
+									{ className: 'list-group' },
+									React.createElement(
+										'div',
+										{ className: 'list-group-item' },
+										React.createElement(
+											'h5',
+											{ className: 'list-group-item-heading' },
+											'Stationary'
+										),
+										React.createElement(
+											'p',
+											{ className: 'list-group-item-text' },
+											'Installed and left in it\'s original position'
+										)
+									),
+									React.createElement(
+										'div',
+										{ className: 'list-group-item' },
+										React.createElement(
+											'h5',
+											{ className: 'list-group-item-heading' },
+											'Flexible/Occasional Flexing'
+										),
+										React.createElement(
+											'p',
+											{ className: 'list-group-item-text' },
+											'Moved randomlly in a non-automated application'
+										)
+									),
+									React.createElement(
+										'div',
+										{ className: 'list-group-item' },
+										React.createElement(
+											'h5',
+											{ className: 'list-group-item-heading' },
+											'Continuous Flex'
+										),
+										React.createElement(
+											'p',
+											{ className: 'list-group-item-text' },
+											'Constant linear motion in automated applications'
+										)
+									),
+									React.createElement(
+										'div',
+										{ className: 'list-group-item' },
+										React.createElement(
+											'h5',
+											{ className: 'list-group-item-heading' },
+											'Torsion'
+										),
+										React.createElement(
+											'p',
+											{ className: 'list-group-item-text' },
+											'Bending and twisting in a X-Y-Z motion in automated applications'
+										)
+									),
+									React.createElement(
+										'div',
+										{ className: 'list-group-item' },
+										React.createElement(
+											'h5',
+											{ className: 'list-group-item-heading' },
+											'Festoon'
+										),
+										React.createElement(
+											'p',
+											{ className: 'list-group-item-text' },
+											'Constant motion in festoon applications, like cable trolleys'
+										)
+									)
+								)
+							),
+							React.createElement(
+								'div',
+								{ className: 'modal-footer' },
+								React.createElement(
+									'button',
+									{ type: 'button', className: 'btn btn-default', 'data-dismiss': 'modal' },
+									'Close'
+								)
+							)
+						)
+					)
+				)
+			);
+		}
+	}]);
+
+	return ApplicationFilter;
 }(React.Component);
 
 exports.default = ApplicationFilter;
@@ -10066,7 +10412,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var approvalsList = ["UL AWM", "UL CMG", "UL CMX", "UL PLTC", "UL CL2", "CAN AWM", "CAN CMG", "CAN CMX"];
+var approvalsList = ["UL AWM", "UL CMG", "UL CMX", "UL PLTC", "UL CL2", "Canada AWM", "Canada CMG", "Canada CMX"];
 
 var ApprovalsFilter = function (_React$Component) {
 	_inherits(ApprovalsFilter, _React$Component);
@@ -10531,7 +10877,8 @@ var SelectedProducts = function (_React$Component) {
       country: '',
       email: '',
       phone: '',
-      comments: ''
+      comments: '',
+      data: _this.props.selectedProducts
     };
     _this.getApprovals = _this.getApprovals.bind(_this);
     _this.getCanApprovals = _this.getCanApprovals.bind(_this);
@@ -10543,6 +10890,15 @@ var SelectedProducts = function (_React$Component) {
   }
 
   _createClass(SelectedProducts, [{
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      console.log("SelectedProducts Props:");
+      console.log(nextProps.selectedProducts);
+      this.setState({
+        data: nextProps.selectedProducts
+      });
+    }
+  }, {
     key: 'getApprovals',
     value: function getApprovals(data) {
       var approvalsArr = [];
@@ -10613,6 +10969,7 @@ var SelectedProducts = function (_React$Component) {
       /* Email form submit */
       var payloadObj = this.state;
       var payload = JSON.stringify(payloadObj, null, 2);
+      console.log(payload);
       $.ajax({
         contentType: "application/json; charset=utf-8",
         dataType: "JSON",
@@ -11115,7 +11472,11 @@ var ProductGridContainer = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (ProductGridContainer.__proto__ || Object.getPrototypeOf(ProductGridContainer)).call(this, props));
 
-    _this.state = { searchPartNumber: null };
+    _this.state = {
+      searchPartNumber: null,
+      windowWidth: 768
+    };
+    _this.updateWindowDimensions = _this.updateWindowDimensions.bind(_this);
     _this.getApprovals = _this.getApprovals.bind(_this);
     _this.getCanApprovals = _this.getCanApprovals.bind(_this);
     _this.handleOptionChange = _this.handleOptionChange.bind(_this);
@@ -11124,12 +11485,27 @@ var ProductGridContainer = function (_React$Component) {
   }
 
   _createClass(ProductGridContainer, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.updateWindowDimensions();
+      window.addEventListener('resize', this.updateWindowDimensions);
+    }
+  }, {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
       if (nextProps.searchPartNumber == null) {
         return;
       } else {
         this.setState({ searchPartNumber: nextProps.searchPartNumber });
+      }
+    }
+  }, {
+    key: 'updateWindowDimensions',
+    value: function updateWindowDimensions() {
+      if (this.state.windowWidth < 768) {
+        console.log("doesn't matter");
+      } else if (window.innerWidth < 768) {
+        this.setState({ windowWidth: window.innerWidth });
       }
     }
   }, {
@@ -11201,24 +11577,37 @@ var ProductGridContainer = function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      var nope = React.createElement(
-        'div',
-        { className: 'col-xs-12 text-center no-results-msg' },
-        React.createElement(
+      var nope = null;
+
+      if (this.state.windowWidth < 768) {
+        nope = React.createElement(
           'div',
-          { className: 'jumbotron custom-jumbotron' },
+          { className: 'col-xs-12 text-center no-results-msg' },
           React.createElement(
-            'h4',
-            null,
-            'Select a'
-          ),
-          React.createElement(
-            'h4',
-            null,
-            'Bus type to begin'
+            'div',
+            { className: 'jumbotron custom-jumbotron' },
+            React.createElement(
+              'h4',
+              null,
+              'Start by Selecting a Bus system from the filter menu'
+            )
           )
-        )
-      );
+        );
+      } else {
+        nope = React.createElement(
+          'div',
+          { className: 'col-xs-12 text-center no-results-msg' },
+          React.createElement(
+            'div',
+            { className: 'jumbotron custom-jumbotron' },
+            React.createElement(
+              'h4',
+              null,
+              'Start by Selecting a Bus type from the filter menu'
+            )
+          )
+        );
+      }
 
       if (this.props.searchPartNumber !== null) {
         nope = React.createElement(
@@ -11270,6 +11659,7 @@ var ProductGridContainer = function (_React$Component) {
         );
       }
       var rows = [];
+      var options = [];
       this.props.data.map(function (product, i) {
 
         if (_this2.props.searchPartNumber !== null) {
@@ -11350,7 +11740,6 @@ var ProductGridContainer = function (_React$Component) {
           }
         }
 
-        // Need to add fast_connect column to database!!!!!!
         if (_this2.props.fastConnectSelection !== null && product.fast_connect == false) {
           return;
         }
@@ -11421,7 +11810,9 @@ var ProductGridContainer = function (_React$Component) {
             )
           )
         ));
+        options.push(product);
       });
+      this.props.getOptions(options);
       return React.createElement(
         'div',
         { className: 'col-xs-12 item-container' },
@@ -11697,8 +12088,8 @@ var Etherline = function (_React$Component) {
 				contentType: "application/json; charset=utf-8",
 				dataType: "JSON",
 				type: "GET",
-				url: "https://selectortoolapi.com/etherline/data"
-				// url: "http://localhost:3000/etherline/data"
+				// url: "https://selectortoolapi.com/etherline/data"
+				url: "http://localhost:3000/etherline/data"
 			}).done(function (data) {
 				console.log(data);
 			}).then(function (data) {
@@ -11722,16 +12113,16 @@ var Etherline = function (_React$Component) {
 						data[i].prettyApprovalArr.push("UL AWM");
 					}
 					if (data[i].can_cmx) {
-						data[i].prettyApprovalArr.push("CAN CMX");
+						data[i].prettyApprovalArr.push("Canada CMX");
 					}
 					if (data[i].can_cmg) {
-						data[i].prettyApprovalArr.push("CAN CMG");
+						data[i].prettyApprovalArr.push("Canada CMG");
 					}
 					if (data[i].can_pltc) {
-						data[i].prettyApprovalArr.push("CAN PLTC");
+						data[i].prettyApprovalArr.push("Canada PLTC");
 					}
 					if (data[i].can_awm) {
-						data[i].prettyApprovalArr.push("CAN AWM");
+						data[i].prettyApprovalArr.push("Canada AWM");
 					}
 				}
 				_this2.setState({ data: data });
@@ -12055,8 +12446,13 @@ var FilterContainer = function (_React$Component) {
                 ),
                 React.createElement(
                   'a',
-                  { id: 'mobile-filters-btn', className: 'navbar-brand', href: '#', onClick: this.toggleMobileFilterDisplay },
-                  React.createElement('span', { className: 'glyphicon glyphicon-filter' })
+                  { id: 'mobile-filters-btn', className: 'navbar-brand text-center', href: '#', onClick: this.toggleMobileFilterDisplay },
+                  React.createElement('span', { className: 'glyphicon glyphicon-filter' }),
+                  React.createElement(
+                    'span',
+                    { className: 'glyph-text' },
+                    'Filter'
+                  )
                 ),
                 React.createElement('img', { className: 'img-responsive header-img', src: 'images/lapp_group_web_cropped.png', alt: 'lapp-logo' })
               )
@@ -12226,19 +12622,127 @@ var CatFilter = function (_React$Component) {
 				{ className: 'filter-collapse-container' },
 				React.createElement(
 					'div',
-					{ 'data-toggle': 'collapse', 'data-target': '#cat-form', className: 'filter-header', onClick: this.handleCollapseClick },
+					null,
+					React.createElement('span', { role: 'button', 'data-toggle': 'modal', 'data-target': '#cat-modal', className: 'glyphicon glyphicon-info-sign info-btn' }),
 					React.createElement(
-						'span',
-						{ className: 'span-margin' },
-						'CAT Type'
-					),
-					' ',
-					React.createElement('span', { className: this.state.collapsedState == true ? "glyphicon glyphicon-plus pull-right glyphicon-margin" : "glyphicon glyphicon-minus pull-right glyphicon-margin" })
+						'div',
+						{ 'data-toggle': 'collapse', 'data-target': '#cat-form', className: 'filter-header', onClick: this.handleCollapseClick },
+						React.createElement(
+							'span',
+							{ className: 'span-margin' },
+							'CAT Type'
+						),
+						' ',
+						React.createElement('span', { className: this.state.collapsedState == true ? "glyphicon glyphicon-plus pull-right glyphicon-margin" : "glyphicon glyphicon-minus pull-right glyphicon-margin" })
+					)
 				),
 				React.createElement(
 					'form',
 					{ id: 'cat-form', onChange: this.handleOptionChange, className: this.props.collapsedState == true ? "attribute-list collapse" : 'attribute-list collapse in' },
 					catRadioItems
+				),
+				React.createElement(
+					'div',
+					{ id: 'cat-modal', className: 'modal fade', tabIndex: '-1', role: 'dialog', 'aria-labelledby': 'mySmallModalLabel' },
+					React.createElement(
+						'div',
+						{ className: 'modal-dialog', role: 'document' },
+						React.createElement(
+							'div',
+							{ className: 'modal-content' },
+							React.createElement(
+								'div',
+								{ className: 'modal-header' },
+								React.createElement(
+									'button',
+									{ type: 'button', className: 'close', 'data-dismiss': 'modal', 'aria-label': 'Close' },
+									React.createElement(
+										'span',
+										{ 'aria-hidden': 'true' },
+										'\xD7'
+									)
+								),
+								React.createElement(
+									'h4',
+									{ className: 'modal-title', id: 'myModalLabel' },
+									'CAT Type ...'
+								)
+							),
+							React.createElement(
+								'div',
+								{ className: 'modal-body' },
+								React.createElement(
+									'div',
+									{ className: 'list-group' },
+									React.createElement(
+										'div',
+										{ className: 'list-group-item' },
+										React.createElement(
+											'h5',
+											{ className: 'list-group-item-heading' },
+											'CAT 5/5e'
+										),
+										React.createElement(
+											'p',
+											{ className: 'list-group-item-text' },
+											'Up to 100 Mhz, Fast Ethernet (100 Mbit) and Gigabit Ethernet.'
+										)
+									),
+									React.createElement(
+										'div',
+										{ className: 'list-group-item' },
+										React.createElement(
+											'h5',
+											{ className: 'list-group-item-heading' },
+											'CAT 6'
+										),
+										React.createElement(
+											'p',
+											{ className: 'list-group-item-text' },
+											'Up to 250 MHz, Fast Ethernet and Gigabit Ethernet.'
+										)
+									),
+									React.createElement(
+										'div',
+										{ className: 'list-group-item' },
+										React.createElement(
+											'h5',
+											{ className: 'list-group-item-heading' },
+											'CAT 6A'
+										),
+										React.createElement(
+											'p',
+											{ className: 'list-group-item-text' },
+											'Up to 500 Mhz, 10 Gigabit Ethernet.'
+										)
+									),
+									React.createElement(
+										'div',
+										{ className: 'list-group-item' },
+										React.createElement(
+											'h5',
+											{ className: 'list-group-item-heading' },
+											'CAT 7'
+										),
+										React.createElement(
+											'p',
+											{ className: 'list-group-item-text' },
+											'Up to 600 Mhz, 10 Gigabit Ethernet.'
+										)
+									)
+								)
+							),
+							React.createElement(
+								'div',
+								{ className: 'modal-footer' },
+								React.createElement(
+									'button',
+									{ type: 'button', className: 'btn btn-default', 'data-dismiss': 'modal' },
+									'Close'
+								)
+							)
+						)
+					)
 				)
 			);
 		}
@@ -12326,7 +12830,13 @@ var ProtocolFilter = function (_React$Component) {
 							checked: _this2.props.protocolSelections === 'option' + [i]
 						}),
 						' ',
-						data
+						data,
+						' ',
+						React.createElement(
+							'sup',
+							null,
+							data === "PROFINET" || "EtherCAT" ? "®" : data === "EtherNet/IP" ? "TM" : ''
+						)
 					)
 				);
 			});
@@ -12335,19 +12845,128 @@ var ProtocolFilter = function (_React$Component) {
 				{ className: 'filter-collapse-container' },
 				React.createElement(
 					'div',
-					{ 'data-toggle': 'collapse', 'data-target': '#protocol-form', className: 'filter-header', onClick: this.handleCollapseClick },
+					null,
+					React.createElement('span', { role: 'button', 'data-toggle': 'modal', 'data-target': '#protocol-modal', className: 'glyphicon glyphicon-info-sign info-btn' }),
 					React.createElement(
-						'span',
-						{ className: 'span-margin' },
-						'Protocol'
-					),
-					' ',
-					React.createElement('span', { className: this.state.collapsedState == true ? "glyphicon glyphicon-plus pull-right glyphicon-margin" : "glyphicon glyphicon-minus pull-right glyphicon-margin" })
+						'div',
+						{ 'data-toggle': 'collapse', 'data-target': '#protocol-form', className: 'filter-header', onClick: this.handleCollapseClick },
+						React.createElement(
+							'span',
+							{ className: 'span-margin' },
+							'Protocol'
+						),
+						' ',
+						React.createElement('span', { className: this.state.collapsedState == true ? "glyphicon glyphicon-plus pull-right glyphicon-margin" : "glyphicon glyphicon-minus pull-right glyphicon-margin" })
+					)
 				),
 				React.createElement(
 					'form',
 					{ id: 'protocol-form', onChange: this.handleOptionChange, className: this.props.collapsedState == true ? "attribute-list collapse" : 'attribute-list collapse in' },
 					protocolRadioItems
+				),
+				React.createElement(
+					'div',
+					{ id: 'protocol-modal', className: 'modal fade', tabIndex: '-1', role: 'dialog', 'aria-labelledby': 'mySmallModalLabel' },
+					React.createElement(
+						'div',
+						{ className: 'modal-dialog', role: 'document' },
+						React.createElement(
+							'div',
+							{ className: 'modal-content' },
+							React.createElement(
+								'div',
+								{ className: 'modal-header' },
+								React.createElement(
+									'button',
+									{ type: 'button', className: 'close', 'data-dismiss': 'modal', 'aria-label': 'Close' },
+									React.createElement(
+										'span',
+										{ 'aria-hidden': 'true' },
+										'\xD7'
+									)
+								),
+								React.createElement(
+									'h4',
+									{ className: 'modal-title', id: 'myModalLabel' },
+									'Protocol'
+								)
+							),
+							React.createElement(
+								'div',
+								{ className: 'modal-body' },
+								React.createElement(
+									'div',
+									{ className: 'list-group' },
+									React.createElement(
+										'div',
+										{ className: 'list-group-item' },
+										React.createElement(
+											'h5',
+											{ className: 'list-group-item-heading' },
+											'Ethernet/IP',
+											React.createElement(
+												'sup',
+												null,
+												'\u2122'
+											)
+										),
+										React.createElement(
+											'p',
+											{ className: 'list-group-item-text' },
+											'Developed by Rockwell, owned and maintained by ODVA.'
+										)
+									),
+									React.createElement(
+										'div',
+										{ className: 'list-group-item' },
+										React.createElement(
+											'h5',
+											{ className: 'list-group-item-heading' },
+											'PROFINET',
+											React.createElement(
+												'sup',
+												null,
+												'\xAE'
+											)
+										),
+										React.createElement(
+											'p',
+											{ className: 'list-group-item-text' },
+											'Developed by Siemens, based on proven TCP/IP and IT standards.'
+										)
+									),
+									React.createElement(
+										'div',
+										{ className: 'list-group-item' },
+										React.createElement(
+											'h5',
+											{ className: 'list-group-item-heading' },
+											'EtherCAT',
+											React.createElement(
+												'sup',
+												null,
+												'\xAE'
+											)
+										),
+										React.createElement(
+											'p',
+											{ className: 'list-group-item-text' },
+											'Developed by Beckhoff, open protocol used in broad range of applications.'
+										)
+									)
+								)
+							),
+							React.createElement(
+								'div',
+								{ className: 'modal-footer' },
+								React.createElement(
+									'button',
+									{ type: 'button', className: 'btn btn-default', 'data-dismiss': 'modal' },
+									'Close'
+								)
+							)
+						)
+					)
 				)
 			);
 		}
@@ -12445,23 +13064,131 @@ var ApplicationFilter = function (_React$Component) {
 				{ className: 'filter-collapse-container' },
 				React.createElement(
 					'div',
-					{ 'data-toggle': 'collapse', 'data-target': '#application-form', className: 'filter-header', onClick: this.handleCollapseClick },
+					null,
+					React.createElement('span', { role: 'button', 'data-toggle': 'modal', 'data-target': '#application-modal', className: 'glyphicon glyphicon-info-sign info-btn' }),
 					React.createElement(
-						'span',
-						{ className: 'span-margin' },
+						'div',
+						{ 'data-toggle': 'collapse', 'data-target': '#application-form', className: 'filter-header', onClick: this.handleCollapseClick },
 						React.createElement(
-							'strong',
-							null,
-							'Application'
-						)
-					),
-					' ',
-					React.createElement('span', { className: this.state.collapsedState == true ? "glyphicon glyphicon-plus pull-right glyphicon-margin" : "glyphicon glyphicon-minus pull-right glyphicon-margin" })
+							'span',
+							{ className: 'span-margin' },
+							React.createElement(
+								'strong',
+								null,
+								'Application'
+							)
+						),
+						' ',
+						React.createElement('span', { className: this.state.collapsedState == true ? "glyphicon glyphicon-plus pull-right glyphicon-margin" : "glyphicon glyphicon-minus pull-right glyphicon-margin" })
+					)
 				),
 				React.createElement(
 					'form',
 					{ id: 'application-form', onChange: this.handleOptionChange, className: this.props.collapsedState == true ? "attribute-list collapse" : 'attribute-list collapse in' },
 					applicationRadioItems
+				),
+				React.createElement(
+					'div',
+					{ id: 'application-modal', className: 'modal fade', tabIndex: '-1', role: 'dialog', 'aria-labelledby': 'mySmallModalLabel' },
+					React.createElement(
+						'div',
+						{ className: 'modal-dialog', role: 'document' },
+						React.createElement(
+							'div',
+							{ className: 'modal-content' },
+							React.createElement(
+								'div',
+								{ className: 'modal-header' },
+								React.createElement(
+									'button',
+									{ type: 'button', className: 'close', 'data-dismiss': 'modal', 'aria-label': 'Close' },
+									React.createElement(
+										'span',
+										{ 'aria-hidden': 'true' },
+										'\xD7'
+									)
+								),
+								React.createElement(
+									'h4',
+									{ className: 'modal-title', id: 'myModalLabel' },
+									'Application...'
+								)
+							),
+							React.createElement(
+								'div',
+								{ className: 'modal-body' },
+								React.createElement(
+									'div',
+									{ className: 'list-group' },
+									React.createElement(
+										'div',
+										{ className: 'list-group-item' },
+										React.createElement(
+											'h5',
+											{ className: 'list-group-item-heading' },
+											'Stationary'
+										),
+										React.createElement(
+											'p',
+											{ className: 'list-group-item-text' },
+											'Installed and left in it\'s original position.'
+										)
+									),
+									React.createElement(
+										'div',
+										{ className: 'list-group-item' },
+										React.createElement(
+											'h5',
+											{ className: 'list-group-item-heading' },
+											'Flexible'
+										),
+										React.createElement(
+											'p',
+											{ className: 'list-group-item-text' },
+											'Moved randomly in a non-automated application.'
+										)
+									),
+									React.createElement(
+										'div',
+										{ className: 'list-group-item' },
+										React.createElement(
+											'h5',
+											{ className: 'list-group-item-heading' },
+											'Continuous Flex'
+										),
+										React.createElement(
+											'p',
+											{ className: 'list-group-item-text' },
+											'Constant linear motion in automated applications.'
+										)
+									),
+									React.createElement(
+										'div',
+										{ className: 'list-group-item' },
+										React.createElement(
+											'h5',
+											{ className: 'list-group-item-heading' },
+											'Torsion'
+										),
+										React.createElement(
+											'p',
+											{ className: 'list-group-item-text' },
+											'Bending and twisting in an X-Y-Z motion in automated applications.'
+										)
+									)
+								)
+							),
+							React.createElement(
+								'div',
+								{ className: 'modal-footer' },
+								React.createElement(
+									'button',
+									{ type: 'button', className: 'btn btn-default', 'data-dismiss': 'modal' },
+									'Close'
+								)
+							)
+						)
+					)
 				)
 			);
 		}
@@ -12491,7 +13218,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var approvalsList = ["UL AWM", "UL CMG", "UL CMX", "UL PLTC", "UL CMR", "CAN AWM", "CAN CMG", "CAN CMX", "CAN PLTC"];
+var approvalsList = ["UL AWM", "UL CMG", "UL CMX", "UL PLTC", "UL CMR", "Canada AWM", "Canada CMG", "Canada CMX", "Canada PLTC"];
 
 var ApprovalsFilter = function (_React$Component) {
 	_inherits(ApprovalsFilter, _React$Component);
@@ -13041,12 +13768,7 @@ var ProductGrid = function (_React$Component) {
           React.createElement(
             "h4",
             null,
-            "Select a"
-          ),
-          React.createElement(
-            "h4",
-            null,
-            "CAT Type to begin"
+            "Start by selecting a CAT type from the filter menu"
           )
         )
       );
