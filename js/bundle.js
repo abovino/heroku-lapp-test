@@ -9308,8 +9308,8 @@ var Unitronic = function (_React$Component) {
 								contentType: "application/json; charset=utf-8",
 								dataType: "JSON",
 								type: "GET",
-								url: "https://selectortoolapi.com/bus/data"
-								// url: "http://localhost:3000/bus/data"
+								// url: "https://selectortoolapi.com/bus/data"
+								url: "http://localhost:3000/bus/data"
 						}).done(function (data) {
 								console.log(data);
 						}).then(function (data) {
@@ -9946,7 +9946,7 @@ var BusFilter = function (_React$Component) {
 				React.createElement(
 					'div',
 					null,
-					React.createElement('span', { role: 'button', 'data-toggle': 'modal', 'data-target': '#bus-modal', className: 'glyphicon glyphicon-info-sign info-btn' }),
+					React.createElement('span', { id: 'bus-info-btn', role: 'button', 'data-toggle': 'modal', 'data-target': '#bus-modal', className: 'glyphicon glyphicon-info-sign info-btn' }),
 					React.createElement(
 						'div',
 						{ 'data-toggle': 'collapse', 'data-target': '#bus-form', className: 'filter-header', onClick: this.handleCollapseClick },
@@ -10146,57 +10146,55 @@ var ApplicationFilter = function (_React$Component) {
 	_createClass(ApplicationFilter, [{
 		key: 'componentWillReceiveProps',
 		value: function componentWillReceiveProps(nextProps) {
-			console.log(nextProps.selectedProductsArr);
-			var stationary = 0;
-			var flexible = 0;
-			var continuous = 0;
-			var torsion = 0;
-			var festoon = 0;
-			for (var i = 0; i < nextProps.data.length; i++) {
-				if (nextProps.busSelection === nextProps.data[i].bus_system) {
-					switch (nextProps.data[i].application) {
-						case "Stationary":
-							stationary++;
-							break;
-						case "Flexible":
-							flexible++;
-							break;
-						case "Continuous Flex":
-							continuous++;
-							break;
-						case "Torsion":
-							torsion++;
-							break;
-						case "Festoon":
-							festoon++;
-							break;
-						default:
-							break;
-					}
-				}
-			}
-
-			console.log(stationary);
-
-			if (nextProps.collapsedState !== this.props.collapsedState) {
-				this.setState({
-					collapsedState: nextProps.collapsedState,
-					stationaryCount: stationary,
-					flexibleCount: flexible,
-					continuousFlex: continuous,
-					torsionCount: torsion,
-					festoonCount: festoon
-				});
-			} else {
-				this.setState({
-					collapsedState: nextProps.collapsedState,
-					stationaryCount: stationary,
-					flexibleCount: flexible,
-					continuousFlex: continuous,
-					torsionCount: torsion,
-					festoonCount: festoon
-				});
-			}
+			/* console.log(nextProps.selectedProductsArr);
+   let stationary = 0;
+   let flexible = 0;
+   let continuous = 0;
+   let torsion = 0;
+   let festoon = 0;
+   for (let i = 0; i < nextProps.data.length; i++) {
+   	if (nextProps.busSelection === nextProps.data[i].bus_system) {
+   		switch (nextProps.data[i].application) {
+   			case "Stationary":
+   				stationary++
+   				break;
+   			case "Flexible":
+   				flexible++
+   				break;
+   			case "Continuous Flex":
+   				continuous++
+   				break;
+   			case "Torsion":
+   				torsion++
+   				break;
+   			case "Festoon":
+   				festoon++
+   				break;		
+   			default:
+   				break;
+   		}
+   	}	
+   }
+   		console.log(stationary); 
+   		if (nextProps.collapsedState !== this.props.collapsedState) {
+   	this.setState({ 
+   		collapsedState: nextProps.collapsedState,
+   		stationaryCount: stationary,
+   		flexibleCount: flexible,
+   		continuousFlex: continuous,
+   		torsionCount: torsion,
+   		festoonCount: festoon
+   	});
+   }  else {
+   	this.setState({
+   		collapsedState: nextProps.collapsedState,
+   		stationaryCount: stationary,
+   		flexibleCount: flexible,
+   		continuousFlex: continuous,
+   		torsionCount: torsion,
+   		festoonCount: festoon
+   	});
+   }  */
 		}
 	}, {
 		key: 'handleOptionChange',
@@ -10236,10 +10234,7 @@ var ApplicationFilter = function (_React$Component) {
 							checked: _this2.props.applicationSelection === 'option' + [i]
 						}),
 						' ',
-						data,
-						' (',
-						_this2.counter(data),
-						')'
+						data
 					)
 				);
 			});
@@ -10249,7 +10244,7 @@ var ApplicationFilter = function (_React$Component) {
 				React.createElement(
 					'div',
 					null,
-					React.createElement('span', { role: 'button', 'data-toggle': 'modal', 'data-target': '#application-modal', className: 'glyphicon glyphicon-info-sign info-btn' }),
+					React.createElement('span', { id: 'application-info-btn', role: 'button', 'data-toggle': 'modal', 'data-target': '#application-modal', className: 'glyphicon glyphicon-info-sign info-btn' }),
 					React.createElement(
 						'div',
 						{ 'data-toggle': 'collapse', 'data-target': '#application-form', className: 'filter-header', onClick: this.handleCollapseClick },
@@ -10966,6 +10961,38 @@ var SelectedProducts = function (_React$Component) {
     key: 'onFormSubmit',
     value: function onFormSubmit(e) {
       e.preventDefault();
+
+      /* function validateEmail(email) {
+      	var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      	return re.test(email);
+      }
+      
+      switch ('' || false) {
+      	case this.state.company:
+      		console.log("Company");
+      		break;
+      	case this.state.salutation:
+      		console.log("salutation");
+      		break;
+      	case this.state.fname:
+      		console.log("fname");
+      		break;
+      	case this.state.lname:
+      		console.log("lname");
+      		break;
+      	case this.state.country:
+      		console.log("country");
+      		break;
+      	case validateEmail(this.state.email):
+      		console.log("email");
+      		break;
+      	case this.state.phone:
+      		console.log("phone");
+      		break;
+      	default:
+      		break;
+      } */
+
       /* Email form submit */
       var payloadObj = this.state;
       var payload = JSON.stringify(payloadObj, null, 2);
@@ -10991,7 +11018,6 @@ var SelectedProducts = function (_React$Component) {
   }, {
     key: 'onFormChange',
     value: function onFormChange(e) {
-      console.log(e.target.name, ": ", e.target.value);
       this.setState(_defineProperty({}, e.target.name, e.target.value));
     }
   }, {
@@ -11214,7 +11240,7 @@ var SelectedProducts = function (_React$Component) {
                               React.createElement(
                                 'td',
                                 null,
-                                React.createElement('input', { name: 'company', type: 'text', value: this.state.company, onChange: this.onFormChange })
+                                React.createElement('input', { title: 'Company', name: 'company', type: 'text', value: this.state.company, onChange: this.onFormChange, required: true })
                               )
                             ),
                             React.createElement(
@@ -11234,7 +11260,7 @@ var SelectedProducts = function (_React$Component) {
                                 null,
                                 React.createElement(
                                   'select',
-                                  { onChange: this.onFormChange, name: 'salutation', id: 'salutation-dropdown' },
+                                  { title: 'Salutation', onChange: this.onFormChange, name: 'salutation', id: 'salutation-dropdown', required: true },
                                   React.createElement('option', { value: '' }),
                                   React.createElement(
                                     'option',
@@ -11269,7 +11295,7 @@ var SelectedProducts = function (_React$Component) {
                               React.createElement(
                                 'td',
                                 null,
-                                React.createElement('input', { name: 'fname', type: 'text', value: this.state.fname, onChange: this.onFormChange })
+                                React.createElement('input', { title: 'First Name', name: 'fname', type: 'text', value: this.state.fname, onChange: this.onFormChange, required: true })
                               )
                             ),
                             React.createElement(
@@ -11287,7 +11313,7 @@ var SelectedProducts = function (_React$Component) {
                               React.createElement(
                                 'td',
                                 null,
-                                React.createElement('input', { name: 'lname', type: 'text', value: this.state.lname, onChange: this.onFormChange })
+                                React.createElement('input', { title: 'Last Name', name: 'lname', type: 'text', value: this.state.lname, onChange: this.onFormChange, required: true })
                               )
                             ),
                             React.createElement(
@@ -11307,7 +11333,7 @@ var SelectedProducts = function (_React$Component) {
                                 null,
                                 React.createElement(
                                   'select',
-                                  { onChange: this.onFormChange, name: 'country', id: 'country-dropdown' },
+                                  { title: 'Country', onChange: this.onFormChange, name: 'country', id: 'country-dropdown' },
                                   React.createElement(
                                     'option',
                                     { value: 'USA' },
@@ -11336,7 +11362,7 @@ var SelectedProducts = function (_React$Component) {
                               React.createElement(
                                 'td',
                                 null,
-                                React.createElement('input', { name: 'email', type: 'text', value: this.state.email, onChange: this.onFormChange })
+                                React.createElement('input', { title: 'Email', name: 'email', type: 'email', value: this.state.email, onChange: this.onFormChange, required: true })
                               )
                             ),
                             React.createElement(
@@ -11348,13 +11374,18 @@ var SelectedProducts = function (_React$Component) {
                                 React.createElement(
                                   'span',
                                   null,
-                                  'Phone'
+                                  'Phone ',
+                                  React.createElement(
+                                    'i',
+                                    { id: 'tel-format' },
+                                    'xxx-xxx-xxxx'
+                                  )
                                 )
                               ),
                               React.createElement(
                                 'td',
                                 null,
-                                React.createElement('input', { name: 'phone', type: 'text', value: this.state.phone, onChange: this.onFormChange })
+                                React.createElement('input', { title: 'Phone', name: 'phone', type: 'tel', pattern: '^\\d{3}-\\d{3}-\\d{4}$', value: this.state.phone, onChange: this.onFormChange, required: true })
                               )
                             ),
                             React.createElement(
@@ -11380,7 +11411,7 @@ var SelectedProducts = function (_React$Component) {
                       ),
                       React.createElement(
                         'div',
-                        { className: 'col-xs-12' },
+                        { className: 'col-xs-12 modal-form-btns' },
                         React.createElement(
                           'button',
                           { type: 'button', className: 'btn btn-default', 'data-dismiss': 'modal' },
@@ -11409,20 +11440,7 @@ var SelectedProducts = function (_React$Component) {
                   )
                 )
               ),
-              React.createElement(
-                'div',
-                { className: 'modal-footer' },
-                React.createElement(
-                  'button',
-                  { type: 'button', className: 'btn btn-default', 'data-dismiss': 'modal' },
-                  'Close'
-                ),
-                React.createElement(
-                  'button',
-                  { type: 'button', className: 'btn btn-primary' },
-                  'Save changes'
-                )
-              )
+              React.createElement('div', { className: 'modal-footer' })
             )
           )
         )
@@ -12088,8 +12106,8 @@ var Etherline = function (_React$Component) {
 				contentType: "application/json; charset=utf-8",
 				dataType: "JSON",
 				type: "GET",
-				url: "https://selectortoolapi.com/etherline/data"
-				// url: "http://localhost:3000/etherline/data"
+				// url: "https://selectortoolapi.com/etherline/data"
+				url: "http://localhost:3000/etherline/data"
 			}).done(function (data) {
 				console.log(data);
 			}).then(function (data) {
@@ -14054,7 +14072,8 @@ var SelectedProducts = function (_React$Component) {
       country: '',
       email: '',
       phone: '',
-      comments: ''
+      comments: '',
+      data: _this.props.selectedProducts
     };
     _this.getApprovals = _this.getApprovals.bind(_this);
     _this.getCanApprovals = _this.getCanApprovals.bind(_this);
@@ -14070,6 +14089,9 @@ var SelectedProducts = function (_React$Component) {
     value: function componentWillReceiveProps(nextProps) {
       console.log("SelectedProducts Props");
       console.log(nextProps.selectedProducts);
+      this.setState({
+        data: nextProps.selectedProducts
+      });
     }
   }, {
     key: 'getApprovals',
@@ -14142,12 +14164,10 @@ var SelectedProducts = function (_React$Component) {
     key: 'onFormSubmit',
     value: function onFormSubmit(e) {
       e.preventDefault();
-      /* Email form submit */
-      var selectedProducts = this.props.selectedProducts;
-      var payloadObj = this.state;
-      payloadObj['usersProducts'] = selectedProducts;
-      var payload = JSON.stringify(payloadObj, null, 2);
 
+      /* Email form submit */
+      var payloadObj = this.state;
+      var payload = JSON.stringify(payloadObj, null, 2);
       $.ajax({
         contentType: "application/json; charset=utf-8",
         dataType: "JSON",
@@ -14169,7 +14189,6 @@ var SelectedProducts = function (_React$Component) {
   }, {
     key: 'onFormChange',
     value: function onFormChange(e) {
-      console.log(e.target.name, ": ", e.target.value);
       this.setState(_defineProperty({}, e.target.name, e.target.value));
     }
   }, {
@@ -14392,7 +14411,7 @@ var SelectedProducts = function (_React$Component) {
                               React.createElement(
                                 'td',
                                 null,
-                                React.createElement('input', { name: 'company', type: 'text', value: this.state.company, onChange: this.onFormChange })
+                                React.createElement('input', { title: 'Company', name: 'company', type: 'text', value: this.state.company, onChange: this.onFormChange, required: true })
                               )
                             ),
                             React.createElement(
@@ -14412,7 +14431,7 @@ var SelectedProducts = function (_React$Component) {
                                 null,
                                 React.createElement(
                                   'select',
-                                  { onChange: this.onFormChange, name: 'salutation', id: 'salutation-dropdown' },
+                                  { title: 'Salutation', onChange: this.onFormChange, name: 'salutation', id: 'salutation-dropdown', required: true },
                                   React.createElement('option', { value: '' }),
                                   React.createElement(
                                     'option',
@@ -14447,7 +14466,7 @@ var SelectedProducts = function (_React$Component) {
                               React.createElement(
                                 'td',
                                 null,
-                                React.createElement('input', { name: 'fname', type: 'text', value: this.state.fname, onChange: this.onFormChange })
+                                React.createElement('input', { title: 'First Name', name: 'fname', type: 'text', value: this.state.fname, onChange: this.onFormChange, required: true })
                               )
                             ),
                             React.createElement(
@@ -14465,7 +14484,7 @@ var SelectedProducts = function (_React$Component) {
                               React.createElement(
                                 'td',
                                 null,
-                                React.createElement('input', { name: 'lname', type: 'text', value: this.state.lname, onChange: this.onFormChange })
+                                React.createElement('input', { title: 'Last Name', name: 'lname', type: 'text', value: this.state.lname, onChange: this.onFormChange, required: true })
                               )
                             ),
                             React.createElement(
@@ -14485,7 +14504,7 @@ var SelectedProducts = function (_React$Component) {
                                 null,
                                 React.createElement(
                                   'select',
-                                  { onChange: this.onFormChange, name: 'country', id: 'country-dropdown' },
+                                  { title: 'Country', onChange: this.onFormChange, name: 'country', id: 'country-dropdown' },
                                   React.createElement(
                                     'option',
                                     { value: 'USA' },
@@ -14514,7 +14533,7 @@ var SelectedProducts = function (_React$Component) {
                               React.createElement(
                                 'td',
                                 null,
-                                React.createElement('input', { name: 'email', type: 'text', value: this.state.email, onChange: this.onFormChange })
+                                React.createElement('input', { title: 'Email', name: 'email', type: 'email', value: this.state.email, onChange: this.onFormChange, required: true })
                               )
                             ),
                             React.createElement(
@@ -14526,13 +14545,18 @@ var SelectedProducts = function (_React$Component) {
                                 React.createElement(
                                   'span',
                                   null,
-                                  'Phone'
+                                  'Phone ',
+                                  React.createElement(
+                                    'i',
+                                    { id: 'tel-format' },
+                                    'xxx-xxx-xxxx'
+                                  )
                                 )
                               ),
                               React.createElement(
                                 'td',
                                 null,
-                                React.createElement('input', { name: 'phone', type: 'text', value: this.state.phone, onChange: this.onFormChange })
+                                React.createElement('input', { title: 'Phone', name: 'phone', type: 'tel', pattern: '^\\d{3}-\\d{3}-\\d{4}$', value: this.state.phone, onChange: this.onFormChange, required: true })
                               )
                             ),
                             React.createElement(
@@ -14558,7 +14582,7 @@ var SelectedProducts = function (_React$Component) {
                       ),
                       React.createElement(
                         'div',
-                        { className: 'col-xs-12' },
+                        { className: 'col-xs-12 modal-form-btns' },
                         React.createElement(
                           'button',
                           { type: 'button', className: 'btn btn-default', 'data-dismiss': 'modal' },
@@ -14566,7 +14590,7 @@ var SelectedProducts = function (_React$Component) {
                         ),
                         React.createElement(
                           'button',
-                          { type: 'submit', className: 'btn btn-primary pull-right' },
+                          { type: 'submit', className: 'btn btn-primary pull-right', disabled: this.state.data < 1 ? 'disabled' : '' },
                           'Submit'
                         )
                       )
@@ -14583,24 +14607,11 @@ var SelectedProducts = function (_React$Component) {
                   React.createElement(
                     'form',
                     { onChange: this.handleOptionChange },
-                    modalRows
+                    this.state.data.length < 1 ? 'nope' : modalRows
                   )
                 )
               ),
-              React.createElement(
-                'div',
-                { className: 'modal-footer' },
-                React.createElement(
-                  'button',
-                  { type: 'button', className: 'btn btn-default', 'data-dismiss': 'modal' },
-                  'Close'
-                ),
-                React.createElement(
-                  'button',
-                  { type: 'button', className: 'btn btn-primary' },
-                  'Save changes'
-                )
-              )
+              React.createElement('div', { className: 'modal-footer' })
             )
           )
         )
