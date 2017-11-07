@@ -57,7 +57,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = "D:\\Angelo\\lapp_project\\lapp_app\\client\\images";
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 126);
@@ -3748,15 +3748,15 @@ var _SelectCable = __webpack_require__(329);
 
 var _SelectCable2 = _interopRequireDefault(_SelectCable);
 
-var _Unitronic = __webpack_require__(330);
+var _Unitronic = __webpack_require__(331);
 
 var _Unitronic2 = _interopRequireDefault(_Unitronic);
 
-var _Etherline = __webpack_require__(342);
+var _Etherline = __webpack_require__(343);
 
 var _Etherline2 = _interopRequireDefault(_Etherline);
 
-var _jquery321Min = __webpack_require__(353);
+var _jquery321Min = __webpack_require__(354);
 
 var _jquery321Min2 = _interopRequireDefault(_jquery321Min);
 
@@ -9147,6 +9147,8 @@ var _ReactRouter = ReactRouter,
     hashHistory = _ReactRouter.hashHistory,
     Link = _ReactRouter.Link;
 
+// var image = require('../client/images/icon_unitronic.jpg');
+
 var SelectCable = function (_React$Component) {
 	_inherits(SelectCable, _React$Component);
 
@@ -9237,7 +9239,8 @@ var SelectCable = function (_React$Component) {
 exports.default = SelectCable;
 
 /***/ }),
-/* 330 */
+/* 330 */,
+/* 331 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9249,15 +9252,15 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _FilterContainer = __webpack_require__(331);
+var _FilterContainer = __webpack_require__(332);
 
 var _FilterContainer2 = _interopRequireDefault(_FilterContainer);
 
-var _SelectedProducts = __webpack_require__(339);
+var _SelectedProducts = __webpack_require__(340);
 
 var _SelectedProducts2 = _interopRequireDefault(_SelectedProducts);
 
-var _ProductGridContainer = __webpack_require__(340);
+var _ProductGridContainer = __webpack_require__(341);
 
 var _ProductGridContainer2 = _interopRequireDefault(_ProductGridContainer);
 
@@ -9517,7 +9520,7 @@ var Unitronic = function (_React$Component) {
 exports.default = Unitronic;
 
 /***/ }),
-/* 331 */
+/* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9529,31 +9532,31 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _ActiveFilters = __webpack_require__(332);
+var _ActiveFilters = __webpack_require__(333);
 
 var _ActiveFilters2 = _interopRequireDefault(_ActiveFilters);
 
-var _BusFilter = __webpack_require__(333);
+var _BusFilter = __webpack_require__(334);
 
 var _BusFilter2 = _interopRequireDefault(_BusFilter);
 
-var _ApplicationFilter = __webpack_require__(334);
+var _ApplicationFilter = __webpack_require__(335);
 
 var _ApplicationFilter2 = _interopRequireDefault(_ApplicationFilter);
 
-var _ApprovalsFilter = __webpack_require__(335);
+var _ApprovalsFilter = __webpack_require__(336);
 
 var _ApprovalsFilter2 = _interopRequireDefault(_ApprovalsFilter);
 
-var _FastConnectFilter = __webpack_require__(336);
+var _FastConnectFilter = __webpack_require__(337);
 
 var _FastConnectFilter2 = _interopRequireDefault(_FastConnectFilter);
 
-var _JacketFilter = __webpack_require__(337);
+var _JacketFilter = __webpack_require__(338);
 
 var _JacketFilter2 = _interopRequireDefault(_JacketFilter);
 
-var _HalogenFreeFilter = __webpack_require__(338);
+var _HalogenFreeFilter = __webpack_require__(339);
 
 var _HalogenFreeFilter2 = _interopRequireDefault(_HalogenFreeFilter);
 
@@ -9761,7 +9764,7 @@ var FilterContainer = function (_React$Component) {
 exports.default = FilterContainer;
 
 /***/ }),
-/* 332 */
+/* 333 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9851,7 +9854,7 @@ var ActiveFilter = function (_React$Component) {
 exports.default = ActiveFilter;
 
 /***/ }),
-/* 333 */
+/* 334 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10101,7 +10104,7 @@ var BusFilter = function (_React$Component) {
 exports.default = BusFilter;
 
 /***/ }),
-/* 334 */
+/* 335 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10389,7 +10392,7 @@ var ApplicationFilter = function (_React$Component) {
 exports.default = ApplicationFilter;
 
 /***/ }),
-/* 335 */
+/* 336 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10501,7 +10504,7 @@ var ApprovalsFilter = function (_React$Component) {
 exports.default = ApprovalsFilter;
 
 /***/ }),
-/* 336 */
+/* 337 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10619,7 +10622,7 @@ var FastConnectFilter = function (_React$Component) {
 exports.default = FastConnectFilter;
 
 /***/ }),
-/* 337 */
+/* 338 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10730,7 +10733,7 @@ var JacketFilter = function (_React$Component) {
 exports.default = JacketFilter;
 
 /***/ }),
-/* 338 */
+/* 339 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10836,7 +10839,7 @@ var HalogenFreeFilter = function (_React$Component) {
 exports.default = HalogenFreeFilter;
 
 /***/ }),
-/* 339 */
+/* 340 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11454,7 +11457,7 @@ var SelectedProducts = function (_React$Component) {
 exports.default = SelectedProducts;
 
 /***/ }),
-/* 340 */
+/* 341 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11470,7 +11473,7 @@ var _App = __webpack_require__(125);
 
 var _App2 = _interopRequireDefault(_App);
 
-var _ProductItem = __webpack_require__(341);
+var _ProductItem = __webpack_require__(342);
 
 var _ProductItem2 = _interopRequireDefault(_ProductItem);
 
@@ -11853,7 +11856,7 @@ var ProductGridContainer = function (_React$Component) {
 exports.default = ProductGridContainer;
 
 /***/ }),
-/* 341 */
+/* 342 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12035,7 +12038,7 @@ var ProductItem = function (_React$Component) {
 exports.default = ProductItem;
 
 /***/ }),
-/* 342 */
+/* 343 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12047,15 +12050,15 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _FilterContainer = __webpack_require__(343);
+var _FilterContainer = __webpack_require__(344);
 
 var _FilterContainer2 = _interopRequireDefault(_FilterContainer);
 
-var _ProductGrid = __webpack_require__(351);
+var _ProductGrid = __webpack_require__(352);
 
 var _ProductGrid2 = _interopRequireDefault(_ProductGrid);
 
-var _SelectedProducts = __webpack_require__(352);
+var _SelectedProducts = __webpack_require__(353);
 
 var _SelectedProducts2 = _interopRequireDefault(_SelectedProducts);
 
@@ -12312,7 +12315,7 @@ var Etherline = function (_React$Component) {
 exports.default = Etherline;
 
 /***/ }),
-/* 343 */
+/* 344 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12324,31 +12327,31 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _CatFilter = __webpack_require__(344);
+var _CatFilter = __webpack_require__(345);
 
 var _CatFilter2 = _interopRequireDefault(_CatFilter);
 
-var _ProtocolFilter = __webpack_require__(345);
+var _ProtocolFilter = __webpack_require__(346);
 
 var _ProtocolFilter2 = _interopRequireDefault(_ProtocolFilter);
 
-var _ApplicationFilter = __webpack_require__(346);
+var _ApplicationFilter = __webpack_require__(347);
 
 var _ApplicationFilter2 = _interopRequireDefault(_ApplicationFilter);
 
-var _ApprovalsFilter = __webpack_require__(347);
+var _ApprovalsFilter = __webpack_require__(348);
 
 var _ApprovalsFilter2 = _interopRequireDefault(_ApprovalsFilter);
 
-var _AWGFilter = __webpack_require__(348);
+var _AWGFilter = __webpack_require__(349);
 
 var _AWGFilter2 = _interopRequireDefault(_AWGFilter);
 
-var _JacketFilter = __webpack_require__(349);
+var _JacketFilter = __webpack_require__(350);
 
 var _JacketFilter2 = _interopRequireDefault(_JacketFilter);
 
-var _HalogenFreeFilter = __webpack_require__(350);
+var _HalogenFreeFilter = __webpack_require__(351);
 
 var _HalogenFreeFilter2 = _interopRequireDefault(_HalogenFreeFilter);
 
@@ -12557,7 +12560,7 @@ var FilterContainer = function (_React$Component) {
 exports.default = FilterContainer;
 
 /***/ }),
-/* 344 */
+/* 345 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12772,7 +12775,7 @@ var CatFilter = function (_React$Component) {
 exports.default = CatFilter;
 
 /***/ }),
-/* 345 */
+/* 346 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12996,7 +12999,7 @@ var ProtocolFilter = function (_React$Component) {
 exports.default = ProtocolFilter;
 
 /***/ }),
-/* 346 */
+/* 347 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13218,7 +13221,7 @@ var ApplicationFilter = function (_React$Component) {
 exports.default = ApplicationFilter;
 
 /***/ }),
-/* 347 */
+/* 348 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13330,7 +13333,7 @@ var ApprovalsFilter = function (_React$Component) {
 exports.default = ApprovalsFilter;
 
 /***/ }),
-/* 348 */
+/* 349 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13441,7 +13444,7 @@ var AWGFilter = function (_React$Component) {
 exports.default = AWGFilter;
 
 /***/ }),
-/* 349 */
+/* 350 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13553,7 +13556,7 @@ var JacketFilter = function (_React$Component) {
 exports.default = JacketFilter;
 
 /***/ }),
-/* 350 */
+/* 351 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13659,7 +13662,7 @@ var HalogenFreeFilter = function (_React$Component) {
 exports.default = HalogenFreeFilter;
 
 /***/ }),
-/* 351 */
+/* 352 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14036,7 +14039,7 @@ var ProductGrid = function (_React$Component) {
 exports.default = ProductGrid;
 
 /***/ }),
-/* 352 */
+/* 353 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14625,7 +14628,7 @@ var SelectedProducts = function (_React$Component) {
 exports.default = SelectedProducts;
 
 /***/ }),
-/* 353 */
+/* 354 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16904,7 +16907,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
       return 1 === arguments.length ? this.off(a, "**") : this.off(b, a || "**", c);
     } }), r.holdReady = function (a) {
     a ? r.readyWait++ : r.ready(!0);
-  }, r.isArray = Array.isArray, r.parseJSON = JSON.parse, r.nodeName = B, "function" == "function" && __webpack_require__(355) && !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
+  }, r.isArray = Array.isArray, r.parseJSON = JSON.parse, r.nodeName = B, "function" == "function" && __webpack_require__(356) && !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
     return r;
   }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));var Vb = a.jQuery,
@@ -16912,10 +16915,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     return a.$ === r && (a.$ = Wb), b && a.jQuery === r && (a.jQuery = Vb), r;
   }, b || (a.jQuery = a.$ = r), r;
 });
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(354)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(355)(module)))
 
 /***/ }),
-/* 354 */
+/* 355 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -16943,7 +16946,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 355 */
+/* 356 */
 /***/ (function(module, exports) {
 
 /* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {/* globals __webpack_amd_options__ */
