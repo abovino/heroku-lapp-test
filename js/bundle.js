@@ -9182,7 +9182,7 @@ var SelectCable = function (_React$Component) {
 						React.createElement(
 							Link,
 							{ to: "unitronic" },
-							React.createElement("img", { className: "cable-pics", src: "images/icon_unitronic.jpg", alt: "" })
+							React.createElement("img", { className: "cable-pics", src: "images/Icon_Unitronic.jpg", alt: "" })
 						),
 						React.createElement(
 							"h3",
@@ -9207,7 +9207,7 @@ var SelectCable = function (_React$Component) {
 						React.createElement(
 							Link,
 							{ to: "etherline" },
-							React.createElement("img", { className: "cable-pics", src: "images/icon_etherline.jpg", alt: "" })
+							React.createElement("img", { className: "cable-pics", src: "images/Icon_Etherline.jpg", alt: "" })
 						),
 						React.createElement(
 							"h3",
