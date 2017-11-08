@@ -164,7 +164,9 @@ a > span {
 
 .custom-jumbotron {
   background-color: rgb(248,248,248) !important;
-  border: 1px solid rgb(231,231,231) !important;
+	border: 1px solid rgb(231,231,231) !important;
+	width: 65%;
+	margin: 0 auto;
 }
 
 .item-container {
@@ -230,6 +232,7 @@ h2, h3, h4 {
 
 .span-margin {
 	margin-left: 5px;
+	width: 100%;
 }
 
 .filter-header {
@@ -514,7 +517,7 @@ input[type=checkbox], input[type=radio] {
 
 #mobile-filters-btn {
   height: auto !important;
-  padding: 11px !important;
+  padding: 4px !important;
   box-sizing: border-box !important;
   font-size: 21px !important;
 }
@@ -523,9 +526,27 @@ input[type=checkbox], input[type=radio] {
   color: rgb(51, 51, 51) !important;
 }
 
+.glyph-text {
+	color: black;
+	font-size: 13px;
+	display: block;
+	margin-top: -6px;
+}
+
 .glyph-search-resize {
   font-size: 21px !important;
   top: 4px !important;
+}
+
+.info-btn {
+	font-size: 16px;
+	top: 6px !important;
+	float: left
+}
+
+.list-group-item > h5 {
+	text-align: left;
+	font-weight: bold;
 }
 
 .search-form-height {
@@ -534,6 +555,22 @@ input[type=checkbox], input[type=radio] {
 
 .hide-non-mobile {
   display: none;
+}
+
+.modal-form-btns {
+	padding-top: 15px;
+}
+
+#tel-format {
+	color: #d3d3d3;
+}
+
+#bus-info-btn {
+	top: 5px !important;
+}
+
+#application-info-btn {
+	top: 2px !important;
 }
 
 /*========== Media Queries ==========*/
@@ -634,6 +671,7 @@ input[type=checkbox], input[type=radio] {
     transition: max-height .5s ease-in;
   }
   .search-container {
+		background-color: #f8f8f8;
     overflow: hidden;
     max-height: 0;
     -webkit-transition: max-height .5s ease-out;

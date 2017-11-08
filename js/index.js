@@ -1,1 +1,5 @@
-console.log('asdfasdfasdf');
+/* $(function () {
+  $('[data-toggle="popover"]').popover({
+		html: true
+	})
+}) */
