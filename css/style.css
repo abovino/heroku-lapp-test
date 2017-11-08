@@ -156,6 +156,13 @@ a > span {
   padding-bottom: 5px;
 }
 
+.etherline-scroll-container {
+  overflow-y: auto;
+  max-height: 700px;
+  padding-left: 1px;
+  padding-bottom: 5px;
+}
+
 .no-results-msg {
   padding: 35px;
   animation: fadeIn ease-in-out 1;

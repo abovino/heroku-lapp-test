@@ -9308,11 +9308,9 @@ var Unitronic = function (_React$Component) {
 								contentType: "application/json; charset=utf-8",
 								dataType: "JSON",
 								type: "GET",
-								// url: "https://selectortoolapi.com/bus/data"
-								url: "http://localhost:3000/bus/data"
-						}).done(function (data) {
-								console.log(data);
-						}).then(function (data) {
+								url: "https://selectortoolapi.com/bus/data"
+								// url: "http://localhost:3000/bus/data"
+						}).done(function (data) {}).then(function (data) {
 								for (var i = 0; i < data.length; i++) {
 										var prettyApprovalArr = [];
 										data[i]["prettyApprovalArr"] = prettyApprovalArr;
@@ -9342,7 +9340,6 @@ var Unitronic = function (_React$Component) {
 												data[i].prettyApprovalArr.push("Canada AWM");
 										}
 								}
-								console.log(data);
 								_this2.setState({ data: data, bus: null });
 						});
 				}
@@ -9415,10 +9412,7 @@ var Unitronic = function (_React$Component) {
 				}
 		}, {
 				key: 'getOptions',
-				value: function getOptions(options) {
-						console.log("OPTIONSSSSSSSSSSS");
-						console.log(options);
-				}
+				value: function getOptions(options) {}
 		}, {
 				key: 'render',
 				value: function render() {
@@ -9596,9 +9590,7 @@ var FilterContainer = function (_React$Component) {
   }, {
     key: 'updateWindowDimensions',
     value: function updateWindowDimensions() {
-      if (this.state.windowWidth < 768) {
-        console.log("doesn't matter");
-      } else if (window.innerWidth < 768) {
+      if (this.state.windowWidth < 768) {} else if (window.innerWidth < 768) {
         this.setState({ collapsedState: true, windowWidth: window.innerWidth });
       }
     }
@@ -9633,7 +9625,6 @@ var FilterContainer = function (_React$Component) {
     key: 'clearFilters',
     value: function clearFilters(e) {
       e.preventDefault();
-      console.log('click');
       this.props.clearStateFilters(e);
     }
   }, {
@@ -9918,7 +9909,6 @@ var BusFilter = function (_React$Component) {
 		value: function render() {
 			var _this2 = this;
 
-			// const h1 = (<h1>hi</h1>);
 			var busRadioItems = busList.map(function (data, i) {
 				return React.createElement(
 					'div',
@@ -10419,7 +10409,6 @@ var ApprovalsFilter = function (_React$Component) {
 
 		_this.state = { collapsedState: _this.props.collapsedState };
 		_this.collapseDetection = "collapsed";
-		console.log("ApprovalsFilter props: ", _this.props);
 		_this.handleOptionChange = _this.handleOptionChange.bind(_this);
 		_this.handleCollapseClick = _this.handleCollapseClick.bind(_this);
 		return _this;
@@ -10540,14 +10529,12 @@ var FastConnectFilter = function (_React$Component) {
   _createClass(FastConnectFilter, [{
     key: "componentWillReceiveProps",
     value: function componentWillReceiveProps(nextProps) {
-      console.log("NEXTPROPS: ", nextProps);
       var hideDetection = true;
 
       if (nextProps.busSelection === "PROFIBUS DP") {
         hideDetection = false;
       }
       if (nextProps.searchPartNumber == null && this.fastConnectHide === false && nextProps.busSelection !== "PROFIBUS DP") {
-        console.log("TRUEEEEEE");
         this.props.stateContainer({ fastConnectSelection: null });
       }
       this.fastConnectHide = hideDetection;
@@ -10865,10 +10852,12 @@ var SelectedProducts = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (SelectedProducts.__proto__ || Object.getPrototypeOf(SelectedProducts)).call(this, props));
 
     _this.state = {
-      company: '',
-      salutation: '',
       fname: '',
       lname: '',
+      city: '',
+      state: '',
+      company: '',
+      salutation: '',
       country: '',
       email: '',
       phone: '',
@@ -10887,8 +10876,6 @@ var SelectedProducts = function (_React$Component) {
   _createClass(SelectedProducts, [{
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
-      console.log("SelectedProducts Props:");
-      console.log(nextProps.selectedProducts);
       this.setState({
         data: nextProps.selectedProducts
       });
@@ -10964,7 +10951,8 @@ var SelectedProducts = function (_React$Component) {
 
       /* function validateEmail(email) {
       	var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      	return re.test(email);
+          return re.test(email);
+          
       }
       
       switch ('' || false) {
@@ -10996,23 +10984,15 @@ var SelectedProducts = function (_React$Component) {
       /* Email form submit */
       var payloadObj = this.state;
       var payload = JSON.stringify(payloadObj, null, 2);
-      console.log(payload);
       $.ajax({
         contentType: "application/json; charset=utf-8",
         dataType: "JSON",
         type: "POST",
         data: payload,
-        // url: "https://selectortoolapi.com/etherline/data"
-        url: "http://localhost:3000/bus/email",
-        success: function success(response) {
-          console.log("RESPONSE");
-          console.log(response);
-          console.log(status);
-        },
-        error: function error(_error) {
-          console.log("ERROR");
-          console.log(_error.responseText);
-        }
+        url: "https://selectortoolapi.com/bus/email",
+        // url: "http://localhost:3000/bus/email",
+        success: function success(response) {},
+        error: function error(_error) {}
       });
     }
   }, {
@@ -11234,24 +11214,6 @@ var SelectedProducts = function (_React$Component) {
                                 React.createElement(
                                   'span',
                                   null,
-                                  'Company'
-                                )
-                              ),
-                              React.createElement(
-                                'td',
-                                null,
-                                React.createElement('input', { title: 'Company', name: 'company', type: 'text', value: this.state.company, onChange: this.onFormChange, required: true })
-                              )
-                            ),
-                            React.createElement(
-                              'tr',
-                              null,
-                              React.createElement(
-                                'td',
-                                { className: 'form-label' },
-                                React.createElement(
-                                  'span',
-                                  null,
                                   'Salutation'
                                 )
                               ),
@@ -11314,6 +11276,324 @@ var SelectedProducts = function (_React$Component) {
                                 'td',
                                 null,
                                 React.createElement('input', { title: 'Last Name', name: 'lname', type: 'text', value: this.state.lname, onChange: this.onFormChange, required: true })
+                              )
+                            ),
+                            React.createElement(
+                              'tr',
+                              null,
+                              React.createElement(
+                                'td',
+                                { className: 'form-label' },
+                                React.createElement(
+                                  'span',
+                                  null,
+                                  'Company'
+                                )
+                              ),
+                              React.createElement(
+                                'td',
+                                null,
+                                React.createElement('input', { title: 'Company', name: 'company', type: 'text', value: this.state.company, onChange: this.onFormChange, required: true })
+                              )
+                            ),
+                            React.createElement(
+                              'tr',
+                              null,
+                              React.createElement(
+                                'td',
+                                { className: 'form-label' },
+                                React.createElement(
+                                  'span',
+                                  null,
+                                  'City'
+                                )
+                              ),
+                              React.createElement(
+                                'td',
+                                null,
+                                React.createElement('input', { title: 'City', name: 'city', type: 'text', value: this.state.city, onChange: this.onFormChange, required: true })
+                              )
+                            ),
+                            React.createElement(
+                              'tr',
+                              null,
+                              React.createElement(
+                                'td',
+                                { className: 'form-label' },
+                                React.createElement(
+                                  'span',
+                                  null,
+                                  'State'
+                                )
+                              ),
+                              React.createElement(
+                                'td',
+                                null,
+                                React.createElement(
+                                  'select',
+                                  { title: 'State', onChange: this.onFormChange, name: 'state', id: 'state-dropdown', required: true },
+                                  React.createElement('option', { value: '' }),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'AK' },
+                                    'Alaska'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'AL' },
+                                    'Alabama'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'AR' },
+                                    'Arkansas'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'AZ' },
+                                    'Arizona'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'CA' },
+                                    'California'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'CO' },
+                                    'Colorado'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'CT' },
+                                    'Connecticut'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'DC' },
+                                    'District of Columbia'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'DE' },
+                                    'Delaware'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'FL' },
+                                    'Florida'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'GA' },
+                                    'Georgia'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'HI' },
+                                    'Hawaii'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'IA' },
+                                    'Iowa'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'ID' },
+                                    'Idaho'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'IL' },
+                                    'Illinois'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'IN' },
+                                    'Indiana'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'KS' },
+                                    'Kansas'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'KY' },
+                                    'Kentucky'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'LA' },
+                                    'Louisiana'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'MA' },
+                                    'Massachusetts'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'MD' },
+                                    'Maryland'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'ME' },
+                                    'Maine'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'MI' },
+                                    'Michigan'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'MN' },
+                                    'Minnesota'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'MO' },
+                                    'Missouri'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'MS' },
+                                    'Mississippi'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'MT' },
+                                    'Montana'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'NC' },
+                                    'North Carolina'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'ND' },
+                                    'North Dakota'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'NE' },
+                                    'Nebraska'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'NH' },
+                                    'New Hampshire'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'NJ' },
+                                    'New Jersey'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'NM' },
+                                    'New Mexico'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'NV' },
+                                    'Nevada'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'NY' },
+                                    'New York'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'OH' },
+                                    'Ohio'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'OK' },
+                                    'Oklahoma'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'OR' },
+                                    'Oregon'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'PA' },
+                                    'Pennsylvania'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'PR' },
+                                    'Puerto Rico'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'RI' },
+                                    'Rhode Island'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'SC' },
+                                    'South Carolina'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'SD' },
+                                    'South Dakota'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'TN' },
+                                    'Tennessee'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'TX' },
+                                    'Texas'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'UT' },
+                                    'Utah'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'VA' },
+                                    'Virginia'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'VT' },
+                                    'Vermont'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'WA' },
+                                    'Washington'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'WI' },
+                                    'Wisconsin'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'WV' },
+                                    'West Virginia'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'WY' },
+                                    'Wyoming'
+                                  )
+                                )
                               )
                             ),
                             React.createElement(
@@ -11417,7 +11697,11 @@ var SelectedProducts = function (_React$Component) {
                           { type: 'button', className: 'btn btn-default', 'data-dismiss': 'modal' },
                           'Close'
                         ),
-                        React.createElement(
+                        this.state.data.length < 1 ? React.createElement(
+                          'button',
+                          { type: 'submit', className: 'btn btn-primary pull-right', disabled: true },
+                          'Submit'
+                        ) : React.createElement(
                           'button',
                           { type: 'submit', className: 'btn btn-primary pull-right' },
                           'Submit'
@@ -11520,9 +11804,7 @@ var ProductGridContainer = function (_React$Component) {
   }, {
     key: 'updateWindowDimensions',
     value: function updateWindowDimensions() {
-      if (this.state.windowWidth < 768) {
-        console.log("doesn't matter");
-      } else if (window.innerWidth < 768) {
+      if (this.state.windowWidth < 768) {} else if (window.innerWidth < 768) {
         this.setState({ windowWidth: window.innerWidth });
       }
     }
@@ -11587,7 +11869,6 @@ var ProductGridContainer = function (_React$Component) {
     key: 'clearFilters',
     value: function clearFilters(e) {
       e.preventDefault();
-      console.log('click');
       this.props.clearStateFilters(e);
     }
   }, {
@@ -12106,11 +12387,9 @@ var Etherline = function (_React$Component) {
 				contentType: "application/json; charset=utf-8",
 				dataType: "JSON",
 				type: "GET",
-				// url: "https://selectortoolapi.com/etherline/data"
-				url: "http://localhost:3000/etherline/data"
-			}).done(function (data) {
-				console.log(data);
-			}).then(function (data) {
+				url: "https://selectortoolapi.com/etherline/data"
+				// url: "http://localhost:3000/etherline/data"
+			}).done(function (data) {}).then(function (data) {
 				for (var i = 0; i < data.length; i++) {
 					var prettyApprovalArr = [];
 					data[i]["prettyApprovalArr"] = prettyApprovalArr;
@@ -12392,7 +12671,7 @@ var FilterContainer = function (_React$Component) {
     key: 'updateWindowDimensions',
     value: function updateWindowDimensions() {
       if (this.state.windowWidth < 768) {
-        console.log("doesn't matter");
+        console.log("");
       } else if (window.innerWidth < 768) {
         this.setState({ collapsedState: true, windowWidth: window.innerWidth });
       }
@@ -12428,7 +12707,6 @@ var FilterContainer = function (_React$Component) {
     key: 'clearFilters',
     value: function clearFilters(e) {
       e.preventDefault();
-      console.log('click');
       this.props.clearStateFilters(e);
     }
   }, {
@@ -12606,7 +12884,6 @@ var CatFilter = function (_React$Component) {
 			if (e.target.value !== this.props.catSelection) {
 				catState = e.target.value;
 			}
-			console.log(catState);
 			this.props.stateContainer({ catSelection: catState });
 		}
 	}, {
@@ -12802,7 +13079,6 @@ var ProtocolFilter = function (_React$Component) {
 
 		_this.state = { collapsedState: _this.props.collapsedState };
 		_this.collapseDetection = "collapsed";
-		console.log("ProtocolFilter props: ", _this.props);
 		_this.handleOptionChange = _this.handleOptionChange.bind(_this);
 		_this.handleCollapseClick = _this.handleCollapseClick.bind(_this);
 		return _this;
@@ -13026,7 +13302,6 @@ var ApplicationFilter = function (_React$Component) {
 
 		_this.state = { collapsedState: _this.props.collapsedState };
 		_this.collapseDetection = "collapsed";
-		console.log("ApplicationFilter props: ", _this.props);
 		_this.handleOptionChange = _this.handleOptionChange.bind(_this);
 		_this.handleCollapseClick = _this.handleCollapseClick.bind(_this);
 		return _this;
@@ -13248,7 +13523,6 @@ var ApprovalsFilter = function (_React$Component) {
 
 		_this.state = { collapsedState: _this.props.collapsedState };
 		_this.collapseDetection = "collapsed";
-		console.log("ApprovalsFilter props: ", _this.props);
 		_this.handleOptionChange = _this.handleOptionChange.bind(_this);
 		_this.handleCollapseClick = _this.handleCollapseClick.bind(_this);
 		return _this;
@@ -13360,7 +13634,6 @@ var AWGFilter = function (_React$Component) {
 
 		_this.state = { collapsedState: _this.props.collapsedState };
 		_this.collapseDetection = "collapsed";
-		console.log("AWGFilter props: ", _this.props);
 		_this.handleOptionChange = _this.handleOptionChange.bind(_this);
 		_this.handleCollapseClick = _this.handleCollapseClick.bind(_this);
 		return _this;
@@ -13383,7 +13656,6 @@ var AWGFilter = function (_React$Component) {
 				var index = tempAwgSelection.indexOf(e.target.value);
 				tempAwgSelection.splice(index, 1);
 			}
-			console.log("AWG SELECTION: ", tempAwgSelection);
 			this.props.stateContainer({ awgSelection: tempAwgSelection });
 		}
 	}, {
@@ -13471,7 +13743,6 @@ var JacketFilter = function (_React$Component) {
 
 		_this.state = { collapsedState: _this.props.collapsedState };
 		_this.collapseDetection = "collapsed";
-		console.log("JacketFilter props: ", _this.props);
 		_this.handleOptionChange = _this.handleOptionChange.bind(_this);
 		_this.handleCollapseClick = _this.handleCollapseClick.bind(_this);
 		return _this;
@@ -13769,7 +14040,6 @@ var ProductGrid = function (_React$Component) {
     key: "clearFilters",
     value: function clearFilters(e) {
       e.preventDefault();
-      console.log('click');
       this.props.clearStateFilters();
     }
   }, {
@@ -13910,13 +14180,7 @@ var ProductGrid = function (_React$Component) {
         }
 
         if (_this2.props.protocolSelections !== null) {
-          if (_this2.props.protocolSelections == "PROFINET" && product.profinet == true) {
-            console.log(product.profinet);
-          } else if (_this2.props.protocolSelections == "EtherNet/IP" && product.ethernet_ip == true) {
-            console.log(product.ethernet_ip);
-          } else if (_this2.props.protocolSelections == "EtherCAT" && product.ethercat == true) {
-            console.log(product.ethercat);
-          } else {
+          if (_this2.props.protocolSelections == "PROFINET" && product.profinet == true) {} else if (_this2.props.protocolSelections == "EtherNet/IP" && product.ethernet_ip == true) {} else if (_this2.props.protocolSelections == "EtherCAT" && product.ethercat == true) {} else {
             return;
           }
         }
@@ -14019,7 +14283,7 @@ var ProductGrid = function (_React$Component) {
         { className: "col-xs-12 item-container" },
         React.createElement(
           "div",
-          { className: "scroll-container" },
+          { className: "etherline-scroll-container" },
           React.createElement(
             "form",
             { onChange: this.handleOptionChange },
@@ -14069,6 +14333,8 @@ var SelectedProducts = function (_React$Component) {
       salutation: '',
       fname: '',
       lname: '',
+      city: '',
+      state: '',
       country: '',
       email: '',
       phone: '',
@@ -14087,8 +14353,6 @@ var SelectedProducts = function (_React$Component) {
   _createClass(SelectedProducts, [{
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
-      console.log("SelectedProducts Props");
-      console.log(nextProps.selectedProducts);
       this.setState({
         data: nextProps.selectedProducts
       });
@@ -14173,17 +14437,10 @@ var SelectedProducts = function (_React$Component) {
         dataType: "JSON",
         type: "POST",
         data: payload,
-        // url: "https://selectortoolapi.com/etherline/data"
-        url: "http://localhost:3000/etherline/email",
-        success: function success(response) {
-          console.log("RESPONSE");
-          console.log(response);
-          console.log(status);
-        },
-        error: function error(_error) {
-          console.log("ERROR");
-          console.log(_error.responseText);
-        }
+        url: "https://selectortoolapi.com/etherline/email",
+        // url: "http://localhost:3000/etherline/email",
+        success: function success(response) {},
+        error: function error(_error) {}
       });
     }
   }, {
@@ -14405,24 +14662,6 @@ var SelectedProducts = function (_React$Component) {
                                 React.createElement(
                                   'span',
                                   null,
-                                  'Company'
-                                )
-                              ),
-                              React.createElement(
-                                'td',
-                                null,
-                                React.createElement('input', { title: 'Company', name: 'company', type: 'text', value: this.state.company, onChange: this.onFormChange, required: true })
-                              )
-                            ),
-                            React.createElement(
-                              'tr',
-                              null,
-                              React.createElement(
-                                'td',
-                                { className: 'form-label' },
-                                React.createElement(
-                                  'span',
-                                  null,
                                   'Salutation'
                                 )
                               ),
@@ -14485,6 +14724,324 @@ var SelectedProducts = function (_React$Component) {
                                 'td',
                                 null,
                                 React.createElement('input', { title: 'Last Name', name: 'lname', type: 'text', value: this.state.lname, onChange: this.onFormChange, required: true })
+                              )
+                            ),
+                            React.createElement(
+                              'tr',
+                              null,
+                              React.createElement(
+                                'td',
+                                { className: 'form-label' },
+                                React.createElement(
+                                  'span',
+                                  null,
+                                  'Company'
+                                )
+                              ),
+                              React.createElement(
+                                'td',
+                                null,
+                                React.createElement('input', { title: 'Company', name: 'company', type: 'text', value: this.state.company, onChange: this.onFormChange, required: true })
+                              )
+                            ),
+                            React.createElement(
+                              'tr',
+                              null,
+                              React.createElement(
+                                'td',
+                                { className: 'form-label' },
+                                React.createElement(
+                                  'span',
+                                  null,
+                                  'City'
+                                )
+                              ),
+                              React.createElement(
+                                'td',
+                                null,
+                                React.createElement('input', { title: 'City', name: 'city', type: 'text', value: this.state.city, onChange: this.onFormChange, required: true })
+                              )
+                            ),
+                            React.createElement(
+                              'tr',
+                              null,
+                              React.createElement(
+                                'td',
+                                { className: 'form-label' },
+                                React.createElement(
+                                  'span',
+                                  null,
+                                  'State'
+                                )
+                              ),
+                              React.createElement(
+                                'td',
+                                null,
+                                React.createElement(
+                                  'select',
+                                  { title: 'State', onChange: this.onFormChange, name: 'state', id: 'state-dropdown', required: true },
+                                  React.createElement('option', { value: '' }),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'AK' },
+                                    'Alaska'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'AL' },
+                                    'Alabama'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'AR' },
+                                    'Arkansas'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'AZ' },
+                                    'Arizona'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'CA' },
+                                    'California'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'CO' },
+                                    'Colorado'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'CT' },
+                                    'Connecticut'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'DC' },
+                                    'District of Columbia'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'DE' },
+                                    'Delaware'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'FL' },
+                                    'Florida'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'GA' },
+                                    'Georgia'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'HI' },
+                                    'Hawaii'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'IA' },
+                                    'Iowa'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'ID' },
+                                    'Idaho'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'IL' },
+                                    'Illinois'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'IN' },
+                                    'Indiana'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'KS' },
+                                    'Kansas'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'KY' },
+                                    'Kentucky'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'LA' },
+                                    'Louisiana'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'MA' },
+                                    'Massachusetts'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'MD' },
+                                    'Maryland'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'ME' },
+                                    'Maine'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'MI' },
+                                    'Michigan'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'MN' },
+                                    'Minnesota'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'MO' },
+                                    'Missouri'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'MS' },
+                                    'Mississippi'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'MT' },
+                                    'Montana'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'NC' },
+                                    'North Carolina'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'ND' },
+                                    'North Dakota'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'NE' },
+                                    'Nebraska'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'NH' },
+                                    'New Hampshire'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'NJ' },
+                                    'New Jersey'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'NM' },
+                                    'New Mexico'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'NV' },
+                                    'Nevada'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'NY' },
+                                    'New York'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'OH' },
+                                    'Ohio'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'OK' },
+                                    'Oklahoma'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'OR' },
+                                    'Oregon'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'PA' },
+                                    'Pennsylvania'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'PR' },
+                                    'Puerto Rico'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'RI' },
+                                    'Rhode Island'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'SC' },
+                                    'South Carolina'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'SD' },
+                                    'South Dakota'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'TN' },
+                                    'Tennessee'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'TX' },
+                                    'Texas'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'UT' },
+                                    'Utah'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'VA' },
+                                    'Virginia'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'VT' },
+                                    'Vermont'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'WA' },
+                                    'Washington'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'WI' },
+                                    'Wisconsin'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'WV' },
+                                    'West Virginia'
+                                  ),
+                                  React.createElement(
+                                    'option',
+                                    { value: 'WY' },
+                                    'Wyoming'
+                                  )
+                                )
                               )
                             ),
                             React.createElement(
@@ -14588,9 +15145,13 @@ var SelectedProducts = function (_React$Component) {
                           { type: 'button', className: 'btn btn-default', 'data-dismiss': 'modal' },
                           'Close'
                         ),
-                        React.createElement(
+                        this.state.data.length < 1 ? React.createElement(
                           'button',
-                          { type: 'submit', className: 'btn btn-primary pull-right', disabled: this.state.data < 1 ? 'disabled' : '' },
+                          { type: 'submit', className: 'btn btn-primary pull-right', disabled: true },
+                          'Submit'
+                        ) : React.createElement(
+                          'button',
+                          { type: 'submit', className: 'btn btn-primary pull-right' },
                           'Submit'
                         )
                       )
@@ -14607,7 +15168,7 @@ var SelectedProducts = function (_React$Component) {
                   React.createElement(
                     'form',
                     { onChange: this.handleOptionChange },
-                    this.state.data.length < 1 ? 'nope' : modalRows
+                    this.state.data.length < 1 ? 'noSelectionsMsg' : modalRows
                   )
                 )
               ),
