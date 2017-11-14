@@ -580,6 +580,33 @@ input[type=checkbox], input[type=radio] {
 	top: 2px !important;
 }
 
+.success-modal {
+	z-index: 1051 !important;
+	top: 20% !important;
+	margin: 0 auto;
+}
+
+#submission-modal {
+	top: 50%;
+}
+
+ .size-submission-modal {
+	width: 350px !important;
+	margin: 0 auto !important;
+}
+
+.submit-status-icon {
+	margin-top: 10px;
+	font-size: 60px;
+	color: green;
+}
+
+.fail-status-icon {
+	margin-top: 10px;
+	font-size: 60px;
+	color: red;
+}
+
 /*========== Media Queries ==========*/
 
  /* Large Devices, Wide Screens */

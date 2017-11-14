@@ -10991,8 +10991,12 @@ var SelectedProducts = function (_React$Component) {
         data: payload,
         url: "https://selectortoolapi.com/bus/email",
         // url: "http://localhost:3000/bus/email",
-        success: function success(response) {},
-        error: function error(_error) {}
+        success: function success(response) {
+          $('#submission-modal').modal('show');
+        },
+        error: function error(_error) {
+          $('#fail-modal').modal('show');
+        }
       });
     }
   }, {
@@ -11005,6 +11009,112 @@ var SelectedProducts = function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
+      var successModal = React.createElement(
+        'div',
+        { id: 'submission-modal', className: 'modal fade success-modal', tabIndex: '-1', role: 'dialog' },
+        React.createElement(
+          'div',
+          { className: 'modal-dialog size-submission-modal', role: 'document' },
+          React.createElement(
+            'div',
+            { className: 'modal-content' },
+            React.createElement(
+              'div',
+              { className: 'modal-header' },
+              React.createElement(
+                'button',
+                { type: 'button', className: 'close', 'data-dismiss': 'modal', 'aria-label': 'Close' },
+                React.createElement(
+                  'span',
+                  { 'aria-hidden': 'true' },
+                  '\xD7'
+                )
+              )
+            ),
+            React.createElement(
+              'h4',
+              { className: 'modal-title' },
+              React.createElement('span', { className: 'glyphicon glyphicon-ok-circle submit-status-icon' })
+            ),
+            React.createElement(
+              'div',
+              { className: 'modal-body' },
+              React.createElement(
+                'h4',
+                null,
+                'Submission Successful!'
+              ),
+              React.createElement(
+                'h4',
+                null,
+                'Your request has been sent and someone will contact you shortly.'
+              )
+            ),
+            React.createElement(
+              'div',
+              { className: 'modal-footer' },
+              React.createElement(
+                'button',
+                { type: 'button', className: 'btn btn-default', 'data-dismiss': 'modal' },
+                'Close'
+              )
+            )
+          )
+        )
+      );
+      var failModal = React.createElement(
+        'div',
+        { id: 'fail-modal', className: 'modal fade success-modal', tabIndex: '-1', role: 'dialog' },
+        React.createElement(
+          'div',
+          { className: 'modal-dialog size-submission-modal', role: 'document' },
+          React.createElement(
+            'div',
+            { className: 'modal-content' },
+            React.createElement(
+              'div',
+              { className: 'modal-header' },
+              React.createElement(
+                'button',
+                { type: 'button', className: 'close', 'data-dismiss': 'modal', 'aria-label': 'Close' },
+                React.createElement(
+                  'span',
+                  { 'aria-hidden': 'true' },
+                  '\xD7'
+                )
+              )
+            ),
+            React.createElement(
+              'h4',
+              { className: 'modal-title' },
+              React.createElement('span', { className: 'glyphicon glyphicon-remove-circle fail-status-icon' })
+            ),
+            React.createElement(
+              'div',
+              { className: 'modal-body' },
+              React.createElement(
+                'h4',
+                null,
+                'Submission Failed!'
+              ),
+              React.createElement(
+                'h4',
+                null,
+                'Hmm... Something went wrong.  Please try again...'
+              )
+            ),
+            React.createElement(
+              'div',
+              { className: 'modal-footer' },
+              React.createElement(
+                'button',
+                { type: 'button', className: 'btn btn-default', 'data-dismiss': 'modal' },
+                'Close'
+              )
+            )
+          )
+        )
+      );
       var _state = this.state,
           company = _state.company,
           salutation = _state.salutation,
@@ -11727,7 +11837,9 @@ var SelectedProducts = function (_React$Component) {
               React.createElement('div', { className: 'modal-footer' })
             )
           )
-        )
+        ),
+        successModal,
+        failModal
       );
     }
   }]);
@@ -14439,8 +14551,12 @@ var SelectedProducts = function (_React$Component) {
         data: payload,
         url: "https://selectortoolapi.com/etherline/email",
         // url: "http://localhost:3000/etherline/email",
-        success: function success(response) {},
-        error: function error(_error) {}
+        success: function success(response) {
+          $('#submission-modal').modal('show');
+        },
+        error: function error(_error) {
+          $('#fail-modal').modal('show');
+        }
       });
     }
   }, {
@@ -14453,6 +14569,112 @@ var SelectedProducts = function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
+      var successModal = React.createElement(
+        'div',
+        { id: 'submission-modal', className: 'modal fade success-modal', tabIndex: '-1', role: 'dialog' },
+        React.createElement(
+          'div',
+          { className: 'modal-dialog size-submission-modal', role: 'document' },
+          React.createElement(
+            'div',
+            { className: 'modal-content' },
+            React.createElement(
+              'div',
+              { className: 'modal-header' },
+              React.createElement(
+                'button',
+                { type: 'button', className: 'close', 'data-dismiss': 'modal', 'aria-label': 'Close' },
+                React.createElement(
+                  'span',
+                  { 'aria-hidden': 'true' },
+                  '\xD7'
+                )
+              )
+            ),
+            React.createElement(
+              'h4',
+              { className: 'modal-title' },
+              React.createElement('span', { className: 'glyphicon glyphicon-ok-circle submit-status-icon' })
+            ),
+            React.createElement(
+              'div',
+              { className: 'modal-body' },
+              React.createElement(
+                'h4',
+                null,
+                'Submission Successful!'
+              ),
+              React.createElement(
+                'h4',
+                null,
+                'Your request has been sent and someone will contact you shortly.'
+              )
+            ),
+            React.createElement(
+              'div',
+              { className: 'modal-footer' },
+              React.createElement(
+                'button',
+                { type: 'button', className: 'btn btn-default', 'data-dismiss': 'modal' },
+                'Close'
+              )
+            )
+          )
+        )
+      );
+      var failModal = React.createElement(
+        'div',
+        { id: 'fail-modal', className: 'modal fade success-modal', tabIndex: '-1', role: 'dialog' },
+        React.createElement(
+          'div',
+          { className: 'modal-dialog size-submission-modal', role: 'document' },
+          React.createElement(
+            'div',
+            { className: 'modal-content' },
+            React.createElement(
+              'div',
+              { className: 'modal-header' },
+              React.createElement(
+                'button',
+                { type: 'button', className: 'close', 'data-dismiss': 'modal', 'aria-label': 'Close' },
+                React.createElement(
+                  'span',
+                  { 'aria-hidden': 'true' },
+                  '\xD7'
+                )
+              )
+            ),
+            React.createElement(
+              'h4',
+              { className: 'modal-title' },
+              React.createElement('span', { className: 'glyphicon glyphicon-remove-circle fail-status-icon' })
+            ),
+            React.createElement(
+              'div',
+              { className: 'modal-body' },
+              React.createElement(
+                'h4',
+                null,
+                'Submission Failed!'
+              ),
+              React.createElement(
+                'h4',
+                null,
+                'Hmm... Something went wrong.  Please try again...'
+              )
+            ),
+            React.createElement(
+              'div',
+              { className: 'modal-footer' },
+              React.createElement(
+                'button',
+                { type: 'button', className: 'btn btn-default', 'data-dismiss': 'modal' },
+                'Close'
+              )
+            )
+          )
+        )
+      );
       var _state = this.state,
           company = _state.company,
           salutation = _state.salutation,
@@ -15168,14 +15390,16 @@ var SelectedProducts = function (_React$Component) {
                   React.createElement(
                     'form',
                     { onChange: this.handleOptionChange },
-                    this.state.data.length < 1 ? 'noSelectionsMsg' : modalRows
+                    modalRows
                   )
                 )
               ),
               React.createElement('div', { className: 'modal-footer' })
             )
           )
-        )
+        ),
+        successModal,
+        failModal
       );
     }
   }]);
