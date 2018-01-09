@@ -11858,7 +11858,7 @@ exports.default = SelectedProducts;
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+		value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -11884,481 +11884,487 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var ProductGridContainer = function (_React$Component) {
-  _inherits(ProductGridContainer, _React$Component);
+		_inherits(ProductGridContainer, _React$Component);
 
-  function ProductGridContainer(props) {
-    _classCallCheck(this, ProductGridContainer);
+		function ProductGridContainer(props) {
+				_classCallCheck(this, ProductGridContainer);
 
-    var _this = _possibleConstructorReturn(this, (ProductGridContainer.__proto__ || Object.getPrototypeOf(ProductGridContainer)).call(this, props));
+				var _this = _possibleConstructorReturn(this, (ProductGridContainer.__proto__ || Object.getPrototypeOf(ProductGridContainer)).call(this, props));
 
-    _this.state = {
-      searchPartNumber: null,
-      windowWidth: 768
-    };
-    _this.updateWindowDimensions = _this.updateWindowDimensions.bind(_this);
-    _this.getApprovals = _this.getApprovals.bind(_this);
-    _this.getCanApprovals = _this.getCanApprovals.bind(_this);
-    _this.handleOptionChange = _this.handleOptionChange.bind(_this);
-    _this.clearFilters = _this.clearFilters.bind(_this);
-    return _this;
-  }
+				_this.state = {
+						searchPartNumber: null,
+						windowWidth: 768
+				};
+				_this.updateWindowDimensions = _this.updateWindowDimensions.bind(_this);
+				_this.getApprovals = _this.getApprovals.bind(_this);
+				_this.getCanApprovals = _this.getCanApprovals.bind(_this);
+				_this.handleOptionChange = _this.handleOptionChange.bind(_this);
+				_this.clearFilters = _this.clearFilters.bind(_this);
+				_this.preventRefresh = _this.preventRefresh.bind(_this);
+				return _this;
+		}
 
-  _createClass(ProductGridContainer, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      this.updateWindowDimensions();
-      window.addEventListener('resize', this.updateWindowDimensions);
-    }
-  }, {
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(nextProps) {
-      if (nextProps.searchPartNumber == null) {
-        return;
-      } else {
-        this.setState({ searchPartNumber: nextProps.searchPartNumber });
-      }
-    }
-  }, {
-    key: 'updateWindowDimensions',
-    value: function updateWindowDimensions() {
-      if (this.state.windowWidth < 768) {} else if (window.innerWidth < 768) {
-        this.setState({ windowWidth: window.innerWidth });
-      }
-    }
-  }, {
-    key: 'getApprovals',
-    value: function getApprovals(data) {
-      var approvalsArr = [];
-      var approvalsStr = "";
+		_createClass(ProductGridContainer, [{
+				key: 'componentDidMount',
+				value: function componentDidMount() {
+						this.updateWindowDimensions();
+						window.addEventListener('resize', this.updateWindowDimensions);
+				}
+		}, {
+				key: 'componentWillReceiveProps',
+				value: function componentWillReceiveProps(nextProps) {
+						if (nextProps.searchPartNumber == null) {
+								return;
+						} else {
+								this.setState({ searchPartNumber: nextProps.searchPartNumber });
+						}
+				}
+		}, {
+				key: 'updateWindowDimensions',
+				value: function updateWindowDimensions() {
+						if (this.state.windowWidth < 768) {} else if (window.innerWidth < 768) {
+								this.setState({ windowWidth: window.innerWidth });
+						}
+				}
+		}, {
+				key: 'getApprovals',
+				value: function getApprovals(data) {
+						var approvalsArr = [];
+						var approvalsStr = "";
 
-      if (data.awm === true) {
-        approvalsArr.push("AWM");
-      }
-      if (data.pltc === true) {
-        approvalsArr.push("PLTC");
-      }
-      if (data.cl2 === true) {
-        approvalsArr.push("CL2");
-      }
-      if (data.cmg === true) {
-        approvalsArr.push("CMG");
-      }
-      if (data.cmx === true) {
-        approvalsArr.push("CMX");
-      }
+						if (data.awm === true) {
+								approvalsArr.push("AWM");
+						}
+						if (data.pltc === true) {
+								approvalsArr.push("PLTC");
+						}
+						if (data.cl2 === true) {
+								approvalsArr.push("CL2");
+						}
+						if (data.cmg === true) {
+								approvalsArr.push("CMG");
+						}
+						if (data.cmx === true) {
+								approvalsArr.push("CMX");
+						}
 
-      approvalsStr = approvalsArr.join(', ');
-      if (approvalsStr.length > 1) {
-        return approvalsStr;
-      } else {
-        return "n/a";
-      }
-    }
-  }, {
-    key: 'getCanApprovals',
-    value: function getCanApprovals(data) {
-      var approvalsArr = [];
-      var approvalsStr = "";
+						approvalsStr = approvalsArr.join(', ');
+						if (approvalsStr.length > 1) {
+								return approvalsStr;
+						} else {
+								return "n/a";
+						}
+				}
+		}, {
+				key: 'getCanApprovals',
+				value: function getCanApprovals(data) {
+						var approvalsArr = [];
+						var approvalsStr = "";
 
-      if (data.can_awm === true) {
-        approvalsArr.push("AWM");
-      }
-      if (data.can_cmg === true) {
-        approvalsArr.push("CMG");
-      }
-      if (data.can_cmx === true) {
-        approvalsArr.push("CMX");
-      }
+						if (data.can_awm === true) {
+								approvalsArr.push("AWM");
+						}
+						if (data.can_cmg === true) {
+								approvalsArr.push("CMG");
+						}
+						if (data.can_cmx === true) {
+								approvalsArr.push("CMX");
+						}
 
-      approvalsStr = approvalsArr.join(', ');
-      if (approvalsStr.length > 1) {
-        return approvalsStr;
-      } else {
-        return "n/a";
-      }
-    }
-  }, {
-    key: 'handleOptionChange',
-    value: function handleOptionChange(e) {
-      this.props.selectedProductsUpdater(e.target.value);
-    }
-  }, {
-    key: 'clearFilters',
-    value: function clearFilters(e) {
-      e.preventDefault();
-      this.props.clearStateFilters(e);
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
+						approvalsStr = approvalsArr.join(', ');
+						if (approvalsStr.length > 1) {
+								return approvalsStr;
+						} else {
+								return "n/a";
+						}
+				}
+		}, {
+				key: 'handleOptionChange',
+				value: function handleOptionChange(e) {
+						this.props.selectedProductsUpdater(e.target.value);
+				}
+		}, {
+				key: 'clearFilters',
+				value: function clearFilters(e) {
+						e.preventDefault();
+						this.props.clearStateFilters(e);
+				}
+		}, {
+				key: 'preventRefresh',
+				value: function preventRefresh(e) {
+						e.preventDefault();
+				}
+		}, {
+				key: 'render',
+				value: function render() {
+						var _this2 = this;
 
-      var nope = null;
+						var nope = null;
 
-      if (this.state.windowWidth < 768) {
-        nope = React.createElement(
-          'div',
-          { className: 'col-xs-12 text-center no-results-msg' },
-          React.createElement(
-            'div',
-            { className: 'jumbotron custom-jumbotron' },
-            React.createElement(
-              'h4',
-              null,
-              'Start by Selecting a Bus system from the filter menu'
-            )
-          )
-        );
-      } else {
-        nope = React.createElement(
-          'div',
-          { className: 'col-xs-12 text-center no-results-msg' },
-          React.createElement(
-            'div',
-            { className: 'jumbotron custom-jumbotron' },
-            React.createElement(
-              'h4',
-              null,
-              'Start by Selecting a Bus type from the filter menu'
-            )
-          )
-        );
-      }
+						if (this.state.windowWidth < 768) {
+								nope = React.createElement(
+										'div',
+										{ className: 'col-xs-12 text-center no-results-msg' },
+										React.createElement(
+												'div',
+												{ className: 'jumbotron custom-jumbotron' },
+												React.createElement(
+														'h4',
+														null,
+														'Start by Selecting a Bus system from the filter menu'
+												)
+										)
+								);
+						} else {
+								nope = React.createElement(
+										'div',
+										{ className: 'col-xs-12 text-center no-results-msg' },
+										React.createElement(
+												'div',
+												{ className: 'jumbotron custom-jumbotron' },
+												React.createElement(
+														'h4',
+														null,
+														'Start by Selecting a Bus type from the filter menu'
+												)
+										)
+								);
+						}
 
-      if (this.props.searchPartNumber !== null) {
-        nope = React.createElement(
-          'div',
-          { className: 'col-xs-12 text-center no-results-msg' },
-          React.createElement(
-            'div',
-            { className: 'jumbotron custom-jumbotron' },
-            React.createElement(
-              'h4',
-              null,
-              'We couldn\'t find any matches for part# "',
-              this.props.searchPartNumber,
-              '"'
-            )
-          )
-        );
-      } else if (this.props.searchPartNumber == null && this.props.busSelection !== null) {
-        nope = React.createElement(
-          'div',
-          { className: 'col-xs-12 text-center no-results-msg' },
-          React.createElement(
-            'div',
-            { className: 'jumbotron custom-jumbotron' },
-            React.createElement(
-              'h4',
-              null,
-              'Sorry, no results found'
-            ),
-            React.createElement(
-              'h5',
-              null,
-              'Please adjust your filters and try again'
-            ),
-            React.createElement(
-              'h6',
-              null,
-              React.createElement(
-                'i',
-                null,
-                React.createElement(
-                  'a',
-                  { onClick: this.clearFilters, href: '#' },
-                  'Clear filters'
-                )
-              )
-            )
-          )
-        );
-      }
-      var rows = [];
-      var options = [];
-      this.props.data.map(function (product, i) {
+						if (this.props.searchPartNumber !== null) {
+								nope = React.createElement(
+										'div',
+										{ className: 'col-xs-12 text-center no-results-msg' },
+										React.createElement(
+												'div',
+												{ className: 'jumbotron custom-jumbotron' },
+												React.createElement(
+														'h4',
+														null,
+														'We couldn\'t find any matches for part# "',
+														this.props.searchPartNumber,
+														'"'
+												)
+										)
+								);
+						} else if (this.props.searchPartNumber == null && this.props.busSelection !== null) {
+								nope = React.createElement(
+										'div',
+										{ className: 'col-xs-12 text-center no-results-msg' },
+										React.createElement(
+												'div',
+												{ className: 'jumbotron custom-jumbotron' },
+												React.createElement(
+														'h4',
+														null,
+														'Sorry, no results found'
+												),
+												React.createElement(
+														'h5',
+														null,
+														'Please adjust your filters and try again'
+												),
+												React.createElement(
+														'h6',
+														null,
+														React.createElement(
+																'i',
+																null,
+																React.createElement(
+																		'a',
+																		{ onClick: this.clearFilters, href: '#' },
+																		'Clear filters'
+																)
+														)
+												)
+										)
+								);
+						}
+						var rows = [];
+						var options = [];
+						this.props.data.map(function (product, i) {
 
-        if (_this2.props.searchPartNumber !== null) {
-          if (_this2.props.searchPartNumber === product.part_number) {
-            rows.push(React.createElement(
-              'li',
-              { key: i, className: 'col-md-3 col-sm-6 product-grid-list-item' },
-              React.createElement(
-                'label',
-                { className: _this2.props.selectedProductsArr.indexOf(product.part_number) > -1 ? "active-selected-part button-label" : "button-label" },
-                React.createElement('input', { type: 'checkbox', value: product.part_number, className: 'product-checkbox' }),
-                React.createElement(
-                  'ul',
-                  { className: 'inner-list' },
-                  React.createElement(
-                    'li',
-                    null,
-                    React.createElement(
-                      'strong',
-                      null,
-                      product.description
-                    )
-                  ),
-                  React.createElement(
-                    'li',
-                    null,
-                    'Application: ',
-                    product.application
-                  ),
-                  React.createElement(
-                    'li',
-                    null,
-                    'Jacket: ',
-                    product.outer_sheath_material
-                  ),
-                  React.createElement(
-                    'li',
-                    null,
-                    'UL: ',
-                    _this2.getApprovals(product)
-                  ),
-                  React.createElement(
-                    'li',
-                    null,
-                    'Canada: ',
-                    _this2.getCanApprovals(product)
-                  ),
-                  React.createElement(
-                    'li',
-                    null,
-                    'P/N: ',
-                    React.createElement(
-                      'a',
-                      { href: product.link, target: '_blank' },
-                      product.part_number
-                    )
-                  )
-                )
-              )
-            ));
-            return;
-          }
-        }
+								if (_this2.props.searchPartNumber !== null) {
+										if (_this2.props.searchPartNumber === product.part_number) {
+												rows.push(React.createElement(
+														'li',
+														{ key: i, className: 'col-md-3 col-sm-6 product-grid-list-item' },
+														React.createElement(
+																'label',
+																{ className: _this2.props.selectedProductsArr.indexOf(product.part_number) > -1 ? "active-selected-part button-label" : "button-label" },
+																React.createElement('input', { type: 'checkbox', value: product.part_number, className: 'product-checkbox' }),
+																React.createElement(
+																		'ul',
+																		{ className: 'inner-list' },
+																		React.createElement(
+																				'li',
+																				null,
+																				React.createElement(
+																						'strong',
+																						null,
+																						product.description
+																				)
+																		),
+																		React.createElement(
+																				'li',
+																				null,
+																				'Application: ',
+																				product.application
+																		),
+																		React.createElement(
+																				'li',
+																				null,
+																				'Jacket: ',
+																				product.outer_sheath_material
+																		),
+																		React.createElement(
+																				'li',
+																				null,
+																				'UL: ',
+																				_this2.getApprovals(product)
+																		),
+																		React.createElement(
+																				'li',
+																				null,
+																				'Canada: ',
+																				_this2.getCanApprovals(product)
+																		),
+																		React.createElement(
+																				'li',
+																				null,
+																				'P/N: ',
+																				React.createElement(
+																						'a',
+																						{ href: product.link, target: '_blank' },
+																						product.part_number
+																				)
+																		)
+																)
+														)
+												));
+												return;
+										}
+								}
 
-        if (product.bus_system !== _this2.props.busSelection) {
-          return;
-        }
+								if (product.bus_system !== _this2.props.busSelection) {
+										return;
+								}
 
-        if (_this2.props.applicationSelection !== null && product.application !== _this2.props.applicationSelection) {
-          return;
-        }
+								if (_this2.props.applicationSelection !== null && product.application !== _this2.props.applicationSelection) {
+										return;
+								}
 
-        if (_this2.props.approvalsSelection !== null) {
-          for (var _i = 0; _i < _this2.props.approvalsSelection.length; _i++) {
-            if (product.prettyApprovalArr.indexOf(_this2.props.approvalsSelection[_i]) < 0) {
-              return;
-            }
-          }
-        }
+								if (_this2.props.approvalsSelection !== null) {
+										for (var _i = 0; _i < _this2.props.approvalsSelection.length; _i++) {
+												if (product.prettyApprovalArr.indexOf(_this2.props.approvalsSelection[_i]) < 0) {
+														return;
+												}
+										}
+								}
 
-        if (_this2.props.fastConnectSelection !== null && product.fast_connect == false) {
-          return;
-        }
+								if (_this2.props.fastConnectSelection !== null && product.fast_connect == false) {
+										return;
+								}
 
-        if (_this2.props.jacketSelection.length > 0) {
-          if (_this2.props.jacketSelection.indexOf(product.outer_sheath_material) < 0) {
-            return;
-          }
-        }
+								if (_this2.props.jacketSelection.length > 0) {
+										if (_this2.props.jacketSelection.indexOf(product.outer_sheath_material) < 0) {
+												return;
+										}
+								}
 
-        if (_this2.props.halogenFree !== null && product.halogen_free == false) {
-          return;
-        }
+								if (_this2.props.halogenFree !== null && product.halogen_free == false) {
+										return;
+								}
 
-        rows.push(React.createElement(
-          'div',
-          { key: i, className: 'part-container col-sm-4 col-md-3' },
-          React.createElement('img', { className: 'product-image', src: _unitronic_sample2.default, alt: 'image' }),
-          React.createElement(
-            'div',
-            { className: 'caption' },
-            React.createElement(
-              'h6',
-              { className: 'text-center product-desc' },
-              React.createElement(
-                'strong',
-                null,
-                product.description
-              )
-            ),
-            React.createElement(
-              'p',
-              null,
-              '...'
-            ),
-            React.createElement(
-              'div',
-              { className: 'middle' },
-              React.createElement(
-                'button',
-                { role: 'button', 'data-toggle': 'modal', 'data-target': "#pn-" + product.part_number, className: 'btn btn-overlay' },
-                'Quick view'
-              )
-            )
-          ),
-          React.createElement(
-            'div',
-            { id: "pn-" + product.part_number, className: 'modal fade', tabIndex: '-1', role: 'dialog', 'aria-labelledby': 'mySmallModalLabel' },
-            React.createElement(
-              'div',
-              { className: 'modal-dialog', role: 'document' },
-              React.createElement(
-                'div',
-                { className: 'modal-content' },
-                React.createElement(
-                  'div',
-                  { className: 'modal-header' },
-                  React.createElement(
-                    'button',
-                    { type: 'button', className: 'close', 'data-dismiss': 'modal', 'aria-label': 'Close' },
-                    React.createElement(
-                      'span',
-                      { 'aria-hidden': 'true' },
-                      '\xD7'
-                    )
-                  ),
-                  React.createElement(
-                    'h4',
-                    { className: 'modal-title', id: 'myModalLabel' },
-                    product.description
-                  )
-                ),
-                React.createElement(
-                  'div',
-                  { className: 'modal-body' },
-                  React.createElement(
-                    'div',
-                    { className: 'list-group modal-image-container' },
-                    React.createElement('img', { className: 'product-image-large', src: _unitronic_sample2.default, alt: 'image' })
-                  ),
-                  React.createElement(
-                    'div',
-                    { className: 'list-group' },
-                    React.createElement(
-                      'div',
-                      null,
-                      React.createElement(
-                        'label',
-                        null,
-                        'Bus System: '
-                      ),
-                      React.createElement(
-                        'span',
-                        { className: 'list-group-item-text' },
-                        ' ',
-                        product.bus_system
-                      )
-                    ),
-                    React.createElement(
-                      'div',
-                      null,
-                      React.createElement(
-                        'label',
-                        null,
-                        'Application: '
-                      ),
-                      React.createElement(
-                        'span',
-                        { className: 'list-group-item-text' },
-                        ' ',
-                        product.application
-                      )
-                    ),
-                    React.createElement(
-                      'div',
-                      null,
-                      React.createElement(
-                        'label',
-                        null,
-                        'UL Approvals: '
-                      ),
-                      React.createElement(
-                        'span',
-                        { className: 'list-group-item-text' },
-                        ' ',
-                        _this2.getApprovals(product)
-                      )
-                    ),
-                    React.createElement(
-                      'div',
-                      null,
-                      React.createElement(
-                        'label',
-                        null,
-                        'Canada Approvals: '
-                      ),
-                      React.createElement(
-                        'span',
-                        { className: 'list-group-item-text' },
-                        ' ',
-                        _this2.getCanApprovals(product)
-                      )
-                    ),
-                    React.createElement(
-                      'div',
-                      null,
-                      React.createElement(
-                        'label',
-                        null,
-                        'P/N: '
-                      ),
-                      React.createElement(
-                        'span',
-                        { className: 'list-group-item-text' },
-                        React.createElement(
-                          'a',
-                          { href: product.link, target: '_blank' },
-                          ' ',
-                          product.part_number
-                        )
-                      )
-                    )
-                  )
-                ),
-                React.createElement(
-                  'div',
-                  { className: 'modal-footer' },
-                  React.createElement(
-                    'button',
-                    { type: 'button', className: 'btn btn-default', 'data-dismiss': 'modal' },
-                    'Close'
-                  ),
-                  React.createElement(
-                    'label',
-                    { className: 'btn btn-primary' },
-                    React.createElement('input', { type: 'checkbox', value: product.part_number, autoComplete: 'off' }),
-                    'Add to list'
-                  )
-                )
-              )
-            )
-          )
-        ));
-        options.push(product);
-      });
-      this.props.getOptions(options);
-      return React.createElement(
-        'div',
-        { className: 'col-xs-12 item-container' },
-        React.createElement(
-          'div',
-          { className: 'scroll-container' },
-          React.createElement(
-            'form',
-            { onChange: this.handleOptionChange },
-            rows.length < 1 ? nope : rows
-          )
-        )
-      );
-    }
-  }]);
+								rows.push(React.createElement(
+										'div',
+										{ key: i, className: 'part-container col-sm-4 col-md-3' },
+										React.createElement('img', { className: 'product-image', src: _unitronic_sample2.default, alt: 'image' }),
+										React.createElement(
+												'div',
+												{ className: 'caption' },
+												React.createElement(
+														'h6',
+														{ className: 'text-center product-desc' },
+														React.createElement(
+																'strong',
+																null,
+																product.description
+														)
+												),
+												React.createElement(
+														'p',
+														null,
+														'...'
+												),
+												React.createElement(
+														'div',
+														{ className: 'middle' },
+														React.createElement(
+																'button',
+																{ role: 'button', 'data-toggle': 'modal', 'data-target': "#pn-" + product.part_number, className: 'btn btn-overlay', onClick: _this2.preventRefresh },
+																'Quick view'
+														)
+												)
+										),
+										React.createElement(
+												'div',
+												{ id: "pn-" + product.part_number, className: 'modal fade', tabIndex: '-1', role: 'dialog', 'aria-labelledby': 'mySmallModalLabel' },
+												React.createElement(
+														'div',
+														{ className: 'modal-dialog', role: 'document' },
+														React.createElement(
+																'div',
+																{ className: 'modal-content' },
+																React.createElement(
+																		'div',
+																		{ className: 'modal-header' },
+																		React.createElement(
+																				'button',
+																				{ type: 'button', className: 'close', 'data-dismiss': 'modal', 'aria-label': 'Close' },
+																				React.createElement(
+																						'span',
+																						{ 'aria-hidden': 'true' },
+																						'\xD7'
+																				)
+																		),
+																		React.createElement(
+																				'h4',
+																				{ className: 'modal-title', id: 'myModalLabel' },
+																				product.description
+																		)
+																),
+																React.createElement(
+																		'div',
+																		{ className: 'modal-body' },
+																		React.createElement(
+																				'div',
+																				{ className: 'list-group modal-image-container' },
+																				React.createElement('img', { className: 'product-image-large', src: _unitronic_sample2.default, alt: 'image' })
+																		),
+																		React.createElement(
+																				'div',
+																				{ className: 'list-group' },
+																				React.createElement(
+																						'div',
+																						null,
+																						React.createElement(
+																								'label',
+																								null,
+																								'Bus System: '
+																						),
+																						React.createElement(
+																								'span',
+																								{ className: 'list-group-item-text' },
+																								' ',
+																								product.bus_system
+																						)
+																				),
+																				React.createElement(
+																						'div',
+																						null,
+																						React.createElement(
+																								'label',
+																								null,
+																								'Application: '
+																						),
+																						React.createElement(
+																								'span',
+																								{ className: 'list-group-item-text' },
+																								' ',
+																								product.application
+																						)
+																				),
+																				React.createElement(
+																						'div',
+																						null,
+																						React.createElement(
+																								'label',
+																								null,
+																								'UL Approvals: '
+																						),
+																						React.createElement(
+																								'span',
+																								{ className: 'list-group-item-text' },
+																								' ',
+																								_this2.getApprovals(product)
+																						)
+																				),
+																				React.createElement(
+																						'div',
+																						null,
+																						React.createElement(
+																								'label',
+																								null,
+																								'Canada Approvals: '
+																						),
+																						React.createElement(
+																								'span',
+																								{ className: 'list-group-item-text' },
+																								' ',
+																								_this2.getCanApprovals(product)
+																						)
+																				),
+																				React.createElement(
+																						'div',
+																						null,
+																						React.createElement(
+																								'label',
+																								null,
+																								'P/N: '
+																						),
+																						React.createElement(
+																								'span',
+																								{ className: 'list-group-item-text' },
+																								React.createElement(
+																										'a',
+																										{ href: product.link, target: '_blank' },
+																										' ',
+																										product.part_number
+																								)
+																						)
+																				)
+																		)
+																),
+																React.createElement(
+																		'div',
+																		{ className: 'modal-footer' },
+																		React.createElement(
+																				'button',
+																				{ type: 'button', className: 'btn btn-default', 'data-dismiss': 'modal' },
+																				'Close'
+																		),
+																		React.createElement(
+																				'label',
+																				{ className: 'btn btn-primary' },
+																				React.createElement('input', { type: 'checkbox', value: product.part_number, autoComplete: 'off' }),
+																				'Add to list'
+																		)
+																)
+														)
+												)
+										)
+								));
+								options.push(product);
+						});
+						this.props.getOptions(options);
+						return React.createElement(
+								'div',
+								{ className: 'col-xs-12 item-container' },
+								React.createElement(
+										'div',
+										{ className: 'scroll-container' },
+										React.createElement(
+												'form',
+												{ onChange: this.handleOptionChange },
+												rows.length < 1 ? nope : rows
+										)
+								)
+						);
+				}
+		}]);
 
-  return ProductGridContainer;
+		return ProductGridContainer;
 }(React.Component);
 
 exports.default = ProductGridContainer;
