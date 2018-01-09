@@ -9308,8 +9308,8 @@ var Unitronic = function (_React$Component) {
 								contentType: "application/json; charset=utf-8",
 								dataType: "JSON",
 								type: "GET",
-								// url: "https://selectortoolapi.com/bus/data"
-								url: "http://localhost:3000/bus/data"
+								url: "https://selectortoolapi.com/bus/data"
+								// url: "http://localhost:3000/bus/data"
 						}).done(function (data) {}).then(function (data) {
 								for (var i = 0; i < data.length; i++) {
 										var prettyApprovalArr = [];
