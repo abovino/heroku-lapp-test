@@ -150,7 +150,8 @@ a > span {
 }
 
 .scroll-container {
-  overflow-y: auto;
+	overflow-y: auto;
+	margin-top: 10px;
   max-height: 537px;
   padding-left: 1px;
   padding-bottom: 5px;
@@ -307,7 +308,58 @@ h2, h3, h4 {
   margin-bottom: -1px;
   animation: fadeIn ease-in-out 1;
   animation-duration: .5s;
-} 
+}
+
+.part-container {
+	animation: fadeIn ease-in-out 1;
+	animation-duration: .5s;
+	color: rgba(0,0,0);
+}
+
+.product-image {
+	max-width: 150px;
+	display: block;
+	margin: 0 auto;
+	color: rgba(0,0,0);
+	border: 1px solid rgba(115, 115, 115, .68);
+}
+
+.product-image-large {
+	max-width: 350px;
+	display: block;
+	margin: 0 auto;
+	color: rgba(0,0,0);
+	border: 1px solid rgba(115, 115, 115, .68);
+}
+
+.part-container:hover .product-image, .part-container:hover .product-desc {
+	opacity: 0.5;
+}
+
+.part-container:hover .middle {
+	opacity: 1;
+}
+
+.btn-overlay {
+	color: white;
+	background-color: rgb(244, 121, 32);
+	border: 1px solid transparent;
+}
+
+.btn-overlay:hover {
+	color: white !important;
+	border: 1px solid grey !important;
+}
+
+.middle {
+	transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
 
 .cat-selection-header {
   text-align: center;
