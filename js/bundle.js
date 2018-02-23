@@ -14914,6 +14914,7 @@ var ProductGrid = function (_React$Component) {
 		_this.getCanApprovals = _this.getCanApprovals.bind(_this);
 		_this.handleOptionChange = _this.handleOptionChange.bind(_this);
 		_this.clearFilters = _this.clearFilters.bind(_this);
+		_this.preventRefresh = _this.preventRefresh.bind(_this);
 		return _this;
 	}
 
@@ -14991,6 +14992,11 @@ var ProductGrid = function (_React$Component) {
 		value: function clearFilters(e) {
 			e.preventDefault();
 			this.props.clearStateFilters();
+		}
+	}, {
+		key: "preventRefresh",
+		value: function preventRefresh(e) {
+			e.preventDefault();
 		}
 	}, {
 		key: "render",
