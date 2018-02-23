@@ -11261,8 +11261,8 @@ var SelectedProducts = function (_React$Component) {
         dataType: "JSON",
         type: "POST",
         data: payload,
-        // url: "https://selectortoolapi.com/bus/email",
-        url: "http://localhost:3000/bus/email",
+        url: "https://selectortoolapi.com/bus/email",
+        // url: "http://localhost:3000/bus/email",
         success: function success(response) {
           $('#submission-modal').modal('show');
         },
@@ -15813,8 +15813,8 @@ var SelectedProducts = function (_React$Component) {
         dataType: "JSON",
         type: "POST",
         data: payload,
-        // url: "https://selectortoolapi.com/etherline/email",
-        url: "http://localhost:3000/etherline/email",
+        url: "https://selectortoolapi.com/etherline/email",
+        // url: "http://localhost:3000/etherline/email",
         success: function success(response) {
           $('#submission-modal').modal('show');
         },
